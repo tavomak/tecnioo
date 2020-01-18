@@ -1,0 +1,120 @@
+mixin slides(image, title, caption)
+    .item.text-center&attributes(attributes)
+        img(src=image , alt=title ,).img-responsive
+        if title != ''
+            .carousel-caption.carousel-caption-box.cadousel-captio-left
+                h1.title__display.carousel-caption-title= title
+                h4= caption
+
+mixin article(header,title, caption, price)
+    if header == ''
+        article&attributes(attributes)
+            h2.title__regular= title
+            p= caption
+            p= price
+            block
+    else
+        article&attributes(attributes)
+            header
+                p.article-header--txt!= header
+            h2.title__regular= title
+            p= caption
+            p= price
+            block
+
+mixin productBanner(bg,title,text)
+    section(class=bg+" tec-product--container container-fluid")
+        article.container
+            .tec-article-wrapp&attributes(attributes)
+                h2.tec-article--title=title
+                p.tec-article--text=text
+                block button
+                    a(href=baseDir+title+".html" title=title class=title+" tec-primary-btn dib") Añadir al carrito
+
+mixin indexProductArticle(title, link, zona)
+    article.col-sm-4.tec-index-product__item(class=link)&attributes(attributes)
+        .tec-index-product__item--card
+            a.tec-index-product__item--link(href=linkSrc+zona+"/"+link+".html")
+                .tec-index-product__img--wrap
+                    span
+                    img.img-responsive.tec-index-product__img(src=baseDir+"assets/img/"+link+"-cart.jpg", alt=title)
+                    .tec-index-product__item--card-title
+                        p=title
+
+mixin productMasCenter(title, direccion, m2, n, link, map, zona)
+    article.col-sm-4.tec-product__item&attributes(attributes)
+        .tec-product__item--card
+            a(href=zona+"/"+link+".html")
+                .tec-product__img--wrap
+                    img.img-responsive.tec-product__img(src=baseDir+"assets/img/"+link+"-cart.jpg", alt=title)
+                .tec-product__caption
+                    h2.tec-product__title=title
+                    p.tec-product__direccion=direccion
+                    hr.visible-sm
+                    .col-xs-6.tec-product__info
+                        p.tec-product__subtitle='M2 Aarrendables'
+                        p=m2
+                    .col-xs-4.tec-product__info
+                        p.tec-product__subtitle='N° Locales'
+                        p=n
+                    .col-xs-2.tec-product__info
+                        a(href="" data-toggle="modal", data-target="#"+link+"-modal")
+                            img.tec-product__img-map(src=baseDir+"assets/img/marcador-mapa.png", alt="")
+                            span.tec-product__subtitle MAPA
+                        div(class="modal fade" id=link+"-modal" tabindex="-1" role="dialog")
+                            .modal-dialog.modal-lg(role="document")
+                                .modal-content
+                                    .modal-header
+                                        span.title__display.text-bold="Strip Center "+title
+                                        button.close(type="button" data-dismiss="modal" aria-label="Close")
+                                            span(aria-hidden="true") &times;
+                                    iframe(src=map, width="100%", height="550", frameborder="0", style="border:0", allowfullscreen)
+
+mixin contentMasCenter(direccion, m2, n, map, restaurant, servicio, superm, shop, instituto, otro)
+    section.container.tec--strip__content
+            .row.tec--strip__content--caption
+                .col-sm-4
+                    h4 Dirección
+                    hr
+                    p=direccion
+                .col-sm-4
+                    h4 M2 Arrendables
+                    hr
+                    p=m2
+                .col-sm-4
+                    h4 Número de locales
+                    hr
+                    p=n
+            .row
+                .col-sm-12
+                    h3.title__display.pages-commun__sub-title&attributes(attributes) Locales principales
+            hr
+            .row
+                unless restaurant == ''
+                    .col-sm-4.tec--restaurantes.tec--locals
+                        each restaurantes in restaurant
+                            p=restaurantes
+                unless servicio == ''
+                    .col-sm-4.tec--servicios.tec--locals
+                        each servicios in servicio
+                            p=servicios
+                unless superm == ''
+                    .col-sm-4.tec--supers.tec--locals
+                        each supers in superm
+                            p=supers
+                unless shop == ''
+                    .col-sm-4.tec--shops.tec--locals
+                        each shops in shop
+                            p=shops
+                unless instituto == ''
+                    .col-sm-4.tec--institutos.tec--locals
+                        each institutos in instituto
+                            p=institutos
+                unless otro == ''
+                    .col-sm-4.tec--otros.tec--locals
+                        each otros in otro
+                            p=otros
+            .row
+                .col-sm-12
+                    h3.title__display.pages-commun__title Ubicación
+                    iframe(src=map, width="100%", height="350", frameborder="0", style="border:0", allowfullscreen)

@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $primary-font;
+  color: $brand-primary-color;
+  line-height: 1.3;
+  //letter-spacing: .03rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  //font-weight: $font-extra-bold;
+}
+p{
+  font-size: 1.2rem;
+}
+a {
+  color: $brand-primary-color;
+  transition: .2s ease-in-out all;
+  font-weight: $font-regular;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: $medium-grey;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+}
+ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+strong {
+  font-weight: $font-bold;
+}
+
+label {
+  font-weight: $font-regular;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 360px);
+}
+.bk-text-justify{
+  @include MQ(L){
+    text-align: justify;
+  }
+  &--center{
+    text-align: center;
+    @include MQ(L){
+      text-align: justify;
+    }
+  }
+}
+
+.bg-primary{
+  background: $brand-primary-color !important;
+}
+.bg-secondary{
+  background: $brand-secondary-color !important;
+}
+.bg-tertiary{
+  background: $brand-tertiary-color !important;
+}
+.bg-complementary{
+  background: $brand-complementary-color !important;
+}

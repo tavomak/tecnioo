@@ -1,0 +1,37 @@
+extends ../layout/_header
+
+block append config
+    -var pageTitle = 'Login'
+    -var pageDescription = ''
+    -var baseDir = ''
+    -var linkSrc = ''
+block header
+    header.navbar-expand.tecnioo-navbar
+        nav.navbar.navbar-light.bg-primary
+            .navbar-brand--img
+                img.w-100(src="./assets/img/Avatar-2", alt="Tecnioo", style="max-width:60px")
+            a.navbar-brand Programación para
+            form-group
+                select.form-control
+                    each val in ['11/dic','12/dic','13/dic','14/dic','15/dic']
+                        option= val
+            nav.navbar-nav.ml-md-auto.flex-row.align-items-center.text-white
+                a agregar técnico
+                a preview
+                a.btn.btn-primary Iniciar todas las rutas
+block mainContent
+    main.content-wrapper
+        section.container
+            .row
+                .col-6
+                    h4 Seleccionar Ticket
+                .col-6
+                    span 0 seleccionadas
+                    select.form-control
+                        each val in ['11/dic','12/dic','13/dic','14/dic','15/dic']
+                            option= val
+            .row
+                h2.text-center.title__display.pages-commun__title Conoce nuestros Strip Centers
+                
+    
+    include ../layout/_scripts

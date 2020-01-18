@@ -1,0 +1,24 @@
+footer.site-footer
+    .container
+        .col-sm-4
+            img(src=baseDir+"assets/img/logo-ifb-int.png", alt="ifb-inversiones")
+        .col-sm-4
+            span.footer-content__text
+                i.fas.fa-map-marker-alt
+                span.footer-content__text-title Dirección
+            p El Golf 82 oficina 1001,<br>Las Condes, Santiago, Chile
+            span.footer-content__text
+                i.fas.fa-phone
+                span.footer-content__text-title Teléfono
+            p +56 2 2951 9269
+        .col-sm-4
+            span.footer-content__text
+                i.fas.fa-map
+                span.footer-content__text-title Strip Centers
+            each sublinkValue, sublinkTitle in subMenu
+                li.mas-center--footer-nav
+                    if pageTitle === sublinkTitle
+                        a.selected(href=sublinkValue, title=sublinkTitle)= sublinkTitle
+                    else
+                        a(href=sublinkValue, title=sublinkTitle)= sublinkTitle
+include _form-modal-footer

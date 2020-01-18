@@ -1,0 +1,33 @@
+$primary-font: 'Noto Sans', sans-serif;
+$display-font: 'Montserrat', sans-serif;
+$font-light: 300;
+$font-regular: 400;
+$font-bold: 600;
+$font-extra-bold: 900;
+
+// Colores
+$palette: (
+    ligth-grey: #DCDDE1,
+    ultra-ligth-grey: #F5F6FA,
+    medium-grey: #697789,
+    brand-grey: #2F3640,
+    dark-grey: #121212,
+    brand-primary-color: #12233F, //#0a2240,
+    brand-secondary-color: #d2451e,
+    brand-tertiary-color: #c4c4b3,
+    brand-complementary-color: #7ca7ad
+);
+$ligth-grey: map-get($palette,ligth-grey);
+$ultra-ligth-grey: map-get($palette,ultra-ligth-grey);
+$medium-grey: map-get($palette,medium-grey);
+$brand-grey: map-get($palette,brand-grey);
+$dark-grey: map-get($palette,dark-grey);
+$brand-primary-color: map-get($palette,brand-primary-color);
+$brand-secondary-color: map-get($palette,brand-secondary-color);
+$brand-tertiary-color: map-get($palette,brand-tertiary-color);
+$brand-complementary-color: map-get($palette,brand-complementary-color);
+$white:white;
+$black: black;
+//Gradientes
+// $gradient-yellow-green: linear-gradient(to right, $page-yellow, $brand-primary-color);
+// $gradient-red-yellow: linear-gradient(to right, $brand-red, $page-yellow);

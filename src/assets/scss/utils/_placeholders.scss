@@ -1,0 +1,34 @@
+%no-margin{
+  margin: 0;
+  padding: 0;
+}
+%center-flex{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+%section-height{
+  min-height: 450px;
+}
+%bk-icon {
+  display: block;
+  width: 60px;
+  height: 60px;
+}
+%title-sizes{
+  text-align: center;
+  @include MQ(M){
+    text-align: left;
+    font-size: 3rem;
+  }
+  @include MQ(L){
+      font-size: 3.3rem;
+  }
+  @include MQ(XL){
+      font-size: 3.7rem;
+  }
+}
+
+%bk-cover{
+  background-size: cover;
+}

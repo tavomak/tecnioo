@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,600,900|Noto+Sans&display=swap");
+/* line 2, src/assets/scss/base/_reset.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+
+/* line 17, src/assets/scss/base/_reset.scss */
+blockquote,
+q {
+  quotes: none;
+}
+
+/* line 22, src/assets/scss/base/_reset.scss */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* line 30, src/assets/scss/base/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 1, src/assets/scss/base/_global.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 5, src/assets/scss/base/_global.scss */
+body {
+  font-family: "Noto Sans", sans-serif;
+  color: #12233F;
+  line-height: 1.3;
+}
+
+/* line 18, src/assets/scss/base/_global.scss */
+p {
+  font-size: 1.2rem;
+}
+
+/* line 21, src/assets/scss/base/_global.scss */
+a {
+  color: #12233F;
+  -webkit-transition: .2s ease-in-out all;
+  transition: .2s ease-in-out all;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* line 26, src/assets/scss/base/_global.scss */
+a:hover {
+  text-decoration: none;
+  color: #697789;
+}
+
+/* line 30, src/assets/scss/base/_global.scss */
+a:focus {
+  text-decoration: none;
+}
+
+/* line 34, src/assets/scss/base/_global.scss */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* line 38, src/assets/scss/base/_global.scss */
+strong {
+  font-weight: 600;
+}
+
+/* line 42, src/assets/scss/base/_global.scss */
+label {
+  font-weight: 400;
+}
+
+/* line 46, src/assets/scss/base/_global.scss */
+.content-wrapper {
+  min-height: calc(100vh - 360px);
+}
+
+@media screen and (min-width: 1024px) {
+  /* line 49, src/assets/scss/base/_global.scss */
+  .bk-text-justify {
+    text-align: justify;
+  }
+}
+
+/* line 53, src/assets/scss/base/_global.scss */
+.bk-text-justify--center {
+  text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  /* line 53, src/assets/scss/base/_global.scss */
+  .bk-text-justify--center {
+    text-align: justify;
+  }
+}
+
+/* line 61, src/assets/scss/base/_global.scss */
+.bg-primary {
+  background: #12233F !important;
+}
+
+/* line 64, src/assets/scss/base/_global.scss */
+.bg-secondary {
+  background: #d2451e !important;
+}
+
+/* line 67, src/assets/scss/base/_global.scss */
+.bg-tertiary {
+  background: #c4c4b3 !important;
+}
+
+/* line 70, src/assets/scss/base/_global.scss */
+.bg-complementary {
+  background: #7ca7ad !important;
+}
+
+/* line 1, src/assets/scss/components/_navbar.scss */
+.tecnioo-navbar {
+  font-size: .8rem;
+}
+
+/*# sourceMappingURL=main.css.map */
