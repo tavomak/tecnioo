@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,600,900|Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 /* line 2, src/assets/scss/base/_reset.scss */
 article,
 aside,
@@ -43,99 +43,141 @@ table {
 
 /* line 5, src/assets/scss/base/_global.scss */
 body {
-  font-family: "Noto Sans", sans-serif;
-  color: #12233F;
+  font-size: .8rem !important;
+  font-family: "Open Sans", sans-serif;
+  color: #54698D;
   line-height: 1.3;
 }
 
-/* line 18, src/assets/scss/base/_global.scss */
-p {
-  font-size: 1.2rem;
+/* line 22, src/assets/scss/base/_global.scss */
+hr {
+  margin: 0 0 10px 0;
 }
 
-/* line 21, src/assets/scss/base/_global.scss */
+/* line 25, src/assets/scss/base/_global.scss */
 a {
-  color: #12233F;
+  color: #54698D;
   -webkit-transition: .2s ease-in-out all;
   transition: .2s ease-in-out all;
   font-weight: 400;
   text-decoration: none;
 }
 
-/* line 26, src/assets/scss/base/_global.scss */
+/* line 30, src/assets/scss/base/_global.scss */
 a:hover {
   text-decoration: none;
   color: #697789;
 }
 
-/* line 30, src/assets/scss/base/_global.scss */
+/* line 34, src/assets/scss/base/_global.scss */
 a:focus {
   text-decoration: none;
 }
 
-/* line 34, src/assets/scss/base/_global.scss */
+/* line 38, src/assets/scss/base/_global.scss */
 ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-/* line 38, src/assets/scss/base/_global.scss */
+/* line 42, src/assets/scss/base/_global.scss */
 strong {
   font-weight: 600;
 }
 
-/* line 42, src/assets/scss/base/_global.scss */
+/* line 46, src/assets/scss/base/_global.scss */
 label {
   font-weight: 400;
 }
 
-/* line 46, src/assets/scss/base/_global.scss */
+/* line 50, src/assets/scss/base/_global.scss */
 .content-wrapper {
   min-height: calc(100vh - 360px);
 }
 
 @media screen and (min-width: 1024px) {
-  /* line 49, src/assets/scss/base/_global.scss */
+  /* line 53, src/assets/scss/base/_global.scss */
   .bk-text-justify {
     text-align: justify;
   }
 }
 
-/* line 53, src/assets/scss/base/_global.scss */
+/* line 57, src/assets/scss/base/_global.scss */
 .bk-text-justify--center {
   text-align: center;
 }
 
 @media screen and (min-width: 1024px) {
-  /* line 53, src/assets/scss/base/_global.scss */
+  /* line 57, src/assets/scss/base/_global.scss */
   .bk-text-justify--center {
     text-align: justify;
   }
 }
 
-/* line 61, src/assets/scss/base/_global.scss */
+/* line 65, src/assets/scss/base/_global.scss */
 .bg-primary {
-  background: #12233F !important;
+  background: #54698D !important;
 }
 
-/* line 64, src/assets/scss/base/_global.scss */
+/* line 68, src/assets/scss/base/_global.scss */
 .bg-secondary {
   background: #d2451e !important;
 }
 
-/* line 67, src/assets/scss/base/_global.scss */
+/* line 71, src/assets/scss/base/_global.scss */
 .bg-tertiary {
   background: #c4c4b3 !important;
 }
 
-/* line 70, src/assets/scss/base/_global.scss */
+/* line 74, src/assets/scss/base/_global.scss */
 .bg-complementary {
   background: #7ca7ad !important;
 }
 
-/* line 1, src/assets/scss/components/_navbar.scss */
-.tecnioo-navbar {
+/* line 2, src/assets/scss/components/_navbar.scss */
+.tecnioo-navbar--wrap {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: red;
+  overflow: hidden;
+}
+
+/* line 8, src/assets/scss/components/_navbar.scss */
+.tecnioo-navbar--wrap__img {
+  max-width: 60px;
+}
+
+/* line 1, src/assets/scss/components/biglist.scss */
+.tecnioo-biglist {
+  border: 1px solid #DCDDE1;
+}
+
+/* line 3, src/assets/scss/components/biglist.scss */
+.tecnioo-biglist--container {
+  max-height: 450px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+/* line 16, src/assets/scss/main.scss */
+.form-control {
+  height: 26px;
+  padding: 2px .75rem;
   font-size: .8rem;
+  border-radius: 0;
+}
+
+/* line 23, src/assets/scss/main.scss */
+.tecnioo-card {
+  min-height: 100%;
+}
+
+/* line 25, src/assets/scss/main.scss */
+.tecnioo-card--flag {
+  max-height: 80px;
+  width: 3px;
+  background: #54698D;
 }
 
 /*# sourceMappingURL=main.css.map */

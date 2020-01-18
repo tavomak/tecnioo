@@ -1,3 +1,17 @@
+mixin ulCards(vars)
+    ul.tecnioo-card--container
+        li.tecnioo-card--item
+            input(type="checkbox")
+        li.tecnioo-card--item
+            .tecnioo-card--title
+            .tecnioo-card--content
+            .tecnioo-card--place
+        li.tecnioo-card--item
+            .tecnioo-card--label
+            .tecnioo-card--deadline
+    
+
+
 mixin slides(image, title, caption)
     .item.text-center&attributes(attributes)
         img(src=image , alt=title ,).img-responsive

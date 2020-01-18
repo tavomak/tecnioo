@@ -1,0 +1,8 @@
+.tecnioo-biglist{
+    border: 1px solid $ligth-grey;
+    &--container{
+        max-height: 450px;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+}

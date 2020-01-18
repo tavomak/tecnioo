@@ -11,3 +11,20 @@
 @import 'base/global';
 
 @import 'components/navbar';
+@import 'components/biglist';
+
+.form-control{
+    height: 26px;
+    padding: 2px .75rem;
+    font-size: .8rem;
+    border-radius:0;
+}
+
+.tecnioo-card{
+    min-height: 100%;
+    &--flag{
+        max-height: 80px;
+        width: 3px;
+        background: $brand-primary-color;
+    }
+}
