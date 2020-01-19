@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Llamados</title>
+    <meta content="Llamados" property="og:title">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="images/webclip.png" rel="apple-touch-icon">
+  </head>
+  <body class="tecnioo-llamados">
+    <nav class="tecnioo-navbar navbar navbar-light bg-primary px-2 align-items-center">
+      <div class="tecnioo-navbar--wrap"><img class="tecnioo-navbar--wrap__img" src="./assets/img/Avatar-2" alt="Tecnioo"></div>
+      <nav class="navbar-nav-scroll">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item"><a class="nav-link text-white px-2" href="./llamados">Llamados</a>
+            <ul class="navbar-nav flex-row"></ul>
+          </li>
+          <li class="nav-item dropdown"><a class="nav-link text-white px-2 dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ruta Camioneta</a>
+            <div class="dropdown-menu" id="tcDropMenu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="./programacion">Programación</a><a class="dropdown-item" href="">Consulta de cierres</a></div>
+          </li>
+          <li class="nav-item"><a class="nav-link text-white px-2" href="./llamados">Validaciones</a></li>
+        </ul>
+      </nav>
+      <nav class="navbar-nav ml-md-auto flex-row align-items-center text-white"><a class="px-2 text-white" href="#">Agregar técnico <i class="fas fa-user-plus tc-icon"></i></a><a class="px-2 text-white" href="#">Preview <i class="fas fa-eye tc-icon"></i></a></nav>
+    </nav>
+    <main class="content-wrapper">
+      <section class="container-fluid pt-5 pb-3 px-5">
+        <div class="row justify-content-end">
+          <div class="col-6">
+            <h4>Validaciones Pendientes</h4>
+          </div>
+          <div class="col-6 text-right"><a class="btn btn-primary text-white" href="">Crear nuevo llamado</a></div>
+        </div>
+      </section>
+      <section class="container-fluid px-5">
+        <div class="row mb-5 align-items-stretch">
+          <div class="col-md-12 bg-grey">
+            <article>
+              <ul>
+                <li class="mt-2 pt-2 bg-white"><a href="#">
+                    <ul class="tecnioo-card d-flex align-items-stretch w-100">
+                      <li class="tecnioo-card--flag"></li>
+                      <li class="tecnioo-card--item px-3">
+                        <p class="tecnioo-card--title"><i class="fas fa-phone"></i><span class="tecnioo-card--title__id">#12345678</span><span class="tecnioo-card--title__status"></span></p>
+                        <p class="tecnioo-card--ticket"><i class="fas fa-layer-group pr-2"></i><small class="tecnioo-card--ticket__text">Cliente Spot - Cliente Mantante Urgencia de Cooler - [Modelo] - [Logo]</small></p>
+                        <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Celocia Rota</span><span class="badge badge-light p-2 mr-1">Problema Eléctrico</span></div>
+                        <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Av. Providencia 701, Providencia, Santiago</small></p>
+                      </li>
+                      <li class="tecnioo-card--item px-3 ml-auto">
+                        <div class="tecnioo-card--label mb-3"><small>Abierto</small><span class="badge badge-primary p-2 ml-2">500 pts</span></div>
+                        <p class="tecnioo-card--deadline">-12h</p>
+                        <p><i class="fas fa-user-circle pr-2"> </i><span>Sin Asignación</span></p>
+                      </li>
+                    </ul>
+                    <div class="text-right pb-4 pr-4"><a class="btn btn-secondary btn-sm mr-auto" href="">Resolver</a></div></a></li>
+                <li class="mt-2 pt-2 bg-white"><a href="#">
+                    <ul class="tecnioo-card d-flex align-items-stretch w-100">
+                      <li class="tecnioo-card--flag"></li>
+                      <li class="tecnioo-card--item px-3">
+                        <p class="tecnioo-card--title"><i class="fas fa-phone"></i><span class="tecnioo-card--title__id">Nuevo</span><span class="tecnioo-card--title__status"></span></p>
+                        <p class="tecnioo-card--ticket"><i class="fas fa-layer-group pr-2"></i><small class="tecnioo-card--ticket__text">Cliente Spot - Cliente Mantante Urgencia de Cooler - [Modelo] - [Logo]</small></p>
+                        <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Celocia Rota</span><span class="badge badge-light p-2 mr-1">Problema Eléctrico</span></div>
+                        <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Av. Providencia 701, Providencia, Santiago</small></p>
+                      </li>
+                      <li class="tecnioo-card--item px-3 ml-auto">
+                        <div class="tecnioo-card--label mb-3"><small>Abierto</small><span class="badge badge-primary p-2 ml-2">500 pts</span></div>
+                        <p class="tecnioo-card--deadline">-12h</p>
+                        <p><i class="fas fa-user-circle pr-2"> </i><span>Sin Asignación</span></p>
+                      </li>
+                    </ul>
+                    <div class="text-right pb-4 pr-4"><a class="btn btn-secondary btn-sm mr-auto" href="">Resolver</a></div></a></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="assets/js/main-dist.js"></script>
+  </body>
+</html>

@@ -1,1 +1,1 @@
-$(function(){console.log("funciona")});
+$(function(){});

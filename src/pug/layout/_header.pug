@@ -31,7 +31,24 @@ html(lang="es")
     body(class="tecnioo-"+pageTitle.replace(/\s+/g, '-').toLowerCase())
 
         block header
-            header.tec-navigation
-                //include ../layout/_nav
+            nav.tecnioo-navbar.navbar.navbar-light.bg-primary.px-2.align-items-center
+                .tecnioo-navbar--wrap
+                    img.tecnioo-navbar--wrap__img(src="./assets/img/Avatar-2", alt="Tecnioo")
+                nav.navbar-nav-scroll
+                    ul.navbar-nav.flex-row
+                        li.nav-item
+                            a.nav-link.text-white.px-2(href="./llamados") Llamados
+                            ul.navbar-nav.flex-row
+                        li.nav-item.dropdown
+                            a.nav-link.text-white.px-2.dropdown-toggle(href="#", id="dropdownMenuButton", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Ruta Camioneta
+                            .dropdown-menu(id="tcDropMenu", aria-labelledby="dropdownMenuButton")
+                                a.dropdown-item(href="./programacion") Programación
+                                a.dropdown-item(href="") Consulta de cierres
+                        li.nav-item
+                            a.nav-link.text-white.px-2(href="./llamados") Validaciones
+                        
+                nav.navbar-nav.ml-md-auto.flex-row.align-items-center.text-white
+                    a.px-2.text-white(href="#") Agregar técnico <i class="fas fa-user-plus tc-icon"></i>
+                    a.px-2.text-white(href="#") Preview <i class="fas fa-eye tc-icon"></i>
 
         block mainContent
