@@ -116,4 +116,13 @@
         width: 3px;
         background: $brand-primary-color;
     }
+    &--title{
+      &__status{
+        width: 14px;
+        height: 14px;
+        display: inline-block;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    }
 }

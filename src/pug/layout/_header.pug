@@ -31,24 +31,35 @@ html(lang="es")
     body(class="tecnioo-"+pageTitle.replace(/\s+/g, '-').toLowerCase())
 
         block header
-            nav.tecnioo-navbar.navbar.navbar-light.bg-primary.px-2.align-items-center
-                .tecnioo-navbar--wrap
+            nav.tecnioo-navbar.navbar.bg-primary.px-2.flex-row
+
+                a.navbar-brand.tecnioo-navbar--wrap(href="#")
                     img.tecnioo-navbar--wrap__img(src="./assets/img/Avatar-2", alt="Tecnioo")
-                nav.navbar-nav-scroll
+
+                .navbar-nav-scroll
                     ul.navbar-nav.flex-row
                         li.nav-item
                             a.nav-link.text-white.px-2(href="./llamados") Llamados
                             ul.navbar-nav.flex-row
                         li.nav-item.dropdown
                             a.nav-link.text-white.px-2.dropdown-toggle(href="#", id="dropdownMenuButton", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Ruta Camioneta
-                            .dropdown-menu(id="tcDropMenu", aria-labelledby="dropdownMenuButton")
+                            .dropdown-menu(aria-labelledby="dropdownMenuButton")
                                 a.dropdown-item(href="./programacion") Programación
                                 a.dropdown-item(href="") Consulta de cierres
                         li.nav-item
                             a.nav-link.text-white.px-2(href="./llamados") Validaciones
-                        
-                nav.navbar-nav.ml-md-auto.flex-row.align-items-center.text-white
-                    a.px-2.text-white(href="#") Agregar técnico <i class="fas fa-user-plus tc-icon"></i>
-                    a.px-2.text-white(href="#") Preview <i class="fas fa-eye tc-icon"></i>
+                ul.navbar-nav.flex-row.ml-md-auto
+                    li.nav-item.dropdown
+                        a.nav-item.nav-link.dropdown-toggle.px-4.text-white(href="#", id="cientMenu" data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") 
+                            | Mantenedoores
+                        .dropdown-menu.dropdown-menu-right(aria-labelledby="cientMenu")
+                            each val in ['Maestra 1', 'Maestra 2', 'Maestra 3', 'Maestra 4', 'Maestra 5', 'Maestra 6', 'Maestra 7', 'Maestra 8' ]
+                                a.dropdown-item(href="#")= val
+                    li.nav-item.dropdown
+                        a.nav-item.nav-link.dropdown-toggle.text-white(href="#", id="cientMenu" data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") 
+                            i.fas.fa-user-circle.pr-2
+                            | Hola david.s@gmail.com
+                        .dropdown-menu.dropdown-menu-right(aria-labelledby="cientMenu")
+                            a.dropdown-item(href="#")  Cerrar Sesión
 
         block mainContent

@@ -6,10 +6,17 @@ block append config
     -var baseDir = ''
     -var linkSrc = ''
 block header
-    header.navbar-expand.tecnioo-navbar
-        nav.navbar.navbar-light.bg-primary.px-2.align-items-center
-            .tecnioo-navbar--wrap
-                img.tecnioo-navbar--wrap__img(src="./assets/img/Avatar-2", alt="Tecnioo")
+    nav.tecnioo-navbar.navbar.bg-primary.px-2.flex-row
+
+        a.navbar-brand(href="#")
+            img.tecnioo-navbar--wrap__img(src="./assets/img/Avatar-2", alt="Tecnioo")
+
+        ul.navbar-nav.flex-row.ml-md-auto
+            li.nav-item.dropdown
+                a.nav-item.nav-link.dropdown-toggle.text-white(href="#", id="cientMenu" data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") 
+                    i.fas.fa-user-circle.pr-2
+                    | Iniciar Sesión
+
 block mainContent
     main.content-wrapper
         section.container.pt-5.pb-3.px-5

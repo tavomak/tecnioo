@@ -160,9 +160,11 @@ label {
 /* line 8, src/assets/scss/components/_navbar.scss */
 .tecnioo-navbar--wrap__img {
   max-width: 60px;
+  position: relative;
+  top: -5px;
 }
 
-/* line 13, src/assets/scss/components/_navbar.scss */
+/* line 15, src/assets/scss/components/_navbar.scss */
 .navbar-nav .dropdown-menu {
   position: absolute;
 }
@@ -292,6 +294,15 @@ label {
   max-height: 80px;
   width: 3px;
   background: #54698D;
+}
+
+/* line 120, src/assets/scss/main.scss */
+.tecnioo-card--title__status {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
