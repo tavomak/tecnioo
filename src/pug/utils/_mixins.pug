@@ -37,7 +37,34 @@ mixin validacionesPendientesCards(id, ticketText, badget1, badget2, badget3, dir
                     .col.text-right
                         a.btn.btn-secondary.btn-sm.mr-auto(href="") Resolver
     
-
+mixin llamadosCard1(id, ticketText, badget1, badget2, badget3, direccion, statustext, ptos, hrs, asing)
+    li.mt-2.pt-2.bg-white
+        a(href="#")
+            ul.tecnioo-card.d-flex.align-items-stretch.w-100
+                li.tecnioo-card--flag
+                li.tecnioo-card--item.px-3
+                    p.tecnioo-card--title
+                        i.fas.fa-phone.mr-2
+                        span.tecnioo-card--title__id= id
+                    p.tecnioo-card--ticket
+                        i.fas.fa-layer-group.pr-2
+                        small.tecnioo-card--ticket__text= ticketText
+                    .tecnioo-card--content.mb-1
+                        span.badge.badge-light.p-2.mr-1= badget1
+                        span.badge.badge-light.p-2.mr-1= badget2
+                        span.badge.badge-light.p-2.mr-1= badget3
+                    p.tecnioo-card--place.pb-2
+                        i.fas.fa-map-marker-alt.tc-icon 
+                        small.pl-2= direccion
+                li.tecnioo-card--item.px-3.ml-auto
+                    .tecnioo-card--label.mb-3
+                        small= statustext
+                        span.badge.badge-primary.p-2.ml-2= ptos
+                    p.tecnioo-card--deadline 
+                        b=hrs
+                    p
+                        i.fas.fa-user-circle.pr-2 
+                        span= asing
 
 mixin slides(image, title, caption)
     .item.text-center&attributes(attributes)

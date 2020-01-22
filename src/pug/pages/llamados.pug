@@ -13,68 +13,37 @@ block mainContent
                 .col-6
                     h4 Llamados
                 .col-6.text-right
-                    a.btn.btn-primary.text-white(href="") Crear nuevo llamado
+                    a.btn.btn-danger.text-white(href="#") Crear nuevo llamado
                 
         section.container-fluid.px-5
             .row.mb-5.align-items-stretch
                 .col-md-5.bg-grey
                     article
                         ul
-                            li.mt-2.pt-2.bg-white
-                                a(href="#")
-                                    ul.tecnioo-card.d-flex.align-items-stretch.w-100
-                                        li.tecnioo-card--flag
-                                        li.tecnioo-card--item.px-3
-                                            p.tecnioo-card--title
-                                                i.fas.fa-phone
-                                                span.tecnioo-card--title__id #12345678
-                                                span.tecnioo-card--title__status
-                                            p.tecnioo-card--ticket
-                                                i.fas.fa-layer-group.pr-2
-                                                small.tecnioo-card--ticket__text Cliente Spot - Cliente Mantante Urgencia de Cooler - [Modelo] - [Logo]
-                                            .tecnioo-card--content.mb-1
-                                                span.badge.badge-light.p-2.mr-1 Coller no enfria
-                                                span.badge.badge-light.p-2.mr-1 Celocia Rota
-                                                span.badge.badge-light.p-2.mr-1 Problema Eléctrico
-                                            p.tecnioo-card--place.pb-2
-                                                i.fas.fa-map-marker-alt.tc-icon 
-                                                small.pl-2 Av. Providencia 701, Providencia, Santiago
-                                        li.tecnioo-card--item.px-3.ml-auto
-                                            .tecnioo-card--label.mb-3
-                                                small Abierto
-                                                span.badge.badge-primary.p-2.ml-2 500 pts
-                                            p.tecnioo-card--deadline -12h
-                                            p
-                                                i.fas.fa-user-circle.pr-2 
-                                                span Sin Asignación
-                            li.mt-2.pt-2.bg-white
-                                a(href="#")
-                                    ul.tecnioo-card.d-flex.align-items-stretch.w-100
-                                        li.tecnioo-card--flag
-                                        li.tecnioo-card--item.px-3
-                                            p.tecnioo-card--title
-                                                i.fas.fa-phone
-                                                span.tecnioo-card--title__id Nuevo
-                                                span.tecnioo-card--title__status
-                                            p.tecnioo-card--ticket
-                                                i.fas.fa-layer-group.pr-2
-                                                small.tecnioo-card--ticket__text Cliente Spot - Cliente Mantante Urgencia de Cooler - [Modelo] - [Logo]
-                                            .tecnioo-card--content.mb-1
-                                                span.badge.badge-light.p-2.mr-1 Coller no enfria
-                                                span.badge.badge-light.p-2.mr-1 Celocia Rota
-                                                span.badge.badge-light.p-2.mr-1 Problema Eléctrico
-                                            p.tecnioo-card--place.pb-2
-                                                i.fas.fa-map-marker-alt.tc-icon 
-                                                small.pl-2 Av. Providencia 701, Providencia, Santiago
-                                        li.tecnioo-card--item.px-3.ml-auto
-                                            .tecnioo-card--label.mb-3
-                                                small Abierto
-                                                span.badge.badge-primary.p-2.ml-2 500 pts
-                                            p.tecnioo-card--deadline -12h
-                                            p
-                                                i.fas.fa-user-circle.pr-2 
-                                                span Sin Asignación
-
+                            +llamadosCard1(
+                                '#35535654', 
+                                'Cliente Spot - Cliente Mantante Urgencia de Cooler - [Modelo] - [Logo]', 
+                                'Coller no enfria', 
+                                'Celocia Rota', 
+                                'Problema Eléctrico', 
+                                'Providencia 701, Providencia, Santiago', 
+                                'Abierto', 
+                                '500 pts', 
+                                '-12h', 
+                                'Sin Asignación'
+                                )
+                            +llamadosCard1(
+                                '#15456565', 
+                                'Cliente Spot - Cliente Mantante Urgencia de Cooler - [Modelo] - [Logo]', 
+                                'Coller no enfria', 
+                                'Celocia Rota', 
+                                'Problema Eléctrico', 
+                                'Providencia 701, Providencia, Santiago', 
+                                'Abierto', 
+                                '500 pts', 
+                                '-12h', 
+                                'Sin Asignación'
+                                )
 
                 .col-md-7
                     article.pr-4
@@ -90,33 +59,82 @@ block mainContent
                                     a.dropdown-item(href="") Asignar Directo
                                     a.dropdown-item(href="") Eliminar
                         ul
-                            - for (var x = 0; x < 5; x++)
-                                li
-                                    hr
-                                    ul.tecnioo-card.d-flex.align-items-stretch.w-100
-                                        li.tecnioo-card--flag
-                                        li.tecnioo-card--item.px-3
-                                            label.custom-checkbox
-                                                input(type="checkbox")
-                                                span.custom-checkbox--checkmark
-                                        li.tecnioo-card--item.px-3
-                                            p.tecnioo-card--title
-                                                span.tecnioo-card--title__id #12345678 - 
-                                                span.tecnioo-card--title__text 
-                                                    b Urgencia Cooler  [Modelo]
-                                                span.tecnioo-card--title__status
-                                            .tecnioo-card--content.mb-1
-                                                span.badge.badge-light.p-2.mr-1 Coller no enfria
-                                                span.badge.badge-light.p-2.mr-1 Coller no enfria
-                                                span.badge.badge-light.p-2.mr-1 Coller no enfria
-                                            p.tecnioo-card--place.pb-2
-                                                i.fas.fa-map-marker-alt.tc-icon 
-                                                small.pl-2 Cliente Spot [Logo] - Providencia, Santiago
-                                        li.tecnioo-card--item.px-3.ml-auto
-                                            .tecnioo-card--label.mb-3
-                                                span.badge.badge-primary.p-2 500 pts
-                                            p.tecnioo-card--deadline.text-center -4d
-                    
+                            hr.pb-2
+                            +validacionesPendientesCards(
+                                '#12345678', 
+                                'Cliente Spot - Cliente Mantante Urgencia de Cooler - [Modelo] - [Logo]', 
+                                'Coller no enfria', 
+                                'Celocia Rota', 
+                                'Problema Eléctrico', 
+                                'Providencia 701, Providencia, Santiago', 
+                                'Abierto', 
+                                '500 pts', 
+                                '-12h', 
+                                'Sin Asignación', 
+                                'Solucionado OK', 
+                                'success'
+                                )
+                            hr.pb-2
+                            +validacionesPendientesCards(
+                                '#32132154', 
+                                'Cliente Spot - Cliente Mantante Urgencia de Cooler - [Modelo] - [Logo]', 
+                                'Coller no enfria', 
+                                'Celocia Rota', 
+                                'Problema Eléctrico', 
+                                'Providencia 701, Providencia, Santiago', 
+                                'Abierto', 
+                                '500 pts', 
+                                '-12h', 
+                                'Sin Asignación', 
+                                'Visitado Pendiente', 
+                                'warning'
+                                )
+                            hr.pb-2
+                            +validacionesPendientesCards(
+                                '#35535654', 
+                                'Cliente Spot - Cliente Mantante Urgencia de Cooler - [Modelo] - [Logo]', 
+                                'Coller no enfria', 
+                                'Celocia Rota', 
+                                'Problema Eléctrico', 
+                                'Providencia 701, Providencia, Santiago', 
+                                'Abierto', 
+                                '500 pts', 
+                                '-12h', 
+                                'Sin Asignación', 
+                                'Pendiente TCM', 
+                                'danger'
+                                )
+                            hr.pb-2
+                            +validacionesPendientesCards(
+                                'Nuevo', 
+                                'Cliente Spot - Cliente Mantante Urgencia de Cooler - [Modelo] - [Logo]', 
+                                'Coller no enfria', 
+                                'Celocia Rota', 
+                                'Problema Eléctrico', 
+                                'Providencia 701, Providencia, Santiago', 
+                                'Abierto', 
+                                '500 pts', 
+                                '-12h', 
+                                'Sin Asignación', 
+                                'Pendiente Validación', 
+                                'info'
+                                )
+                            hr.pb-2
+                            +validacionesPendientesCards(
+                                'Nuevo', 
+                                'Cliente Spot - Cliente Mantante Urgencia de Cooler - [Modelo] - [Logo]', 
+                                'Coller no enfria', 
+                                'Celocia Rota', 
+                                'Problema Eléctrico', 
+                                'Providencia 701, Providencia, Santiago', 
+                                'Abierto', 
+                                '500 pts', 
+                                '-12h', 
+                                'Sin Asignación', 
+                                'Local Cerrado', 
+                                'dark'
+                                )
+                            hr.pb-2
 
 
     include ../layout/_scripts
