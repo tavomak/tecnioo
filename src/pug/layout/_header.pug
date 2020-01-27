@@ -52,11 +52,18 @@ html(lang="es")
                     li.nav-item.dropdown
                         a.nav-item.nav-link.dropdown-toggle.px-4.text-white(href="#", id="cientMenu" data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") 
                             | Mantenedoores
-                        .dropdown-menu.dropdown-menu-right(aria-labelledby="cientMenu")
+                        .dropdown-menu.dropdown-menu-right.dropright(aria-labelledby="cientMenu")
+                            a.dropdown-item.dropdown-toggle.dropdown-submenu(href="#" id="cientSubMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+                                <span class="nav-label dropright">Muestra 9</span><span class="caret"></span>
+                            .dropdown-menu
+                                each val in ['Maestra 91', 'Maestra 92', 'Maestra 93']
+                                    a.dropdown-item(href="#")= val
                             each val in ['Maestra 1', 'Maestra 2', 'Maestra 3', 'Maestra 4', 'Maestra 5', 'Maestra 6', 'Maestra 7', 'Maestra 8' ]
                                 a.dropdown-item(href="#")= val
+
+                                    
                     li.nav-item.dropdown
-                        a.nav-item.nav-link.dropdown-toggle.text-white(href="#", id="cientMenu" data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") 
+                        a.nav-item.nav-link.dropdown-toggle.text-white(href="#", id="cientProfile" data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") 
                             i.fas.fa-user-circle.pr-2
                             | Hola david.s@gmail.com
                         .dropdown-menu.dropdown-menu-right(aria-labelledby="cientMenu")
