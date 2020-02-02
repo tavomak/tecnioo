@@ -92,7 +92,7 @@ block mainContent
                     .col-6
                         h4 
                             |Seleccionar Técnico
-                            span.dropdown.pl-5
+                            .d-inline.dropdown.pl-5
                                 button.btn.btn-outline-primary.dropdown-toggle(type="button" id="dropdownTecnicosTipo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Filtrar
                                 .dropdown-menu(aria-labelledby="dropdownTecnicosTipo")
                                     each val in ['Todos','Técnico Camioneta','Técnico Ruta Sanitizados']
@@ -118,7 +118,7 @@ block mainContent
                                     .small Max 1000 pts
                 each val in ['Alberto Rivera','Sebastián Gonzalez','Juan Pérez','Roberto Soto', 'Sebastián Guédez']               
                     .col-sm-2
-                        a(href="#" data-toggle="modal" data-target="#tecnicoModal").tecnioo-card.card
+                        a(href="#").tecnioo-card.card
                             .card-body
                                 .card-title
                                     i.fas.fa-user-circle.pr-2(style="font-size:1.2rem;")
@@ -135,62 +135,5 @@ block mainContent
                                         .badge.badge-warning.p-2 Técnico Camioneta
                                     li
                                         .small Max 1000 pts
-
-        .modal.fade(id="tecnicoModal" tabindex="-1" role="dialog" aria-labelledby="tecnicoModalLabel" aria-hidden="true")
-            .modal-dialog.modal-lg(role="document")
-                .modal-content
-                    .modal-header
-                        .modal-title 
-                            h4 Nombre del Técnico
-                        button(type="button" class="close" data-dismiss="modal" aria-label="Close")
-                            span(aria-hidden="true") &times;
-                    .modal-body.p-0
-                    .container-fluid
-                        form
-                            .form-group.row.pt-4
-                                label.col-1.col-form-label(for="buscarTicket") Todos
-                                .col-sm-8
-                                    input.form-control(type="text" placeholder="Buscar ticket" id="buscarTicket")
-                                .col-3.text-right
-                                    a(href="#").btn.btn-outline-primary.btn-sm Buscar
-                        .row
-                            .col-8
-                                article.tecnioo-biglist--container.pr-4
-                                    ul
-                                        - for (var x = 0; x < 5; x++)
-                                            li
-                                                hr
-                                                ul.tecnioo-card.d-flex.align-items-stretch.w-100
-                                                    li.tecnioo-card--flag
-                                                    li.tecnioo-card--item.px-3
-                                                        label.custom-checkbox
-                                                            input(type="checkbox")
-                                                            span.custom-checkbox--checkmark
-                                                    li.tecnioo-card--item.px-3
-                                                        p.tecnioo-card--title
-                                                            span.tecnioo-card--title__id #12345678 - 
-                                                            span.tecnioo-card--title__text 
-                                                                b Urgencia Cooler  [Modelo]
-                                                            span.tecnioo-card--title__status
-                                                        .tecnioo-card--content.mb-1
-                                                            span.badge.badge-light.p-2.mr-1 Coller no enfria
-                                                            span.badge.badge-light.p-2.mr-1 Coller no enfria
-                                                            span.badge.badge-light.p-2.mr-1 Coller no enfria
-                                                        p.tecnioo-card--place.pb-2
-                                                            i.fas.fa-map-marker-alt.tc-icon 
-                                                            small.pl-2 Cliente Spot [Logo] - Providencia, Santiago
-                                                    li.tecnioo-card--item.px-3.ml-auto
-                                                        .tecnioo-card--label.mb-3
-                                                            span.badge.badge-primary.p-2 500 pts
-                                                        p.tecnioo-card--deadline.text-center -4d
-
-
-                            .col-4.p-0
-                                iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.01075626506!2d-70.58617688480206!3d-33.39688358078929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2ddbca25c3%3A0x94faa92657957dde!2sAv%20Vitacura%205250%2C%20of.%20308%2C%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1579371739262!5m2!1ses-419!2scl"
-                                width="100%" 
-                                height="450" 
-                                frameborder="0" 
-                                style="border:0;" 
-                                allowfullscreen="")
 
     include ../layout/_scripts

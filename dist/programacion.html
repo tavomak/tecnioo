@@ -14,7 +14,7 @@
     <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
     <link href="images/webclip.png" rel="apple-touch-icon">
   </head>
-  <body class="tecnioo-programación-de-llamados">
+  <body>
     <nav class="tecnioo-navbar navbar bg-primary px-2 flex-row"><a class="navbar-brand tecnioo-navbar--wrap" href="#"><img class="tecnioo-navbar--wrap__img" src="./assets/img/Avatar-2" alt="Tecnioo"></a><a class="text-white px-2">Programación para</a>
       <div>
         <select class="form-control">
@@ -208,10 +208,13 @@
         <div class="row pb-4">
           <div class="col-6">
             <h4>
-               Seleccionar Técnico<span class="dropdown pl-5">
+               Seleccionar Técnico
+              <div class="d-inline dropdown pl-5">
                 <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownTecnicosTipo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filtrar</button>
                 <div class="dropdown-menu" aria-labelledby="dropdownTecnicosTipo"><a class="dropdown-item" href="#">Todos</a><a class="dropdown-item" href="#">Técnico Camioneta</a><a class="dropdown-item" href="#">Técnico Ruta Sanitizados</a>
-                </div></span></h4>
+                </div>
+              </div>
+            </h4>
           </div>
         </div>
         <div class="row justify-content-center align-items-stretch">
@@ -234,7 +237,7 @@
                   </li>
                 </ul>
               </div></a></div>
-          <div class="col-sm-2"><a class="tecnioo-card card" href="#" data-toggle="modal" data-target="#tecnicoModal">
+          <div class="col-sm-2"><a class="tecnioo-card card" href="#">
               <div class="card-body">
                 <div class="card-title"><i class="fas fa-user-circle pr-2" style="font-size:1.2rem;"></i><b>Alberto Rivera</b></div>
                 <ul class="card-content d-flex justify-content-between align-items-center">
@@ -253,7 +256,7 @@
                   </li>
                 </ul>
               </div></a></div>
-          <div class="col-sm-2"><a class="tecnioo-card card" href="#" data-toggle="modal" data-target="#tecnicoModal">
+          <div class="col-sm-2"><a class="tecnioo-card card" href="#">
               <div class="card-body">
                 <div class="card-title"><i class="fas fa-user-circle pr-2" style="font-size:1.2rem;"></i><b>Sebastián Gonzalez</b></div>
                 <ul class="card-content d-flex justify-content-between align-items-center">
@@ -272,7 +275,7 @@
                   </li>
                 </ul>
               </div></a></div>
-          <div class="col-sm-2"><a class="tecnioo-card card" href="#" data-toggle="modal" data-target="#tecnicoModal">
+          <div class="col-sm-2"><a class="tecnioo-card card" href="#">
               <div class="card-body">
                 <div class="card-title"><i class="fas fa-user-circle pr-2" style="font-size:1.2rem;"></i><b>Juan Pérez</b></div>
                 <ul class="card-content d-flex justify-content-between align-items-center">
@@ -291,7 +294,7 @@
                   </li>
                 </ul>
               </div></a></div>
-          <div class="col-sm-2"><a class="tecnioo-card card" href="#" data-toggle="modal" data-target="#tecnicoModal">
+          <div class="col-sm-2"><a class="tecnioo-card card" href="#">
               <div class="card-body">
                 <div class="card-title"><i class="fas fa-user-circle pr-2" style="font-size:1.2rem;"></i><b>Roberto Soto</b></div>
                 <ul class="card-content d-flex justify-content-between align-items-center">
@@ -310,7 +313,7 @@
                   </li>
                 </ul>
               </div></a></div>
-          <div class="col-sm-2"><a class="tecnioo-card card" href="#" data-toggle="modal" data-target="#tecnicoModal">
+          <div class="col-sm-2"><a class="tecnioo-card card" href="#">
               <div class="card-body">
                 <div class="card-title"><i class="fas fa-user-circle pr-2" style="font-size:1.2rem;"></i><b>Sebastián Guédez</b></div>
                 <ul class="card-content d-flex justify-content-between align-items-center">
@@ -331,141 +334,6 @@
               </div></a></div>
         </div>
       </section>
-      <div class="modal fade" id="tecnicoModal" tabindex="-1" role="dialog" aria-labelledby="tecnicoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <div class="modal-title"> 
-                <h4>Nombre del Técnico</h4>
-              </div>
-              <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body p-0"></div>
-            <div class="container-fluid">
-              <form>
-                <div class="form-group row pt-4">
-                  <label class="col-1 col-form-label" for="buscarTicket">Todos</label>
-                  <div class="col-sm-8">
-                    <input class="form-control" type="text" placeholder="Buscar ticket" id="buscarTicket">
-                  </div>
-                  <div class="col-3 text-right"><a class="btn btn-outline-primary btn-sm" href="#">Buscar</a></div>
-                </div>
-              </form>
-              <div class="row">
-                <div class="col-8">
-                  <article class="tecnioo-biglist--container pr-4">
-                    <ul>
-                      <li>
-                        <hr>
-                        <ul class="tecnioo-card d-flex align-items-stretch w-100">
-                          <li class="tecnioo-card--flag"></li>
-                          <li class="tecnioo-card--item px-3">
-                            <label class="custom-checkbox">
-                              <input type="checkbox"><span class="custom-checkbox--checkmark"></span>
-                            </label>
-                          </li>
-                          <li class="tecnioo-card--item px-3">
-                            <p class="tecnioo-card--title"><span class="tecnioo-card--title__id">#12345678 - </span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
-                            <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
-                            <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - Providencia, Santiago</small></p>
-                          </li>
-                          <li class="tecnioo-card--item px-3 ml-auto">
-                            <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">500 pts</span></div>
-                            <p class="tecnioo-card--deadline text-center">-4d</p>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <hr>
-                        <ul class="tecnioo-card d-flex align-items-stretch w-100">
-                          <li class="tecnioo-card--flag"></li>
-                          <li class="tecnioo-card--item px-3">
-                            <label class="custom-checkbox">
-                              <input type="checkbox"><span class="custom-checkbox--checkmark"></span>
-                            </label>
-                          </li>
-                          <li class="tecnioo-card--item px-3">
-                            <p class="tecnioo-card--title"><span class="tecnioo-card--title__id">#12345678 - </span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
-                            <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
-                            <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - Providencia, Santiago</small></p>
-                          </li>
-                          <li class="tecnioo-card--item px-3 ml-auto">
-                            <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">500 pts</span></div>
-                            <p class="tecnioo-card--deadline text-center">-4d</p>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <hr>
-                        <ul class="tecnioo-card d-flex align-items-stretch w-100">
-                          <li class="tecnioo-card--flag"></li>
-                          <li class="tecnioo-card--item px-3">
-                            <label class="custom-checkbox">
-                              <input type="checkbox"><span class="custom-checkbox--checkmark"></span>
-                            </label>
-                          </li>
-                          <li class="tecnioo-card--item px-3">
-                            <p class="tecnioo-card--title"><span class="tecnioo-card--title__id">#12345678 - </span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
-                            <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
-                            <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - Providencia, Santiago</small></p>
-                          </li>
-                          <li class="tecnioo-card--item px-3 ml-auto">
-                            <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">500 pts</span></div>
-                            <p class="tecnioo-card--deadline text-center">-4d</p>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <hr>
-                        <ul class="tecnioo-card d-flex align-items-stretch w-100">
-                          <li class="tecnioo-card--flag"></li>
-                          <li class="tecnioo-card--item px-3">
-                            <label class="custom-checkbox">
-                              <input type="checkbox"><span class="custom-checkbox--checkmark"></span>
-                            </label>
-                          </li>
-                          <li class="tecnioo-card--item px-3">
-                            <p class="tecnioo-card--title"><span class="tecnioo-card--title__id">#12345678 - </span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
-                            <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
-                            <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - Providencia, Santiago</small></p>
-                          </li>
-                          <li class="tecnioo-card--item px-3 ml-auto">
-                            <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">500 pts</span></div>
-                            <p class="tecnioo-card--deadline text-center">-4d</p>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <hr>
-                        <ul class="tecnioo-card d-flex align-items-stretch w-100">
-                          <li class="tecnioo-card--flag"></li>
-                          <li class="tecnioo-card--item px-3">
-                            <label class="custom-checkbox">
-                              <input type="checkbox"><span class="custom-checkbox--checkmark"></span>
-                            </label>
-                          </li>
-                          <li class="tecnioo-card--item px-3">
-                            <p class="tecnioo-card--title"><span class="tecnioo-card--title__id">#12345678 - </span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
-                            <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
-                            <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - Providencia, Santiago</small></p>
-                          </li>
-                          <li class="tecnioo-card--item px-3 ml-auto">
-                            <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">500 pts</span></div>
-                            <p class="tecnioo-card--deadline text-center">-4d</p>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </article>
-                </div>
-                <div class="col-4 p-0">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.01075626506!2d-70.58617688480206!3d-33.39688358078929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2ddbca25c3%3A0x94faa92657957dde!2sAv%20Vitacura%205250%2C%20of.%20308%2C%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1579371739262!5m2!1ses-419!2scl" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

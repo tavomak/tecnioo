@@ -48,9 +48,10 @@ body {
   color: #54698D;
   line-height: 1.3;
   overflow-x: hidden;
+  padding-top: 0 !important;
 }
 
-/* line 14, src/assets/scss/base/_global.scss */
+/* line 15, src/assets/scss/base/_global.scss */
 h1,
 h2,
 h3,
@@ -58,12 +59,12 @@ h4 {
   font-weight: 600;
 }
 
-/* line 23, src/assets/scss/base/_global.scss */
+/* line 24, src/assets/scss/base/_global.scss */
 hr {
   margin: 0 0 10px 0;
 }
 
-/* line 26, src/assets/scss/base/_global.scss */
+/* line 27, src/assets/scss/base/_global.scss */
 a {
   color: #54698D;
   -webkit-transition: .2s ease-in-out all;
@@ -72,78 +73,78 @@ a {
   text-decoration: none;
 }
 
-/* line 31, src/assets/scss/base/_global.scss */
+/* line 32, src/assets/scss/base/_global.scss */
 a:hover {
   text-decoration: none;
   color: #697789;
 }
 
-/* line 35, src/assets/scss/base/_global.scss */
+/* line 36, src/assets/scss/base/_global.scss */
 a:focus {
   text-decoration: none;
 }
 
-/* line 39, src/assets/scss/base/_global.scss */
+/* line 40, src/assets/scss/base/_global.scss */
 ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-/* line 43, src/assets/scss/base/_global.scss */
+/* line 44, src/assets/scss/base/_global.scss */
 strong {
   font-weight: 600;
 }
 
-/* line 47, src/assets/scss/base/_global.scss */
+/* line 48, src/assets/scss/base/_global.scss */
 label {
   font-weight: 400;
 }
 
-/* line 51, src/assets/scss/base/_global.scss */
+/* line 52, src/assets/scss/base/_global.scss */
 .content-wrapper {
   min-height: calc(100vh - 360px);
 }
 
 @media screen and (min-width: 1024px) {
-  /* line 54, src/assets/scss/base/_global.scss */
+  /* line 55, src/assets/scss/base/_global.scss */
   .bk-text-justify {
     text-align: justify;
   }
 }
 
-/* line 58, src/assets/scss/base/_global.scss */
+/* line 59, src/assets/scss/base/_global.scss */
 .bk-text-justify--center {
   text-align: center;
 }
 
 @media screen and (min-width: 1024px) {
-  /* line 58, src/assets/scss/base/_global.scss */
+  /* line 59, src/assets/scss/base/_global.scss */
   .bk-text-justify--center {
     text-align: justify;
   }
 }
 
-/* line 66, src/assets/scss/base/_global.scss */
+/* line 67, src/assets/scss/base/_global.scss */
 .bg-primary {
   background: #54698D !important;
 }
 
-/* line 69, src/assets/scss/base/_global.scss */
+/* line 70, src/assets/scss/base/_global.scss */
 .bg-secondary {
   background: #d2451e !important;
 }
 
-/* line 72, src/assets/scss/base/_global.scss */
+/* line 73, src/assets/scss/base/_global.scss */
 .bg-tertiary {
   background: #c4c4b3 !important;
 }
 
-/* line 75, src/assets/scss/base/_global.scss */
+/* line 76, src/assets/scss/base/_global.scss */
 .bg-complementary {
   background: #7ca7ad !important;
 }
 
-/* line 78, src/assets/scss/base/_global.scss */
+/* line 79, src/assets/scss/base/_global.scss */
 .bg-grey {
   background: #F5F6FA !important;
 }
@@ -303,6 +304,149 @@ label {
   display: inline-block;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+/*form styles*/
+/* line 132, src/assets/scss/main.scss */
+#msform {
+  max-width: 90%;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* line 137, src/assets/scss/main.scss */
+#msform fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  /*stacking fieldsets above each other*/
+  position: absolute;
+}
+
+/*Hide all except first fieldset*/
+/* line 148, src/assets/scss/main.scss */
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+
+/*inputs*/
+/* line 152, src/assets/scss/main.scss */
+#msform input, #msform textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+}
+
+/*buttons*/
+/* line 164, src/assets/scss/main.scss */
+#msform .action-button {
+  width: 100px;
+  background: #54698D;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+}
+
+/* line 175, src/assets/scss/main.scss */
+#msform .action-button:hover, #msform .action-button:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #54698D;
+}
+
+/*headings*/
+/* line 179, src/assets/scss/main.scss */
+.fs-title {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #54698D;
+  margin-bottom: 10px;
+}
+
+/* line 185, src/assets/scss/main.scss */
+.fs-subtitle {
+  font-weight: normal;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/*progressbar*/
+/* line 192, src/assets/scss/main.scss */
+#progressbar {
+  margin-bottom: 60px;
+  overflow: hidden;
+  /*CSS counters to number the steps*/
+  counter-reset: step;
+}
+
+/* line 198, src/assets/scss/main.scss */
+#progressbar li {
+  text-align: center;
+  list-style-type: none;
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* line 205, src/assets/scss/main.scss */
+#progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 20px;
+  line-height: 20px;
+  display: block;
+  font-size: 10px;
+  color: #333;
+  background: white;
+  border-radius: 3px;
+  margin: 0 auto 5px auto;
+}
+
+/*progressbar connectors*/
+/* line 218, src/assets/scss/main.scss */
+#progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: white;
+  position: absolute;
+  left: -50%;
+  top: 9px;
+  z-index: -1;
+  /*put it behind the numbers*/
+}
+
+/* line 228, src/assets/scss/main.scss */
+#progressbar li:first-child:after {
+  /*connector not needed before the first step*/
+  content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+/* line 234, src/assets/scss/main.scss */
+#progressbar li.active:before, #progressbar li.active:after {
+  background: #54698D;
+  color: white;
+}
+
+/* line 239, src/assets/scss/main.scss */
+.help-block {
+  font-size: .8em;
+  color: #7c7c7c;
+  text-align: left;
+  margin-bottom: .5em;
 }
 
 /*# sourceMappingURL=main.css.map */

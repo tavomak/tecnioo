@@ -39,17 +39,15 @@ block mainContent
                                     .badge.badge-info.p-2 Técnico Ruta
                                 li
                                     .small Max 1000 pts
-                .col-2
+                .col-9
                     h4 Seleccionar Ticket
                     p.mb-1 
                         b 0 seleccionados
-                    select.form-control.d-inline.w-100
+                    select.form-control.d-inline.w-25
                         each val in ['Seleccionar', 'Alberto Rivera','Sebastián Gonzalez','Juan Pérez','Roberto Soto', 'Sebastián Guédez']
                             option= val
-                    a(href="#").btn.btn-outline-warning.btn-sm.d-block.mt-2 Reasignar a otro técnico
-                    a(href="programacion").btn.btn-outline-danger.btn-sm.d-block.mt-2 Excluir de la programación
-                .col-7
-                    include ../layout/_filtros.pug
+                    a(href="#").btn.btn-outline-warning.btn-sm.mx-4 Reasignar a otro técnico
+                    a(href="programacion").btn.btn-outline-danger.btn-sm.mx-4 Excluir de la programación
             hr.mt-4
             .row
                 .col.py-3
