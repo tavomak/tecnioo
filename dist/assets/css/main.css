@@ -154,18 +154,17 @@ label {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: red;
   overflow: hidden;
 }
 
-/* line 8, src/assets/scss/components/_navbar.scss */
+/* line 7, src/assets/scss/components/_navbar.scss */
 .tecnioo-navbar--wrap__img {
   max-width: 60px;
   position: relative;
   top: -5px;
 }
 
-/* line 15, src/assets/scss/components/_navbar.scss */
+/* line 14, src/assets/scss/components/_navbar.scss */
 .navbar-nav .dropdown-menu {
   position: absolute;
 }

@@ -15,8 +15,9 @@ const
 // BrowserSync
 function browserSync(done) {
     browsersync.init({
-        proxy: "http://localhost/tecnioo/dist",
-        port: 8081
+        server: {
+            baseDir: "./dist"
+        }
     });
     done();
 }
