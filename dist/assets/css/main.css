@@ -231,13 +231,6 @@ label {
   overflow-x: hidden;
 }
 
-/* line 2, src/assets/scss/components/_wizard.scss */
-.list-step.active {
-  font-weight: 600;
-  background: #54698D;
-  color: white;
-}
-
 /*form styles*/
 /* line 2, src/assets/scss/pages/_crearllamado.scss */
 #msform {

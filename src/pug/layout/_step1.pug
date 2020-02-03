@@ -5,13 +5,13 @@ hr
 
 form.form-row.justify-content-between.pb-3
     .form-group.col-6
-        label(for="") Origen de llamado
-        select.form-control
+        label(for="step1SelectCallSource") Origen de llamado
+        select#step1SelectCallSource.form-control
             each val in ['Seleccionar origen','Llamado','Correo']
                 option= val
     .form-group.col-6        
-        label(for="") Tipo de llamado
-        select.form-control
+        label(for="step1SelectCallType") Tipo de llamado
+        select#step1SelectCallType.form-control
             each val in ['Seleccionar tipo','Urgencias', 'Instalaciones *', 'Retiros **', 'Modificaciones', 'Perforaciones', 'Cambio de Accesorio', 'Puesta en Marcha', 'Capacitación', 'Diagnóstico', 'Visita Inspectiva', 'Taller' ]
                 option= val
 .row
@@ -20,21 +20,21 @@ form.form-row.justify-content-between.pb-3
 hr
 form.pt-3.form-row
     .form-group.col-6
-        label(for="selectClientType") Buscar por
-        select#selectClientType.form-control
+        label(for="step1SelectClientType") Buscar por
+        select#step1SelectClientType.form-control
             each val in ['Rut','Razón Social','Código Cliente']
                 option= val
     .form-group.col-6
-        label(for="inputClientType") Cliente Número
-        input.form-control(type="text"  id="inputSelectTipe" placeholder="Ej: 9.999.999-9")
+        label(for="step1InputSelectTipe") Cliente Número
+        input.form-control#step1InputSelectTipe(type="text"  placeholder="Ej: 9.999.999-9")
         p.text-right.m-0
-            a(href="#")#showResults.btn.btn-outline-primary.btn-sm.mt-3 Buscar
-.bk-result-wrap.pb-5.row
+            a.btn.btn-outline-primary.btn-sm.mt-3#step1ShowResults(href="#") Buscar
+.bk-step1-hidden.pb-5.row
     .col-12
         h2.fs-title Resultados
         hr
     .col-12.pt-3
-        a(href="#")
+        a#step1SelectClientName(href="#")
             .card
                 .card-body
                     p 77.889.654-0
@@ -54,4 +54,4 @@ form.pt-3.form-row
                                 i.fas.fa-map-marker-alt.mr-2
                                 span 30        
 hr    
-a.next.action-buton.btn.btn-primary.text-white Siguiente
+a.next.action-buton.btn.btn-primary.text-white.disabled#step1Next(disabled) Siguiente

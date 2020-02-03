@@ -1,6 +1,6 @@
 $(function () {
 
-    //WIZARD ====================================================== //
+    //WIZARD ANIMATION ====================================================== //
 
     var current_fs, next_fs, previous_fs; //fieldsets
     var left, opacity, scale; //fieldset properties which we will animate
@@ -89,16 +89,73 @@ $(function () {
             easing: 'easeOutQuint'
         });
     });
-
-    $('.bk-result-wrap').hide()
-    $('.addContactWrap').hide()
-
-    $('#showResults').on('click', function () {
-        $('.bk-result-wrap').show('slow')
+    //WIZARD HIDE ELEMENTS ====================================================== //
+    //WIZARD STEP 1 ====================================================== //
+    $('.bk-step1-hidden').hide();
+    $('#step1ShowResults').on('click', function () {
+        $('.bk-step1-hidden').show('slow')
     });
 
-    $('#addContactNew').on('click', function () {
-        $('.addContactWrap').show('slow')
+    $('#step1SelectClientName').on('click', function (e) {
+        e.preventDefault();
+        $(this).find('.card').addClass('shadow');
+        $('#step1Next').removeClass('disabled')
     });
 
+    $('#step1Next').on('click', function () {
+        var step1SelectCallSource = $('#step1SelectCallSource').val(),
+            step1SelectCallType = $('#step1SelectCallType').val(),
+            step1SelectClientType = $('#step1SelectClientType').val(),
+            step1InputSelectTipe = $('#step1InputSelectTipe').val();
+        console.log(step1SelectCallSource);
+        console.log(step1SelectCallType);
+        console.log(step1SelectClientType);
+        console.log(step1InputSelectTipe);
+
+        $('.list-step-1 i').removeClass('d-none');
+    });
+    //WIZARD STEP 2 ====================================================== //
+    $('.bk-step2-hidden').hide();
+    $('.step2AddNewContact-wrap').hide();
+
+    $('#step2SelectClientType').on('change', function () {
+        $('.bk-step2-hidden').show('slow');
+    });
+    $('#step2AddNewContact').on('click', function () {
+        $('.step2AddNewContact-wrap').show('slow');
+    });
+    $('#step2Prev').on('click', function () {
+        $('.list-step-1 i').addClass('d-none');
+    });
+    $('#step2Next').on('click', function () {
+        $('.list-step-2 i').removeClass('d-none');
+    });
+    //WIZARD STEP 3 ====================================================== //
+    $('#step3Prev').on('click', function () {
+        $('.list-step-2 i').addClass('d-none');
+    });
+    $('#step3Next').on('click', function () {
+        $('.list-step-3 i').removeClass('d-none');
+    });
+    //WIZARD STEP 4 ====================================================== //
+    $('#step4Prev').on('click', function () {
+        $('.list-step-3 i').addClass('d-none');
+    });
+    $('#step4Next').on('click', function () {
+        $('.list-step-4 i').removeClass('d-none');
+    });
+        //WIZARD STEP 5 ====================================================== //
+    $('#step5Prev').on('click', function () {
+        $('.list-step-4 i').addClass('d-none');
+    });
+    $('#step5Next').on('click', function () {
+        $('.list-step-5 i').removeClass('d-none');
+    });
+    //WIZARD STEP 6 ====================================================== //
+    $('#step6Prev').on('click', function () {
+        $('.list-step-5 i').addClass('d-none');
+    });
+    $('#step5Next').on('click', function () {
+        $('.list-step-6 i').removeClass('d-none');
+    });
 });

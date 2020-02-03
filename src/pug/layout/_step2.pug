@@ -6,12 +6,12 @@
     .col-12.my-2
         .input-group
             .input-group-prepend
-                label.input-group-text.form-control(for="inputGroupSelect01") Seleccione la sucursal donde se encuentra la maquina
-            select.custom-select.form-control(id="inputGroupSelect01")
+                label.input-group-text.form-control(for="#step2SelectClientType") Seleccione la sucursal donde se encuentra la maquina
+            select.custom-select.form-control#step2SelectClientType
                 option Seleccionar
                 - for (var x = 0; x < 30; x++)
                     option= 'Sucursal '+ x  
-    .col-12.mt-4
+    .col-12.mt-4.bk-step2-hidden
         h2.fs-title Seleccionar contacto
         h3.fs-subtitle Si el contacto no aparece en el listado agregue uno nuevo
         hr
@@ -32,8 +32,8 @@
                                     i.fas.fa-phone.mr-2
                                     span +569 6 5654.8454
         p.text-right
-            a(href="#")#addContactNew.btn.btn-outline-primary.btn-sm Agregar Nuevo
-        .addContactWrap.row
+            a(href="#")#step2AddNewContact.btn.btn-outline-primary.btn-sm Agregar Nuevo
+        .step2AddNewContact-wrap.row
             .col-12
                 h2.fs-title Agregar nuevo contacto
                 hr
@@ -42,4 +42,6 @@
                 p.text-right
                     a(href="#")#addContact.btn.btn-outline-primary.btn-sm Agregar
             
-include ../layout/_prevnext
+hr
+a.previous.action-buton.btn.btn-light.mr-4#step2Prev Anterior
+a.next.action-buton.btn.btn-primary.text-white#step2Next Siguiente

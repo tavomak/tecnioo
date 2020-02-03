@@ -14,18 +14,16 @@ block mainContent
                     h4 Asistente de creación de llamado
         section.container-fluid.px-5
             .row.mb-5.align-items-stretch
-                .col-sm-4.col-md-2.bg-grey
-                    article.p-2
+                .col-sm-4.col-md-2.bg-grey.pt-5
+                    article
                         ul#progressStep
-                            li.active.list-step
-                                p 
-                                    span 1 
-                                    | Crear Ticket
                             each val, i in {1:'Crear Ticket', 2:'Datos de contacto', 3:'Información del equipo', 4:'Diagnóstico', 5:'Información del problema', 6:'Horario de atención'}
-                                li 
-                                    p 
-                                        span #{i} 
-                                        | #{val}
+                                li.list-step(class="list-step-"+i)
+                                    p
+                                        small
+                                            span #{i} 
+                                            | #{val}
+                                        i.fas.fa-check-circle.float-right.d-none
                 .col-sm-8.col-md-7
                     #msform
                         ul#progressbar.d-flex.justify-content-between
@@ -44,7 +42,7 @@ block mainContent
                             include ../layout/_step5
                         fieldset.w-100
                             include ../layout/_step6
-                .col-md-3.bg-grey.d-none.d-md-block
+                .col-md-3.bg-grey.d-none.d-md-block.pt-5
                     include ../layout/_previewllamado
 
     .modal.fade(id="crearLlamadoModal" tabindex="-1" role="dialog" aria-labelledby="crearLlamadoLabel" aria-hidden="true")
