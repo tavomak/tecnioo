@@ -1,0 +1,26 @@
+.row
+    .col
+        h2.fs-title Horario de atención
+        h3.fs-subtitle Configure el horario donde recibirá al tecnico
+        hr
+
+    .col-12
+        ul.d-flex.flex-row.align-items-center
+            li.col-4
+                label(for="selectTypeOfTime") Tipo de horario
+                select#selectTypeOfTime.form-control
+                    each val in ['Lunes a viernes','Sabado','Domingo']
+                        option= val
+            li.col-4
+                label(for="selectTimeStart") Apertura
+                select#selectTimeStart.form-control
+                    each val in ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00', '17:00','18:00','19:00']
+                        option= val
+            li.col-4
+                label(for="selectTimeEnd") Cierre
+                select#selectTimeEnd.form-control
+                    each val in ['19:00','20:00','21:00','22:00','23:00','01:00','02:00','03:00','16:00', '17:00','18:00','19:00']
+                        option= val
+    .col-12.text-center.my-4
+        a.btn.btn-primary.text-white(href="" data-toggle="modal", data-target="#crearLlamadoModal") Previsualizar solicitud
+

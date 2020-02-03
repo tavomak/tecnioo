@@ -1,0 +1,49 @@
+.row
+    .col
+        h2.fs-title Diagnóstico Preventivo
+        h3.fs-subtitle Antes de continuar conteste estas preguntas
+        hr
+
+.row
+    ul.col-12.tecnioo-card
+        li.bg-grey.w-100.px-4.py-2
+            p
+                b ¿El equipo está enchufado?
+            p Asegurese que el equipo esta conectado a una fuente de energia de 220v
+        li.text-right.w-100.py-2
+            each val, i in {1:'Si', 2:'No', 3:'No sé'}
+                .custom-control.custom-radio.custom-control-inline
+                    input(type="radio" id="radioForContacto-"+i name="radioForContacto-"+i class="custom-control-input")
+                    label(class="custom-control-label" for="radioForContacto-"+i) #{val}
+    ul.col-12.tecnioo-card
+        li.bg-grey.w-100.px-4.py-2
+            p
+                b ¿El equipo está enchufado?
+            p Asegurese que el equipo esta conectado a una fuente de energia de 220v
+        li.text-right.w-100.py-2
+            each val, i in {4:'Si', 5:'No', 6:'No sé'}
+                .custom-control.custom-radio.custom-control-inline
+                    input(type="radio" id="radioForContacto-"+i name="radioForContacto-"+i class="custom-control-input")
+                    label(class="custom-control-label" for="radioForContacto-"+i) #{val}
+    ul.col-12.tecnioo-card
+        li.bg-grey.w-100.px-4.py-2
+            p
+                b ¿El equipo está enchufado?
+            p Asegurese que el equipo esta conectado a una fuente de energia de 220v
+        li.text-right.w-100.py-2
+            each val, i in {7:'Si', 8:'No', 9:'No sé'}
+                .custom-control.custom-radio.custom-control-inline
+                    input(type="radio" id="radioForContacto-"+i name="radioForContacto-"+i class="custom-control-input")
+                    label(class="custom-control-label" for="radioForContacto-"+i) #{val}
+    ul.col-12.tecnioo-card
+        li.bg-grey.w-100.px-4.py-2
+            p
+                b ¿El equipo está enchufado?
+            p Asegurese que el equipo esta conectado a una fuente de energia de 220v
+        li.text-right.w-100.py-2
+            each val, i in {10:'Si', 12:'No', 13:'No sé'}
+                .custom-control.custom-radio.custom-control-inline
+                    input(type="radio" id="radioForContacto-"+i name="radioForContacto-"+i class="custom-control-input")
+                    label(class="custom-control-label" for="radioForContacto-"+i) #{val}
+
+include ../layout/_prevnext

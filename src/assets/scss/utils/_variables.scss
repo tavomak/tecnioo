@@ -31,3 +31,13 @@ $black: black;
 //Gradientes
 // $gradient-yellow-green: linear-gradient(to right, $page-yellow, $brand-primary-color);
 // $gradient-red-yellow: linear-gradient(to right, $brand-red, $page-yellow);
+$colors: (
+    primary: $brand-primary-color,
+    secondary: #90B9FF,
+    success: rgb(60, 204, 144),
+    danger: rgb(233, 58, 58),
+    warning: #FF8C31,
+    info: #F7CC00,
+    dark: #913C9E
+);
+

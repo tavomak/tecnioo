@@ -1,0 +1,25 @@
+.row
+    .col
+        h2.fs-title Información del equipo
+        hr
+
+form.form-row
+    .form-group.col-12
+        ul.mb-3
+            - for (var x = 0; x < 4; x++)
+                li.my-2
+                    ul.tecnioo-card.d-flex.align-items-center
+                        li.tecnioo-card--item.custom-control.custom-checkbox
+                            input.custom-control-input(type="checkbox" id="checkboxForEquipo-"+x)
+                            label.custom-control-label(for="checkboxForEquipo-"+x)
+                        li.tecnioo-card--item.p-2.bg-grey.w-100.row.align-items-center
+                            .col-4.tecnioo-card--title
+                                span.tecnioo-card--title__text 
+                                    b [Maquina Modelo]
+                            .col-4.tecnioo-card--place 
+                                span.pl-2 [Maquina Código]
+                            .col-4
+                                .tecnioo-card--img.m-auto
+                                    img.w-100(src="./assets/img/logo-cristal.jpg", alt="")
+
+include ../layout/_prevnext

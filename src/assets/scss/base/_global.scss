@@ -64,8 +64,10 @@ label {
   }
 }
 
-.bg-primary{
-  background: $brand-primary-color !important;
+@each $name, $color in $colors {
+  .bg-#{$name}{
+    background-color: $color !important;
+  }
 }
 .bg-secondary{
   background: $brand-secondary-color !important;

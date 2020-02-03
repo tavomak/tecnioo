@@ -124,29 +124,79 @@ label {
   }
 }
 
-/* line 67, src/assets/scss/base/_global.scss */
+/* line 68, src/assets/scss/base/_global.scss */
 .bg-primary {
-  background: #54698D !important;
+  background-color: #54698D !important;
 }
 
-/* line 70, src/assets/scss/base/_global.scss */
+/* line 68, src/assets/scss/base/_global.scss */
+.bg-secondary {
+  background-color: #90B9FF !important;
+}
+
+/* line 68, src/assets/scss/base/_global.scss */
+.bg-success {
+  background-color: #3ccc90 !important;
+}
+
+/* line 68, src/assets/scss/base/_global.scss */
+.bg-danger {
+  background-color: #e93a3a !important;
+}
+
+/* line 68, src/assets/scss/base/_global.scss */
+.bg-warning {
+  background-color: #FF8C31 !important;
+}
+
+/* line 68, src/assets/scss/base/_global.scss */
+.bg-info {
+  background-color: #F7CC00 !important;
+}
+
+/* line 68, src/assets/scss/base/_global.scss */
+.bg-dark {
+  background-color: #913C9E !important;
+}
+
+/* line 72, src/assets/scss/base/_global.scss */
 .bg-secondary {
   background: #d2451e !important;
 }
 
-/* line 73, src/assets/scss/base/_global.scss */
+/* line 75, src/assets/scss/base/_global.scss */
 .bg-tertiary {
   background: #c4c4b3 !important;
 }
 
-/* line 76, src/assets/scss/base/_global.scss */
+/* line 78, src/assets/scss/base/_global.scss */
 .bg-complementary {
   background: #7ca7ad !important;
 }
 
-/* line 79, src/assets/scss/base/_global.scss */
+/* line 81, src/assets/scss/base/_global.scss */
 .bg-grey {
   background: #F5F6FA !important;
+}
+
+/* line 1, src/assets/scss/components/_customscrollbar.scss */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(220, 221, 225, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+/* line 8, src/assets/scss/components/_customscrollbar.scss */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+/* line 14, src/assets/scss/components/_customscrollbar.scss */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(220, 221, 225, 0.3);
+  background-color: #DCDDE1;
 }
 
 /* line 2, src/assets/scss/components/_navbar.scss */
@@ -181,139 +231,22 @@ label {
   overflow-x: hidden;
 }
 
-/* The container */
-/* line 18, src/assets/scss/main.scss */
-.custom-checkbox {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Hide the browser's default checkbox */
-/* line 32, src/assets/scss/main.scss */
-.custom-checkbox input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom checkbox */
-/* line 41, src/assets/scss/main.scss */
-.custom-checkbox--checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 15px;
-  width: 15px;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-/* line 51, src/assets/scss/main.scss */
-.custom-checkbox:hover input ~ .custom-checkbox--checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-/* line 56, src/assets/scss/main.scss */
-.custom-checkbox input:checked ~ .custom-checkbox--checkmark {
-  background-color: #007bff;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-/* line 61, src/assets/scss/main.scss */
-.custom-checkbox--checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-/* line 68, src/assets/scss/main.scss */
-.custom-checkbox input:checked ~ .custom-checkbox--checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-/* line 73, src/assets/scss/main.scss */
-.custom-checkbox .custom-checkbox--checkmark:after {
-  left: 6px;
-  top: 2px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-/* line 85, src/assets/scss/main.scss */
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(220, 221, 225, 0.3);
-  border-radius: 10px;
-  background-color: #F5F5F5;
-}
-
-/* line 92, src/assets/scss/main.scss */
-::-webkit-scrollbar {
-  width: 12px;
-  background-color: #F5F5F5;
-}
-
-/* line 98, src/assets/scss/main.scss */
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(220, 221, 225, 0.3);
-  background-color: #DCDDE1;
-}
-
-/* line 105, src/assets/scss/main.scss */
-.form-control {
-  height: 26px;
-  padding: 2px .75rem;
-  font-size: .8rem;
-  border-radius: 0;
-}
-
-/* line 112, src/assets/scss/main.scss */
-.tecnioo-card {
-  min-height: 100%;
-}
-
-/* line 114, src/assets/scss/main.scss */
-.tecnioo-card--flag {
-  max-height: 80px;
-  width: 3px;
+/* line 2, src/assets/scss/components/_wizard.scss */
+.list-step.active {
+  font-weight: 600;
   background: #54698D;
-}
-
-/* line 120, src/assets/scss/main.scss */
-.tecnioo-card--title__status {
-  width: 14px;
-  height: 14px;
-  display: inline-block;
-  border-radius: 50%;
-  margin-right: 10px;
+  color: white;
 }
 
 /*form styles*/
-/* line 132, src/assets/scss/main.scss */
+/* line 2, src/assets/scss/pages/_crearllamado.scss */
 #msform {
   max-width: 90%;
   position: relative;
   margin: 0 auto;
 }
 
-/* line 137, src/assets/scss/main.scss */
+/* line 7, src/assets/scss/pages/_crearllamado.scss */
 #msform fieldset {
   background: white;
   border: 0 none;
@@ -325,54 +258,20 @@ label {
 }
 
 /*Hide all except first fieldset*/
-/* line 148, src/assets/scss/main.scss */
+/* line 18, src/assets/scss/pages/_crearllamado.scss */
 #msform fieldset:not(:first-of-type) {
   display: none;
 }
 
-/*inputs*/
-/* line 152, src/assets/scss/main.scss */
-#msform input, #msform textarea {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: montserrat;
-  color: #2C3E50;
-  font-size: 13px;
-}
-
-/*buttons*/
-/* line 164, src/assets/scss/main.scss */
-#msform .action-button {
-  width: 100px;
-  background: #54698D;
-  font-weight: bold;
-  color: white;
-  border: 0 none;
-  border-radius: 1px;
-  cursor: pointer;
-  padding: 10px 5px;
-  margin: 10px 5px;
-}
-
-/* line 175, src/assets/scss/main.scss */
-#msform .action-button:hover, #msform .action-button:focus {
-  box-shadow: 0 0 0 2px white, 0 0 0 3px #54698D;
-}
-
 /*headings*/
-/* line 179, src/assets/scss/main.scss */
+/* line 23, src/assets/scss/pages/_crearllamado.scss */
 .fs-title {
   font-size: 16px;
-  text-transform: uppercase;
   color: #54698D;
   margin-bottom: 10px;
 }
 
-/* line 185, src/assets/scss/main.scss */
+/* line 28, src/assets/scss/pages/_crearllamado.scss */
 .fs-subtitle {
   font-weight: normal;
   font-size: 14px;
@@ -381,7 +280,7 @@ label {
 }
 
 /*progressbar*/
-/* line 192, src/assets/scss/main.scss */
+/* line 35, src/assets/scss/pages/_crearllamado.scss */
 #progressbar {
   margin-bottom: 60px;
   overflow: hidden;
@@ -389,7 +288,7 @@ label {
   counter-reset: step;
 }
 
-/* line 198, src/assets/scss/main.scss */
+/* line 41, src/assets/scss/pages/_crearllamado.scss */
 #progressbar li {
   text-align: center;
   list-style-type: none;
@@ -398,7 +297,7 @@ label {
   position: relative;
 }
 
-/* line 205, src/assets/scss/main.scss */
+/* line 48, src/assets/scss/pages/_crearllamado.scss */
 #progressbar li:before {
   content: counter(step);
   counter-increment: step;
@@ -413,7 +312,7 @@ label {
 }
 
 /*progressbar connectors*/
-/* line 218, src/assets/scss/main.scss */
+/* line 61, src/assets/scss/pages/_crearllamado.scss */
 #progressbar li:after {
   content: '';
   width: 100%;
@@ -426,7 +325,7 @@ label {
   /*put it behind the numbers*/
 }
 
-/* line 228, src/assets/scss/main.scss */
+/* line 71, src/assets/scss/pages/_crearllamado.scss */
 #progressbar li:first-child:after {
   /*connector not needed before the first step*/
   content: none;
@@ -434,18 +333,55 @@ label {
 
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
-/* line 234, src/assets/scss/main.scss */
+/* line 77, src/assets/scss/pages/_crearllamado.scss */
 #progressbar li.active:before, #progressbar li.active:after {
   background: #54698D;
   color: white;
 }
 
-/* line 239, src/assets/scss/main.scss */
+/* line 82, src/assets/scss/pages/_crearllamado.scss */
 .help-block {
   font-size: .8em;
   color: #7c7c7c;
   text-align: left;
   margin-bottom: .5em;
+}
+
+/* line 22, src/assets/scss/main.scss */
+.form-control {
+  height: 26px;
+  padding: 2px .75rem;
+  font-size: .8rem;
+  border-radius: 0;
+}
+
+/* line 29, src/assets/scss/main.scss */
+.tecnioo-card {
+  min-height: 100%;
+}
+
+/* line 31, src/assets/scss/main.scss */
+.tecnioo-card--flag {
+  max-height: 80px;
+  width: 3px;
+  background: #54698D;
+}
+
+/* line 37, src/assets/scss/main.scss */
+.tecnioo-card--title__status {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* line 45, src/assets/scss/main.scss */
+.tecnioo-card--img {
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+  border: 1px solid #697789;
 }
 
 /*# sourceMappingURL=main.css.map */

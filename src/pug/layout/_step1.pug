@@ -1,0 +1,57 @@
+.row
+    .col
+        h2.fs-title Crear Nuevo Ticket de Atención
+hr
+
+form.form-row.justify-content-between.pb-3
+    .form-group.col-6
+        label(for="") Origen de llamado
+        select.form-control
+            each val in ['Seleccionar origen','Llamado','Correo']
+                option= val
+    .form-group.col-6        
+        label(for="") Tipo de llamado
+        select.form-control
+            each val in ['Seleccionar tipo','Urgencias', 'Instalaciones *', 'Retiros **', 'Modificaciones', 'Perforaciones', 'Cambio de Accesorio', 'Puesta en Marcha', 'Capacitación', 'Diagnóstico', 'Visita Inspectiva', 'Taller' ]
+                option= val
+.row
+    .col
+        h2.fs-title Busqueda de cliente y sucursal
+hr
+form.pt-3.form-row
+    .form-group.col-6
+        label(for="selectClientType") Buscar por
+        select#selectClientType.form-control
+            each val in ['Rut','Razón Social','Código Cliente']
+                option= val
+    .form-group.col-6
+        label(for="inputClientType") Cliente Número
+        input.form-control(type="text"  id="inputSelectTipe" placeholder="Ej: 9.999.999-9")
+        p.text-right.m-0
+            a(href="#")#showResults.btn.btn-outline-primary.btn-sm.mt-3 Buscar
+.bk-result-wrap.pb-5.row
+    .col-12
+        h2.fs-title Resultados
+        hr
+    .col-12.pt-3
+        a(href="#")
+            .card
+                .card-body
+                    p 77.889.654-0
+                    .card-title.pb-2
+                        h5
+                            | Nombre de cliente Spot - 
+                            b [Cliente Manandte]
+                    .card-text.container-fluid
+                        .row
+                            .col-4.p-0
+                                i.fas.fa-phone.mr-2
+                                span +569 6 5654.8454
+                            .col-6.p-0
+                                i.fas.fa-envelope.mr-2
+                                span nombre@empresa.cl
+                            .col-2.p-0
+                                i.fas.fa-map-marker-alt.mr-2
+                                span 30        
+hr    
+a.next.action-buton.btn.btn-primary.text-white Siguiente

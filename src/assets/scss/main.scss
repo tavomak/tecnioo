@@ -10,97 +10,14 @@
 @import 'base/typography';
 @import 'base/global';
 
+//@import 'components/customcheckbox';
+@import 'components/customscrollbar';
 @import 'components/navbar';
 @import 'components/biglist';
+@import 'components/wizard';
 
+@import 'pages/crearllamado';
 
-/* The container */
-.custom-checkbox {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  /* Hide the browser's default checkbox */
-  .custom-checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  /* Create a custom checkbox */
-  .custom-checkbox--checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 15px;
-    width: 15px;
-    background-color: #eee;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .custom-checkbox:hover input ~ .custom-checkbox--checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .custom-checkbox input:checked ~ .custom-checkbox--checkmark {
-    background-color: #007bff;
-  }
-  
-  /* Create the checkmark/indicator (hidden when not checked) */
-  .custom-checkbox--checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  /* Show the checkmark when checked */
-  .custom-checkbox input:checked ~ .custom-checkbox--checkmark:after {
-    display: block;
-  }
-  
-  /* Style the checkmark/indicator */
-  .custom-checkbox .custom-checkbox--checkmark:after {
-    left: 6px;
-    top: 2px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-
-::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba($ligth-grey,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar
-{
-	width: 12px;
-	background-color: #F5F5F5;
-}
-
-::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba($ligth-grey,.3);
-	background-color: $ligth-grey;
-}
 
 .form-control{
     height: 26px;
@@ -125,120 +42,10 @@
         margin-right: 10px;
       }
     }
-}
-
-
-/*form styles*/
-#msform {
-  max-width: 90%;
-  position: relative;
-  margin: 0 auto;
-}
-#msform fieldset {
-	background: white;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-	padding: 20px 30px;
-	
-	/*stacking fieldsets above each other*/
-	position: absolute;
-}
-/*Hide all except first fieldset*/
-#msform fieldset:not(:first-of-type) {
-	display: none;
-}
-/*inputs*/
-#msform input, #msform textarea {
-	padding: 15px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	margin-bottom: 10px;
-	width: 100%;
-	box-sizing: border-box;
-	font-family: montserrat;
-	color: #2C3E50;
-	font-size: 13px;
-}
-/*buttons*/
-#msform .action-button {
-	width: 100px;
-	background: $brand-primary-color;
-	font-weight: bold;
-	color: white;
-	border: 0 none;
-	border-radius: 1px;
-	cursor: pointer;
-	padding: 10px 5px;
-	margin: 10px 5px;
-}
-#msform .action-button:hover, #msform .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px $brand-primary-color;
-}
-/*headings*/
-.fs-title {
-	font-size: 16px;
-	text-transform: uppercase;
-	color: $brand-primary-color;
-	margin-bottom: 10px;
-}
-.fs-subtitle {
-	font-weight: normal;
-	font-size: 14px;
-	color: #666;
-	margin-bottom: 20px;
-}
-/*progressbar*/
-#progressbar {
-	margin-bottom: 60px;
-	overflow: hidden;
-	/*CSS counters to number the steps*/
-	counter-reset: step;
-}
-#progressbar li {
-  text-align: center;
-	list-style-type: none;
-	color: white;
-	text-transform: uppercase;
-	position: relative;
-}
-#progressbar li:before {
-	content: counter(step);
-	counter-increment: step;
-	width: 20px;
-	line-height: 20px;
-	display: block;
-	font-size: 10px;
-	color: #333;
-	background: white;
-	border-radius: 3px;
-	margin: 0 auto 5px auto;
-}
-/*progressbar connectors*/
-#progressbar li:after {
-	content: '';
-	width: 100%;
-	height: 2px;
-	background: white;
-	position: absolute;
-	left: -50%;
-	top: 9px;
-	z-index: -1; /*put it behind the numbers*/
-}
-#progressbar li:first-child:after {
-	/*connector not needed before the first step*/
-	content: none; 
-}
-/*marking active/completed steps green*/
-/*The number of the step and the connector before it = green*/
-#progressbar li.active:before,  #progressbar li.active:after{
-	background: $brand-primary-color;
-	color: white;
-}
-
-.help-block {
-  font-size: .8em;
-  color: #7c7c7c;
-  text-align: left;
-  margin-bottom: .5em;
+    &--img{
+      width: 45px;
+      height: 45px;
+      overflow: hidden;
+      border: 1px solid $medium-grey;
+    }
 }

@@ -1,0 +1,16 @@
+.row
+    .col
+        h2.fs-title Información del problema
+        h3.fs-subtitle Seleccione hasta 3 problemas de la lista
+        hr
+
+ul.form-row
+    each val, i in {1:'No Enfría', 2:'No Funciona', 3:'Cambiar Compresor', 4:'No Enfría', 5:'No Funciona', 6:'Cambiar Compresor', 7:'No Enfría', 8:'No Funciona', 9:'Cambiar Compresor', 10:'No Enfría', 11:'No Funciona', 12:'Cambiar Compresor'}
+        .form-group.col-6
+            li.custom-control.custom-checkbox
+                input(type="checkbox" id="checkboxForProblem-"+i class="custom-control-input")
+                label(class="custom-control-label" for="checkboxForProblem-"+i) #{val}
+.form-group
+    label(for="exampleFormControlTextarea1") Relate el problema (Opcional)
+    textarea(class="form-control" id="exampleFormControlTextarea1" rows="3")
+include ../layout/_prevnext

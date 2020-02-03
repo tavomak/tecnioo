@@ -1,0 +1,45 @@
+
+.row
+    .col-12
+        h2.fs-title Seleccionar Sucursal
+        hr
+    .col-12.my-2
+        .input-group
+            .input-group-prepend
+                label.input-group-text.form-control(for="inputGroupSelect01") Seleccione la sucursal donde se encuentra la maquina
+            select.custom-select.form-control(id="inputGroupSelect01")
+                option Seleccionar
+                - for (var x = 0; x < 30; x++)
+                    option= 'Sucursal '+ x  
+    .col-12.mt-4
+        h2.fs-title Seleccionar contacto
+        h3.fs-subtitle Si el contacto no aparece en el listado agregue uno nuevo
+        hr
+        ul.mb-3
+            - for (var x = 0; x < 3; x++)
+                li.my-2
+                    ul.tecnioo-card.d-flex.align-items-center
+                        li.tecnioo-card--item.custom-control.custom-checkbox
+                            input.custom-control-input(type="checkbox" id="checkboxForContacto-"+x)
+                            label.custom-control-label(for="checkboxForContacto-"+x)
+                        li.tecnioo-card--item.px-2.py-3.bg-grey.w-100.row.align-items-center
+                                .col-12.tecnioo-card--title.pb-1
+                                    b Juan González
+                                .col-6 
+                                    i.fas.fa-envelope.mr-2
+                                    span nombre@empresa.cl
+                                .col-6
+                                    i.fas.fa-phone.mr-2
+                                    span +569 6 5654.8454
+        p.text-right
+            a(href="#")#addContactNew.btn.btn-outline-primary.btn-sm Agregar Nuevo
+        .addContactWrap.row
+            .col-12
+                h2.fs-title Agregar nuevo contacto
+                hr
+            .col-12
+                include ../layout/_contacto-form
+                p.text-right
+                    a(href="#")#addContact.btn.btn-outline-primary.btn-sm Agregar
+            
+include ../layout/_prevnext
