@@ -89,7 +89,7 @@ $(function () {
             easing: 'easeOutQuint'
         });
     });
-    //WIZARD HIDE ELEMENTS ====================================================== //
+    
     //WIZARD STEP 1 ====================================================== //
     $('.bk-step1-hidden').hide();
     $('#step1ShowResults').on('click', function () {
@@ -119,11 +119,16 @@ $(function () {
     $('.step2AddNewContact-wrap').hide();
 
     $('#step2SelectClientType').on('change', function () {
+        var step2SelectClientType = $(this).val();
+        console.log(step2SelectClientType);
+
         $('.bk-step2-hidden').show('slow');
     });
+
     $('#step2AddNewContact').on('click', function () {
         $('.step2AddNewContact-wrap').show('slow');
     });
+
     $('#step2Prev').on('click', function () {
         $('.list-step-1 i').addClass('d-none');
     });
@@ -144,18 +149,25 @@ $(function () {
     $('#step4Next').on('click', function () {
         $('.list-step-4 i').removeClass('d-none');
     });
-        //WIZARD STEP 5 ====================================================== //
+    //WIZARD STEP 5 ====================================================== //
     $('#step5Prev').on('click', function () {
         $('.list-step-4 i').addClass('d-none');
     });
     $('#step5Next').on('click', function () {
         $('.list-step-5 i').removeClass('d-none');
     });
+    
+    $('input.step3SelectCheckbox').on('change', function (evt) {
+        if ($('#step3SelectCheckbox').find('.step3SelectCheckbox:checked').length > 3) {
+            this.checked = false;
+        }
+    });
     //WIZARD STEP 6 ====================================================== //
     $('#step6Prev').on('click', function () {
         $('.list-step-5 i').addClass('d-none');
+        $('.list-step-6 i').addClass('d-none');
     });
-    $('#step5Next').on('click', function () {
+    $('#step6Next').on('click', function () {
         $('.list-step-6 i').removeClass('d-none');
     });
 });

@@ -5,13 +5,13 @@
 
 form.form-row
     .form-group.col-12
-        ul.mb-3
+        ul.mb-3.custom-control.custom-radio
             - for (var x = 0; x < 4; x++)
                 li.my-2
                     ul.tecnioo-card.d-flex.align-items-center
-                        li.tecnioo-card--item.custom-control.custom-checkbox
-                            input.custom-control-input(type="checkbox" id="checkboxForEquipo-"+x)
-                            label.custom-control-label(for="checkboxForEquipo-"+x)
+                        li.tecnioo-card--item
+                            input.custom-control-input(type="radio" id="checkboxForMachine-"+x name="checkboxForMachine")
+                            label.custom-control-label(for="checkboxForMachine-"+x)
                         li.tecnioo-card--item.p-2.bg-grey.w-100.row.align-items-center
                             .col-4.tecnioo-card--title
                                 span.tecnioo-card--title__text 
