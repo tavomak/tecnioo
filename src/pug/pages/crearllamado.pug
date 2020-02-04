@@ -5,7 +5,8 @@ block append config
     -var pageDescription = ''
     -var baseDir = ''
     -var linkSrc = ''
-
+block links
+    link( rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css")
 block mainContent
     main.content-wrapper
         section.container-fluid.pt-5.pb-3.px-5
@@ -17,7 +18,7 @@ block mainContent
                 .col-sm-4.col-md-2.bg-grey.pt-5
                     article
                         ul#progressStep
-                            each val, i in {1:'Crear Ticket', 2:'Datos de contacto', 3:'Información del equipo', 4:'Diagnóstico', 5:'Información del problema', 6:'Horario de atención'}
+                            each val, i in {1:'Crear Ticket', 2:'Información del equipo', 3:'Diagnóstico', 4:'Información del problema', 5:'Horario de atención'}
                                 li.list-step(class="list-step-"+i)
                                     p
                                         small
@@ -28,12 +29,12 @@ block mainContent
                     #msform
                         ul#progressbar.d-flex.justify-content-between
                             li.active.w-100
-                            - for (var x = 0; x < 5; x++)
+                            - for (var x = 0; x < 4; x++)
                                 li.w-100
                         fieldset.w-100
                             include ../layout/_step1
-                        fieldset.w-100
-                            include ../layout/_step2
+                            hr    
+                            a.next.action-buton.btn.btn-primary.text-white.disabled#step1Next(disabled) Siguiente
                         fieldset.w-100
                             include ../layout/_step3
                         fieldset.w-100
@@ -73,4 +74,5 @@ block mainContent
             crossorigin="anonymous"
             )
         script( src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" )
+        script( src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js")
         script(src=baseDir+"assets/js/main-dist.js")

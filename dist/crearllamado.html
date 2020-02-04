@@ -13,6 +13,7 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
     <link href="images/webclip.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css">
   </head>
   <body>
     <nav class="tecnioo-navbar navbar bg-primary px-2 flex-row"><a class="navbar-brand tecnioo-navbar--wrap" href="#"><img class="tecnioo-navbar--wrap__img" src="./assets/img/avatar-2.png" alt="Tecnioo"></a>
@@ -57,19 +58,16 @@
                   <p><small><span>1 </span>Crear Ticket</small><i class="fas fa-check-circle float-right d-none"></i></p>
                 </li>
                 <li class="list-step list-step-2">
-                  <p><small><span>2 </span>Datos de contacto</small><i class="fas fa-check-circle float-right d-none"></i></p>
+                  <p><small><span>2 </span>Información del equipo</small><i class="fas fa-check-circle float-right d-none"></i></p>
                 </li>
                 <li class="list-step list-step-3">
-                  <p><small><span>3 </span>Información del equipo</small><i class="fas fa-check-circle float-right d-none"></i></p>
+                  <p><small><span>3 </span>Diagnóstico</small><i class="fas fa-check-circle float-right d-none"></i></p>
                 </li>
                 <li class="list-step list-step-4">
-                  <p><small><span>4 </span>Diagnóstico</small><i class="fas fa-check-circle float-right d-none"></i></p>
+                  <p><small><span>4 </span>Información del problema</small><i class="fas fa-check-circle float-right d-none"></i></p>
                 </li>
                 <li class="list-step list-step-5">
-                  <p><small><span>5 </span>Información del problema</small><i class="fas fa-check-circle float-right d-none"></i></p>
-                </li>
-                <li class="list-step list-step-6">
-                  <p><small><span>6 </span>Horario de atención</small><i class="fas fa-check-circle float-right d-none"></i></p>
+                  <p><small><span>5 </span>Horario de atención</small><i class="fas fa-check-circle float-right d-none"></i></p>
                 </li>
               </ul>
             </article>
@@ -82,7 +80,6 @@
                 <li class="w-100"></li>
                 <li class="w-100"></li>
                 <li class="w-100"></li>
-                <li class="w-100"></li>
               </ul>
               <fieldset class="w-100">
                 <div class="row">
@@ -91,7 +88,7 @@
                   </div>
                 </div>
                 <hr>
-                <form class="form-row justify-content-between pb-3">
+                <div class="form-row justify-content-between pb-3">
                   <div class="form-group col-6">
                     <label for="step1SelectCallSource">Origen de llamado</label>
                     <select class="form-control" id="step1SelectCallSource">
@@ -117,14 +114,14 @@
                       <option>Taller</option>
                     </select>
                   </div>
-                </form>
+                </div>
                 <div class="row">
                   <div class="col">
                     <h2 class="fs-title">Busqueda de cliente y sucursal</h2>
                   </div>
                 </div>
                 <hr>
-                <form class="pt-3 form-row">
+                <div class="pt-3 form-row">
                   <div class="form-group col-6">
                     <label for="step1SelectClientType">Buscar por</label>
                     <select class="form-control" id="step1SelectClientType">
@@ -138,7 +135,7 @@
                     <input class="form-control" id="step1InputSelectTipe" type="text" placeholder="Ej: 9.999.999-9">
                     <p class="text-right m-0"><a class="btn btn-outline-primary btn-sm mt-3" id="step1ShowResults" href="#">Buscar</a></p>
                   </div>
-                </form>
+                </div>
                 <div class="bk-step1-hidden pb-5 row">
                   <div class="col-12">
                     <h2 class="fs-title">Resultados</h2>
@@ -160,12 +157,7 @@
                           </div>
                         </div>
                       </div></a></div>
-                </div>
-                <hr><a class="next action-buton btn btn-primary text-white disabled" id="step1Next" disabled>Siguiente</a>
-              </fieldset>
-              <fieldset class="w-100">
-                <div class="row">
-                  <div class="col-12">
+                  <div class="col-12 mt-5">
                     <h2 class="fs-title">Seleccionar Sucursal</h2>
                     <hr>
                   </div>
@@ -210,42 +202,11 @@
                     </div>
                   </div>
                   <div class="col-12 mt-4 bk-step2-hidden">
-                    <h2 class="fs-title">Seleccionar contacto</h2>
-                    <h3 class="fs-subtitle">Si el contacto no aparece en el listado agregue uno nuevo</h3>
+                    <h2 class="fs-title">Contacto asignado</h2>
                     <hr>
                     <ul class="mb-3 custom-control custom-radio" id="step2checkboxContact">
                       <li class="my-2">
                         <ul class="tecnioo-card d-flex align-items-center">
-                          <li class="tecnioo-card--item">
-                            <input class="custom-control-input" type="radio" id="checkboxForContacto-0" name="checkboxForContacto">
-                            <label class="custom-control-label" for="checkboxForContacto-0"></label>
-                          </li>
-                          <li class="tecnioo-card--item px-2 py-3 bg-grey w-100 row align-items-center">
-                            <div class="col-12 tecnioo-card--title pb-1"><b>Juan González</b></div>
-                            <div class="col-6"> <i class="fas fa-envelope mr-2"></i><span>nombre@empresa.cl</span></div>
-                            <div class="col-6"><i class="fas fa-phone mr-2"></i><span>+569 6 5654.8454</span></div>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="my-2">
-                        <ul class="tecnioo-card d-flex align-items-center">
-                          <li class="tecnioo-card--item">
-                            <input class="custom-control-input" type="radio" id="checkboxForContacto-1" name="checkboxForContacto">
-                            <label class="custom-control-label" for="checkboxForContacto-1"></label>
-                          </li>
-                          <li class="tecnioo-card--item px-2 py-3 bg-grey w-100 row align-items-center">
-                            <div class="col-12 tecnioo-card--title pb-1"><b>Juan González</b></div>
-                            <div class="col-6"> <i class="fas fa-envelope mr-2"></i><span>nombre@empresa.cl</span></div>
-                            <div class="col-6"><i class="fas fa-phone mr-2"></i><span>+569 6 5654.8454</span></div>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="my-2">
-                        <ul class="tecnioo-card d-flex align-items-center">
-                          <li class="tecnioo-card--item">
-                            <input class="custom-control-input" type="radio" id="checkboxForContacto-2" name="checkboxForContacto">
-                            <label class="custom-control-label" for="checkboxForContacto-2"></label>
-                          </li>
                           <li class="tecnioo-card--item px-2 py-3 bg-grey w-100 row align-items-center">
                             <div class="col-12 tecnioo-card--title pb-1"><b>Juan González</b></div>
                             <div class="col-6"> <i class="fas fa-envelope mr-2"></i><span>nombre@empresa.cl</span></div>
@@ -254,39 +215,21 @@
                         </ul>
                       </li>
                     </ul>
-                    <p class="text-right"><a class="btn btn-outline-primary btn-sm" href="#" id="step2AddNewContact">Agregar Nuevo</a></p>
-                    <div class="step2AddNewContact-wrap row">
-                      <div class="col-12">
-                        <h2 class="fs-title">Agregar nuevo contacto</h2>
-                        <hr>
-                      </div>
-                      <div class="col-12">
-                        <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <label for="inputNombreContacto">Nombre Contacto</label>
-                            <input class="form-control" type="text" id="inputNombreContacto">
-                          </div>
-                          <div class="form-group col-md-6"> 
-                            <label for="inputEmail4">Email</label>
-                            <input class="form-control" type="email" id="inputEmail4">
-                          </div>
-                        </div>
-                        <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <label for="inputEmail4">Telefono</label>
-                            <input class="form-control" type="email" id="inputEmail4">
-                          </div>
-                          <div class="form-group col-md-6"> 
-                            <label for="inputPassword4">Comentario</label>
-                            <input class="form-control" type="password" id="inputPassword4">
-                          </div>
-                        </div>
-                        <p class="text-right"><a class="btn btn-outline-primary btn-sm" href="#" id="addContact">Agregar</a></p>
-                      </div>
-                    </div>
+                    <!--p.text-righta(href="#")#step2AddNewContact.btn.btn-outline-primary.btn-sm Agregar Nuevo
+                    -->
+                    <!--.step2AddNewContact-wra.row
+                    .col-12
+                        h2.fs-title Agregar nuevo contacto
+                        hr
+                    .col-12
+                        include ../layout/_contacto-form
+                        p.text-right
+                            a(href="#")#addContact.btn.btn-outline-primary.btn-sm Agregar
+                        
+                    -->
                   </div>
                 </div>
-                <hr><a class="previous action-buton btn btn-light mr-4" id="step2Prev">Anterior</a><a class="next action-buton btn btn-primary text-white" id="step2Next">Siguiente</a>
+                <hr><a class="next action-buton btn btn-primary text-white disabled" id="step1Next" disabled>Siguiente</a>
               </fieldset>
               <fieldset class="w-100">
                 <div class="row">
@@ -295,7 +238,7 @@
                     <hr>
                   </div>
                 </div>
-                <form class="form-row">
+                <div class="form-row">
                   <div class="form-group col-12">
                     <ul class="mb-3 custom-control custom-radio">
                       <li class="my-2">
@@ -360,7 +303,7 @@
                       </li>
                     </ul>
                   </div>
-                </form>
+                </div>
                 <hr><a class="previous action-buton btn btn-light mr-4" id="step3Prev">Anterior</a><a class="next action-buton btn btn-primary text-white" id="step3Next">Siguiente</a>
               </fieldset>
               <fieldset class="w-100">
@@ -550,54 +493,37 @@
                     <h3 class="fs-subtitle">Configure el horario donde recibirá al tecnico</h3>
                     <hr>
                   </div>
-                  <div class="col-12">
-                    <ul class="d-flex flex-row align-items-center">
-                      <li class="col-4">
-                        <label for="selectTypeOfTime">Tipo de horario</label>
-                        <select class="form-control" id="selectTypeOfTime">
-                          <option>Lunes a viernes</option>
-                          <option>Sabado</option>
-                          <option>Domingo</option>
-                        </select>
-                      </li>
-                      <li class="col-4">
-                        <label for="selectTimeStart">Apertura</label>
-                        <select class="form-control" id="selectTimeStart">
-                          <option>08:00</option>
-                          <option>09:00</option>
-                          <option>10:00</option>
-                          <option>11:00</option>
-                          <option>12:00</option>
-                          <option>13:00</option>
-                          <option>14:00</option>
-                          <option>15:00</option>
-                          <option>16:00</option>
-                          <option>17:00</option>
-                          <option>18:00</option>
-                          <option>19:00</option>
-                        </select>
-                      </li>
-                      <li class="col-4">
-                        <label for="selectTimeEnd">Cierre</label>
-                        <select class="form-control" id="selectTimeEnd">
-                          <option>19:00</option>
-                          <option>20:00</option>
-                          <option>21:00</option>
-                          <option>22:00</option>
-                          <option>23:00</option>
-                          <option>01:00</option>
-                          <option>02:00</option>
-                          <option>03:00</option>
-                          <option>16:00</option>
-                          <option>17:00</option>
-                          <option>18:00</option>
-                          <option>19:00</option>
-                        </select>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
-                <hr><a class="previous action-buton btn btn-light mr-4" id="step6Prev">Anterior</a><a class="btn btn-primary text-white" id="step6Next" href="" data-toggle="modal" data-target="#crearLlamadoModal">Previsualizar y enviar solicitud</a>
+                <ul class="row px-4">
+                  <li class="col-12 my-2">
+                    <h2 class="fs-title py-2">Seleccionar rango de dias</h2>
+                    <div id="selectTypeOfTime"></div>
+                    <!--label(for="selectTypeOfTime") Tipo de horario-->
+                    <!--select#selectTypeOfTime.form-control
+                    each val in ['Lunes a viernes','Sabado','Domingo']
+                        option= val
+                    -->
+                  </li>
+                  <li class="col-12 my-4">
+                    <h2 class="fs-title py-2">Seleccionar horario de apertura</h2>
+                    <div id="selectTimeStart"></div>
+                    <!--label(for="selectTimeStart") Apertura-->
+                    <!--select#selectTimeStart.form-control
+                    each val in ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00', '17:00','18:00','19:00']
+                        option= val
+                    -->
+                  </li>
+                  <li class="col-12 my-2">
+                    <h2 class="fs-title py-2">Seleccionar horario de cierre</h2>
+                    <div id="selectTimeEnd"></div>
+                    <!--label(for="selectTimeEnd") Cierre-->
+                    <!--select#selectTimeEnd.form-control
+                    each val in ['19:00','20:00','21:00','22:00','23:00','01:00','02:00','03:00','04:00']
+                        option= val
+                    -->
+                  </li>
+                </ul>
+                <hr class="mt-5"><a class="previous action-buton btn btn-light mr-4" id="step6Prev">Anterior</a><a class="btn btn-primary text-white" id="step6Next" href="" data-toggle="modal" data-target="#crearLlamadoModal">Previsualizar y enviar solicitud</a>
               </fieldset>
             </div>
           </div>
@@ -750,6 +676,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
     <script src="assets/js/main-dist.js"></script>
   </body>
 </html>

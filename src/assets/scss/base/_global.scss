@@ -68,6 +68,9 @@ label {
   .bg-#{$name}{
     background-color: $color !important;
   }
+  .text-color-#{$name}{
+    color: $color !important;
+  }
 }
 .bg-secondary{
   background: $brand-secondary-color !important;
@@ -80,4 +83,7 @@ label {
 }
 .bg-grey{
   background: $ultra-ligth-grey!important;
+}
+.min-h-100{
+  min-height: 94vh;
 }

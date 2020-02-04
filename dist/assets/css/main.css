@@ -129,9 +129,19 @@ label {
   background-color: #54698D !important;
 }
 
+/* line 71, src/assets/scss/base/_global.scss */
+.text-color-primary {
+  color: #54698D !important;
+}
+
 /* line 68, src/assets/scss/base/_global.scss */
 .bg-secondary {
   background-color: #90B9FF !important;
+}
+
+/* line 71, src/assets/scss/base/_global.scss */
+.text-color-secondary {
+  color: #90B9FF !important;
 }
 
 /* line 68, src/assets/scss/base/_global.scss */
@@ -139,9 +149,19 @@ label {
   background-color: #3ccc90 !important;
 }
 
+/* line 71, src/assets/scss/base/_global.scss */
+.text-color-success {
+  color: #3ccc90 !important;
+}
+
 /* line 68, src/assets/scss/base/_global.scss */
 .bg-danger {
   background-color: #e93a3a !important;
+}
+
+/* line 71, src/assets/scss/base/_global.scss */
+.text-color-danger {
+  color: #e93a3a !important;
 }
 
 /* line 68, src/assets/scss/base/_global.scss */
@@ -149,9 +169,19 @@ label {
   background-color: #FF8C31 !important;
 }
 
+/* line 71, src/assets/scss/base/_global.scss */
+.text-color-warning {
+  color: #FF8C31 !important;
+}
+
 /* line 68, src/assets/scss/base/_global.scss */
 .bg-info {
   background-color: #F7CC00 !important;
+}
+
+/* line 71, src/assets/scss/base/_global.scss */
+.text-color-info {
+  color: #F7CC00 !important;
 }
 
 /* line 68, src/assets/scss/base/_global.scss */
@@ -159,24 +189,34 @@ label {
   background-color: #913C9E !important;
 }
 
-/* line 72, src/assets/scss/base/_global.scss */
-.bg-secondary {
-  background: #d2451e !important;
+/* line 71, src/assets/scss/base/_global.scss */
+.text-color-dark {
+  color: #913C9E !important;
 }
 
 /* line 75, src/assets/scss/base/_global.scss */
+.bg-secondary {
+  background: #90B9FF !important;
+}
+
+/* line 78, src/assets/scss/base/_global.scss */
 .bg-tertiary {
   background: #c4c4b3 !important;
 }
 
-/* line 78, src/assets/scss/base/_global.scss */
+/* line 81, src/assets/scss/base/_global.scss */
 .bg-complementary {
   background: #7ca7ad !important;
 }
 
-/* line 81, src/assets/scss/base/_global.scss */
+/* line 84, src/assets/scss/base/_global.scss */
 .bg-grey {
   background: #F5F6FA !important;
+}
+
+/* line 87, src/assets/scss/base/_global.scss */
+.min-h-100 {
+  min-height: 94vh;
 }
 
 /* line 1, src/assets/scss/components/_customscrollbar.scss */

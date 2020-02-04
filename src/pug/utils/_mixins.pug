@@ -36,7 +36,42 @@ mixin validacionesPendientesCards(id, ticketText, badget1, badget2, badget3, dir
                 if statusColor != 'success'
                     .col.text-right
                         a.btn.btn-secondary.btn-sm.mr-auto(href="") Resolver
-    
+mixin listStado(color, name, number, button)
+    a(href="#")
+        ul.d-flex.justify-content-between.align-items-center
+            li 
+                p.m-0
+                    span.tecnioo-card--title__status(class="bg-"+color)
+                    =name
+            li 
+                p.m-0=number
+            if button
+                li Consultar
+mixin listName(name, number)
+    a(href="#")
+        ul.d-flex.justify-content-between.align-items-center
+            li 
+                p.m-0
+                    =name
+            li 
+                p.m-0=number
+mixin tableRow(color, cierre, asingacion, sla)
+    tr 
+        td 
+            span.tecnioo-card--title__status(class="bg-"+color)
+            i.fas.fa-phone.mr-2
+            span 26/01/2020
+        td #12345789
+        td 
+            b Urgencia Cooler - Modelo - Logo
+        td 0
+        td
+            b(class="text-color-"+color)=cierre
+        td=asingacion
+        td
+            b=sla
+        td Nombre Sucursal - Cliente Spot
+        td Providencia
 mixin llamadosCard1(id, ticketText, badget1, badget2, badget3, direccion, statustext, ptos, hrs, asing)
     li.mt-2.pt-2.bg-white
         a(href="#")

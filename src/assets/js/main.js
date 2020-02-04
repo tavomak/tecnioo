@@ -129,45 +129,77 @@ $(function () {
         $('.step2AddNewContact-wrap').show('slow');
     });
 
-    $('#step2Prev').on('click', function () {
+/*     $('#step2Prev').on('click', function () {
         $('.list-step-1 i').addClass('d-none');
     });
     $('#step2Next').on('click', function () {
         $('.list-step-2 i').removeClass('d-none');
-    });
+    }); */
     //WIZARD STEP 3 ====================================================== //
     $('#step3Prev').on('click', function () {
-        $('.list-step-2 i').addClass('d-none');
+        $('.list-step-1 i').addClass('d-none');
     });
     $('#step3Next').on('click', function () {
-        $('.list-step-3 i').removeClass('d-none');
+        $('.list-step-2 i').removeClass('d-none');
     });
     //WIZARD STEP 4 ====================================================== //
     $('#step4Prev').on('click', function () {
-        $('.list-step-3 i').addClass('d-none');
+        $('.list-step-2 i').addClass('d-none');
     });
     $('#step4Next').on('click', function () {
-        $('.list-step-4 i').removeClass('d-none');
+        $('.list-step-3 i').removeClass('d-none');
     });
     //WIZARD STEP 5 ====================================================== //
     $('#step5Prev').on('click', function () {
-        $('.list-step-4 i').addClass('d-none');
+        $('.list-step-3 i').addClass('d-none');
     });
     $('#step5Next').on('click', function () {
-        $('.list-step-5 i').removeClass('d-none');
+        $('.list-step-4 i').removeClass('d-none');
     });
     
-    $('input.step3SelectCheckbox').on('change', function (evt) {
-        if ($('#step3SelectCheckbox').find('.step3SelectCheckbox:checked').length > 3) {
+    $('input.step5SelectCheckbox').on('change', function (evt) {
+        if ($('#step5SelectCheckbox').find('.step5SelectCheckbox:checked').length > 3) {
             this.checked = false;
         }
     });
     //WIZARD STEP 6 ====================================================== //
+    $("#selectTypeOfTime").ionRangeSlider({
+        skin: "round",
+        type: "double",
+        grid: true,
+        //from: new Date().getDay(),
+        values: [
+            "Lunes",
+            "Martes",
+            "Miercoles",
+            "Jueves",
+            "Viernes",
+            "Sabado",
+            "Domingo"
+        ]
+    });
+    $("#selectTimeStart").ionRangeSlider({
+        skin: "round",
+        type: "double",
+        grid: true,
+        values: [
+            '08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00', '17:00','18:00','19:00'
+        ]
+    });
+    $("#selectTimeEnd").ionRangeSlider({
+        skin: "round",
+        type: "double",
+        grid: true,
+        values: [
+            '19:00','20:00','21:00','22:00','23:00','01:00','02:00','03:00','04:00'
+        ]
+    });
+    
     $('#step6Prev').on('click', function () {
+        $('.list-step-4 i').addClass('d-none');
         $('.list-step-5 i').addClass('d-none');
-        $('.list-step-6 i').addClass('d-none');
     });
     $('#step6Next').on('click', function () {
-        $('.list-step-6 i').removeClass('d-none');
+        $('.list-step-5 i').removeClass('d-none');
     });
 });

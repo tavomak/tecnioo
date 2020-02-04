@@ -1,47 +1,39 @@
 
-.row
-    .col-12
-        h2.fs-title Seleccionar Sucursal
-        hr
-    .col-12.my-2
-        .input-group
-            .input-group-prepend
-                label.input-group-text.form-control(for="#step2SelectClientType") Seleccione la sucursal donde se encuentra la maquina
-            select.custom-select.form-control#step2SelectClientType
-                option Seleccionar
-                - for (var x = 0; x < 30; x++)
-                    option= 'Sucursal '+ x  
-    .col-12.mt-4.bk-step2-hidden
-        h2.fs-title Seleccionar contacto
-        h3.fs-subtitle Si el contacto no aparece en el listado agregue uno nuevo
-        hr
-        ul.mb-3.custom-control.custom-radio#step2checkboxContact
-            - for (var x = 0; x < 3; x++)
-                li.my-2
-                    ul.tecnioo-card.d-flex.align-items-center
-                        li.tecnioo-card--item
-                            input.custom-control-input(type="radio" id="checkboxForContacto-"+x name="checkboxForContacto")
-                            label.custom-control-label(for="checkboxForContacto-"+x)
-                        li.tecnioo-card--item.px-2.py-3.bg-grey.w-100.row.align-items-center
-                                .col-12.tecnioo-card--title.pb-1
-                                    b Juan González
-                                .col-6 
-                                    i.fas.fa-envelope.mr-2
-                                    span nombre@empresa.cl
-                                .col-6
-                                    i.fas.fa-phone.mr-2
-                                    span +569 6 5654.8454
-        p.text-right
-            a(href="#")#step2AddNewContact.btn.btn-outline-primary.btn-sm Agregar Nuevo
-        .step2AddNewContact-wrap.row
-            .col-12
-                h2.fs-title Agregar nuevo contacto
-                hr
-            .col-12
-                include ../layout/_contacto-form
-                p.text-right
-                    a(href="#")#addContact.btn.btn-outline-primary.btn-sm Agregar
+
+.col-12.mt-5
+    h2.fs-title Seleccionar Sucursal
+    hr
+.col-12.my-2
+    .input-group
+        .input-group-prepend
+            label.input-group-text.form-control(for="#step2SelectClientType") Seleccione la sucursal donde se encuentra la maquina
+        select.custom-select.form-control#step2SelectClientType
+            option Seleccionar
+            - for (var x = 0; x < 30; x++)
+                option= 'Sucursal '+ x  
+.col-12.mt-4.bk-step2-hidden
+    h2.fs-title Contacto asignado
+    hr
+    ul.mb-3.custom-control.custom-radio#step2checkboxContact
+            li.my-2
+                ul.tecnioo-card.d-flex.align-items-center
+                    li.tecnioo-card--item.px-2.py-3.bg-grey.w-100.row.align-items-center
+                            .col-12.tecnioo-card--title.pb-1
+                                b Juan González
+                            .col-6 
+                                i.fas.fa-envelope.mr-2
+                                span nombre@empresa.cl
+                            .col-6
+                                i.fas.fa-phone.mr-2
+                                span +569 6 5654.8454
+    //p.text-right
+        a(href="#")#step2AddNewContact.btn.btn-outline-primary.btn-sm Agregar Nuevo
+    //.step2AddNewContact-wra.row
+        .col-12
+            h2.fs-title Agregar nuevo contacto
+            hr
+        .col-12
+            include ../layout/_contacto-form
+            p.text-right
+                a(href="#")#addContact.btn.btn-outline-primary.btn-sm Agregar
             
-hr
-a.previous.action-buton.btn.btn-light.mr-4#step2Prev Anterior
-a.next.action-buton.btn.btn-primary.text-white#step2Next Siguiente

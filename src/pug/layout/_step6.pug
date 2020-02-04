@@ -3,25 +3,29 @@
         h2.fs-title Horario de atención
         h3.fs-subtitle Configure el horario donde recibirá al tecnico
         hr
-
-    .col-12
-        ul.d-flex.flex-row.align-items-center
-            li.col-4
-                label(for="selectTypeOfTime") Tipo de horario
-                select#selectTypeOfTime.form-control
-                    each val in ['Lunes a viernes','Sabado','Domingo']
-                        option= val
-            li.col-4
-                label(for="selectTimeStart") Apertura
-                select#selectTimeStart.form-control
-                    each val in ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00', '17:00','18:00','19:00']
-                        option= val
-            li.col-4
-                label(for="selectTimeEnd") Cierre
-                select#selectTimeEnd.form-control
-                    each val in ['19:00','20:00','21:00','22:00','23:00','01:00','02:00','03:00','16:00', '17:00','18:00','19:00']
-                        option= val
-hr
+ul.row.px-4
+    li.col-12.my-2
+        h2.fs-title.py-2 Seleccionar rango de dias
+        #selectTypeOfTime
+        //label(for="selectTypeOfTime") Tipo de horario
+        //select#selectTypeOfTime.form-control
+            each val in ['Lunes a viernes','Sabado','Domingo']
+                option= val
+    li.col-12.my-4
+        h2.fs-title.py-2 Seleccionar horario de apertura
+        #selectTimeStart
+        //label(for="selectTimeStart") Apertura
+        //select#selectTimeStart.form-control
+            each val in ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00', '17:00','18:00','19:00']
+                option= val
+    li.col-12.my-2
+        h2.fs-title.py-2 Seleccionar horario de cierre
+        #selectTimeEnd
+        //label(for="selectTimeEnd") Cierre
+        //select#selectTimeEnd.form-control
+            each val in ['19:00','20:00','21:00','22:00','23:00','01:00','02:00','03:00','04:00']
+                option= val
+hr.mt-5
 a.previous.action-buton.btn.btn-light.mr-4#step6Prev Anterior
 a.btn.btn-primary.text-white#step6Next(href="" data-toggle="modal", data-target="#crearLlamadoModal") Previsualizar y enviar solicitud
 

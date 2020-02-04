@@ -3,7 +3,7 @@
         h2.fs-title Crear Nuevo Ticket de Atención
 hr
 
-form.form-row.justify-content-between.pb-3
+.form-row.justify-content-between.pb-3
     .form-group.col-6
         label(for="step1SelectCallSource") Origen de llamado
         select#step1SelectCallSource.form-control
@@ -18,7 +18,7 @@ form.form-row.justify-content-between.pb-3
     .col
         h2.fs-title Busqueda de cliente y sucursal
 hr
-form.pt-3.form-row
+.pt-3.form-row
     .form-group.col-6
         label(for="step1SelectClientType") Buscar por
         select#step1SelectClientType.form-control
@@ -53,5 +53,4 @@ form.pt-3.form-row
                             .col-2.p-0
                                 i.fas.fa-map-marker-alt.mr-2
                                 span 30        
-hr    
-a.next.action-buton.btn.btn-primary.text-white.disabled#step1Next(disabled) Siguiente
+    include ../layout/_step2

@@ -1,6 +1,10 @@
 ul.d-flex.justify-content-between.align-items-center
     li
-        input.form-control(type="text" placeholder="Ticket")
+        .input-group.input-group-sm
+            .input-group-prepend
+                label.input-group-text(for="#step2SelectClientType")
+                    i.fas.fa-search
+                input.form-control(type="text" placeholder="Ticket")
     li
         .dropdown
             button.btn.btn-light.dropdown-toggle(type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Técnicos

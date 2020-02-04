@@ -41,12 +41,257 @@
       </ul>
     </nav>
     <main class="content-wrapper">
-      <section class="container-fluid pt-5 pb-3 px-5">
-        <div class="row justify-content-end">
-          <div class="col-6">
-            <h4>Home</h4>
+      <section class="container-fluid">
+        <div class="row">
+          <div class="col-4 col-lg-3 col-xl-2 bg-grey pt-5 pb-3 min-h-100">
+            <div class="input-group input-group-sm mb-4">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="#step2SelectClientType"><i class="fas fa-search"></i></label>
+                <input class="form-control" type="text" placeholder="Buscar Ticket">
+              </div>
+            </div>
+            <h6> <b>Todos</b></h6>
+            <hr><a href="#">
+              <ul class="d-flex justify-content-between align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-primary"></span>Abiertos
+                  </p>
+                </li>
+                <li> 
+                  <p class="m-0">8</p>
+                </li>
+              </ul></a><a href="#">
+              <ul class="d-flex justify-content-between align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-secondary"></span>Asignados
+                  </p>
+                </li>
+                <li> 
+                  <p class="m-0">5</p>
+                </li>
+              </ul></a><a href="#">
+              <ul class="d-flex justify-content-between align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-dark"></span>En Validación
+                  </p>
+                </li>
+                <li> 
+                  <p class="m-0">4</p>
+                </li>
+              </ul></a><a href="#">
+              <ul class="d-flex justify-content-between align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-info"></span>Pendiente Cliente
+                  </p>
+                </li>
+                <li> 
+                  <p class="m-0">9</p>
+                </li>
+              </ul></a><a href="#">
+              <ul class="d-flex justify-content-between align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-warning"></span>Pendiente TCM
+                  </p>
+                </li>
+                <li> 
+                  <p class="m-0">2</p>
+                </li>
+              </ul></a><a href="#">
+              <ul class="d-flex justify-content-between align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-danger"></span>Local Cerrado
+                  </p>
+                </li>
+                <li> 
+                  <p class="m-0">7</p>
+                </li>
+              </ul></a>
+            <hr>
+            <h6> <b>Otros Filtros</b></h6>
+            <hr><a href="#">
+              <ul class="d-flex justify-content-between align-items-center">
+                <li> 
+                  <p class="m-0">Nuevos Hoy
+                  </p>
+                </li>
+                <li> 
+                  <p class="m-0">18</p>
+                </li>
+              </ul></a><a href="#">
+              <ul class="d-flex justify-content-between align-items-center">
+                <li> 
+                  <p class="m-0">Cerrados Hoy
+                  </p>
+                </li>
+                <li> 
+                  <p class="m-0">7</p>
+                </li>
+              </ul></a><a href="#">
+              <ul class="d-flex justify-content-between align-items-center">
+                <li> 
+                  <p class="m-0">Vencidos
+                  </p>
+                </li>
+                <li> 
+                  <p class="m-0">12</p>
+                </li>
+              </ul></a><a href="#">
+              <ul class="d-flex justify-content-between align-items-center">
+                <li> 
+                  <p class="m-0">Re-asignados
+                  </p>
+                </li>
+                <li> 
+                  <p class="m-0">10</p>
+                </li>
+              </ul></a>
+            <hr><a href="#">
+              <ul class="d-flex justify-content-between align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-success"></span>Llamados Cerrados
+                  </p>
+                </li>
+                <li> 
+                  <p class="m-0">7</p>
+                </li>
+                <li>Consultar</li>
+              </ul></a>
+            <hr>
           </div>
-          <div class="col-6 text-right"><a class="btn btn-danger text-white" href="crearllamado.html">Home</a></div>
+          <div class="col-8 col-lg-9 col-xl-10 pt-5 pb-3">
+            <h4>Todos</h4>
+            <hr>
+            <ul class="d-flex justify-content-between align-items-center">
+              <li>
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="#step2SelectClientType"><i class="fas fa-search"></i></label>
+                    <input class="form-control" type="text" placeholder="Ticket">
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Técnicos</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownTecnicos"><a class="dropdown-item" href="#">Todos</a><a class="dropdown-item" href="#">Pedro Carrasco</a><a class="dropdown-item" href="#">Jorge Salgado</a><a class="dropdown-item" href="#">Juan Gonzalez</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownZona" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Zona TCM</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownZona"><a class="dropdown-item" href="#">Todas</a><a class="dropdown-item" href="#">Santiago</a><a class="dropdown-item" href="#">Rancagua</a><a class="dropdown-item" href="#">Viña del mar</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownTipo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo de llamado</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownTipo"><a class="dropdown-item" href="#">Todos</a><a class="dropdown-item" href="#">Urgencias</a><a class="dropdown-item" href="#">Instalaciones</a><a class="dropdown-item" href="#">Modificaciones</a><a class="dropdown-item" href="#">Cambio de accesoio</a><a class="dropdown-item" href="#">Retiro</a><a class="dropdown-item" href="#">Vista Inspectiva</a><a class="dropdown-item" href="#">Capacitación</a><a class="dropdown-item" href="#">Perforaciones</a><a class="dropdown-item" href="#">Puesta en Marcha</a><a class="dropdown-item" href="#">Diagnóstico</a><a class="dropdown-item" href="#">Taller</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <button class="btn btn-outline-primary">Filtrar</button>
+              </li>
+            </ul>
+            <div class="table-responsive">
+              <table class="table table-striped mt-4">
+                <thead>
+                  <tr>
+                    <th scope="col">Creacion</th>
+                    <th scope="col">Ticket</th>
+                    <th scope="col">Tipo de Llamado</th>
+                    <th scope="col">Ots</th>
+                    <th scope="col">Último Cierre</th>
+                    <th scope="col">Asignación</th>
+                    <th scope="col">SLA</th>
+                    <th scope="col">Sucursal</th>
+                    <th scope="col">Comuna</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr> 
+                    <td> <span class="tecnioo-card--title__status bg-primary"></span><i class="fas fa-phone mr-2"></i><span>26/01/2020</span></td>
+                    <td>#12345789</td>
+                    <td> <b>Urgencia Cooler - Modelo - Logo</b></td>
+                    <td>0</td>
+                    <td><b class="text-color-primary">Abierto</b></td>
+                    <td>Sin Asignación</td>
+                    <td><b>N/A</b></td>
+                    <td>Nombre Sucursal - Cliente Spot</td>
+                    <td>Providencia</td>
+                  </tr>
+                  <tr> 
+                    <td> <span class="tecnioo-card--title__status bg-secondary"></span><i class="fas fa-phone mr-2"></i><span>26/01/2020</span></td>
+                    <td>#12345789</td>
+                    <td> <b>Urgencia Cooler - Modelo - Logo</b></td>
+                    <td>0</td>
+                    <td><b class="text-color-secondary">Asignado</b></td>
+                    <td>Juan Peréz</td>
+                    <td><b>+48h</b></td>
+                    <td>Nombre Sucursal - Cliente Spot</td>
+                    <td>Providencia</td>
+                  </tr>
+                  <tr> 
+                    <td> <span class="tecnioo-card--title__status bg-primary"></span><i class="fas fa-phone mr-2"></i><span>26/01/2020</span></td>
+                    <td>#12345789</td>
+                    <td> <b>Urgencia Cooler - Modelo - Logo</b></td>
+                    <td>0</td>
+                    <td><b class="text-color-primary">Abierto</b></td>
+                    <td>Sin Asignación</td>
+                    <td><b>N/A</b></td>
+                    <td>Nombre Sucursal - Cliente Spot</td>
+                    <td>Providencia</td>
+                  </tr>
+                  <tr> 
+                    <td> <span class="tecnioo-card--title__status bg-info"></span><i class="fas fa-phone mr-2"></i><span>26/01/2020</span></td>
+                    <td>#12345789</td>
+                    <td> <b>Urgencia Cooler - Modelo - Logo</b></td>
+                    <td>0</td>
+                    <td><b class="text-color-info">Pendiente Cliente</b></td>
+                    <td>Roberto Mendoza</td>
+                    <td><b>+3</b></td>
+                    <td>Nombre Sucursal - Cliente Spot</td>
+                    <td>Providencia</td>
+                  </tr>
+                  <tr> 
+                    <td> <span class="tecnioo-card--title__status bg-danger"></span><i class="fas fa-phone mr-2"></i><span>26/01/2020</span></td>
+                    <td>#12345789</td>
+                    <td> <b>Urgencia Cooler - Modelo - Logo</b></td>
+                    <td>0</td>
+                    <td><b class="text-color-danger">Local Cerrado</b></td>
+                    <td>Juan Peréz</td>
+                    <td><b>-3</b></td>
+                    <td>Nombre Sucursal - Cliente Spot</td>
+                    <td>Providencia</td>
+                  </tr>
+                  <tr> 
+                    <td> <span class="tecnioo-card--title__status bg-warning"></span><i class="fas fa-phone mr-2"></i><span>26/01/2020</span></td>
+                    <td>#12345789</td>
+                    <td> <b>Urgencia Cooler - Modelo - Logo</b></td>
+                    <td>0</td>
+                    <td><b class="text-color-warning">Pendiente TCM</b></td>
+                    <td>Juan Peréz</td>
+                    <td><b>+3</b></td>
+                    <td>Nombre Sucursal - Cliente Spot</td>
+                    <td>Providencia</td>
+                  </tr>
+                  <tr> 
+                    <td> <span class="tecnioo-card--title__status bg-dark"></span><i class="fas fa-phone mr-2"></i><span>26/01/2020</span></td>
+                    <td>#12345789</td>
+                    <td> <b>Urgencia Cooler - Modelo - Logo</b></td>
+                    <td>0</td>
+                    <td><b class="text-color-dark">Pendiente de Validación</b></td>
+                    <td>Juan Peréz</td>
+                    <td><b>N/A</b></td>
+                    <td>Nombre Sucursal - Cliente Spot</td>
+                    <td>Providencia</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
     </main>
