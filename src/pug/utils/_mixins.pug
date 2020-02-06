@@ -70,7 +70,10 @@ mixin tableRow(color, cierre, asingacion, sla)
             b Urgencia Cooler - Modelo - Logo
         td 0
         td
-            b(class="text-color-"+color)=cierre
+            if color == "success"
+                b(class="text-color-"+color) 14/02/2020
+            else
+                b(class="text-color-"+color)=cierre
         td=asingacion
         td
             b=sla

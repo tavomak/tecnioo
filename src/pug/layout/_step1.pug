@@ -3,17 +3,15 @@
         h2.fs-title Crear Nuevo Ticket de Atención
 hr
 
-.form-row.justify-content-between.pb-3
-    .form-group.col-6
-        label(for="step1SelectCallSource") Origen de llamado
-        select#step1SelectCallSource.form-control
-            each val in ['Seleccionar origen','Llamado','Correo']
-                option= val
-    .form-group.col-6        
-        label(for="step1SelectCallType") Tipo de llamado
-        select#step1SelectCallType.form-control
-            each val in ['Seleccionar tipo','Urgencias', 'Instalaciones *', 'Retiros **', 'Modificaciones', 'Perforaciones', 'Cambio de Accesorio', 'Puesta en Marcha', 'Capacitación', 'Diagnóstico', 'Visita Inspectiva', 'Taller' ]
-                option= val
+.form-row
+    .form-group.col-12
+        .input-group
+            .input-group-prepend
+                label.input-group-text.form-control(for="step1SelectCallSource") Origen de llamado
+            select#step1SelectCallSource.form-control.custom-select
+                each val in ['Seleccionar origen','Llamado','Correo']
+                    option= val
+
 .row
     .col
         h2.fs-title Busqueda de cliente y sucursal

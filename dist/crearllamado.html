@@ -88,31 +88,18 @@
                   </div>
                 </div>
                 <hr>
-                <div class="form-row justify-content-between pb-3">
-                  <div class="form-group col-6">
-                    <label for="step1SelectCallSource">Origen de llamado</label>
-                    <select class="form-control" id="step1SelectCallSource">
-                      <option>Seleccionar origen</option>
-                      <option>Llamado</option>
-                      <option>Correo</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-6">       
-                    <label for="step1SelectCallType">Tipo de llamado</label>
-                    <select class="form-control" id="step1SelectCallType">
-                      <option>Seleccionar tipo</option>
-                      <option>Urgencias</option>
-                      <option>Instalaciones *</option>
-                      <option>Retiros **</option>
-                      <option>Modificaciones</option>
-                      <option>Perforaciones</option>
-                      <option>Cambio de Accesorio</option>
-                      <option>Puesta en Marcha</option>
-                      <option>Capacitación</option>
-                      <option>Diagnóstico</option>
-                      <option>Visita Inspectiva</option>
-                      <option>Taller</option>
-                    </select>
+                <div class="form-row">
+                  <div class="form-group col-12">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text form-control" for="step1SelectCallSource">Origen de llamado</label>
+                      </div>
+                      <select class="form-control custom-select" id="step1SelectCallSource">
+                        <option>Seleccionar origen</option>
+                        <option>Llamado</option>
+                        <option>Correo</option>
+                      </select>
+                    </div>
                   </div>
                 </div>
                 <div class="row">
@@ -215,6 +202,28 @@
                         </ul>
                       </li>
                     </ul>
+                  </div>
+                  <div class="col mt-4">
+                    <h2 class="fs-title">Información sobre el tipo de llamado</h2>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <label class="input-group-text form-control" for="step1SelectCallType">Tipo de llamado</label>
+                      </div>
+                      <select class="form-control custom-select" id="step1SelectCallType">
+                        <option>Seleccionar</option>
+                        <option>Urgencias</option>
+                        <option>Instalaciones *</option>
+                        <option>Retiros **</option>
+                        <option>Modificaciones</option>
+                        <option>Perforaciones</option>
+                        <option>Cambio de Accesorio</option>
+                        <option>Puesta en Marcha</option>
+                        <option>Capacitación</option>
+                        <option>Diagnóstico</option>
+                        <option>Visita Inspectiva</option>
+                        <option>Taller</option>
+                      </select>
+                    </div>
                     <!--p.text-righta(href="#")#step2AddNewContact.btn.btn-outline-primary.btn-sm Agregar Nuevo
                     -->
                     <!--.step2AddNewContact-wra.row

@@ -26,6 +26,15 @@
                             .col-6
                                 i.fas.fa-phone.mr-2
                                 span +569 6 5654.8454
+
+.col.mt-4
+    h2.fs-title Información sobre el tipo de llamado
+    .input-group
+        .input-group-prepend
+            label.input-group-text.form-control(for="step1SelectCallType") Tipo de llamado
+        select#step1SelectCallType.form-control.custom-select
+            each val in ['Seleccionar','Urgencias', 'Instalaciones *', 'Retiros **', 'Modificaciones', 'Perforaciones', 'Cambio de Accesorio', 'Puesta en Marcha', 'Capacitación', 'Diagnóstico', 'Visita Inspectiva', 'Taller' ]
+                option= val
     //p.text-right
         a(href="#")#step2AddNewContact.btn.btn-outline-primary.btn-sm Agregar Nuevo
     //.step2AddNewContact-wra.row

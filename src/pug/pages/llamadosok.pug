@@ -1,0 +1,144 @@
+extends ../layout/_header
+
+block append config
+    -var pageTitle = 'Llamados Ok'
+    -var pageDescription = ''
+    -var baseDir = ''
+    -var linkSrc = ''
+
+block mainContent
+    main.content-wrapper
+        section.container-fluid
+            .row
+                .col-4.col-lg-3.col-xl-2.bg-grey.pt-5.pb-3.min-h-100
+                    .input-group.input-group-sm.mb-4
+                        .input-group-prepend
+                            label.input-group-text(for="#step2SelectClientType")
+                                i.fas.fa-search
+                            input.form-control(type="text" placeholder="Buscar Ticket")
+                    h6 
+                        b Todos
+                    hr
+                    +listStado(
+                        'primary', 
+                        'Abiertos', 
+                        '8'
+                        )
+                    +listStado(
+                        'secondary', 
+                        'Asignados', 
+                        '5'
+                        )
+                    +listStado(
+                        'dark', 
+                        'En Validación', 
+                        '4'
+                        )
+                    +listStado(
+                        'info', 
+                        'Pendiente Cliente', 
+                        '9'
+                        )
+                    +listStado(
+                        'warning', 
+                        'Pendiente TCM', 
+                        '2'
+                        )
+                    +listStado(
+                        'danger', 
+                        'Local Cerrado', 
+                        '7'
+                        )
+                    hr
+                    h6 
+                        b Otros Filtros
+                    hr
+                    +listName( 
+                        'Nuevos Hoy', 
+                        '18'
+                        )
+                    +listName( 
+                        'Cerrados Hoy', 
+                        '7'
+                        )
+                    +listName( 
+                        'Vencidos', 
+                        '12'
+                        )
+                    +listName( 
+                        'Re-asignados', 
+                        '10'
+                        )
+                    hr
+                    +listStado(
+                        'success', 
+                        'Llamados Cerrados', 
+                        '7',
+                        'Consultar'
+                        )
+                    hr
+                .col-8.col-lg-9.col-xl-10.pt-5.pb-3
+                    h4 Todos
+                    hr
+                    include ../layout/_filtros
+                    .table-responsive
+                        table.table.table-striped.mt-4
+                            thead
+                                tr
+                                    th(scope="col") Creacion
+                                    th(scope="col") Ticket
+                                    th(scope="col") Tipo de Llamado
+                                    th(scope="col") Ots
+                                    th(scope="col") Fecha de Cierre
+                                    th(scope="col") Asignación
+                                    th(scope="col") SLA
+                                    th(scope="col") Sucursal
+                                    th(scope="col") Comuna
+                            tbody
+                                +tableRow(
+                                    'success', 
+                                    'Abierto',  
+                                    'Sin Asignación', 
+                                    '+12'
+                                    )
+                                +tableRow(
+                                    'success', 
+                                    'Asignado',  
+                                    'Juan Peréz', 
+                                    '+48h'
+                                    )
+                                +tableRow(
+                                    'success', 
+                                    'Abierto',  
+                                    'Sin Asignación', 
+                                    'N/A'
+                                    )
+                                +tableRow(
+                                    'success', 
+                                    'Pendiente Cliente',  
+                                    'Roberto Mendoza', 
+                                    '+3'
+                                    )
+                                +tableRow(
+                                    'success', 
+                                    'Local Cerrado',  
+                                    'Juan Peréz', 
+                                    '+3'
+                                    )
+                                +tableRow(
+                                    'success', 
+                                    'Pendiente TCM',  
+                                    'Juan Peréz', 
+                                    '+3'
+                                    )
+                                +tableRow(
+                                    'success', 
+                                    'Pendiente de Validación',  
+                                    'Juan Peréz', 
+                                    '+5'
+                                    )
+                
+
+
+
+    include ../layout/_scripts
