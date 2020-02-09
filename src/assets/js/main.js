@@ -213,4 +213,9 @@ $(function () {
     $('#step6Next').on('click', function () {
         $('.list-step-5 i').removeClass('d-none');
     });
+
+    $('#step1SelectCallType').on('change', function(){
+        var selectCallType = $(this).val();
+        console.log(selectCallType);
+    });
 });

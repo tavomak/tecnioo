@@ -191,21 +191,25 @@
                   <div class="col-12 mt-4 bk-step2-hidden">
                     <h2 class="fs-title">Contacto asignado</h2>
                     <hr>
-                    <ul class="mb-3 custom-control custom-radio" id="step2checkboxContact">
+                    <ul class="pl-0 mb-3 custom-control custom-radio" id="step2checkboxContact">
                       <li class="my-2">
                         <ul class="tecnioo-card d-flex align-items-center">
-                          <li class="tecnioo-card--item px-2 py-3 bg-grey w-100 row align-items-center">
-                            <div class="col-12 tecnioo-card--title pb-1">
-                              <label for="">Juan González</label>
-                              <input type="hidden" id="step2InputContactName" val="Juan González">
+                          <li class="form-row tecnioo-card--item px-2 py-3 bg-grey">
+                            <div class="form-group col-md-6">
+                              <label for="inputNombreContacto">Nombre Contacto</label>
+                              <input class="form-control" type="text" id="inputNombreContacto">
                             </div>
-                            <div class="col-6"> <i class="fas fa-envelope mr-2"></i>
-                              <label for="">nombre@empresa.cl</label>
-                              <input type="hidden" id="step2InputContactEmail" val="nombre@empresa.cl"><span> </span>
+                            <div class="form-group col-md-6"> 
+                              <label for="inputEmail4">Email</label>
+                              <input class="form-control" type="email" id="inputEmail4">
                             </div>
-                            <div class="col-6"><i class="fas fa-phone mr-2"></i>
-                              <label for="step2InputContactPhone">+569 6 5654.8454</label>
-                              <input type="hidden" id="step2InputContactPhone" val="+569 6 5654.8454">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail4">Telefono</label>
+                              <input class="form-control" type="email" id="inputEmail4">
+                            </div>
+                            <div class="form-group col-md-6"> 
+                              <label for="inputPassword4">Comentario</label>
+                              <input class="form-control" type="password" id="inputPassword4">
                             </div>
                           </li>
                         </ul>
@@ -233,18 +237,6 @@
                         <option>Taller</option>
                       </select>
                     </div>
-                    <!--p.text-righta(href="#")#step2AddNewContact.btn.btn-outline-primary.btn-sm Agregar Nuevo
-                    -->
-                    <!--.step2AddNewContact-wra.row
-                    .col-12
-                        h2.fs-title Agregar nuevo contacto
-                        hr
-                    .col-12
-                        include ../layout/_contacto-form
-                        p.text-right
-                            a(href="#")#addContact.btn.btn-outline-primary.btn-sm Agregar
-                        
-                    -->
                   </div>
                 </div>
                 <hr><a class="next action-buton btn btn-primary text-white disabled" id="step1Next" disabled>Siguiente</a>
@@ -330,6 +322,47 @@
                     <h2 class="fs-title">Diagnóstico Preventivo</h2>
                     <h3 class="fs-subtitle">Antes de continuar conteste estas preguntas</h3>
                     <hr>
+                  </div>
+                </div>
+                <div class="form-row py-4">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text form-control" for="step1SelectCallType">Tipo de diagnóstico</label>
+                    </div>
+                    <select class="form-control custom-select" id="step1SelectCallType">
+                      <option>Otro</option>
+                      <option>Cambio de Carro Ducasse</option>
+                      <option>Cambio de Compresor</option>
+                      <option>Cambio de Enfriador</option>
+                      <option>Cambio de Equipo</option>
+                      <option>Cambio de Filtro</option>
+                      <option>Cambio de Pistola</option>
+                      <option>Cambo de Torre</option>
+                      <option>Despacho</option>
+                      <option>Diagnóstico 1</option>
+                      <option>Diagnóstico 2</option>
+                      <option>Enbellecimiento</option>
+                      <option>Enfriador</option>
+                      <option>Instalación Gráfica</option>
+                      <option>Lavado</option>
+                      <option>Mesón 1 (1 a 3)</option>
+                      <option>Mesón 2 (4 a 6)</option>
+                      <option>Mesón 3 (más de 6)</option>
+                      <option>Nivel 1</option>
+                      <option>Nivel 2</option>
+                      <option>Nivel 3</option>
+                      <option>Preparación Instalación</option>
+                      <option>Recepción</option>
+                      <option>Reparación 1</option>
+                      <option>Reparación 2</option>
+                      <option>Retiro 1</option>
+                      <option>Retiro 2</option>
+                      <option>Retiro 3</option>
+                      <option>Retiro a Taller</option>
+                      <option>Retiro Enfriador</option>
+                      <option>Secado de Gráfica</option>
+                      <option>Sugiere Baja</option>
+                    </select>
                   </div>
                 </div>
                 <div class="row">
