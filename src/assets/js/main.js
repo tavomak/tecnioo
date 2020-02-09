@@ -128,13 +128,6 @@ $(function () {
     $('#step2AddNewContact').on('click', function () {
         $('.step2AddNewContact-wrap').show('slow');
     });
-
-/*     $('#step2Prev').on('click', function () {
-        $('.list-step-1 i').addClass('d-none');
-    });
-    $('#step2Next').on('click', function () {
-        $('.list-step-2 i').removeClass('d-none');
-    }); */
     //WIZARD STEP 3 ====================================================== //
     $('#step3Prev').on('click', function () {
         $('.list-step-1 i').addClass('d-none');

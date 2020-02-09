@@ -19,13 +19,17 @@
                 ul.tecnioo-card.d-flex.align-items-center
                     li.tecnioo-card--item.px-2.py-3.bg-grey.w-100.row.align-items-center
                             .col-12.tecnioo-card--title.pb-1
-                                b Juan González
+                                label(for="") Juan González
+                                input(type="hidden" id="step2InputContactName" val="Juan González")
                             .col-6 
                                 i.fas.fa-envelope.mr-2
-                                span nombre@empresa.cl
+                                label(for="") nombre@empresa.cl
+                                input(type="hidden" id="step2InputContactEmail" val="nombre@empresa.cl")
+                                span 
                             .col-6
                                 i.fas.fa-phone.mr-2
-                                span +569 6 5654.8454
+                                label(for="step2InputContactPhone") +569 6 5654.8454
+                                input(type="hidden" id="step2InputContactPhone" val="+569 6 5654.8454")
 
 .col.mt-4
     h2.fs-title Información sobre el tipo de llamado

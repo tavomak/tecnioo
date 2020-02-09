@@ -55,19 +55,19 @@
             <article>
               <ul id="progressStep">
                 <li class="list-step list-step-1">
-                  <p><small><span>1 </span>Crear Ticket</small><i class="fas fa-check-circle float-right d-none"></i></p>
+                  <p id="list-step-1"><small><span>1 </span>Crear Ticket</small><i class="fas fa-check-circle float-right d-none"></i></p>
                 </li>
                 <li class="list-step list-step-2">
-                  <p><small><span>2 </span>Información del equipo</small><i class="fas fa-check-circle float-right d-none"></i></p>
+                  <p id="list-step-2"><small><span>2 </span>Información del equipo</small><i class="fas fa-check-circle float-right d-none"></i></p>
                 </li>
                 <li class="list-step list-step-3">
-                  <p><small><span>3 </span>Diagnóstico</small><i class="fas fa-check-circle float-right d-none"></i></p>
+                  <p id="list-step-3"><small><span>3 </span>Diagnóstico</small><i class="fas fa-check-circle float-right d-none"></i></p>
                 </li>
                 <li class="list-step list-step-4">
-                  <p><small><span>4 </span>Información del problema</small><i class="fas fa-check-circle float-right d-none"></i></p>
+                  <p id="list-step-4"><small><span>4 </span>Información del problema</small><i class="fas fa-check-circle float-right d-none"></i></p>
                 </li>
                 <li class="list-step list-step-5">
-                  <p><small><span>5 </span>Horario de atención</small><i class="fas fa-check-circle float-right d-none"></i></p>
+                  <p id="list-step-5"><small><span>5 </span>Horario de atención</small><i class="fas fa-check-circle float-right d-none"></i></p>
                 </li>
               </ul>
             </article>
@@ -195,9 +195,18 @@
                       <li class="my-2">
                         <ul class="tecnioo-card d-flex align-items-center">
                           <li class="tecnioo-card--item px-2 py-3 bg-grey w-100 row align-items-center">
-                            <div class="col-12 tecnioo-card--title pb-1"><b>Juan González</b></div>
-                            <div class="col-6"> <i class="fas fa-envelope mr-2"></i><span>nombre@empresa.cl</span></div>
-                            <div class="col-6"><i class="fas fa-phone mr-2"></i><span>+569 6 5654.8454</span></div>
+                            <div class="col-12 tecnioo-card--title pb-1">
+                              <label for="">Juan González</label>
+                              <input type="hidden" id="step2InputContactName" val="Juan González">
+                            </div>
+                            <div class="col-6"> <i class="fas fa-envelope mr-2"></i>
+                              <label for="">nombre@empresa.cl</label>
+                              <input type="hidden" id="step2InputContactEmail" val="nombre@empresa.cl"><span> </span>
+                            </div>
+                            <div class="col-6"><i class="fas fa-phone mr-2"></i>
+                              <label for="step2InputContactPhone">+569 6 5654.8454</label>
+                              <input type="hidden" id="step2InputContactPhone" val="+569 6 5654.8454">
+                            </div>
                           </li>
                         </ul>
                       </li>

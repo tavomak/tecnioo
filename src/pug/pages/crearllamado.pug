@@ -20,7 +20,7 @@ block mainContent
                         ul#progressStep
                             each val, i in {1:'Crear Ticket', 2:'Información del equipo', 3:'Diagnóstico', 4:'Información del problema', 5:'Horario de atención'}
                                 li.list-step(class="list-step-"+i)
-                                    p
+                                    p(id="list-step-"+i)
                                         small
                                             span #{i} 
                                             | #{val}
