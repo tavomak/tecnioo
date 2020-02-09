@@ -176,7 +176,13 @@ $(function () {
             "Viernes",
             "Sabado",
             "Domingo"
-        ]
+        ],
+        onChange: function (data) {
+            console.log(data.from_value);
+            console.log(data.to_value);
+            $('#HorarioAtencionDesde').val(data.from_value);
+            $('#HorarioAtencionHasta').val(data.to_value);
+        }
     });
     $("#selectTimeStart").ionRangeSlider({
         skin: "round",
@@ -184,7 +190,13 @@ $(function () {
         grid: true,
         values: [
             '08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00'
-        ]
+        ],
+        onChange: function (data) {
+            console.log(data.from_value);
+            console.log(data.to_value);
+            $('#HorarioAperturaDesde').val(data.from_value);
+            $('#HorarioAperturaHasta').val(data.to_value);
+        }
     });
     $("#selectTimeEnd").ionRangeSlider({
         skin: "round",
@@ -192,7 +204,13 @@ $(function () {
         grid: true,
         values: [
             '15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','24:00'
-        ]
+        ],
+        onChange: function (data) {
+            console.log(data.from_value);
+            console.log(data.to_value);
+            $('#HorarioCierreDesde').val(data.from_value);
+            $('#HorarioCierreHasta').val(data.to_value);
+        }
     });
     
     $('#step6Prev').on('click', function () {

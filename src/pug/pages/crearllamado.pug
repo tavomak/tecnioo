@@ -45,6 +45,28 @@ block mainContent
                             include ../layout/_step6
                 .col-md-3.bg-grey.d-none.d-md-block.pt-5
                     include ../layout/_previewllamado
+    form.d-none(action="")
+        input(type="text" name="formOrigenLlamado" id="formOrigenLlamado")
+        input(type="text" name="formTipoBusqueda" id="formTipoBusqueda")
+        input(type="text" name="formNumeroCliente" id="formNumeroCliente")
+        input(type="text" name="formNombreCliente" id="formNombreCliente")
+        input(type="text" name="formTelefonoCliente" id="formTelefonoCliente")
+        input(type="text" name="formEmailCliente" id="formEmailCliente")
+        input(type="text" name="formNumeroSucursales" id="formNumeroSucursales")
+        input(type="text" name="formNombreSucursal" id="formNombreSucursal")
+        input(type="text" name="formTipoLlamado" id="formTipoLlamado")
+        input(type="text" name="formMaquinaModelo" id="formMaquinaModelo")
+        input(type="text" name="formMaquinaCodigo" id="formMaquinaCodigo")
+        input(type="text" name="formMaquinaLogo" id="formMaquinaLogo")
+        input(type="text" name="formRespuestasDiagnosticoPreventivo" id="formRespuestasDiagnosticoPreventivo")
+        input(type="text" name="formRespuestasInfoProblema" id="formRespuestasInfoProblema")
+        input(type="text" name="formHorarioAtencionDesde" id="formHorarioAtencionDesde")
+        input(type="text" name="formHorarioAtencionHasta" id="formHorarioAtencionHasta")
+        input(type="text" name="formHorarioAperturaDesde" id="formHorarioAperturaDesde")
+        input(type="text" name="formHorarioAperturaHasta" id="formHorarioAperturaHasta")
+        input(type="text" name="formHorarioCierreDesde" id="formHorarioCierreDesde")
+        input(type="text" name="formHorarioCierreHasta" id="formHorarioCierreHasta")
+        <input type="submit" value="Submit" id="sumitForm">
 
     .modal.fade(id="crearLlamadoModal" tabindex="-1" role="dialog" aria-labelledby="crearLlamadoLabel" aria-hidden="true")
         .modal-dialog.modal-lg(role="document")
