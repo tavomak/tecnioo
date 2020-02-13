@@ -1,0 +1,217 @@
+extends ../layout/_header
+
+block append config
+    -var pageTitle = 'Vaalidación llamado OT'
+    -var pageDescription = ''
+    -var baseDir = ''
+    -var linkSrc = ''
+
+block mainContent
+    main.content-wrapper
+        section.container-fluid.pt-5.pb-3.px-5
+            .row
+                .col
+                    i.fas.fa-arrow-left.mr-2
+                    i.fas.fa-phone.mr-2
+                    span #09346486358
+                .col
+                    i.fas.fa-layer-group.pr-2 
+                    | Urgencia de Cooler - [Modelo] - [Logo]
+                .col.align-self-end.text-right
+                    span +24H
+            hr.mt-5
+            .row
+                .col-8
+                    h4 Detalle del llamado
+                    p.text-right
+                        small 12/008/19 12:43 hrs
+                    .card.bg-grey.container.py-3
+                        .row
+                            .col-6
+                                p.mb-1 
+                                    b Datos del spot
+                                p.my-3
+                                    small Sucursal spot
+                                .card
+                                    table.table
+                                        tr
+                                            td Burguer King Pedro de Fontova
+                                            td.text-right ID: 9676
+                                    iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.01075626506!2d-70.58617688480206!3d-33.39688358078929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2ddbca25c3%3A0x94faa92657957dde!2sAv%20Vitacura%205250%2C%20of.%20308%2C%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1579371739262!5m2!1ses-419!2scl"
+                                    width="100%" 
+                                    height="150" 
+                                    frameborder="0" 
+                                    style="border:0;" 
+                                    allowfullscreen="")
+                                    table.table
+                                        tr
+                                            td Ubicación
+                                            td.text-right Providencia 701
+                                        tr
+                                            td Comuna
+                                            td.text-right Providencia
+                                        tr
+                                            td Zona TCM 
+                                            td.text-right Santiago
+                                        tr
+                                            td Coordenadas
+                                            td.text-right -33.68735, -70.378273
+                                p.mt-3
+                                    small Cliente spot
+                                .card
+                                    table.table
+                                        tr
+                                            td Rut
+                                            td.text-right 76.764.554
+                                        tr
+                                            td Razón social
+                                            td.text-right Burger King S.A.
+                                p.mt-3
+                                    small Contacto
+                                .card
+                                    table.table
+                                        tr
+                                            td Nombre
+                                            td.text-right Sebastián Morales
+                                        tr
+                                            td Teléfono
+                                            td.text-right +569 6433 6342
+                                        tr
+                                            td email
+                                            td.text-right sebastianmorales@gmail.com
+                                p.mt-3
+                                    small Horario de atención
+                                .card
+                                    table.table
+                                        each val in ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
+                                            tr
+                                                td=val
+                                                td.text-right 9:00 a 20:00
+
+                            .col-6
+                                p.mb-1 
+                                    b Datos de la máquina
+                                    p.my-3
+                                        small Equipo afectado
+                                .card
+                                    table.table
+                                        tr
+                                            td SKU
+                                            td.text-right 8765
+                                        tr
+                                            td Código TCM
+                                            td.text-right 200156789
+                                        tr
+                                            td Modelo
+                                            td.text-right Cooler V2345 1 Puerta
+                                        tr
+                                            td Logo
+                                            td.text-right Cristal
+                                        tr
+                                            td Mandante
+                                            td.text-right CCU
+                                p.mb-1 
+                                    b Reporte
+                                    p.my-3
+                                        small Diagnóstico
+                                        .badge.badge-info.p-2.mr-1 Nivel 1
+                                    p.my-3
+                                        small Posible Problema
+                                        .badge.badge-info.p-2.mr-1 Cooler no enfria
+                                        .badge.badge-info.p-2.mr-1 Tubería rota
+                                        .badge.badge-info.p-2.mr-1 Problema eléctrico
+                                    p.my-3
+                                        small Nota del cliente
+                                    .card
+                                        .card-body
+                                            p En las tardes deja de enfriar, por la mañana siempre esta ok
+                .col-4
+                    h4 OTs y Cierres
+                    p.text-right
+                        small 12/008/19 12:43 hrs
+                    .card
+                        .card-body
+                            .mb-4.d-flex
+                                span.tecnioo-card--title__status.bg-info 
+                                |Pendiente de validación
+                                span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
+                            p
+                                i.fas.fa-user-circle.pr-2
+                                |Sin Asignación
+                            .d-flex.justify-content-between
+                                a.btn.btn-outline-primary.btn-sm OT:9876554342
+                                a.btn.btn-outline-secondary.btn-sm Check-in
+                                a.btn.btn-outline-secondary.btn-sm Firma
+                            p.mb-3.mt-5
+                                b Nuevo Diagnóstico
+                            p
+                                span.badge.badge-secondary.p-2 Solicitud de cambio de compresor
+                            p.mb-3.mt-5
+                                b Observación del técnico
+                                    .card
+                                        .card-body
+                                            p El diagnóstico estaba equivocado, solicito validar de nuevo.
+                            p.mb-3.mt-5
+                                b Firma Cliente
+                            p
+                                a.btn.btn-outline-primary.btn-sm Aprobado
+                            hr
+                            p.mb-3.mt-5
+                                b Validación
+                            .d-block.btn.btn-outline-primary.btn-sm.my-2 Aprobar y reagendar al mismo técnico
+                            .d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y reagendar al mismo técnico
+                            .d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y reagendar a otro técnico
+                            .d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y enviar programación
+                    
+                    ul.d-flex.my-4.align-items-center
+                        li 
+                            p.m-0
+                                span.tecnioo-card--title__status.bg-info
+                        li.w-100
+                            .card
+                                .card-body  
+                                    .mb-4.d-flex
+                                        i.fas.fa-layer-group.mr-2
+                                        span #765756765757
+                                        span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
+                                    h6 Visitado Pendiente
+                                    p
+                                        i.fas.fa-user-circle.pr-2
+                                        |Sin Asignación
+
+
+                    ul.d-flex.my-4.align-items-center
+                        li 
+                            p.m-0
+                                span.tecnioo-card--title__status.bg-warning
+                        li.w-100
+                            .card
+                                .card-body  
+                                    .mb-4.d-flex
+                                        i.fas.fa-layer-group.mr-2
+                                        span #765756765757
+                                        span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
+                                    h6 Pendiente TCM
+                                    p
+                                        i.fas.fa-user-circle.pr-2
+                                        |Sin Asignación
+
+                    ul.d-flex.my-4.align-items-center
+                        li 
+                            p.m-0
+                                span.tecnioo-card--title__status.bg-danger
+                        li.w-100
+                            .card
+                                .card-body  
+                                    .mb-4.d-flex
+                                        i.fas.fa-layer-group.mr-2
+                                        span #765756765757
+                                        span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
+                                    h6 Local Cerrado
+                                    p
+                                        i.fas.fa-user-circle.pr-2
+                                        |Sin Asignación
+
+
+
+    include ../layout/_scripts
