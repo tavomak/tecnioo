@@ -250,7 +250,7 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group col-12">
-                    <ul class="mb-3 custom-control custom-radio">
+                    <ul class="mb-3 custom-control custom-radio" id="contenedorMaquinasListado">
                       <li class="my-2">
                         <ul class="tecnioo-card d-flex align-items-center">
                           <li class="tecnioo-card--item">
@@ -312,6 +312,9 @@
                         </ul>
                       </li>
                     </ul>
+                    <p class="text-right m-0">
+                      <button class="btn btn-outline-primary" href="" data-toggle="modal" data-target="#crearMaquinaModal">Agregar</button>
+                    </p>
                   </div>
                 </div>
                 <hr><a class="previous action-buton btn btn-light mr-4" id="step3Prev">Anterior</a><a class="next action-buton btn btn-primary text-white" id="step3Next">Siguiente</a>
@@ -574,6 +577,21 @@
                     -->
                   </li>
                 </ul>
+                <p class="text-right">
+                  <button class="btn btn-outline-primary" id="agregarHorario">Agregar</button>
+                </p>
+                <div class="table-responsive">
+                  <table class="table table-striped mt-4">
+                    <thead>
+                      <tr>
+                        <th scope="col">Días</th>
+                        <th scope="col">Rango de apertura</th>
+                        <th scope="col">Rando de cierre</th>
+                      </tr>
+                    </thead>
+                    <tbody id="step6TableTimes"></tbody>
+                  </table>
+                </div>
                 <hr class="mt-5"><a class="previous action-buton btn btn-light mr-4" id="step6Prev">Anterior</a><a class="btn btn-primary text-white" id="step6Next" href="" data-toggle="modal" data-target="#crearLlamadoModal">Previsualizar y enviar solicitud</a>
               </fieldset>
             </div>
@@ -669,6 +687,55 @@
       <input type="text" name="formHorarioCierreDesde" id="formHorarioCierreDesde">
       <input type="text" name="formHorarioCierreHasta" id="formHorarioCierreHasta"><input type="submit" value="Submit" id="sumitForm">
     </form>
+    <div class="modal fade" id="crearMaquinaModal" tabindex="-1" role="dialog" aria-labelledby="crearMaquinaLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Nueva máquina</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="pt-3 form-row">
+              <div class="form-group col-6">
+                <label>Mandante</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="form-group col-6">
+                <label>Logo</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="form-group col-6">
+                <label>Modelo</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="form-group col-6">
+                <label>Categoría de Máquina</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="form-group col-6">
+                <label>Máquina</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="form-group col-6">
+                <label>Modelo</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="form-group col-6">
+                <label>Marca / Logo</label>
+                <input class="form-control" type="text">
+              </div>
+              <div class="form-group col-6">
+                <label>Nº Serie o QR (Input alfanumérico)</label>
+                <input class="form-control" type="text">
+              </div>
+            </div>
+            <p class="text-right">
+              <button class="btn btn-outline-primary" id="agregarNuevaMaquina">Agregar</button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="modal fade" id="crearLlamadoModal" tabindex="-1" role="dialog" aria-labelledby="crearLlamadoLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">

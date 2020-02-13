@@ -4,7 +4,7 @@
         hr
 .form-row
     .form-group.col-12
-        ul.mb-3.custom-control.custom-radio
+        ul.mb-3.custom-control.custom-radio#contenedorMaquinasListado
             - for (var x = 0; x < 4; x++)
                 li.my-2
                     ul.tecnioo-card.d-flex.align-items-center
@@ -21,6 +21,8 @@
                                 .tecnioo-card--img.m-auto
                                     img.w-100(src="./assets/img/logo-cristal.jpg", alt="")
 
+        p.text-right.m-0
+            button.btn.btn-outline-primary(href="" data-toggle="modal", data-target="#crearMaquinaModal") Agregar
 hr
 a.previous.action-buton.btn.btn-light.mr-4#step3Prev Anterior
 a.next.action-buton.btn.btn-primary.text-white#step3Next Siguiente

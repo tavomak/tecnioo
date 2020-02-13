@@ -25,6 +25,16 @@ ul.row.px-4
         //select#selectTimeEnd.form-control
             each val in ['19:00','20:00','21:00','22:00','23:00','01:00','02:00','03:00','04:00']
                 option= val
+p.text-right
+    button.btn.btn-outline-primary#agregarHorario Agregar
+.table-responsive
+    table.table.table-striped.mt-4
+        thead
+            tr
+                th(scope="col") Días
+                th(scope="col") Rango de apertura
+                th(scope="col") Rando de cierre
+        tbody#step6TableTimes
 hr.mt-5
 a.previous.action-buton.btn.btn-light.mr-4#step6Prev Anterior
 a.btn.btn-primary.text-white#step6Next(href="" data-toggle="modal", data-target="#crearLlamadoModal") Previsualizar y enviar solicitud

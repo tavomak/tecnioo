@@ -159,20 +159,39 @@
             <hr>
           </div>
           <div class="col-8 col-lg-9 col-xl-10 pt-5 pb-3">
-            <h4>Todos</h4>
+            <ul class="d-flex align-items-center">
+              <li class="mr-auto">
+                <h6> <b>Todos</b></h6>
+              </li>
+              <li class="px-2">
+                <p class="m-0">última actualización</p>
+                <p class="m-0">20/05/20 19:03</p>
+              </li>
+              <li class="pl-2">
+                <button class="btn btn-outline-primary"> <i class="fas fa-sync"> </i>Actualizar</button>
+              </li>
+            </ul>
             <hr>
             <ul class="d-flex justify-content-between align-items-center">
               <li>
+                <p>  <span>102 </span>Resultados</p>
                 <div class="input-group input-group-sm">
                   <div class="input-group-prepend">
                     <label class="input-group-text" for="#step2SelectClientType"><i class="fas fa-search"></i></label>
-                    <input class="form-control" type="text" placeholder="Ticket">
+                    <input class="form-control" type="text" placeholder="Búscar">
                   </div>
                 </div>
               </li>
               <li>
                 <div class="dropdown">
-                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Técnicos</button>
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownTipo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo de llamado</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownTipo"><a class="dropdown-item" href="#">Todos</a><a class="dropdown-item" href="#">Urgencias</a><a class="dropdown-item" href="#">Instalaciones</a><a class="dropdown-item" href="#">Modificaciones</a><a class="dropdown-item" href="#">Cambio de accesoio</a><a class="dropdown-item" href="#">Retiro</a><a class="dropdown-item" href="#">Vista Inspectiva</a><a class="dropdown-item" href="#">Capacitación</a><a class="dropdown-item" href="#">Perforaciones</a><a class="dropdown-item" href="#">Puesta en Marcha</a><a class="dropdown-item" href="#">Diagnóstico</a><a class="dropdown-item" href="#">Taller</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo de máquina</button>
                   <div class="dropdown-menu" aria-labelledby="dropdownTecnicos"><a class="dropdown-item" href="#">Todos</a><a class="dropdown-item" href="#">Pedro Carrasco</a><a class="dropdown-item" href="#">Jorge Salgado</a><a class="dropdown-item" href="#">Juan Gonzalez</a>
                   </div>
                 </div>
@@ -181,13 +200,6 @@
                 <div class="dropdown">
                   <button class="btn btn-light dropdown-toggle" type="button" id="dropdownZona" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Zona TCM</button>
                   <div class="dropdown-menu" aria-labelledby="dropdownZona"><a class="dropdown-item" href="#">Todas</a><a class="dropdown-item" href="#">Santiago</a><a class="dropdown-item" href="#">Rancagua</a><a class="dropdown-item" href="#">Viña del mar</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="dropdown">
-                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownTipo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tipo de llamado</button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownTipo"><a class="dropdown-item" href="#">Todos</a><a class="dropdown-item" href="#">Urgencias</a><a class="dropdown-item" href="#">Instalaciones</a><a class="dropdown-item" href="#">Modificaciones</a><a class="dropdown-item" href="#">Cambio de accesoio</a><a class="dropdown-item" href="#">Retiro</a><a class="dropdown-item" href="#">Vista Inspectiva</a><a class="dropdown-item" href="#">Capacitación</a><a class="dropdown-item" href="#">Perforaciones</a><a class="dropdown-item" href="#">Puesta en Marcha</a><a class="dropdown-item" href="#">Diagnóstico</a><a class="dropdown-item" href="#">Taller</a>
                   </div>
                 </div>
               </li>

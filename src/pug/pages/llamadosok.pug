@@ -78,9 +78,48 @@ block mainContent
                         )
                     hr
                 .col-8.col-lg-9.col-xl-10.pt-5.pb-3
-                    h4 Todos
+                    ul.d-flex.align-items-center
+                        li.mr-auto
+                            h6 
+                                b Todos
+                        li.px-2
+                            p.m-0 última actualización
+                            p.m-0 20/05/20 19:03
+                        li.pl-2
+                            button.btn.btn-outline-primary 
+                                i.fas.fa-sync 
+                                | Actualizar
                     hr
-                    include ../layout/_filtros
+                    ul.d-flex.justify-content-between.align-items-center
+                        li
+                            p   
+                                span 102 
+                                | Resultados
+                            .input-group.input-group-sm
+                                .input-group-prepend
+                                    label.input-group-text(for="#step2SelectClientType")
+                                        i.fas.fa-search
+                                    input.form-control(type="text" placeholder="Búscar")
+                        li
+                            .dropdown
+                                button.btn.btn-light.dropdown-toggle(type="button" id="dropdownTipo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Tipo de llamado
+                                .dropdown-menu(aria-labelledby="dropdownTipo")
+                                    each val in ['Todos','Urgencias','Instalaciones','Modificaciones', 'Cambio de accesoio', 'Retiro', 'Vista Inspectiva', 'Capacitación','Perforaciones','Puesta en Marcha','Diagnóstico','Taller']
+                                        a.dropdown-item(href="#")= val
+                        li
+                            .dropdown
+                                button.btn.btn-light.dropdown-toggle(type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Tipo de máquina
+                                .dropdown-menu(aria-labelledby="dropdownTecnicos")
+                                    each val in ['Todos','Pedro Carrasco','Jorge Salgado','Juan Gonzalez']
+                                        a.dropdown-item(href="#")= val
+                        li
+                            .dropdown
+                                button.btn.btn-light.dropdown-toggle(type="button" id="dropdownZona" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Zona TCM
+                                .dropdown-menu(aria-labelledby="dropdownZona")
+                                    each val in ['Todas','Santiago','Rancagua','Viña del mar']
+                                        a.dropdown-item(href="#")= val
+                        li
+                            button.btn.btn-outline-primary Filtrar
                     .table-responsive
                         table.table.table-striped.mt-4
                             thead

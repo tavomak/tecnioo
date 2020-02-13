@@ -68,6 +68,43 @@ block mainContent
         input(type="text" name="formHorarioCierreHasta" id="formHorarioCierreHasta")
         <input type="submit" value="Submit" id="sumitForm">
 
+    .modal.fade(id="crearMaquinaModal" tabindex="-1" role="dialog" aria-labelledby="crearMaquinaLabel" aria-hidden="true")
+        .modal-dialog.modal-lg(role="document")
+            .modal-content
+                .modal-header
+                    h5.modal-title Nueva máquina
+                    button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                        span(aria-hidden="true") &times;
+                .modal-body
+                    .pt-3.form-row
+                        .form-group.col-6
+                            label Mandante
+                            input.form-control(type="text"  )
+                        .form-group.col-6
+                            label Logo
+                            input.form-control(type="text"  )
+                        .form-group.col-6
+                            label Modelo
+                            input.form-control(type="text"  )
+                        .form-group.col-6
+                            label Categoría de Máquina
+                            input.form-control(type="text"  )
+                        .form-group.col-6
+                            label Máquina
+                            input.form-control(type="text"  )
+                        .form-group.col-6
+                            label Modelo
+                            input.form-control(type="text"  )
+                        .form-group.col-6
+                            label Marca / Logo
+                            input.form-control(type="text"  )
+                        .form-group.col-6
+                            label Nº Serie o QR (Input alfanumérico)
+                            input.form-control(type="text"  )
+                    p.text-right
+                        button.btn.btn-outline-primary#agregarNuevaMaquina Agregar
+                
+
     .modal.fade(id="crearLlamadoModal" tabindex="-1" role="dialog" aria-labelledby="crearLlamadoLabel" aria-hidden="true")
         .modal-dialog.modal-lg(role="document")
             .modal-content

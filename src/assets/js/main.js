@@ -129,6 +129,28 @@ $(function () {
         $('.step2AddNewContact-wrap').show('slow');
     });
     //WIZARD STEP 3 ====================================================== //
+    $('#agregarNuevaMaquina').on('click', function () {
+        var numberCheckboxRandom = Math.floor(Math.random()*1000);
+        $('#crearMaquinaModal').modal('hide');
+        $('#contenedorMaquinasListado').append(
+            '<li class="my-2">\n\
+                <ul class="tecnioo-card d-flex align-items-center">\n\
+                    <li class="tecnioo-card--item">\n\
+                        <input class="custom-control-input" type="radio" id="checkboxForMachine-'+numberCheckboxRandom+'" name="checkboxForMachine">\n\
+                        <label class="custom-control-label" for="checkboxForMachine-'+numberCheckboxRandom+'"></label>\n\
+                    </li>\n\
+                    <li class="tecnioo-card--item p-2 bg-grey w-100 row align-items-center">\n\
+                        <div class="col-4 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Maquina Modelo]</b></span></div>\n\
+                        <div class="col-4 tecnioo-card--place"> <span class="pl-2">[Maquina Código]</span></div>\n\
+                        <div class="col-4">\n\
+                            <div class="tecnioo-card--img m-auto"><img class="w-100" src="./assets/img/logo-cristal.jpg" alt=""></div>\n\
+                        </div>\n\
+                    </li>\n\
+                </ul>\n\
+            </li>'
+        );
+    });
+
     $('#step3Prev').on('click', function () {
         $('.list-step-1 i').addClass('d-none');
     });
@@ -156,6 +178,39 @@ $(function () {
         }
     });
     //WIZARD STEP 6 ====================================================== //
+    var fromDay = 'Lunes',
+        toDay = 'Domingo',
+        fromApe = '08:00',
+        toApe = '15:00',
+        fromCie = '15:00',
+        toCie = '23:59';
+
+    var saveResult = function (data) {
+        fromDay = data.from_value;
+        toDay = data.to_value;
+    };
+    var saveResult2 = function (data) {
+        fromApe = data.from_value;
+        toApe = data.to_value;
+    };
+    var saveResult3 = function (data) {
+        fromCie = data.from_value;
+        toCie = data.to_value;
+    };
+
+    var writeResult = function () {
+        var result = "De: " + fromDay + " a: " + toDay,
+            result2 = "De: " + fromApe + " a: " + toApe,
+            result3 = "De: " + fromCie+ " a: " + toCie;
+        $('#step6TableTimes').append(
+            '<tr>\n\
+                <td>'+ result +'</td>\n\
+                <td>'+ result2 +'</td>\n\
+                <td>'+ result3 +'</td>\n\
+            </tr>'
+        );
+    };
+
     $("#selectTypeOfTime").ionRangeSlider({
         skin: "round",
         type: "double",
@@ -170,12 +225,12 @@ $(function () {
             "Sabado",
             "Domingo"
         ],
-        onChange: function (data) {
-            console.log(data.from_value);
-            console.log(data.to_value);
-            $('#HorarioAtencionDesde').val(data.from_value);
-            $('#HorarioAtencionHasta').val(data.to_value);
-        }
+        onLoad: function (data) {
+            saveResult(data);
+            writeResult();
+        },
+        onChange: saveResult,
+        onFinish: saveResult
     });
     $("#selectTimeStart").ionRangeSlider({
         skin: "round",
@@ -189,7 +244,13 @@ $(function () {
             console.log(data.to_value);
             $('#HorarioAperturaDesde').val(data.from_value);
             $('#HorarioAperturaHasta').val(data.to_value);
-        }
+        },
+        onLoad: function (data) {
+            saveResult2(data);
+            writeResult();
+        },
+        onChange: saveResult2,
+        onFinish: saveResult2
     });
     $("#selectTimeEnd").ionRangeSlider({
         skin: "round",
@@ -203,7 +264,13 @@ $(function () {
             console.log(data.to_value);
             $('#HorarioCierreDesde').val(data.from_value);
             $('#HorarioCierreHasta').val(data.to_value);
-        }
+        },
+        onLoad: function (data) {
+            saveResult3(data);
+            writeResult();
+        },
+        onChange: saveResult3,
+        onFinish: saveResult3
     });
     
     $('#step6Prev').on('click', function () {
@@ -218,4 +285,5 @@ $(function () {
         var selectCallType = $(this).val();
         console.log(selectCallType);
     });
+    $('#agregarHorario').on('click', writeResult);
 });
