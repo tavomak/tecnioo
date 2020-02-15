@@ -6,28 +6,16 @@
 ul.row.px-4
     li.col-12.my-2
         h2.fs-title.py-2 Seleccionar rango de dias
-        #selectTypeOfTime
-        //label(for="selectTypeOfTime") Tipo de horario
-        //select#selectTypeOfTime.form-control
-            each val in ['Lunes a viernes','Sabado','Domingo']
-                option= val
+        input#selectTypeOfTime
     li.col-12.my-4
         h2.fs-title.py-2 Seleccionar horario de apertura
-        #selectTimeStart
-        //label(for="selectTimeStart") Apertura
-        //select#selectTimeStart.form-control
-            each val in ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00', '17:00','18:00','19:00']
-                option= val
+        input#selectTimeStart
     li.col-12.my-2
         h2.fs-title.py-2 Seleccionar horario de cierre
-        #selectTimeEnd
-        //label(for="selectTimeEnd") Cierre
-        //select#selectTimeEnd.form-control
-            each val in ['19:00','20:00','21:00','22:00','23:00','01:00','02:00','03:00','04:00']
-                option= val
+        input#selectTimeEnd
 p.text-right
     button.btn.btn-outline-primary#agregarHorario Agregar
-.table-responsive
+.table-responsive#step6TableHorarios
     table.table.table-striped.mt-4
         thead
             tr

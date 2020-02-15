@@ -13,8 +13,8 @@ block header
         a.text-white.px-2 Programación para
         div
             select.form-control
-                each val in ['11/dic','12/dic','13/dic','14/dic','15/dic']
-                    option= val
+                - for (var i = 15; i < 28; ++i) 
+                    option= i+'/02/2020'
         nav.navbar-nav.ml-md-auto.flex-row.align-items-center.text-white
             a.px-2.text-white(href="home.html") Salir <i class="fas fa-sign-out-alt"></i>
 block mainContent
@@ -28,10 +28,10 @@ block mainContent
                 .col-3
                     p.mb-1 
                         b 0 seleccionados
-                    select.form-control.d-inline.w-75
+                    select.form-control.d-inline.w-75.mr-2
                         each val in ['Seleccionar', 'Alberto Rivera','Sebastián Gonzalez','Juan Pérez','Roberto Soto', 'Sebastián Guédez']
                             option= val
-                    a(href="#").btn.btn-outline-primary.btn-sm.ml-2 Asignar
+                    a(href="#").btn.btn-outline-primary.btn-sm.my-2 Asignar
             hr.mt-4
             .row
                 .col.py-3
@@ -48,7 +48,10 @@ block mainContent
                                     input.form-control(type="text" placeholder="Buscar ticket" id="buscarTicket")
                                 .col-3.text-right
                                     a(href="#").btn.btn-outline-primary.btn-sm Buscar
-
+                        hr
+                        .custom-control.custom-checkbox.my-1.ml-3
+                            input(type="checkbox" class="custom-control-input" id="selectAllcheckbox")
+                            label(class="custom-control-label" for="selectAllcheckbox") Seleccionar Todos
                         ul
                             - for (var x = 0; x < 5; x++)
                                 li
@@ -103,7 +106,7 @@ block mainContent
                                         a.dropdown-item(href="#")= val
             .row.justify-content-center.align-items-stretch
                 .col-sm-2
-                    a(href="#").tecnioo-card.card
+                    a(href="programaciontecnico.html").tecnioo-card.card
                         .card-body
                             .card-title
                                 i.fas.fa-user-circle.pr-2(style="font-size:1.2rem;")
@@ -122,7 +125,7 @@ block mainContent
                                     .small Max 1000 pts
                 each val in ['Alberto Rivera','Sebastián Gonzalez','Juan Pérez','Roberto Soto', 'Sebastián Guédez']               
                     .col-sm-2
-                        a(href="#").tecnioo-card.card
+                        a(href="programaciontecnico.html").tecnioo-card.card
                             .card-body
                                 .card-title
                                     i.fas.fa-user-circle.pr-2(style="font-size:1.2rem;")

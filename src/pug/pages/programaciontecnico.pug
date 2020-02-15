@@ -5,18 +5,6 @@ block append config
     -var pageDescription = ''
     -var baseDir = ''
     -var linkSrc = ''
-block header
-    nav.tecnioo-navbar.navbar.bg-primary.px-2.flex-row
-
-        a.navbar-brand.tecnioo-navbar--wrap(href="#")
-            img.tecnioo-navbar--wrap__img(src="./assets/img/avatar-2.png", alt="Tecnioo")
-        a.text-white.px-2 Programación para
-        div
-            select.form-control
-                each val in ['11/dic','12/dic','13/dic','14/dic','15/dic']
-                    option= val
-        nav.navbar-nav.ml-md-auto.flex-row.align-items-center.text-white
-            a.px-2.text-white(href="#") Salir <i class="fas fa-sign-out-alt"></i>
 block mainContent
     main.content-wrapper
         section.container-fluid.pt-5.pb-3.px-5
@@ -40,6 +28,12 @@ block mainContent
                                 li
                                     .small Max 1000 pts
                 .col-9
+                    .form-group.pb-3
+                        p
+                            b Programación para
+                        select.form-control.w-25
+                            - for (var i = 15; i < 28; ++i) 
+                                option= i+'/02/2020'
                     h4 Seleccionar Ticket
                     p.mb-1 
                         b 0 seleccionados
@@ -64,7 +58,10 @@ block mainContent
                                     input.form-control(type="text" placeholder="Buscar ticket" id="buscarTicket")
                                 .col-3.text-right
                                     a(href="#").btn.btn-outline-primary.btn-sm Buscar
-
+                        hr
+                        .custom-control.custom-checkbox.my-1.ml-3
+                            input(type="checkbox" class="custom-control-input" id="selectAllcheckbox")
+                            label(class="custom-control-label" for="selectAllcheckbox") Seleccionar Todos
                         ul
                             - for (var x = 0; x < 5; x++)
                                 li

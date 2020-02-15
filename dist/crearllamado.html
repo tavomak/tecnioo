@@ -76,10 +76,10 @@
             <div id="msform">
               <ul class="d-flex justify-content-between" id="progressbar">
                 <li class="active w-100"></li>
-                <li class="w-100"></li>
-                <li class="w-100"></li>
-                <li class="w-100"></li>
-                <li class="w-100"></li>
+                <li class="w-100 progressbarItem-0"></li>
+                <li class="w-100 progressbarItem-1"></li>
+                <li class="w-100 progressbarItem-2"></li>
+                <li class="w-100 progressbarItem-3"></li>
               </ul>
               <fieldset class="w-100">
                 <div class="row">
@@ -119,7 +119,7 @@
                   </div>
                   <div class="form-group col-6">
                     <label for="step1InputSelectTipe">Cliente Número</label>
-                    <input class="form-control" id="step1InputSelectTipe" type="text" placeholder="Ej: 9.999.999-9">
+                    <input class="form-control Rut" id="step1InputSelectTipe" type="text" placeholder="Ej: 9.999.999-9">
                     <p class="text-right m-0"><a class="btn btn-outline-primary btn-sm mt-3" id="step1ShowResults" href="#">Buscar</a></p>
                   </div>
                 </div>
@@ -196,16 +196,16 @@
                         <ul class="tecnioo-card d-flex align-items-center">
                           <li class="form-row tecnioo-card--item px-2 py-3 bg-grey">
                             <div class="form-group col-md-6">
-                              <label for="inputNombreContacto">Nombre Contacto</label>
-                              <input class="form-control" type="text" id="inputNombreContacto">
+                              <label for="step2InputNombreContacto">Nombre Contacto</label>
+                              <input class="form-control" type="text" id="step2InputNombreContacto">
                             </div>
                             <div class="form-group col-md-6"> 
-                              <label for="inputEmail4">Email</label>
-                              <input class="form-control" type="email" id="inputEmail4">
+                              <label for="step2InputEmail">Email</label>
+                              <input class="form-control" type="email" id="step2InputEmail" required>
                             </div>
                             <div class="form-group col-md-6">
-                              <label for="inputEmail4">Telefono</label>
-                              <input class="form-control" type="email" id="inputEmail4">
+                              <label for="step2InputTelefono">Teléfono</label>
+                              <input class="form-control" type="text" id="step2InputTelefono" required>
                             </div>
                             <div class="form-group col-md-6"> 
                               <label for="inputPassword4">Comentario</label>
@@ -319,7 +319,7 @@
                 </div>
                 <hr><a class="previous action-buton btn btn-light mr-4" id="step3Prev">Anterior</a><a class="next action-buton btn btn-primary text-white" id="step3Next">Siguiente</a>
               </fieldset>
-              <fieldset class="w-100">
+              <fieldset class="w-100 step-remove">
                 <div class="row">
                   <div class="col">
                     <h2 class="fs-title">Diagnóstico Preventivo</h2>
@@ -452,7 +452,7 @@
                 </div>
                 <hr><a class="previous action-buton btn btn-light mr-4" id="step4Prev">Anterior</a><a class="next action-buton btn btn-primary text-white" id="step4Next">Siguiente</a>
               </fieldset>
-              <fieldset class="w-100">
+              <fieldset class="w-100 step-remove">
                 <div class="row">
                   <div class="col">
                     <h2 class="fs-title">Información del problema</h2>
@@ -551,36 +551,21 @@
                 <ul class="row px-4">
                   <li class="col-12 my-2">
                     <h2 class="fs-title py-2">Seleccionar rango de dias</h2>
-                    <div id="selectTypeOfTime"></div>
-                    <!--label(for="selectTypeOfTime") Tipo de horario-->
-                    <!--select#selectTypeOfTime.form-control
-                    each val in ['Lunes a viernes','Sabado','Domingo']
-                        option= val
-                    -->
+                    <input id="selectTypeOfTime">
                   </li>
                   <li class="col-12 my-4">
                     <h2 class="fs-title py-2">Seleccionar horario de apertura</h2>
-                    <div id="selectTimeStart"></div>
-                    <!--label(for="selectTimeStart") Apertura-->
-                    <!--select#selectTimeStart.form-control
-                    each val in ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00', '17:00','18:00','19:00']
-                        option= val
-                    -->
+                    <input id="selectTimeStart">
                   </li>
                   <li class="col-12 my-2">
                     <h2 class="fs-title py-2">Seleccionar horario de cierre</h2>
-                    <div id="selectTimeEnd"></div>
-                    <!--label(for="selectTimeEnd") Cierre-->
-                    <!--select#selectTimeEnd.form-control
-                    each val in ['19:00','20:00','21:00','22:00','23:00','01:00','02:00','03:00','04:00']
-                        option= val
-                    -->
+                    <input id="selectTimeEnd">
                   </li>
                 </ul>
                 <p class="text-right">
                   <button class="btn btn-outline-primary" id="agregarHorario">Agregar</button>
                 </p>
-                <div class="table-responsive">
+                <div class="table-responsive" id="step6TableHorarios">
                   <table class="table table-striped mt-4">
                     <thead>
                       <tr>
@@ -698,30 +683,90 @@
             <div class="pt-3 form-row">
               <div class="form-group col-6">
                 <label>Mandante</label>
-                <input class="form-control" type="text">
+                <select class="form-control">
+                  <option>Mandante 1</option>
+                  <option>Mandante 2</option>
+                  <option>Mandante 3</option>
+                  <option>Mandante 4</option>
+                  <option>Mandante 5</option>
+                  <option>Mandante 6</option>
+                  <option>Mandante 7</option>
+                  <option>Mandante 8</option>
+                  <option>Mandante 9</option>
+                </select>
+              </div>
+              <div class="form-group col-6">
+                <label>Modelo</label>
+                <select class="form-control">
+                  <option>Modelo 1</option>
+                  <option>Modelo 2</option>
+                  <option>Modelo 3</option>
+                  <option>Modelo 4</option>
+                  <option>Modelo 5</option>
+                  <option>Modelo 6</option>
+                  <option>Modelo 7</option>
+                  <option>Modelo 8</option>
+                  <option>Modelo 9</option>
+                </select>
               </div>
               <div class="form-group col-6">
                 <label>Logo</label>
-                <input class="form-control" type="text">
-              </div>
-              <div class="form-group col-6">
-                <label>Modelo</label>
-                <input class="form-control" type="text">
+                <select class="form-control">
+                  <option>Logo 1</option>
+                  <option>Logo 2</option>
+                  <option>Logo 3</option>
+                  <option>Logo 4</option>
+                  <option>Logo 5</option>
+                  <option>Logo 6</option>
+                  <option>Logo 7</option>
+                  <option>Logo 8</option>
+                  <option>Logo 9</option>
+                </select>
               </div>
               <div class="form-group col-6">
                 <label>Categoría de Máquina</label>
-                <input class="form-control" type="text">
+                <select class="form-control">
+                  <option>Categoría 1</option>
+                  <option>Categoría 2</option>
+                  <option>Categoría 3</option>
+                  <option>Categoría 4</option>
+                  <option>Categoría 5</option>
+                  <option>Categoría 6</option>
+                  <option>Categoría 7</option>
+                  <option>Categoría 8</option>
+                  <option>Categoría 9</option>
+                </select>
               </div>
               <div class="form-group col-6">
                 <label>Máquina</label>
-                <input class="form-control" type="text">
+                <select class="form-control">
+                  <option>Máquina 1</option>
+                  <option>Máquina 2</option>
+                  <option>Máquina 3</option>
+                  <option>Máquina 4</option>
+                  <option>Máquina 5</option>
+                  <option>Máquina 6</option>
+                  <option>Máquina 7</option>
+                  <option>Máquina 8</option>
+                  <option>Máquina 9</option>
+                </select>
               </div>
               <div class="form-group col-6">
                 <label>Modelo</label>
-                <input class="form-control" type="text">
+                <select class="form-control">
+                  <option>Modelo 1</option>
+                  <option>Modelo 2</option>
+                  <option>Modelo 3</option>
+                  <option>Modelo 4</option>
+                  <option>Modelo 5</option>
+                  <option>Modelo 6</option>
+                  <option>Modelo 7</option>
+                  <option>Modelo 8</option>
+                  <option>Modelo 9</option>
+                </select>
               </div>
               <div class="form-group col-6">
-                <label>Marca / Logo</label>
+                <label>Descripción de Maquina</label>
                 <input class="form-control" type="text">
               </div>
               <div class="form-group col-6">
@@ -817,6 +862,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <script src="assets/js/jquery.validate.min-dist.js"></script>
+    <script src="assets/js/additional-methods.min-dist.js"></script>
+    <script src="assets/js/rut-dist.js"></script>
+    <script src="assets/js/main-wizard-dist.js"></script>
     <script src="assets/js/main-dist.js"></script>
   </body>
 </html>

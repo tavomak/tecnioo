@@ -98,7 +98,7 @@ function minifyCss() {
 function minifyJs() {
     return (
         gulp
-        .src('./src/assets/js/main.js')
+        .src('./src/assets/js/*')
         .pipe(uglify()
             .on("error", notify.onError({
                 sound: true,
@@ -133,7 +133,7 @@ function watchFiles() {
     gulp.watch("./src/assets/scss/**/*", scss);
     gulp.watch("./src/pug/**/*", pugjs);
     gulp.watch("./dist/assets/css/main.css", minifyCss);
-    gulp.watch("./src/assets/js/main.js", minifyJs);
+    gulp.watch("./src/assets/js/**/*", minifyJs);
     gulp.watch("./src/assets/js/**/*", browserSyncReload);
     gulp.watch(
         [
