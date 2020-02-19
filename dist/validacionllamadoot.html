@@ -15,7 +15,7 @@
     <link href="images/webclip.png" rel="apple-touch-icon">
   </head>
   <body>
-    <nav class="tecnioo-navbar navbar bg-primary px-2 flex-row"><a class="navbar-brand tecnioo-navbar--wrap" href="#"><img class="tecnioo-navbar--wrap__img" src="./assets/img/avatar-2.png" alt="Tecnioo"></a>
+    <nav class="tecnioo-navbar navbar bg-primary px-2 flex-row"><a class="navbar-brand tecnioo-navbar--wrap" href="home.html"><img class="tecnioo-navbar--wrap__img" src="./assets/img/avatar-2.png" alt="Tecnioo"></a>
       <div class="navbar-nav-scroll">
         <ul class="navbar-nav flex-row">
           <li class="nav-item"><a class="nav-link text-white px-2" href="./llamados.html">Llamados</a>
@@ -43,9 +43,15 @@
     <main class="content-wrapper">
       <section class="container-fluid pt-5 pb-3 px-5">
         <div class="row">
-          <div class="col"><i class="fas fa-arrow-left mr-2"></i><i class="fas fa-phone mr-2"></i><span>#09346486358</span></div>
-          <div class="col"><i class="fas fa-layer-group pr-2"> </i>Urgencia de Cooler - [Modelo] - [Logo]</div>
-          <div class="col align-self-end text-right"><span>+24H</span></div>
+          <div class="col">
+            <h5><i class="fas fa-arrow-left mr-2"></i><i class="fas fa-phone mr-2"></i><span>#09346486358</span></h5>
+          </div>
+          <div class="col">
+            <h5><i class="fas fa-layer-group pr-2"> </i>Urgencia de Cooler - [Modelo] - [Logo]</h5>
+          </div>
+          <div class="col align-self-end text-right">
+            <h5><span>+24H</span></h5>
+          </div>
         </div>
         <hr class="mt-5">
         <div class="row">
@@ -116,36 +122,38 @@
                   </div>
                   <p class="mt-3"><small>Horario de atención</small></p>
                   <div class="card">
-                    <table class="table">
-                      <tr>
-                        <td>Lunes</td>
-                        <td class="text-right">9:00 a 20:00</td>
-                      </tr>
-                      <tr>
-                        <td>Martes</td>
-                        <td class="text-right">9:00 a 20:00</td>
-                      </tr>
-                      <tr>
-                        <td>Miercoles</td>
-                        <td class="text-right">9:00 a 20:00</td>
-                      </tr>
-                      <tr>
-                        <td>Jueves</td>
-                        <td class="text-right">9:00 a 20:00</td>
-                      </tr>
-                      <tr>
-                        <td>Viernes</td>
-                        <td class="text-right">9:00 a 20:00</td>
-                      </tr>
-                      <tr>
-                        <td>Sabado</td>
-                        <td class="text-right">9:00 a 20:00</td>
-                      </tr>
-                      <tr>
-                        <td>Domingo</td>
-                        <td class="text-right">9:00 a 20:00</td>
-                      </tr>
-                    </table>
+                    <div class="table-responsive" id="tableHorarios">
+                      <table class="table mt-4">
+                        <thead>
+                          <tr>
+                            <th scope="col"> <b>Días</b></th>
+                            <th scope="col"> <b>Apertura</b></th>
+                            <th scope="col"> <b>Cierre</b></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Lunes a: Domingo</td>
+                            <td>08:00 a: 15:00</td>
+                            <td>5:00 a: 23:59</td>
+                          </tr>
+                        </tbody>
+                        <tbody>
+                          <tr>
+                            <td>Lunes a: Domingo</td>
+                            <td>08:00 a: 15:00</td>
+                            <td>5:00 a: 23:59</td>
+                          </tr>
+                        </tbody>
+                        <tbody>
+                          <tr>
+                            <td>Lunes a: Domingo</td>
+                            <td>08:00 a: 15:00</td>
+                            <td>5:00 a: 23:59</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
                 <div class="col-6">
@@ -203,7 +211,11 @@
               <div class="card-body">
                 <div class="mb-4 d-flex"><span class="tecnioo-card--title__status bg-info"> </span>Pendiente de validación<span class="badge badge-primary p-2 ml-2 ml-auto">500 pts</span></div>
                 <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
-                <div class="d-flex justify-content-between"><a class="btn btn-outline-primary btn-sm">OT:9876554342</a><a class="btn btn-outline-secondary btn-sm">Check-in</a><a class="btn btn-outline-secondary btn-sm">Firma</a></div>
+                <div class="d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm">OT:9876554342</button>
+                  <button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#checkin" id="checkinBtn">Check-in</button>
+                  <button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#firma" id="firmaBtn">Firma</button>
+                </div>
                 <p class="mb-3 mt-5"><b>Nuevo Diagnóstico</b></p>
                 <p><span class="badge badge-secondary p-2">Solicitud de cambio de compresor</span></p>
                 <p class="mb-3 mt-5"><b>Observación del técnico
@@ -221,52 +233,206 @@
                 <div class="d-block btn btn-outline-danger btn-sm my-2">Rechazar y reagendar a otro técnico</div>
                 <div class="d-block btn btn-outline-danger btn-sm my-2">Rechazar y enviar programación</div>
               </div>
-            </div>
-            <ul class="d-flex my-4 align-items-center">
-              <li> 
-                <p class="m-0"><span class="tecnioo-card--title__status bg-info"></span></p>
-              </li>
-              <li class="w-100">
-                <div class="card">
-                  <div class="card-body"> 
-                    <div class="mb-4 d-flex"><i class="fas fa-layer-group mr-2"></i><span>#765756765757</span><span class="badge badge-primary p-2 ml-2 ml-auto">500 pts</span></div>
-                    <h6>Visitado Pendiente</h6>
-                    <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
+            </div><a href="#" data-toggle="modal" data-target="#estadoLlamado">
+              <ul class="d-flex my-4 align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-info"></span></p>
+                </li>
+                <li class="w-100">
+                  <div class="card">
+                    <div class="card-body"> 
+                      <div class="mb-4 d-flex"><i class="fas fa-layer-group mr-2"></i><span>#765756765757</span><span class="badge badge-primary p-2 ml-2 ml-auto">500 pts</span></div>
+                      <h6>Visitado Pendiente</h6>
+                      <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
+                    </div>
                   </div>
-                </div>
-              </li>
-            </ul>
-            <ul class="d-flex my-4 align-items-center">
-              <li> 
-                <p class="m-0"><span class="tecnioo-card--title__status bg-warning"></span></p>
-              </li>
-              <li class="w-100">
-                <div class="card">
-                  <div class="card-body"> 
-                    <div class="mb-4 d-flex"><i class="fas fa-layer-group mr-2"></i><span>#765756765757</span><span class="badge badge-primary p-2 ml-2 ml-auto">500 pts</span></div>
-                    <h6>Pendiente TCM</h6>
-                    <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
+                </li>
+              </ul></a><a href="#" data-toggle="modal" data-target="#estadoLlamado">
+              <ul class="d-flex my-4 align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-warning"></span></p>
+                </li>
+                <li class="w-100">
+                  <div class="card">
+                    <div class="card-body"> 
+                      <div class="mb-4 d-flex"><i class="fas fa-layer-group mr-2"></i><span>#765756765757</span><span class="badge badge-primary p-2 ml-2 ml-auto">500 pts</span></div>
+                      <h6>Pendiente TCM</h6>
+                      <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
+                    </div>
                   </div>
-                </div>
-              </li>
-            </ul>
-            <ul class="d-flex my-4 align-items-center">
-              <li> 
-                <p class="m-0"><span class="tecnioo-card--title__status bg-danger"></span></p>
-              </li>
-              <li class="w-100">
-                <div class="card">
-                  <div class="card-body"> 
-                    <div class="mb-4 d-flex"><i class="fas fa-layer-group mr-2"></i><span>#765756765757</span><span class="badge badge-primary p-2 ml-2 ml-auto">500 pts</span></div>
-                    <h6>Local Cerrado</h6>
-                    <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
+                </li>
+              </ul></a><a href="#" data-toggle="modal" data-target="#estadoLlamado">
+              <ul class="d-flex my-4 align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-danger"></span></p>
+                </li>
+                <li class="w-100">
+                  <div class="card">
+                    <div class="card-body"> 
+                      <div class="mb-4 d-flex"><i class="fas fa-layer-group mr-2"></i><span>#765756765757</span><span class="badge badge-primary p-2 ml-2 ml-auto">500 pts</span></div>
+                      <h6>Local Cerrado</h6>
+                      <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
+                    </div>
                   </div>
-                </div>
-              </li>
-            </ul>
+                </li>
+              </ul></a>
           </div>
         </div>
       </section>
+      <div class="modal fade" id="estadoLlamado" tabindex="-1" role="dialog" aria-labelledby="estadoLlamadoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <ul class="d-flex my-4 align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-info"></span></p>
+                </li>
+                <li class="w-100">
+                  <h5>Visitado Pendiente</h5>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-body">
+              <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
+              <p class="modal-title"> 
+                <div class="d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm">OT:9876554342</button>
+                  <button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal" id="checkinBtn">Check-in</button>
+                  <button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal" id="firmaBtn">Firma</button>
+                </div>
+              </p>
+              <p><b>Nuevo Diagnóstico</b>
+                <div class="card p-2">
+                  <div class="card-body p-0">
+                    <p class="m-0">Solicitud de cambio de compresor</p>
+                  </div>
+                </div>
+              </p>
+              <p><b>Observación del técnico</b>
+                <div class="card p-2">
+                  <div class="card-body p-0">
+                    <p class="m-0">El diagnostico estaba equivocado, solicito validar de nuevo</p>
+                  </div>
+                </div>
+              </p>
+              <p><b>Firma Cliente</b></p>
+              <p>
+                <button class="btn btn-outline-success btn-sm">Aprobado</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="checkin" tabindex="-1" role="dialog" aria-labelledby="checkinLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <ul class="d-flex my-4 align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-success"></span></p>
+                </li>
+                <li class="w-100">
+                  <h5>Visitado Pendiente</h5>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-body">
+              <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
+              <p class="modal-title"> 
+                <div class="d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm">OT:9876554342</button>
+                  <button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#checkin" id="checkinBtn">Check-in</button>
+                  <button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal" id="firmaBtn">Firma</button>
+                </div>
+              </p>
+              <p><b>Estado del Check-in</b>
+                <div class="card p-2">
+                  <div class="card-body p-0">
+                    <p class="m-0">Ok</p>
+                  </div>
+                </div>
+              </p>
+              <div class="card">
+                <div class="card-body">
+                  <div class="table">
+                    <tr>
+                      <td>Burguer King Pedro de Fontova</td>
+                      <td class="text-right">ID: 9676</td>
+                    </tr>
+                  </div>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.01075626506!2d-70.58617688480206!3d-33.39688358078929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2ddbca25c3%3A0x94faa92657957dde!2sAv%20Vitacura%205250%2C%20of.%20308%2C%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1579371739262!5m2!1ses-419!2scl" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                  <table class="table">
+                    <tr>
+                      <td>Ubicación</td>
+                      <td class="text-right">Providencia 701</td>
+                    </tr>
+                    <tr>
+                      <td>Comuna</td>
+                      <td class="text-right">Providencia</td>
+                    </tr>
+                    <tr>
+                      <td>Zona TCM </td>
+                      <td class="text-right">Santiago</td>
+                    </tr>
+                    <tr>
+                      <td>Coordenadas</td>
+                      <td class="text-right">-33.68735, -70.378273</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="firma" tabindex="-1" role="dialog" aria-labelledby="firmaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <ul class="d-flex my-4 align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-success"></span></p>
+                </li>
+                <li class="w-100">
+                  <h5>Cierre OK</h5>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-body">
+              <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
+              <p class="modal-title"> 
+                <div class="d-flex justify-content-between">
+                  <button class="btn btn-outline-primary btn-sm">OT:9876554342</button>
+                  <button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#checkin" id="checkinBtn">Check-in</button>
+                  <button class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#firma" id="firmaBtn">Firma</button>
+                </div>
+              </p>
+              <p><b>Firma Cliente</b></p>
+              <p>
+                <button class="btn btn-outline-success btn-sm">Aprobado</button>
+              </p>
+              <form>
+                <div class="form-group">
+                  <label for="inputNombreContacto">Nombre Contacto</label>
+                  <input class="form-control" type="text" id="inputNombreContacto" placeholder="Sebastian Morales">
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail">Rut</label>
+                  <input class="form-control Rut" type="text" id="inputRut" placeholder="15.722.353-4">
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail">Email</label>
+                  <input class="form-control" type="email" id="inputEmail" placeholder="s@4pthech.com">
+                </div>
+                <div class="form-group">
+                  <label for="inputFirma">Firma</label>
+                  <textatea class="form-control" type="text" id="inputFirma" style="height: 160px;"></textatea>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

@@ -7,32 +7,35 @@
     .input-group
         .input-group-prepend
             label.input-group-text.form-control(for="#step2SelectClientType") Seleccione la sucursal donde se encuentra la maquina
-        select.custom-select.form-control#step2SelectClientType
+        select.custom-select.form-control.w-100#step2SelectClientType
             option Seleccionar
             - for (var x = 0; x < 30; x++)
                 option= 'Sucursal '+ x  
+    p.text-right.m-0
+        a.btn.btn-outline-primary.btn-sm.mt-3#step1NuevaSucursal(href="#" data-toggle="modal" data-target="#modalNuevaSucursal") Nueva Sucursal
 .col-12.mt-4.bk-step2-hidden
     h2.fs-title Contacto asignado
     hr
     ul.pl-0.mb-3.custom-control.custom-radio#step2checkboxContact
             li.my-2
                 ul.tecnioo-card.d-flex.align-items-center
-                    li.form-row.tecnioo-card--item.px-2.py-3.bg-grey
-                        .form-group.col-md-6
-                            label(for="step2InputNombreContacto") Nombre Contacto
-                            input.form-control(type="text" id="step2InputNombreContacto")  
-                        
-                        .form-group.col-md-6 
-                            label(for="step2InputEmail") Email
-                            input.form-control(type="email" id="step2InputEmail" required)
+                    li
+                        form.form-row.tecnioo-card--item.px-2.py-3.bg-grey.inputsFormulario
+                            .form-group.col-md-6
+                                label(for="step2InputNombreContacto") Nombre Contacto
+                                input.form-control(type="text" id="step2InputNombreContacto")  
                             
-                        .form-group.col-md-6
-                            label(for="step2InputTelefono") Teléfono
-                            input.form-control(type="text" id="step2InputTelefono" required)
-                        
-                        .form-group.col-md-6 
-                            label(for="inputPassword4") Comentario
-                            input.form-control(type="password" id="inputPassword4" )
+                            .form-group.col-md-6 
+                                label(for="step2InputEmail") Email
+                                input.form-control(type="email" id="step2InputEmail" required)
+                                
+                            .form-group.col-md-6
+                                label(for="step1SelectCallType") Teléfono
+                                input.form-control(type="number" id="step2InputTelefono"  pattern="[0-9]{9}" max="9" required)
+                            
+                            .form-group.col-md-6 
+                                label(for="step2InputComentario") Comentario
+                                input.form-control.inputTelefono(type="text" id="step2InputComentario" required)
 
 .col.mt-4
     h2.fs-title Información sobre el tipo de llamado

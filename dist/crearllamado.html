@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css">
   </head>
   <body>
-    <nav class="tecnioo-navbar navbar bg-primary px-2 flex-row"><a class="navbar-brand tecnioo-navbar--wrap" href="#"><img class="tecnioo-navbar--wrap__img" src="./assets/img/avatar-2.png" alt="Tecnioo"></a>
+    <nav class="tecnioo-navbar navbar bg-primary px-2 flex-row"><a class="navbar-brand tecnioo-navbar--wrap" href="home.html"><img class="tecnioo-navbar--wrap__img" src="./assets/img/avatar-2.png" alt="Tecnioo"></a>
       <div class="navbar-nav-scroll">
         <ul class="navbar-nav flex-row">
           <li class="nav-item"><a class="nav-link text-white px-2" href="./llamados.html">Llamados</a>
@@ -153,7 +153,7 @@
                       <div class="input-group-prepend">
                         <label class="input-group-text form-control" for="#step2SelectClientType">Seleccione la sucursal donde se encuentra la maquina</label>
                       </div>
-                      <select class="custom-select form-control" id="step2SelectClientType">
+                      <select class="custom-select form-control w-100" id="step2SelectClientType">
                         <option>Seleccionar</option>
                         <option>Sucursal 0</option>
                         <option>Sucursal 1</option>
@@ -187,6 +187,7 @@
                         <option>Sucursal 29</option>
                       </select>
                     </div>
+                    <p class="text-right m-0"><a class="btn btn-outline-primary btn-sm mt-3" id="step1NuevaSucursal" href="#" data-toggle="modal" data-target="#modalNuevaSucursal">Nueva Sucursal</a></p>
                   </div>
                   <div class="col-12 mt-4 bk-step2-hidden">
                     <h2 class="fs-title">Contacto asignado</h2>
@@ -194,23 +195,25 @@
                     <ul class="pl-0 mb-3 custom-control custom-radio" id="step2checkboxContact">
                       <li class="my-2">
                         <ul class="tecnioo-card d-flex align-items-center">
-                          <li class="form-row tecnioo-card--item px-2 py-3 bg-grey">
-                            <div class="form-group col-md-6">
-                              <label for="step2InputNombreContacto">Nombre Contacto</label>
-                              <input class="form-control" type="text" id="step2InputNombreContacto">
-                            </div>
-                            <div class="form-group col-md-6"> 
-                              <label for="step2InputEmail">Email</label>
-                              <input class="form-control" type="email" id="step2InputEmail" required>
-                            </div>
-                            <div class="form-group col-md-6">
-                              <label for="step2InputTelefono">Teléfono</label>
-                              <input class="form-control" type="text" id="step2InputTelefono" required>
-                            </div>
-                            <div class="form-group col-md-6"> 
-                              <label for="inputPassword4">Comentario</label>
-                              <input class="form-control" type="password" id="inputPassword4">
-                            </div>
+                          <li>
+                            <form class="form-row tecnioo-card--item px-2 py-3 bg-grey inputsFormulario">
+                              <div class="form-group col-md-6">
+                                <label for="step2InputNombreContacto">Nombre Contacto</label>
+                                <input class="form-control" type="text" id="step2InputNombreContacto">
+                              </div>
+                              <div class="form-group col-md-6"> 
+                                <label for="step2InputEmail">Email</label>
+                                <input class="form-control" type="email" id="step2InputEmail" required>
+                              </div>
+                              <div class="form-group col-md-6">
+                                <label for="step1SelectCallType">Teléfono</label>
+                                <input class="form-control" type="number" id="step2InputTelefono" pattern="[0-9]{9}" max="9" required>
+                              </div>
+                              <div class="form-group col-md-6"> 
+                                <label for="step2InputComentario">Comentario</label>
+                                <input class="form-control inputTelefono" type="text" id="step2InputComentario" required>
+                              </div>
+                            </form>
                           </li>
                         </ul>
                       </li>
@@ -258,9 +261,10 @@
                             <label class="custom-control-label" for="checkboxForMachine-0"></label>
                           </li>
                           <li class="tecnioo-card--item p-2 bg-grey w-100 row align-items-center">
-                            <div class="col-4 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Maquina Modelo]</b></span></div>
-                            <div class="col-4 tecnioo-card--place"> <span class="pl-2">[Maquina Código]</span></div>
-                            <div class="col-4">
+                            <div class="col-3 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Tipo de máquina]</b></span></div>
+                            <div class="col-3 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Maquina Modelo]</b></span></div>
+                            <div class="col-3 tecnioo-card--place"> <span class="pl-2">[Maquina Código]</span></div>
+                            <div class="col-3">
                               <div class="tecnioo-card--img m-auto"><img class="w-100" src="./assets/img/logo-cristal.jpg" alt=""></div>
                             </div>
                           </li>
@@ -273,9 +277,10 @@
                             <label class="custom-control-label" for="checkboxForMachine-1"></label>
                           </li>
                           <li class="tecnioo-card--item p-2 bg-grey w-100 row align-items-center">
-                            <div class="col-4 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Maquina Modelo]</b></span></div>
-                            <div class="col-4 tecnioo-card--place"> <span class="pl-2">[Maquina Código]</span></div>
-                            <div class="col-4">
+                            <div class="col-3 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Tipo de máquina]</b></span></div>
+                            <div class="col-3 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Maquina Modelo]</b></span></div>
+                            <div class="col-3 tecnioo-card--place"> <span class="pl-2">[Maquina Código]</span></div>
+                            <div class="col-3">
                               <div class="tecnioo-card--img m-auto"><img class="w-100" src="./assets/img/logo-cristal.jpg" alt=""></div>
                             </div>
                           </li>
@@ -288,9 +293,10 @@
                             <label class="custom-control-label" for="checkboxForMachine-2"></label>
                           </li>
                           <li class="tecnioo-card--item p-2 bg-grey w-100 row align-items-center">
-                            <div class="col-4 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Maquina Modelo]</b></span></div>
-                            <div class="col-4 tecnioo-card--place"> <span class="pl-2">[Maquina Código]</span></div>
-                            <div class="col-4">
+                            <div class="col-3 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Tipo de máquina]</b></span></div>
+                            <div class="col-3 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Maquina Modelo]</b></span></div>
+                            <div class="col-3 tecnioo-card--place"> <span class="pl-2">[Maquina Código]</span></div>
+                            <div class="col-3">
                               <div class="tecnioo-card--img m-auto"><img class="w-100" src="./assets/img/logo-cristal.jpg" alt=""></div>
                             </div>
                           </li>
@@ -303,9 +309,10 @@
                             <label class="custom-control-label" for="checkboxForMachine-3"></label>
                           </li>
                           <li class="tecnioo-card--item p-2 bg-grey w-100 row align-items-center">
-                            <div class="col-4 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Maquina Modelo]</b></span></div>
-                            <div class="col-4 tecnioo-card--place"> <span class="pl-2">[Maquina Código]</span></div>
-                            <div class="col-4">
+                            <div class="col-3 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Tipo de máquina]</b></span></div>
+                            <div class="col-3 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Maquina Modelo]</b></span></div>
+                            <div class="col-3 tecnioo-card--place"> <span class="pl-2">[Maquina Código]</span></div>
+                            <div class="col-3">
                               <div class="tecnioo-card--img m-auto"><img class="w-100" src="./assets/img/logo-cristal.jpg" alt=""></div>
                             </div>
                           </li>
@@ -602,6 +609,14 @@
                   <td>77.889.654-0</td>
                 </tr>
                 <tr> 
+                  <th scope="row">Dirección</th>
+                  <td>77.889.654-0</td>
+                </tr>
+                <tr> 
+                  <th scope="row">Comuna</th>
+                  <td>Providencia </td>
+                </tr>
+                <tr> 
                   <th scope="row">Sucursal</th>
                   <td>Sucursal 0</td>
                 </tr>
@@ -643,6 +658,40 @@
                   <td> 
                     <div class="tecnioo-card--img m-auto"><img class="w-100" src="./assets/img/logo-cristal.jpg" alt=""></div>
                   </td>
+                </tr>
+              </tbody>
+            </table>
+            <h5>Información del problema</h5>
+            <table class="table">
+              <tbody>
+                <tr> 
+                  <th scope="row">1</th>
+                  <td>No Enfría</td>
+                </tr>
+                <tr> 
+                  <th scope="row">2</th>
+                  <td>No Funciona</td>
+                </tr>
+                <tr> 
+                  <th scope="row">3</th>
+                  <td>Cambiar Compresor</td>
+                </tr>
+              </tbody>
+            </table>
+            <h5>Horarios de atención</h5>
+            <table class="table">
+              <tbody>
+                <tr> 
+                  <th scope="row">Días</th>
+                  <td>De: Lunes a: Domingo</td>
+                </tr>
+                <tr> 
+                  <th scope="row">Apertura</th>
+                  <td>De: 08:00 a: 15:00</td>
+                </tr>
+                <tr> 
+                  <th scope="row">Cierre</th>
+                  <td>De: 15:00 a: 23:59</td>
                 </tr>
               </tbody>
             </table>
@@ -808,6 +857,14 @@
                   <td>77.889.654-0</td>
                 </tr>
                 <tr> 
+                  <th scope="row">Dirección</th>
+                  <td>77.889.654-0</td>
+                </tr>
+                <tr> 
+                  <th scope="row">Comuna</th>
+                  <td>Providencia </td>
+                </tr>
+                <tr> 
                   <th scope="row">Sucursal</th>
                   <td>Sucursal 0</td>
                 </tr>
@@ -852,7 +909,119 @@
                 </tr>
               </tbody>
             </table>
+            <h5>Información del problema</h5>
+            <table class="table">
+              <tbody>
+                <tr> 
+                  <th scope="row">1</th>
+                  <td>No Enfría</td>
+                </tr>
+                <tr> 
+                  <th scope="row">2</th>
+                  <td>No Funciona</td>
+                </tr>
+                <tr> 
+                  <th scope="row">3</th>
+                  <td>Cambiar Compresor</td>
+                </tr>
+              </tbody>
+            </table>
+            <h5>Horarios de atención</h5>
+            <table class="table">
+              <tbody>
+                <tr> 
+                  <th scope="row">Días</th>
+                  <td>De: Lunes a: Domingo</td>
+                </tr>
+                <tr> 
+                  <th scope="row">Apertura</th>
+                  <td>De: 08:00 a: 15:00</td>
+                </tr>
+                <tr> 
+                  <th scope="row">Cierre</th>
+                  <td>De: 15:00 a: 23:59</td>
+                </tr>
+              </tbody>
+            </table>
             <p class="text-center"><a class="btn btn-danger my-5" href="#">Enviar Solicitud</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalNuevaSucursal" tabindex="-1" role="dialog" aria-labelledby="modalNuevaSucursalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4>Nueva Sucursal Para</h4>
+          </div>
+          <div class="modal-body">
+            <div class="card p-2 mb-4">
+              <div class="card-body p-0">
+                <p><small>77.889.098-3</small></p>
+                <p><b>Nombre de cliente Spot</b></p>
+              </div>
+            </div>
+            <form>
+              <div class="form-group">
+                <label for="inputNombreSucursalAdd">Nombre Sucursal</label>
+                <input class="form-control" type="text" id="inputNombreSucursalAdd">
+              </div>
+              <div class="form-group">
+                <label for="inputDireccionAdd">Dirección</label>
+                <input class="form-control" type="text" id="inputDireccionAdd">
+              </div>
+              <div class="form-group">
+                <label for="inputNumeración">Numeración</label>
+                <input class="form-control" type="text" id="inputNumeraciónAdd">
+              </div>
+              <div class="form-group">
+                <select class="custom-select form-control">
+                  <option>Seleccionar</option>
+                  <option>Comuna 0</option>
+                  <option>Comuna 1</option>
+                  <option>Comuna 2</option>
+                  <option>Comuna 3</option>
+                  <option>Comuna 4</option>
+                  <option>Comuna 5</option>
+                  <option>Comuna 6</option>
+                  <option>Comuna 7</option>
+                  <option>Comuna 8</option>
+                  <option>Comuna 9</option>
+                  <option>Comuna 10</option>
+                  <option>Comuna 11</option>
+                  <option>Comuna 12</option>
+                  <option>Comuna 13</option>
+                  <option>Comuna 14</option>
+                  <option>Comuna 15</option>
+                  <option>Comuna 16</option>
+                  <option>Comuna 17</option>
+                  <option>Comuna 18</option>
+                  <option>Comuna 19</option>
+                  <option>Comuna 20</option>
+                  <option>Comuna 21</option>
+                  <option>Comuna 22</option>
+                  <option>Comuna 23</option>
+                  <option>Comuna 24</option>
+                  <option>Comuna 25</option>
+                  <option>Comuna 26</option>
+                  <option>Comuna 27</option>
+                  <option>Comuna 28</option>
+                  <option>Comuna 29</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input step5SelectCheckbox" type="checkbox" id="checkboxFornuevaSucursalAdd">
+                  <label class="custom-control-label" for="checkboxFornuevaSucursalAdd">¿En Casa Matríz?</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputIDSucursal">ID de la Sucursal</label>
+                <input class="form-control" type="text" id="inputIDSucursalAdd">
+              </div>
+            </form>
+            <p class="text-center"><a class="btn btn-primary" href="#">Crear Nueva Sucursal</a></p>
+            <p class="text-center"><a href="#">Cancelar</a></p>
           </div>
         </div>
       </div>

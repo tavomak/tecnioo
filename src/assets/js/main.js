@@ -35,6 +35,16 @@ $(function () {
         }
     }); */
 
+    $('.inputsFormulario').on('keyup keypress', function (e) {
+        if ($(this).valid()) {
+            console.log('Validado')
+          $('#boton_enviar').prop('disabled', false);
+        } else {
+            console.log('No Validado')
+          $('#boton_enviar').prop('disabled', true);
+        }
+      });
+
     //Mensajes Personalizados
     jQuery.extend(jQuery.validator.messages, {
         required: "Este campo es obligatorio",
