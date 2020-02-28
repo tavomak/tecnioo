@@ -128,6 +128,51 @@ block mainContent
                     p.text-center
                         a.btn.btn-danger.my-5(href="#") Enviar Solicitud
 
+    .modal.fade(id="modalNuevaSucursal" tabindex="-1" role="dialog" aria-labelledby="modalNuevaSucursalLabel" aria-hidden="true")
+        .modal-dialog(role="document")
+            .modal-content
+                .modal-header
+                    h4 Nueva Sucursal Para
+                .modal-body
+                    .card.p-2.mb-4
+                        .card-body.p-0
+                            p
+                                small 77.889.098-3
+                            p
+                                b Nombre de cliente Spot
+                    form
+                        .form-group
+                            label(for="inputNombreSucursalAdd") Nombre Sucursal
+                            input.form-control(type="text"  id="inputNombreSucursalAdd")  
+                        
+                        .form-group
+                            label(for="inputDireccionAdd") Dirección
+                            input.form-control(type="text"  id="inputDireccionAdd")
+                        
+                        .form-group
+                            label(for="inputNumeración") Numeración
+                            input.form-control(type="text"  id="inputNumeraciónAdd")
+                        
+                        
+                        .form-group
+                            select.custom-select.form-control
+                                option Seleccionar
+                                - for (var x = 0; x < 30; x++)
+                                    option= 'Comuna '+ x 
+                        .form-group
+                            .custom-control.custom-checkbox
+                                input.custom-control-input.step5SelectCheckbox(type="checkbox" id="checkboxFornuevaSucursalAdd")
+                                label(class="custom-control-label" for="checkboxFornuevaSucursalAdd") ¿En Casa Matríz?
+
+                        .form-group
+                            label(for="inputIDSucursal") ID de la Sucursal
+                            input.form-control(type="text"  id="inputIDSucursalAdd")
+
+                    p.text-center
+                        a.btn.btn-primary(href="#") Crear Nueva Sucursal
+                    p.text-center
+                        a(href="#") Cancelar
+
     block scripts 
         script(
             src="https://code.jquery.com/jquery-3.4.1.min.js"

@@ -1,7 +1,7 @@
 extends ../layout/_header
 
 block append config
-    -var pageTitle = 'Vaalidación llamado OT'
+    -var pageTitle = 'Detalle Llamado'
     -var pageDescription = ''
     -var baseDir = ''
     -var linkSrc = ''
@@ -11,14 +11,17 @@ block mainContent
         section.container-fluid.pt-5.pb-3.px-5
             .row
                 .col
-                    i.fas.fa-arrow-left.mr-2
-                    i.fas.fa-phone.mr-2
-                    span #09346486358
+                    h5
+                        i.fas.fa-arrow-left.mr-2
+                        i.fas.fa-phone.mr-2
+                        span #09346486358
                 .col
-                    i.fas.fa-layer-group.pr-2 
-                    | Urgencia de Cooler - [Modelo] - [Logo]
+                    h5
+                        i.fas.fa-layer-group.pr-2 
+                        | Urgencia de Cooler - [Modelo] - [Logo]
                 .col.align-self-end.text-right
-                    span +24H
+                    h5
+                        span +24H
             hr.mt-5
             .row
                 .col-8
@@ -82,11 +85,22 @@ block mainContent
                                 p.mt-3
                                     small Horario de atención
                                 .card
-                                    table.table
-                                        each val in ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo']
-                                            tr
-                                                td=val
-                                                td.text-right 9:00 a 20:00
+                                    .table-responsive#tableHorarios
+                                        table.table.mt-4
+                                                thead
+                                                    tr
+                                                        th( scope="col") 
+                                                            b Días
+                                                        th( scope="col") 
+                                                            b Apertura
+                                                        th( scope="col") 
+                                                            b Cierre
+                                                - for (var i = 1; i < 4; ++i) 
+                                                    tbody
+                                                        tr
+                                                            td Lunes a: Domingo
+                                                            td 08:00 a: 15:00
+                                                            td 5:00 a: 23:59
 
                             .col-6
                                 p.mb-1 
@@ -137,20 +151,38 @@ block mainContent
                                 span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
                             p
                                 i.fas.fa-user-circle.pr-2
-                                |Sin Asignación
+                                |Juan Peréz
                             .d-flex.justify-content-between
-                                a.btn.btn-outline-primary.btn-sm OT:9876554342
-                                a.btn.btn-outline-secondary.btn-sm Check-in
-                                a.btn.btn-outline-secondary.btn-sm Firma
+                                button.btn.btn-outline-primary.btn-sm OT:9876554342
+                                button.btn.btn-outline-secondary.btn-sm(data-toggle="modal" data-target="#checkin" id="checkinBtn") Check-in
+                                button.btn.btn-outline-secondary.btn-sm(data-toggle="modal" data-target="#firma" id="firmaBtn") Firma
                             p.mb-3.mt-5
-                                b Nuevo Diagnóstico
+                                b Solución
                             p
-                                span.badge.badge-secondary.p-2 Solicitud de cambio de compresor
+                                span.badge.badge-info.p-2.mr-2 Limpieza del condensador
+                                span.badge.badge-info.p-2.mr-2 Filtro tapado
+                                span.badge.badge-info.p-2.mr-2 Termostato
+                            p.mb-3.mt-5
+                                b Causa
+                            p
+                                span.badge.badge-info.p-2.mr-2 Desgaste
+                            p.mb-3.mt-5
+                                b Acción
+                            p
+                                span.badge.badge-info.p-2.mr-2 Cambio
+                            p.mb-3.mt-5
+                                b Repuesto
+                            p
+                                span.badge.badge-info.p-2.mr-2 2 Filtro MN678
+                                span.badge.badge-info.p-2.mr-2 1Manguera 456
                             p.mb-3.mt-5
                                 b Observación del técnico
                                     .card
                                         .card-body
-                                            p El diagnóstico estaba equivocado, solicito validar de nuevo.
+                                            p se deja ok el equipo
+                            p.mb-3.mt-5
+                                b Foto
+                                img(src="https://aakruthigroup.com/wp-content/uploads/2017/09/gallery-dummy-img-1.jpg", alt="").w-100
                             p.mb-3.mt-5
                                 b Firma Cliente
                             p
@@ -162,56 +194,178 @@ block mainContent
                             .d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y reagendar al mismo técnico
                             .d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y reagendar a otro técnico
                             .d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y enviar programación
-                    
-                    ul.d-flex.my-4.align-items-center
-                        li 
-                            p.m-0
-                                span.tecnioo-card--title__status.bg-info
-                        li.w-100
-                            .card
-                                .card-body  
-                                    .mb-4.d-flex
-                                        i.fas.fa-layer-group.mr-2
-                                        span #765756765757
-                                        span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
-                                    h6 Visitado Pendiente
-                                    p
-                                        i.fas.fa-user-circle.pr-2
-                                        |Sin Asignación
+                    a(href="#" data-toggle="modal" data-target="#estadoLlamado")
+                        ul.d-flex.my-4.align-items-center
+                            li 
+                                p.m-0
+                                    span.tecnioo-card--title__status.bg-info
+                            li.w-100
+                                .card
+                                    .card-body  
+                                        .mb-4.d-flex
+                                            i.fas.fa-layer-group.mr-2
+                                            span #765756765757
+                                            span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
+                                        h6 Visitado Pendiente
+                                        p
+                                            i.fas.fa-user-circle.pr-2
+                                            |Sin Asignación
 
+                    a(href="#" data-toggle="modal" data-target="#estadoLlamado")
+                        ul.d-flex.my-4.align-items-center
+                            li 
+                                p.m-0
+                                    span.tecnioo-card--title__status.bg-warning
+                            li.w-100
+                                .card
+                                    .card-body  
+                                        .mb-4.d-flex
+                                            i.fas.fa-layer-group.mr-2
+                                            span #765756765757
+                                            span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
+                                        h6 Pendiente TCM
+                                        p
+                                            i.fas.fa-user-circle.pr-2
+                                            |Sin Asignación
+                    a(href="#" data-toggle="modal" data-target="#estadoLlamado")
+                        ul.d-flex.my-4.align-items-center
+                            li 
+                                p.m-0
+                                    span.tecnioo-card--title__status.bg-danger
+                            li.w-100
+                                .card
+                                    .card-body  
+                                        .mb-4.d-flex
+                                            i.fas.fa-layer-group.mr-2
+                                            span #765756765757
+                                            span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
+                                        h6 Local Cerrado
+                                        p
+                                            i.fas.fa-user-circle.pr-2
+                                            |Sin Asignación
 
-                    ul.d-flex.my-4.align-items-center
-                        li 
-                            p.m-0
-                                span.tecnioo-card--title__status.bg-warning
-                        li.w-100
-                            .card
-                                .card-body  
-                                    .mb-4.d-flex
-                                        i.fas.fa-layer-group.mr-2
-                                        span #765756765757
-                                        span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
-                                    h6 Pendiente TCM
-                                    p
-                                        i.fas.fa-user-circle.pr-2
-                                        |Sin Asignación
-
-                    ul.d-flex.my-4.align-items-center
-                        li 
-                            p.m-0
-                                span.tecnioo-card--title__status.bg-danger
-                        li.w-100
-                            .card
-                                .card-body  
-                                    .mb-4.d-flex
-                                        i.fas.fa-layer-group.mr-2
-                                        span #765756765757
-                                        span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
-                                    h6 Local Cerrado
-                                    p
-                                        i.fas.fa-user-circle.pr-2
-                                        |Sin Asignación
-
-
-
+        .modal.fade(id="estadoLlamado" tabindex="-1" role="dialog" aria-labelledby="estadoLlamadoLabel" aria-hidden="true")
+            .modal-dialog.modal-sm(role="document")
+                .modal-content
+                    .modal-header
+                        ul.d-flex.my-4.align-items-center
+                            li 
+                                p.m-0
+                                    span.tecnioo-card--title__status.bg-info
+                            li.w-100
+                                h5 Visitado Pendiente
+                    .modal-body
+                        p
+                            i.fas.fa-user-circle.pr-2
+                            |Sin Asignación
+                        p.modal-title 
+                            .d-flex.justify-content-between
+                                button.btn.btn-outline-primary.btn-sm OT:9876554342
+                                button.btn.btn-outline-secondary.btn-sm(data-toggle="modal" data-target="#exampleModal" id="checkinBtn") Check-in
+                                button.btn.btn-outline-secondary.btn-sm(data-toggle="modal" data-target="#exampleModal" id="firmaBtn") Firma
+                        p
+                            b Nuevo Diagnóstico
+                            .card.p-2
+                                .card-body.p-0
+                                    p.m-0 Solicitud de cambio de compresor
+                        p
+                            b Observación del técnico
+                            .card.p-2
+                                .card-body.p-0
+                                    p.m-0 El diagnostico estaba equivocado, solicito validar de nuevo
+                        p
+                            b Firma Cliente
+                        p
+                            button.btn.btn-outline-success.btn-sm Aprobado
+        
+        .modal.fade(id="checkin" tabindex="-1" role="dialog" aria-labelledby="checkinLabel" aria-hidden="true")
+            .modal-dialog(role="document")
+                .modal-content
+                    .modal-header
+                        ul.d-flex.my-4.align-items-center
+                            li 
+                                p.m-0
+                                    span.tecnioo-card--title__status.bg-success
+                            li.w-100
+                                h5 Visitado Pendiente
+                    .modal-body
+                        p
+                            i.fas.fa-user-circle.pr-2
+                            |Sin Asignación
+                        p.modal-title 
+                            .d-flex.justify-content-between
+                                button.btn.btn-outline-primary.btn-sm OT:9876554342
+                                button.btn.btn-outline-secondary.btn-sm(data-toggle="modal" data-target="#checkin" id="checkinBtn") Check-in
+                                button.btn.btn-outline-secondary.btn-sm(data-toggle="modal" data-target="#exampleModal" id="firmaBtn") Firma
+                        p
+                            b Estado del Check-in
+                            .card.p-2
+                                .card-body.p-0
+                                    p.m-0 Ok
+                        .card
+                            .card-body
+                                .table
+                                    tr
+                                        td Burguer King Pedro de Fontova
+                                        td.text-right ID: 9676
+                                iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.01075626506!2d-70.58617688480206!3d-33.39688358078929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2ddbca25c3%3A0x94faa92657957dde!2sAv%20Vitacura%205250%2C%20of.%20308%2C%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1579371739262!5m2!1ses-419!2scl"
+                                width="100%" 
+                                height="150" 
+                                frameborder="0" 
+                                style="border:0;" 
+                                allowfullscreen="")
+                                table.table
+                                    tr
+                                        td Ubicación
+                                        td.text-right Providencia 701
+                                    tr
+                                        td Comuna
+                                        td.text-right Providencia
+                                    tr
+                                        td Zona TCM 
+                                        td.text-right Santiago
+                                    tr
+                                        td Coordenadas
+                                        td.text-right -33.68735, -70.378273
+        
+        .modal.fade(id="firma" tabindex="-1" role="dialog" aria-labelledby="firmaLabel" aria-hidden="true")
+            .modal-dialog.modal-sm(role="document")
+                .modal-content
+                    .modal-header
+                        ul.d-flex.my-4.align-items-center
+                            li 
+                                p.m-0
+                                    span.tecnioo-card--title__status.bg-success
+                            li.w-100
+                                h5 Cierre OK
+                    .modal-body
+                        p
+                            i.fas.fa-user-circle.pr-2
+                            |Sin Asignación
+                        p.modal-title 
+                            .d-flex.justify-content-between
+                                button.btn.btn-outline-primary.btn-sm OT:9876554342
+                                button.btn.btn-outline-secondary.btn-sm(data-toggle="modal" data-target="#checkin" id="checkinBtn") Check-in
+                                button.btn.btn-outline-secondary.btn-sm(data-toggle="modal" data-target="#firma" id="firmaBtn") Firma
+                        p
+                            b Firma Cliente
+                        p
+                            button.btn.btn-outline-success.btn-sm Aprobado
+                        form
+                            .form-group
+                                label(for="inputNombreContacto") Nombre Contacto
+                                input.form-control(type="text"  id="inputNombreContacto" placeholder="Sebastian Morales")  
+                            
+                            .form-group
+                                label(for="inputEmail") Rut
+                                input.form-control.Rut(type="text"  id="inputRut" placeholder="15.722.353-4")
+                            
+                            .form-group
+                                label(for="inputEmail") Email
+                                input.form-control(type="email"  id="inputEmail" placeholder="s@4pthech.com")
+                            
+                            .form-group
+                                label(for="inputFirma") Firma
+                                textatea.form-control(type="text"  id="inputFirma" style="height: 160px;")
+                                        
     include ../layout/_scripts
