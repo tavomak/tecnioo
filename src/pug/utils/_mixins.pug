@@ -79,6 +79,25 @@ mixin tableRow(color, cierre, asingacion, sla)
             b=sla
         td Nombre Sucursal - Cliente Spot
         td Providencia
+mixin tableRow2(tecnico, tipo, zona, llamados, locales, ptsprogramados, ptosompletados, cumplimiento, inicio, cierre)
+    tr 
+        td 
+            i.fas.fa-user-circle.mr-2
+            span=tecnico
+        td #12345789
+        td 
+            b Urgencia Cooler - Modelo - Logo
+        td 0
+        td
+            if color == "success"
+                b(class="text-color-"+color) 14/02/2020
+            else
+                b(class="text-color-"+color)=cierre
+        td=asingacion
+        td
+            b=sla
+        td Nombre Sucursal - Cliente Spot
+        td Providencia
 mixin llamadosCard1(id, ticketText, badget1, badget2, badget3, direccion, statustext, ptos, hrs, asing)
     li.mt-2.pt-2.bg-white
         a(href="#")

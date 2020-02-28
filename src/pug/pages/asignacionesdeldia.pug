@@ -27,56 +27,21 @@ block mainContent
                         table.table.table-striped.mt-4
                             thead
                                 tr
-                                    th(scope="col") Creacion
-                                    th(scope="col") Ticket
-                                    th(scope="col") Tipo de Llamado
-                                    th(scope="col") Ots
-                                    th(scope="col") Último Cierre
-                                    th(scope="col") Asignación
-                                    th(scope="col") SLA
-                                    th(scope="col") Sucursal
-                                    th(scope="col") Comuna
+                                    th(scope="col") Técnico
+                                    th(scope="col") Tipo
+                                    th(scope="col") Zona
+                                    th(scope="col") Nº de Llamados
+                                    th(scope="col") Nº de Locales
+                                    th(scope="col") Pts Programados
+                                    th(scope="col") Ptos Completados
+                                    th(scope="col") Cumplimiento
+                                    th(scope="col") Hora Inicio
+                                    th(scope="col") Hora Término
                             tbody
                                 +tableRow(
                                     'primary', 
                                     'Abierto',  
                                     'Sin Asignación', 
-                                    'N/A'
-                                    )
-                                +tableRow(
-                                    'secondary', 
-                                    'Asignado',  
-                                    'Juan Peréz', 
-                                    '+48h'
-                                    )
-                                +tableRow(
-                                    'primary', 
-                                    'Abierto',  
-                                    'Sin Asignación', 
-                                    'N/A'
-                                    )
-                                +tableRow(
-                                    'info', 
-                                    'Pendiente Cliente',  
-                                    'Roberto Mendoza', 
-                                    '+3'
-                                    )
-                                +tableRow(
-                                    'danger', 
-                                    'Local Cerrado',  
-                                    'Juan Peréz', 
-                                    '-3'
-                                    )
-                                +tableRow(
-                                    'warning', 
-                                    'Pendiente TCM',  
-                                    'Juan Peréz', 
-                                    '+3'
-                                    )
-                                +tableRow(
-                                    'dark', 
-                                    'Pendiente de Validación',  
-                                    'Juan Peréz', 
                                     'N/A'
                                     )
                 
