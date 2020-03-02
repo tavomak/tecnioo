@@ -89,17 +89,18 @@ $(function () {
             easing: 'easeOutQuint'
         });
     });
-    
+
     //WIZARD STEP 1 ====================================================== //
     $('.bk-step1-hidden').hide();
-    $('#step1ShowResults').on('click', function () {
+    $('#step1ShowResults').on('click', function (e) {
+        e.preventDefault();
         $('.bk-step1-hidden').show('slow')
     });
 
     $('#step1SelectClientName').on('click', function (e) {
         e.preventDefault();
         $(this).find('.card').addClass('shadow');
-        $('#step1Next').removeClass('disabled')
+
     });
 
     $('#step1Next').on('click', function () {
@@ -115,19 +116,29 @@ $(function () {
         $('.list-step-1 i').removeClass('d-none');
     });
 
-    $('#step1SelectClientType').on('change ', function(){
+    $('#step1SelectClientType').on('change ', function () {
         var step1SelectClientTypeSelected = $(this).val();
-        if (step1SelectClientTypeSelected != "Rut"){
-            $('#step1InputSelectTipe').removeClass('Rut');
-        }else{
-            $('#step1InputSelectTipe').addClass('Rut');
+        switch (step1SelectClientTypeSelected) {
+            case 'Rut':
+                $('#step1NotRut').addClass('d-none');
+                $('#step1Rut').removeClass('d-none');
+                break;
+            case 'Razón Social':
+                $('#step1NotRut').removeClass('d-none');
+                $('#step1Rut').addClass('d-none');
+                $('#step1InputSelectTipeNotRut').attr('placeholder', 'Ingresar Razón Social');
+                break;
+            case 'Código Cliente':
+                $('#step1NotRut').removeClass('d-none');
+                $('#step1Rut').addClass('d-none');
+                $('#step1InputSelectTipeNotRut').attr('placeholder', 'Ingresar Código Cliente');
         }
     });
 
-    $('#step1SelectCallType').on('change', function(){
+    $('#step1SelectCallType').on('change', function () {
         var step1SelectCallType = $(this).val(),
-        reloadClass = $(this).hasClass('reloadPage');
-        if (step1SelectCallType == "Instalaciones *" || step1SelectCallType == 'Retiros **'){
+            reloadClass = $(this).hasClass('reloadPage');
+        if (step1SelectCallType == "Instalaciones *" || step1SelectCallType == 'Retiros **') {
             $(this).addClass('reloadPage');
             $('#progressStep').find('.list-step-3').remove();
             $('#progressStep').find('.list-step-4').remove();
@@ -142,6 +153,17 @@ $(function () {
         }
     });
 
+    /* $('#fieldsetStep1').on('change', function () {
+        if ($('#fieldsetStep1').valid()  ) {
+            console.log('Evento Fieldset 1 OK');
+            $('#step1Next').removeClass('disabled');
+        }
+    }); */
+    $('#fieldsetStep1').on('blur keyup', function(){
+        if ($('#fieldsetStep1').valid()  ) {
+            console.log('x')
+        }
+    });
     //WIZARD STEP 2 ====================================================== //
     $('.bk-step2-hidden').hide();
     $('.step2AddNewContact-wrap').hide();
@@ -158,14 +180,14 @@ $(function () {
     });
     //WIZARD STEP 3 ====================================================== //
     $('#agregarNuevaMaquina').on('click', function () {
-        var numberCheckboxRandom = Math.floor(Math.random()*1000);
+        var numberCheckboxRandom = Math.floor(Math.random() * 1000);
         $('#crearMaquinaModal').modal('hide');
         $('#contenedorMaquinasListado').append(
             '<li class="my-2">\n\
                 <ul class="tecnioo-card d-flex align-items-center">\n\
                     <li class="tecnioo-card--item">\n\
-                        <input class="custom-control-input" type="radio" id="checkboxForMachine-'+numberCheckboxRandom+'" name="checkboxForMachine">\n\
-                        <label class="custom-control-label" for="checkboxForMachine-'+numberCheckboxRandom+'"></label>\n\
+                        <input class="custom-control-input" type="radio" id="checkboxForMachine-'+ numberCheckboxRandom + '" name="checkboxForMachine">\n\
+                        <label class="custom-control-label" for="checkboxForMachine-'+ numberCheckboxRandom + '"></label>\n\
                     </li>\n\
                     <li class="tecnioo-card--item p-2 bg-grey w-100 row align-items-center">\n\
                         <div class="col-4 tecnioo-card--title"><span class="tecnioo-card--title__text"> <b>[Maquina Modelo]</b></span></div>\n\
@@ -199,7 +221,7 @@ $(function () {
     $('#step5Next').on('click', function () {
         $('.list-step-4 i').removeClass('d-none');
     });
-    
+
     $('input.step5SelectCheckbox').on('change', function (evt) {
         if ($('#step5SelectCheckbox').find('.step5SelectCheckbox:checked').length > 3) {
             this.checked = false;
@@ -229,17 +251,17 @@ $(function () {
     var writeResult = function () {
         var result = "De: " + fromDay + " a: " + toDay,
             result2 = "De: " + fromApe + " a: " + toApe,
-            result3 = "De: " + fromCie+ " a: " + toCie;
+            result3 = "De: " + fromCie + " a: " + toCie;
         $('#step6TableTimes').append(
             '<tr>\n\
-                <td>'+ result +'</td>\n\
-                <td>'+ result2 +'</td>\n\
-                <td>'+ result3 +'</td>\n\
+                <td>'+ result + '</td>\n\
+                <td>'+ result2 + '</td>\n\
+                <td>'+ result3 + '</td>\n\
                 <td><a href="#" class="eliminaHorario">Eliminar</a></td>\n\
             </tr>'
         );
     };
-    $('#step6TableHorarios').delegate('.eliminaHorario', 'click', function (e){
+    $('#step6TableHorarios').delegate('.eliminaHorario', 'click', function (e) {
         e.preventDefault();
         $(this).parents('tr').remove();
     });
@@ -269,7 +291,7 @@ $(function () {
         type: "double",
         grid: true,
         values: [
-            '08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00'
+            '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00'
         ],
         onChange: function (data) {
             $('#HorarioAperturaDesde').val(data.from_value);
@@ -287,7 +309,7 @@ $(function () {
         type: "double",
         grid: true,
         values: [
-            '15:00','16:00','17:00','18:00','19:00','20:00','21:00','22:00','23:00','24:00'
+            '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '24:00'
         ],
         onChange: function (data) {
             $('#HorarioCierreDesde').val(data.from_value);
@@ -300,7 +322,7 @@ $(function () {
         onChange: saveResult3,
         onFinish: saveResult3
     });
-    
+
     $('#step6Prev').on('click', function () {
         $('.list-step-4 i').addClass('d-none');
         $('.list-step-5 i').addClass('d-none');
@@ -310,13 +332,13 @@ $(function () {
         $('.list-step-5 i').removeClass('d-none');
     });
 
-    $('#step1SelectCallType').on('change', function(){
+    $('#step1SelectCallType').on('change', function () {
         var selectCallType = $(this).val();
         console.log(selectCallType);
     });
     $('#agregarHorario').on('click', writeResult);
 
-    $('#selectAllcheckbox').click(function() {
+    $('#selectAllcheckbox').click(function () {
         console.log('Funca')
         if ($(this).is(':checked')) {
             $('.tecnioo-card').find('.custom-control-input').attr('checked', true);

@@ -73,15 +73,15 @@
             </article>
           </div>
           <div class="col-sm-8 col-md-7">
-            <div id="msform">
-              <ul class="d-flex justify-content-between" id="progressbar">
-                <li class="active w-100"></li>
-                <li class="w-100 progressbarItem-0"></li>
-                <li class="w-100 progressbarItem-1"></li>
-                <li class="w-100 progressbarItem-2"></li>
-                <li class="w-100 progressbarItem-3"></li>
-              </ul>
-              <fieldset class="w-100">
+            <ul class="d-flex justify-content-between" id="progressbar">
+              <li class="active w-100"></li>
+              <li class="w-100 progressbarItem-0"></li>
+              <li class="w-100 progressbarItem-1"></li>
+              <li class="w-100 progressbarItem-2"></li>
+              <li class="w-100 progressbarItem-3"></li>
+            </ul>
+            <form id="msform">
+              <fieldset class="w-100" id="fieldsetStep1">
                 <div class="row">
                   <div class="col">
                     <h2 class="fs-title">Crear Nuevo Ticket de Atención</h2>
@@ -94,10 +94,10 @@
                       <div class="input-group-prepend">
                         <label class="input-group-text form-control" for="step1SelectCallSource">Origen de llamado</label>
                       </div>
-                      <select class="form-control custom-select" id="step1SelectCallSource">
-                        <option>Seleccionar origen</option>
-                        <option>Llamado</option>
-                        <option>Correo</option>
+                      <select class="form-control custom-select" id="step1SelectCallSource" name="step1SelectCallSource">
+                        <option value="">Seleccionar origen</option>
+                        <option value="llamado">Llamado</option>
+                        <option value="correo">Correo</option>
                       </select>
                     </div>
                   </div>
@@ -117,11 +117,15 @@
                       <option>Código Cliente</option>
                     </select>
                   </div>
-                  <div class="form-group col-6">
+                  <div class="form-group col-6" id="step1Rut">
                     <label for="step1InputSelectTipe">Cliente Número</label>
-                    <input class="form-control Rut" id="step1InputSelectTipe" type="text" placeholder="Ej: 9.999.999-9">
-                    <p class="text-right m-0"><a class="btn btn-outline-primary btn-sm mt-3" id="step1ShowResults" href="#">Buscar</a></p>
+                    <input class="form-control Rut" id="step1InputSelectTipe" type="text" name="inputRut" placeholder="Ej: 9.999.999-9" required>
                   </div>
+                  <div class="form-group col-6 d-none" id="step1NotRut">
+                    <label for="step1InputSelectTipeNotRut">Cliente Número</label>
+                    <input class="form-control" id="step1InputSelectTipeNotRut" type="text" placeholder="">
+                  </div>
+                  <p class="text-right w-100"><a class="btn btn-outline-primary btn-sm mt-3" id="step1ShowResults" href="#">Buscar</a></p>
                 </div>
                 <div class="bk-step1-hidden pb-5 row">
                   <div class="col-12">
@@ -196,24 +200,24 @@
                       <li class="my-2">
                         <ul class="tecnioo-card d-flex align-items-center">
                           <li>
-                            <form class="form-row tecnioo-card--item px-2 py-3 bg-grey inputsFormulario">
+                            <div class="form-row tecnioo-card--item px-2 py-3 bg-grey inputsFormulario">
                               <div class="form-group col-md-6">
                                 <label for="step2InputNombreContacto">Nombre Contacto</label>
-                                <input class="form-control" type="text" id="step2InputNombreContacto">
+                                <input class="form-control" type="text" name="inputNombre" id="step2InputNombreContacto">
                               </div>
                               <div class="form-group col-md-6"> 
                                 <label for="step2InputEmail">Email</label>
-                                <input class="form-control" type="email" id="step2InputEmail" required>
+                                <input class="form-control" type="email" id="step2InputEmail" name="inputEmail" required>
                               </div>
                               <div class="form-group col-md-6">
                                 <label for="step1SelectCallType">Teléfono</label>
-                                <input class="form-control" type="number" id="step2InputTelefono" pattern="[0-9]{9}" max="9" required>
+                                <input class="form-control" type="number" id="step2InputTelefono" name="inputTelefono" pattern="[0-9]{9}" max="9" required>
                               </div>
                               <div class="form-group col-md-6"> 
                                 <label for="step2InputComentario">Referencia de Unificación</label>
                                 <input class="form-control inputTelefono" type="text" id="step2InputComentario" required>
                               </div>
-                            </form>
+                            </div>
                           </li>
                         </ul>
                       </li>
@@ -244,7 +248,7 @@
                 </div>
                 <hr><a class="next action-buton btn btn-primary text-white disabled" id="step1Next" disabled>Siguiente</a>
               </fieldset>
-              <fieldset class="w-100">
+              <fieldset class="w-100" id="fieldsetStep2">
                 <div class="row">
                   <div class="col">
                     <h2 class="fs-title">Información del equipo</h2>
@@ -326,7 +330,7 @@
                 </div>
                 <hr><a class="previous action-buton btn btn-light mr-4" id="step3Prev">Anterior</a><a class="next action-buton btn btn-primary text-white" id="step3Next">Siguiente</a>
               </fieldset>
-              <fieldset class="w-100 step-remove">
+              <fieldset class="w-100 step-remove" id="fieldsetStep3">
                 <div class="row">
                   <div class="col">
                     <h2 class="fs-title">Diagnóstico Preventivo</h2>
@@ -337,9 +341,9 @@
                 <div class="form-row py-4">
                   <div class="input-group">
                     <div class="input-group-prepend">
-                      <label class="input-group-text form-control" for="step1SelectCallType">Tipo de diagnóstico</label>
+                      <label class="input-group-text form-control" for="step1SelectDiagnosticType">Tipo de diagnóstico</label>
                     </div>
-                    <select class="form-control custom-select" id="step1SelectCallType">
+                    <select class="form-control custom-select" id="step1SelectDiagnosticType">
                       <option>Otro</option>
                       <option>Cambio de Carro Ducasse</option>
                       <option>Cambio de Compresor</option>
@@ -459,7 +463,7 @@
                 </div>
                 <hr><a class="previous action-buton btn btn-light mr-4" id="step4Prev">Anterior</a><a class="next action-buton btn btn-primary text-white" id="step4Next">Siguiente</a>
               </fieldset>
-              <fieldset class="w-100 step-remove">
+              <fieldset class="w-100 step-remove" id="fieldsetStep4">
                 <div class="row">
                   <div class="col">
                     <h2 class="fs-title">Información del problema</h2>
@@ -547,7 +551,7 @@
                 </div>
                 <hr><a class="previous action-buton btn btn-light mr-4" id="step5Prev">Anterior</a><a class="next action-buton btn btn-primary text-white" id="step5Next">Siguiente</a>
               </fieldset>
-              <fieldset class="w-100">
+              <fieldset class="w-100" id="fieldsetStep5">
                 <div class="row pb-4">
                   <div class="col">
                     <h2 class="fs-title">Horario de atención</h2>
@@ -586,7 +590,7 @@
                 </div>
                 <hr class="mt-5"><a class="previous action-buton btn btn-light mr-4" id="step6Prev">Anterior</a><a class="btn btn-primary text-white" id="step6Next" href="" data-toggle="modal" data-target="#crearLlamadoModal">Previsualizar y enviar solicitud</a>
               </fieldset>
-            </div>
+            </form>
           </div>
           <div class="col-md-3 bg-grey d-none d-md-block pt-5">
             <h5>Datos del llamado</h5>

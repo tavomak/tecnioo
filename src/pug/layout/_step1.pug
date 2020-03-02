@@ -8,9 +8,10 @@ hr
         .input-group
             .input-group-prepend
                 label.input-group-text.form-control(for="step1SelectCallSource") Origen de llamado
-            select#step1SelectCallSource.form-control.custom-select
-                each val in ['Seleccionar origen','Llamado','Correo']
-                    option= val
+            select#step1SelectCallSource.form-control.custom-select(name="step1SelectCallSource")
+                option(value="") Seleccionar origen
+                each val in ['Llamado','Correo']
+                    option( value=val.toLowerCase() )= val
 
 .row
     .col
@@ -22,11 +23,14 @@ hr
         select#step1SelectClientType.form-control
             each val in ['Rut','Razón Social','Código Cliente']
                 option= val
-    .form-group.col-6
+    .form-group.col-6#step1Rut
         label(for="step1InputSelectTipe") Cliente Número
-        input.form-control.Rut#step1InputSelectTipe(type="text"  placeholder="Ej: 9.999.999-9")
-        p.text-right.m-0
-            a.btn.btn-outline-primary.btn-sm.mt-3#step1ShowResults(href="#") Buscar
+        input.form-control.Rut#step1InputSelectTipe(type="text" name="inputRut" placeholder="Ej: 9.999.999-9" required)
+    .form-group.col-6.d-none#step1NotRut
+        label(for="step1InputSelectTipeNotRut") Cliente Número
+        input.form-control#step1InputSelectTipeNotRut(type="text"  placeholder="")
+    p.text-right.w-100
+        a.btn.btn-outline-primary.btn-sm.mt-3#step1ShowResults(href="#") Buscar
 .bk-step1-hidden.pb-5.row
     .col-12
         h2.fs-title Resultados
@@ -51,4 +55,49 @@ hr
                             .col-2.p-0
                                 i.fas.fa-map-marker-alt.mr-2
                                 span 30        
-    include ../layout/_step2
+    .col-12.mt-5
+        h2.fs-title Seleccionar Sucursal
+        hr
+    .col-12.my-2
+        .input-group
+            .input-group-prepend
+                label.input-group-text.form-control(for="#step2SelectClientType") Seleccione la sucursal donde se encuentra la maquina
+            select.custom-select.form-control.w-100#step2SelectClientType
+                option Seleccionar
+                - for (var x = 0; x < 30; x++)
+                    option= 'Sucursal '+ x  
+        p.text-right.m-0
+            a.btn.btn-outline-primary.btn-sm.mt-3#step1NuevaSucursal(href="#" data-toggle="modal" data-target="#modalNuevaSucursal") Nueva Sucursal
+    .col-12.mt-4.bk-step2-hidden
+        h2.fs-title Contacto asignado
+        hr
+        ul.pl-0.mb-3.custom-control.custom-radio#step2checkboxContact
+                li.my-2
+                    ul.tecnioo-card.d-flex.align-items-center
+                        li
+                            .form-row.tecnioo-card--item.px-2.py-3.bg-grey.inputsFormulario
+                                .form-group.col-md-6
+                                    label(for="step2InputNombreContacto") Nombre Contacto
+                                    input.form-control(type="text" name="inputNombre" id="step2InputNombreContacto")  
+                                
+                                .form-group.col-md-6 
+                                    label(for="step2InputEmail") Email
+                                    input.form-control(type="email" id="step2InputEmail" name="inputEmail" required)
+                                    
+                                .form-group.col-md-6
+                                    label(for="step1SelectCallType") Teléfono
+                                    input.form-control(type="number" id="step2InputTelefono" name="inputTelefono" pattern="[0-9]{9}" max="9" required)
+                                
+                                .form-group.col-md-6 
+                                    label(for="step2InputComentario") Referencia de Unificación
+                                    input.form-control.inputTelefono(type="text" id="step2InputComentario" required)
+
+    .col.mt-4
+        h2.fs-title Información sobre el tipo de llamado
+        .input-group
+            .input-group-prepend
+                label.input-group-text.form-control(for="step1SelectCallType") Tipo de llamado
+            select#step1SelectCallType.form-control.custom-select
+                each val in ['Seleccionar','Urgencias', 'Instalaciones *', 'Retiros **', 'Modificaciones', 'Perforaciones', 'Cambio de Accesorio', 'Puesta en Marcha', 'Capacitación', 'Diagnóstico', 'Visita Inspectiva', 'Taller' ]
+                    option= val
+                

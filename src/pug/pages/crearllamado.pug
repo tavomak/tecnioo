@@ -26,22 +26,22 @@ block mainContent
                                             | #{val}
                                         i.fas.fa-check-circle.float-right.d-none
                 .col-sm-8.col-md-7
-                    #msform
-                        ul#progressbar.d-flex.justify-content-between
-                            li.active.w-100
-                            - for (var x = 0; x < 4; x++)
-                                li(class='w-100 progressbarItem-'+x  )
-                        fieldset.w-100
+                    ul#progressbar.d-flex.justify-content-between
+                        li.active.w-100
+                        - for (var x = 0; x < 4; x++)
+                            li(class='w-100 progressbarItem-'+x  )
+                    form#msform
+                        fieldset#fieldsetStep1.w-100
                             include ../layout/_step1
                             hr    
                             a.next.action-buton.btn.btn-primary.text-white.disabled#step1Next(disabled) Siguiente
-                        fieldset.w-100
+                        fieldset#fieldsetStep2.w-100
                             include ../layout/_step3
-                        fieldset.w-100.step-remove
+                        fieldset#fieldsetStep3.w-100.step-remove
                             include ../layout/_step4
-                        fieldset.w-100.step-remove
+                        fieldset#fieldsetStep4.w-100.step-remove
                             include ../layout/_step5
-                        fieldset.w-100
+                        fieldset#fieldsetStep5.w-100
                             include ../layout/_step6
                 .col-md-3.bg-grey.d-none.d-md-block.pt-5
                     include ../layout/_previewllamado

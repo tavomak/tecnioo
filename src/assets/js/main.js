@@ -11,47 +11,13 @@ $(function () {
 
     // Arregla el campo de RUT
     $('.Rut').Rut({
-        on_error: function () { },
+        on_error: function () {
+            console.log('rut invalido');
+        },
+        on_success: function () {
+            console.log('RUT válido')
+        },
         format_on: 'keyup'
-    });
-
-    $('.inputsFormulario').rules("add", {
-        required: true,
-        number: true,
-        minlength: 9,
-        maxlength: 9,
-        messages: {
-            required: "Teléfono requerido",
-            minlength: jQuery.validator.format("Por favor ingresa un teléfono de 9 digitos."),
-            maxlength: jQuery.validator.format("Por favor ingresa un teléfono de 9 digitos."),
-        }
-    });
-
-    /* $('#email').on('keyup keypress', function (e) {
-        if ($(this).valid()) {
-            $('#btnEnvia').prop('disabled', false);
-        } else {
-            $('#btnEnvia').prop('disabled', true);
-        }
-    }); */
-
-    $('.inputsFormulario').on('keyup keypress', function (e) {
-        if ($(this).valid()) {
-            console.log('Validado')
-          $('#boton_enviar').prop('disabled', false);
-        } else {
-            console.log('No Validado')
-          $('#boton_enviar').prop('disabled', true);
-        }
-      });
-
-    //Mensajes Personalizados
-    jQuery.extend(jQuery.validator.messages, {
-        required: "Este campo es obligatorio",
-        email: "Por favor ingresa un correo válido.",
-        number: "Please sólo numeros",
-        lettersonly: "Por favor ingresa sólo letras.",
-        digits: "Por favor ingresa sólo números."
     });
 
     // Validador de RUT
@@ -64,5 +30,34 @@ $(function () {
         return this.optional(element) || /^[a-z\s]+$/i.test(value);
     }, "Por favor ingresa sólo letras.");
 
+    $('#fieldsetStep1').validate({
+        rules: {
+            inputRut: {
+                required: true,
+                Rut: true,
+            },
+            inputNombre: {
+                required: true,
+                lettersonly: true,
+            },
+            inputTelefono: {
+                required: true,
+                digits: true,
+                minlength: 9,
+                maxlength: 9,
+            },
+            inputEmail: {
+                required: true,
+                email: true,
+            },
+        },
+        messages: {
+            step1SelectCallSource: { valueNotEquals: "Seleccionar un origen de llamado" }
+        },
+        errorPlacement: function (error, element) {
+            $(element).parents('.form-group').append(error)
+            console.log(error);
+        }
+    });
 
-});
+}); 
