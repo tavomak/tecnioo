@@ -99,11 +99,11 @@ function minifyJs() {
     return (
         gulp
         .src('./src/assets/js/*')
-        .pipe(uglify()
+        /* .pipe(uglify()
             .on("error", notify.onError({
                 sound: true,
                 title: 'Error en JS'
-            })))
+            }))) */
         .pipe(rename({
             suffix: '-dist'
         }))

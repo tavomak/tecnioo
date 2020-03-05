@@ -1,1 +1,252 @@
-!function(t){jQuery.fn.Rut=function(r){var i={digito_verificador:null,on_error:function(){},on_success:function(){},validation:!0,format:!0,format_on:"change"};t.extend(i,r);this.each(function(){if(i.format&&jQuery(this).bind(i.format_on,function(){jQuery(this).val(jQuery.Rut.formatear(jQuery(this).val(),null==i.digito_verificador))}),i.validation)if(null==i.digito_verificador)jQuery(this).bind("blur",function(){var r=jQuery(this).val();""==jQuery(this).val()||jQuery.Rut.validar(r)?""!=jQuery(this).val()&&i.on_success():i.on_error()});else{var t=jQuery(this).attr("id");jQuery(i.digito_verificador).bind("blur",function(){var r=jQuery("#"+t).val()+"-"+jQuery(this).val();""==jQuery(this).val()||jQuery.Rut.validar(r)?""!=jQuery(this).val()&&i.on_success():i.on_error()})}})}}(jQuery),jQuery.Rut={formatear:function(r,t){var i=new String(r),u="";if(i=jQuery.Rut.quitarFormato(i),t){var o=i.charAt(i.length-1);i=i.substring(0,i.length-1)}for(;3<i.length;)u="."+i.substr(i.length-3)+u,i=i.substring(0,i.length-3);return""!=(u=i+u)&&t?u+="-"+o:t&&(u+=o),u},quitarFormato:function(r){for(var t=new String(r);-1!=t.indexOf(".");)t=t.replace(".","");for(;-1!=t.indexOf("-");)t=t.replace("-","");return t},digitoValido:function(r){return"0"==r||"1"==r||"2"==r||"3"==r||"4"==r||"5"==r||"6"==r||"7"==r||"8"==r||"9"==r||"k"==r||"K"==r},digitoCorrecto:function(r){return largo=r.length,!(largo<2)&&(rut=2<largo?r.substring(0,largo-1):r.charAt(0),dv=r.charAt(largo-1),jQuery.Rut.digitoValido(dv),null==rut||null==dv?0:(dvr=jQuery.Rut.getDigito(rut),dvr==dv.toLowerCase()))},getDigito:function(r){for(suma=0,mul=2,i=r.length-1;0<=i;i--)suma+=r.charAt(i)*mul,7==mul?mul=2:mul++;return res=suma%11,1==res?"k":0==res?"0":11-res},validar:function(r){if(r=jQuery.Rut.quitarFormato(r),largo=r.length,largo<2)return!1;for(i=0;i<largo;i++)if(!jQuery.Rut.digitoValido(r.charAt(i)))return!1;var t="";for(i=largo-1,j=0;0<=i;i--,j++)t+=r.charAt(i);var u="";for(u+=t.charAt(0),u+="-",cnt=0,i=1,j=2;i<largo;i++,j++)3==cnt?(u+=".",j++,u+=t.charAt(i),cnt=1):(u+=t.charAt(i),cnt++);for(t="",i=u.length-1,j=0;0<=i;i--,j++)t+=u.charAt(i);return!!jQuery.Rut.digitoCorrecto(r)}};
+/* Copyright (c) 2009 José Joaquín Núñez (josejnv@gmail.com) http://joaquinnunez.cl/blog/
+ * Licensed under GPL (http://www.opensource.org/licenses/gpl-2.0.php)
+ * Use only for non-commercial usage.
+ *
+ * Version : 0.5
+ *
+ * Requires: jQuery 1.2+
+ */
+ 
+(function($)
+{
+  jQuery.fn.Rut = function(options)
+  {
+    var defaults = {
+      digito_verificador: null,
+      on_error: function(){},
+      on_success: function(){},
+      validation: true,
+      format: true,
+      format_on: 'change'
+    };
+
+    var opts = $.extend(defaults, options);
+
+    this.each(function(){
+    
+      if(defaults.format)
+      {
+        jQuery(this).bind(defaults.format_on, function(){
+          jQuery(this).val(jQuery.Rut.formatear(jQuery(this).val(),defaults.digito_verificador==null));
+        });
+      }
+      if(defaults.validation)
+      {
+        if(defaults.digito_verificador == null)
+        {
+          jQuery(this).bind('blur', function(){
+            var rut = jQuery(this).val();
+            if(jQuery(this).val() != "" && !jQuery.Rut.validar(rut))
+            {
+                defaults.on_error();
+            }
+            else if(jQuery(this).val() != "")
+            {
+                defaults.on_success();
+            }
+          });
+        }
+        else
+        {
+          var id = jQuery(this).attr("id");
+          jQuery(defaults.digito_verificador).bind('blur', function(){
+            var rut = jQuery("#"+id).val()+"-"+jQuery(this).val();
+            if(jQuery(this).val() != "" && !jQuery.Rut.validar(rut))
+            {
+                defaults.on_error();
+            }
+            else if(jQuery(this).val() != "")
+            {
+                defaults.on_success();
+            }
+          });
+        }
+      }
+    });
+  }
+})(jQuery);
+
+/**
+  Funciones
+*/
+
+
+jQuery.Rut = {
+
+  formatear:  function(Rut, digitoVerificador)
+          {
+          var sRut = new String(Rut);
+          var sRutFormateado = '';
+          sRut = jQuery.Rut.quitarFormato(sRut);
+          if(digitoVerificador){
+            var sDV = sRut.charAt(sRut.length-1);
+            sRut = sRut.substring(0, sRut.length-1);
+          }
+          while( sRut.length > 3 )
+          {
+            sRutFormateado = "." + sRut.substr(sRut.length - 3) + sRutFormateado;
+            sRut = sRut.substring(0, sRut.length - 3);
+          }
+          sRutFormateado = sRut + sRutFormateado;
+          if(sRutFormateado != "" && digitoVerificador)
+          {
+            sRutFormateado += "-"+sDV;
+          }
+          else if(digitoVerificador)
+          {
+            sRutFormateado += sDV;
+          }
+          
+          return sRutFormateado;
+        },
+
+  quitarFormato: function(rut)
+        {
+          var strRut = new String(rut);
+          while( strRut.indexOf(".") != -1 )
+          {
+          strRut = strRut.replace(".","");
+          }
+          while( strRut.indexOf("-") != -1 )
+          {
+          strRut = strRut.replace("-","");
+          }
+          
+          return strRut;
+        },
+
+  digitoValido: function(dv)
+        { 
+          if ( dv != '0' && dv != '1' && dv != '2' && dv != '3' && dv != '4' 
+            && dv != '5' && dv != '6' && dv != '7' && dv != '8' && dv != '9' 
+            && dv != 'k'  && dv != 'K')
+          {   
+            return false; 
+          } 
+          return true;
+        },
+
+  digitoCorrecto:   function(crut)
+          { 
+            largo = crut.length;
+            if ( largo < 2 )  
+            {   
+              return false; 
+            }
+            if(largo > 2)
+            {
+              rut = crut.substring(0, largo - 1);
+            }
+            else
+            {   
+              rut = crut.charAt(0);
+            }
+            dv = crut.charAt(largo-1);
+            jQuery.Rut.digitoValido(dv);  
+          
+            if(rut == null || dv == null)
+            {
+              return 0;
+            }
+
+            dvr = jQuery.Rut.getDigito(rut);
+
+            if (dvr != dv.toLowerCase())  
+            {   
+              return false;
+            }
+            return true;
+          },
+
+  getDigito:    function(rut)
+        {
+          var dvr = '0';
+          suma = 0;
+          mul  = 2;
+          for(i=rut.length -1;i >= 0;i--) 
+          { 
+            suma = suma + rut.charAt(i) * mul;    
+            if (mul == 7)
+            {
+              mul = 2;
+            }   
+            else
+            {         
+              mul++;
+            } 
+          }
+          res = suma % 11;  
+          if (res==1)
+          {
+            return 'k';
+          } 
+          else if(res==0)
+          {   
+            return '0';
+          } 
+          else  
+          {   
+            return 11-res;
+          }
+        },
+
+  validar:   function(texto)
+        {
+          texto = jQuery.Rut.quitarFormato(texto);
+          largo = texto.length;
+        
+          // rut muy corto
+          if ( largo < 2 )  
+          {
+            return false; 
+          }
+    
+          // verifica que los numeros correspondan a los de rut
+          for (i=0; i < largo ; i++ ) 
+          {   
+            // numero o letra que no corresponda a los del rut
+            if(!jQuery.Rut.digitoValido(texto.charAt(i)))
+            {     
+              return false;
+            }
+          }
+    
+          var invertido = "";
+          for(i=(largo-1),j=0; i>=0; i--,j++)
+          {
+            invertido = invertido + texto.charAt(i);
+          }
+          var dtexto = "";
+          dtexto = dtexto + invertido.charAt(0);
+          dtexto = dtexto + '-';  
+          cnt = 0;  
+        
+          for ( i=1,j=2; i<largo; i++,j++ ) 
+          {
+            if ( cnt == 3 )   
+            {     
+              dtexto = dtexto + '.';      
+              j++;      
+              dtexto = dtexto + invertido.charAt(i);      
+              cnt = 1;    
+            }
+            else    
+            {       
+              dtexto = dtexto + invertido.charAt(i);      
+              cnt++;    
+            } 
+          } 
+        
+          invertido = ""; 
+          for (i=(dtexto.length-1),j=0; i>=0; i--,j++)
+          {   
+            invertido = invertido + dtexto.charAt(i);
+          }
+    
+          if (jQuery.Rut.digitoCorrecto(texto))
+          {   
+            return true;
+          }
+          return false;
+        }
+};

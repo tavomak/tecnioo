@@ -1,1 +1,63 @@
-$(function(){$("#selectAllcheckbox").click(function(){$(this).is(":checked")?$(".tecnioo-card").find(".custom-control-input").attr("checked",!0):$(".tecnioo-card").find(".custom-control-input").attr("checked",!1)}),$(".Rut").Rut({on_error:function(){console.log("rut invalido")},on_success:function(){console.log("RUT válido")},format_on:"keyup"}),$.validator.addMethod("Rut",function(e,t){return this.optional(t)||$.Rut.validar(e)},"Este campo debe ser un rut valido."),jQuery.validator.addMethod("lettersonly",function(e,t){return this.optional(t)||/^[a-z\s]+$/i.test(e)},"Por favor ingresa sólo letras."),$("#fieldsetStep1").validate({rules:{inputRut:{required:!0,Rut:!0},inputNombre:{required:!0,lettersonly:!0},inputTelefono:{required:!0,digits:!0,minlength:9,maxlength:9},inputEmail:{required:!0,email:!0}},messages:{step1SelectCallSource:{valueNotEquals:"Seleccionar un origen de llamado"}},errorPlacement:function(e,t){$(t).parents(".form-group").append(e),console.log(e)}})});
+$(function () {
+
+    //Selecciona todos los cheboxes en las tarjetas de llamados
+    $('#selectAllcheckbox').click(function () {
+        if ($(this).is(':checked')) {
+            $('.tecnioo-card').find('.custom-control-input').attr('checked', true);
+        } else {
+            $('.tecnioo-card').find('.custom-control-input').attr('checked', false);
+        }
+    });
+
+    // Arregla el campo de RUT
+    $('.Rut').Rut({
+        on_error: function () {
+            console.log('rut invalido');
+        },
+        on_success: function () {
+            console.log('RUT válido')
+        },
+        format_on: 'keyup'
+    });
+
+    // Validador de RUT
+    $.validator.addMethod("Rut", function (value, element) {
+        return this.optional(element) || $.Rut.validar(value);
+    }, "Este campo debe ser un rut valido.");
+
+    // Validación de sólo letras y espacio
+    jQuery.validator.addMethod("lettersonly", function (value, element) {
+        return this.optional(element) || /^[a-z\s]+$/i.test(value);
+    }, "Por favor ingresa sólo letras.");
+
+    $('#fieldsetStep1').validate({
+        rules: {
+            inputRut: {
+                required: true,
+                Rut: true,
+            },
+            inputNombre: {
+                required: true,
+                lettersonly: true,
+            },
+            inputTelefono: {
+                required: true,
+                digits: true,
+                minlength: 9,
+                maxlength: 9,
+            },
+            inputEmail: {
+                required: true,
+                email: true,
+            },
+        },
+        messages: {
+            step1SelectCallSource: { valueNotEquals: "Seleccionar un origen de llamado" }
+        },
+        errorPlacement: function (error, element) {
+            $(element).parents('.form-group').append(error)
+            console.log(error);
+        }
+    });
+
+}); 

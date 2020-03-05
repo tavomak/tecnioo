@@ -53,14 +53,14 @@ block mainContent
                             input(type="checkbox" class="custom-control-input" id="selectAllcheckbox")
                             label(class="custom-control-label" for="selectAllcheckbox") Seleccionar Todos
                         ul
-                            - for (var x = 0; x < 5; x++)
-                                li
+                            - for (var x = 0; x < 4; x++)
+                                li.tecnioo-card
                                     hr
-                                    ul.tecnioo-card.d-flex.align-items-stretch.w-100
+                                    ul.d-flex.align-items-stretch.w-100
                                         li.tecnioo-card--flag
                                         li.tecnioo-card--item.custom-control.custom-checkbox.ml-3
-                                            input.custom-control-input(type="checkbox" id="ed-"+x)
-                                            label.custom-control-label(for="ed-"+x)
+                                            input.custom-control-input(type="checkbox" id="ListaParaAsignar_["+x+"]_CheckLlamado" class="bk-marker" data-lat="-33."+x+"6" data-lng="-70."+x+"1" data-id="1"+x data-pts="1"+x name="ListaParaAsignar_["+x+"]")
+                                            label.custom-control-label(for="ListaParaAsignar_["+x+"]_CheckLlamado")
                                         li.tecnioo-card--item.px-3
                                             p.tecnioo-card--title
                                                 span.tecnioo-card--title__id #12345678 - 
@@ -86,12 +86,7 @@ block mainContent
 
 
                 .col-7.p-0
-                    iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.01075626506!2d-70.58617688480206!3d-33.39688358078929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2ddbca25c3%3A0x94faa92657957dde!2sAv%20Vitacura%205250%2C%20of.%20308%2C%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1579371739262!5m2!1ses-419!2scl"
-                    width="100%" 
-                    height="450" 
-                    frameborder="0" 
-                    style="border:0;" 
-                    allowfullscreen="")
+                    #map(style="position:relative;height: 100%;width: 100%;margin: 0px;padding: 0px")
 
                     
         section.tecnioo-cards.container-fluid.pb-5.px-5
@@ -106,7 +101,7 @@ block mainContent
                                         a.dropdown-item(href="#")= val
             .row.justify-content-center.align-items-stretch
                 .col-sm-2
-                    a(href="programaciontecnico.html").tecnioo-card.card
+                    a(href="programaciontecnico.html").tecnioo-card-tecnico.card
                         .card-body
                             .card-title
                                 i.fas.fa-user-circle.pr-2(style="font-size:1.2rem;")
@@ -125,7 +120,7 @@ block mainContent
                                     .small Max 1000 pts
                 each val in ['Alberto Rivera','Sebastián Gonzalez','Juan Pérez','Roberto Soto', 'Sebastián Guédez']               
                     .col-sm-2
-                        a(href="programaciontecnico.html").tecnioo-card.card
+                        a(href="programaciontecnico.html").tecnioo-card-tecnico.card
                             .card-body
                                 .card-title
                                     i.fas.fa-user-circle.pr-2(style="font-size:1.2rem;")
@@ -143,4 +138,21 @@ block mainContent
                                     li
                                         .small Max 1000 pts
 
-    include ../layout/_scripts
+    block scripts 
+        script(
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"
+            )
+        script(
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+            )
+        script(
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+            crossorigin="anonymous"
+            )
+        script(src="https://maps.googleapis.com/maps/api/js")
+        script(src=baseDir+"assets/js/map-dist.js")
