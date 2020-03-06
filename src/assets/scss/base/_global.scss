@@ -63,7 +63,6 @@ label {
     }
   }
 }
-
 @each $name, $color in $colors {
   .bg-#{$name}{
     background-color: $color !important;
@@ -71,9 +70,6 @@ label {
   .text-color-#{$name}{
     color: $color !important;
   }
-}
-.bg-secondary{
-  background: $brand-secondary-color !important;
 }
 .bg-tertiary{
   background: $brand-tertiary-color !important;
