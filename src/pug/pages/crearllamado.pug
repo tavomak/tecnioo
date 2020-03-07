@@ -32,17 +32,17 @@ block mainContent
                             li(class='w-100 progressbarItem-'+x  )
                     form#msform
                         fieldset#fieldsetStep1.w-100
-                            include ../layout/_step1
+                            include ../layout/wizard/_step1
                             hr    
                             a.next.action-buton.btn.btn-primary.text-white.disabled#step1Next(disabled) Siguiente
                         fieldset#fieldsetStep2.w-100
-                            include ../layout/_step3
+                            include ../layout/wizard/_step3
                         fieldset#fieldsetStep3.w-100.step-remove
-                            include ../layout/_step4
+                            include ../layout/wizard/_step4
                         fieldset#fieldsetStep4.w-100.step-remove
-                            include ../layout/_step5
+                            include ../layout/wizard/_step5
                         fieldset#fieldsetStep5.w-100
-                            include ../layout/_step6
+                            include ../layout/wizard/_step6
                 .col-md-3.bg-grey.d-none.d-md-block.pt-5
                     include ../layout/_previewllamado
     form.d-none(action="")

@@ -412,4 +412,10 @@ label {
   border: 1px solid #697789;
 }
 
+/* line 53, src/assets/scss/main.scss */
+.select-day:hover {
+  background: #54698D;
+  color: white;
+}
+
 /*# sourceMappingURL=main.css.map */

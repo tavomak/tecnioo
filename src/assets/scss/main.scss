@@ -49,3 +49,9 @@
       border: 1px solid $medium-grey;
     }
 }
+.select-day {
+  &:hover {
+    background: $brand-primary-color;
+    color:$white;
+  }
+}

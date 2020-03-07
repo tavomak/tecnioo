@@ -79,25 +79,23 @@ mixin tableRow(color, cierre, asingacion, sla)
             b=sla
         td Nombre Sucursal - Cliente Spot
         td Providencia
-mixin tableRow2(tecnico, tipo, zona, llamados, locales, ptsprogramados, ptosompletados, cumplimiento, inicio, cierre)
+mixin tableRowTecnico(tecnico, tipo, cumplimiento)
     tr 
-        td 
+        td
             i.fas.fa-user-circle.mr-2
             span=tecnico
-        td #12345789
+        td
+            span(class="tecnioo-card--title__status d-inline-block bg-"+(tipo == "C" ? "info" : "secondary")+"")
+            span=(tipo == "C" ? "Camioneta" : "Mantención")
         td 
-            b Urgencia Cooler - Modelo - Logo
-        td 0
-        td
-            if color == "success"
-                b(class="text-color-"+color) 14/02/2020
-            else
-                b(class="text-color-"+color)=cierre
-        td=asingacion
-        td
-            b=sla
-        td Nombre Sucursal - Cliente Spot
-        td Providencia
+            b Santiago
+        td 12
+        td 10
+        td 1200
+        td 920
+        td= cumplimiento
+        td 08:03 hrs
+        td 19:32 hrs
 mixin llamadosCard1(id, ticketText, badget1, badget2, badget3, direccion, statustext, ptos, hrs, asing)
     li.mt-2.pt-2.bg-white
         a(href="#")
@@ -130,8 +128,28 @@ mixin llamadosCard1(id, ticketText, badget1, badget2, badget3, direccion, status
                         i.fas.fa-clock.pr-2 
                         span 12/01/20 
                         span 16:42:17
+mixin checklistPreventivo(title, indo)
+    li.bg-gray
+        .custom-control.custom-radio.custom-control-inline
+            input(type="radio" id="customRadioInline1" name="customRadioInline1").custom-control-input
+            label.custom-control-label(for="customRadioInline1") Si
+        .custom-control.custom-radio.custom-control-inline
+            input(type="radio" id="customRadioInline2" name="customRadioInline1").custom-control-input
+            label.custom-control-label(for="customRadioInline2") No
+        .custom-control.custom-radio.custom-control-inline
+            input(type="radio" id="customRadioInline2" name="customRadioInline1").custom-control-input
+            label.custom-control-label(for="customRadioInline2") No sé
 
-mixin slides(image, title, caption)
+//- Asignaciones del día
+//- Columna horarios
+mixin rangoHorariosTabla(horarios, asignacion, clase)
+    a.select-day.d-block(href="#")&attributes(attributes)
+        .d-flex.justify-content-between.my-2
+            span.px-1= horarios
+            span.px-1= asignacion
+
+//- no son parte del proyecto actual            
+//-mixin slides(image, title, caption)
     .item.text-center&attributes(attributes)
         img(src=image , alt=title ,).img-responsive
         if title != ''
@@ -139,7 +157,7 @@ mixin slides(image, title, caption)
                 h1.title__display.carousel-caption-title= title
                 h4= caption
 
-mixin article(header,title, caption, price)
+//- mixin article(header,title, caption, price)
     if header == ''
         article&attributes(attributes)
             h2.title__regular= title
@@ -155,7 +173,7 @@ mixin article(header,title, caption, price)
             p= price
             block
 
-mixin productBanner(bg,title,text)
+//- mixin productBanner(bg,title,text)
     section(class=bg+" tec-product--container container-fluid")
         article.container
             .tec-article-wrapp&attributes(attributes)
@@ -164,7 +182,7 @@ mixin productBanner(bg,title,text)
                 block button
                     a(href=baseDir+title+".html" title=title class=title+" tec-primary-btn dib") Añadir al carrito
 
-mixin indexProductArticle(title, link, zona)
+//- mixin indexProductArticle(title, link, zona)
     article.col-sm-4.tec-index-product__item(class=link)&attributes(attributes)
         .tec-index-product__item--card
             a.tec-index-product__item--link(href=linkSrc+zona+"/"+link+".html")
@@ -174,7 +192,7 @@ mixin indexProductArticle(title, link, zona)
                     .tec-index-product__item--card-title
                         p=title
 
-mixin productMasCenter(title, direccion, m2, n, link, map, zona)
+//- mixin productMasCenter(title, direccion, m2, n, link, map, zona)
     article.col-sm-4.tec-product__item&attributes(attributes)
         .tec-product__item--card
             a(href=zona+"/"+link+".html")
@@ -203,7 +221,7 @@ mixin productMasCenter(title, direccion, m2, n, link, map, zona)
                                             span(aria-hidden="true") &times;
                                     iframe(src=map, width="100%", height="550", frameborder="0", style="border:0", allowfullscreen)
 
-mixin contentMasCenter(direccion, m2, n, map, restaurant, servicio, superm, shop, instituto, otro)
+//- mixin contentMasCenter(direccion, m2, n, map, restaurant, servicio, superm, shop, instituto, otro)
     section.container.tec--strip__content
             .row.tec--strip__content--caption
                 .col-sm-4
@@ -251,14 +269,3 @@ mixin contentMasCenter(direccion, m2, n, map, restaurant, servicio, superm, shop
                 .col-sm-12
                     h3.title__display.pages-commun__title Ubicación
                     iframe(src=map, width="100%", height="350", frameborder="0", style="border:0", allowfullscreen)
-mixin checklistPreventivo(title, indo)
-    li.bg-gray
-        .custom-control.custom-radio.custom-control-inline
-            input(type="radio" id="customRadioInline1" name="customRadioInline1").custom-control-input
-            label.custom-control-label(for="customRadioInline1") Si
-        .custom-control.custom-radio.custom-control-inline
-            input(type="radio" id="customRadioInline2" name="customRadioInline1").custom-control-input
-            label.custom-control-label(for="customRadioInline2") No
-        .custom-control.custom-radio.custom-control-inline
-            input(type="radio" id="customRadioInline2" name="customRadioInline1").custom-control-input
-            label.custom-control-label(for="customRadioInline2") No sé
