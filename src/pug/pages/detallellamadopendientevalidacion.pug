@@ -1,7 +1,7 @@
 extends ../layout/_header
 
 block append config
-    -var pageTitle = 'Detalle Llamado Cierre Ok'
+    -var pageTitle = 'Detalle Llamado Pendiente Validación'
     -var pageDescription = ''
     -var baseDir = ''
     -var linkSrc = ''
@@ -18,7 +18,7 @@ block mainContent
                 li
                     h5
                         i.fas.fa-layer-group.pr-2 
-                        | Urgencia de Cooler - [Modelo] - [Logo] / Cerrado Ok
+                        | Urgencia de Cooler - [Modelo] - [Logo] / Pendiente de Validación
                 li.align-self-end.text-right
                     h5
                         span +24H
@@ -27,8 +27,8 @@ block mainContent
                     ul.d-flex.justify-content-between.align-items-baseline.mb-0
                         li
                             h4 
-                                span.tecnioo-card--title__status.bg-success
-                                | Cerrado Ok
+                                span.tecnioo-card--title__status.bg-dark
+                                | Pendiente de Validación
                                 a(href="#").btn.btn-outline-primary.btn-sm.ml-4 OT: 987654321
                         li
                             p.text-right
@@ -109,6 +109,12 @@ block mainContent
                                         tr
                                             td Coordenadas
                                             td.text-right -33.68735, -70.378273
+                                        tr
+                                            td Hora de llegada
+                                            td.text-right 12:03 hrs
+                                        tr
+                                            td Hora de Salida
+                                            td.text-right 13:33 hrs
                             li.col-6
                                 h6 Firma Cliente
                                 .badge.badge-info.p-2.mr-1 Aprobado
