@@ -18,8 +18,8 @@ block mainContent
                             input.form-control(type="text" placeholder="Buscar Fecha")
                     h4 
                         b Vigente
-                    +rangoHorariosTabla('Mie 10','800 pts')
-                    +rangoHorariosTabla('Hoy', '7080 pts')(class="bg-primary text-white")
+                    +rangoHorariosTabla('Mañana','800 pts')(class="bg-primary text-white")
+                    +rangoHorariosTabla('Hoy', '7080 pts')
                     hr
                     .py-4
                         h6 Marzo 2020
@@ -35,7 +35,7 @@ block mainContent
                             +rangoHorariosTabla(key, val)
                         
                 .col-8.col-lg-9.col-xl-10.pt-5.pb-3
-                    -var diaImpreso = "Mañana 09 de Marzo";
+                    -var diaImpreso = "Mañana 10 de Marzo";
                     include ../layout/_subheader
                     .table-responsive
                         table.table.table-striped
@@ -53,9 +53,6 @@ block mainContent
                                     th(scope="col") Hora Término
                             tbody
                                 - var array = [{ "tecnico":"Jorge Sosa", "tipo": "C", "cumplimiento" : "76%" }, { "tecnico":"Juan Pérez", "tipo": "M",  "cumplimiento" : "76%" }, { "tecnico":"Alberto Rivera", "tipo": "C",  "cumplimiento" : "76%" },{ "tecnico":"Edmindo Perez", "tipo": "C", "cumplimiento" : "76%" }, { "tecnico":"Iván Zambrano", "tipo": "C",  "cumplimiento" : "76%" }, { "tecnico":"Pedro Coronado", "tipo": "C",  "cumplimiento" : "76%" }]
-                                each val, key in array
-                                    +tableRowTecnico(val.tecnico, val.tipo, val.cumplimiento)
-                                - var array = [{ "tecnico":"Jorge Sosa", "tipo": "C", "cumplimiento" : "76%" }, { "tecnico":"Juan Pérez", "tipo": "M",  "cumplimiento" : "76%" }, { "tecnico":"Alberto Rivera", "tipo": "M",  "cumplimiento" : "76%" },{ "tecnico":"Edmindo Perez", "tipo": "M", "cumplimiento" : "76%" }, { "tecnico":"Iván Zambrano", "tipo": "M",  "cumplimiento" : "76%" }, { "tecnico":"Pedro Coronado", "tipo": "C",  "cumplimiento" : "76%" }]
                                 each val, key in array
                                     +tableRowTecnico(val.tecnico, val.tipo, val.cumplimiento)
                     nav.py-4(aria-label="Page navigation")

@@ -1,0 +1,204 @@
+extends ../layout/_header
+
+block append config
+    -var pageTitle = 'Asignaciones - Día - User'
+    -var pageDescription = ''
+    -var baseDir = ''
+    -var linkSrc = ''
+
+block mainContent
+    main.content-wrapper
+        section.container-fluid
+            .row
+                .col-12
+                    ul.d-flex.justify-content-between.align-items-baseline.text-center.mb-0.pt-4
+                        li
+                            h4 
+                                i.fas.fa-arrow-left.mr-2 
+                                i.fas.fa-user-circle.mr-2 
+                                | Alverto Rivera
+                                .badge.badge-warning.p-2.text-white Camioneta
+                        li
+                            small Última actualización 
+                            small 26/02/1010 19:02 hrs
+                            button.btn.btn-sm.btn-outline-primary 
+                                | Actualizar 
+                                i.fas.fa-sync-alt
+                    ul.d-flex.mb-0
+                        li.w-50.mr-4
+                            p.m-0
+                                span Asignación 
+                                span 10 de febrero
+                        li.w-25.mr-4
+                            p   
+                                span Inicio Día
+                        li.w-25
+                            p.m-0
+                                span Fin Día
+                    ul.d-flex.align-items-stretch
+                        li.w-50.mr-4.card.px-4.d-flex.justify-content-center
+                            ul.d-flex.justify-content-between.align-items-baseline.text-center.mb-0
+                                li
+                                    h4 10
+                                    p
+                                        small Nº Llamados
+                                li
+                                    h4 1.200
+                                    p
+                                        small Pts Programados
+                                li
+                                    h4 950
+                                    p
+                                        small Pts Completados
+                                li
+                                    h4 75%
+                                    p
+                                        small Cumplimiento
+                        li.w-25.mr-4.card
+                            ul.d-flex.justify-content-center.mb-0.align-items-center.h-100
+                                li(style="width:60%")
+                                    .table-responsive
+                                        table.table
+                                            tr
+                                                td.border-0 Hora
+                                                td.border-0 08:03 hrs.
+                                            tr
+                                                td.border-0 KM
+                                                td.border-0 20.556
+                                            tr
+                                                td.border-0 Nº Guía Kit
+                                                td.border-0 198
+                                li(style="width:40%")
+                                    img.w-100(src="https://aakruthigroup.com/wp-content/uploads/2017/09/gallery-dummy-img-1.jpg", alt="")
+                        li.w-25.card
+                            ul.d-flex.justify-content-center.mb-0.align-items-center.h-100
+                                li(style="width:60%")
+                                    .table-responsive
+                                        table.table
+                                            tr
+                                                td.border-0 Hora
+                                                td.border-0 08:03 hrs.
+                                            tr
+                                                td.border-0 KM
+                                                td.border-0 20.589
+                                li(style="width:40%")
+                                    img.w-100(src="https://aakruthigroup.com/wp-content/uploads/2017/09/gallery-dummy-img-1.jpg", alt="")
+                    ul.nav.nav-pills.nav-justified(id="myTab" role="tablist").pb-0
+                        -var x = {'Todos 32' : 'active','Asignado 5': 'secondary','Solucionados OK 5': 'success', 'En Validación 4': 'dark','Pendiente Cliente': 'info', 'Pendientes TCM 2': 'warning', 'Local Cerrado 7': 'danger'}
+                        each val, key in x
+                                a.nav-item.nav-link(href="#")
+                                    if val === "active"
+                                        span(class="link--status-"+val) 
+                                    else
+                                        span.tecnioo-card--title__status(class="bg-"+val) 
+                                    span=key
+                    hr
+                    ul.d-flex.align-items-stretch.mt-3
+                        li.w-50.mr-4
+                            button.btn.btn-sm.btn-outline-dark
+                                | Buscar
+                                i.fas.fa-search.ml-5
+                        li.w-25.mr-4
+                            span.mr-4 Tipo de llamado
+                            button.btn.btn-sm.btn-outline-dark
+                                | Todos
+                                i.fas.fa-sort-down.ml-5
+                        li.w-25
+                            span.mr-4 Tipo de Máquinas
+                            button.btn.btn-sm.btn-outline-dark
+                                | Todas
+                                i.fas.fa-sort-down.ml-5
+            .row
+                .col-12
+                    .table-responsive
+                        table.table.table-striped
+                            thead
+                                tr
+                                    th(scope="col") Creacion
+                                    th(scope="col") Ticket
+                                    th(scope="col") Tipo de Llamado
+                                    th(scope="col") Ots
+                                    th(scope="col") Último Cierre
+                                    th(scope="col") Asignación
+                                    th(scope="col") SLA
+                                    th(scope="col") Sucursal
+                                    th(scope="col") Comuna
+                            tbody
+                                +tableRow(
+                                    'primary', 
+                                    'Abierto',  
+                                    'Sin Asignación', 
+                                    'N/A'
+                                    )
+                                +tableRow(
+                                    'secondary', 
+                                    'Asignado',  
+                                    'Juan Peréz', 
+                                    '+48h'
+                                    )
+                                +tableRow(
+                                    'success', 
+                                    'Solucionado OK',  
+                                    'Sin Asignación', 
+                                    'N/A'
+                                    )
+                                +tableRow(
+                                    'success', 
+                                    'Solucionado OK',  
+                                    'Roberto Mendoza', 
+                                    '+3'
+                                    )
+                                +tableRow(
+                                    'primary', 
+                                    'Abierto',  
+                                    'Sin Asignación', 
+                                    'N/A'
+                                    )
+                                +tableRow(
+                                    'info', 
+                                    'Pendiente Cliente',  
+                                    'Roberto Mendoza', 
+                                    '+3'
+                                    )
+                                +tableRow(
+                                    'danger', 
+                                    'Local Cerrado',  
+                                    'Juan Peréz', 
+                                    '-3'
+                                    )
+                                +tableRow(
+                                    'warning', 
+                                    'Pendiente TCM',  
+                                    'Juan Peréz', 
+                                    '+3'
+                                    )
+                                +tableRow(
+                                    'dark', 
+                                    'Pendiente de Validación',  
+                                    'Juan Peréz', 
+                                    'N/A'
+                                    )
+                    nav.py-4(aria-label="Page navigation")
+                        ul.pagination.justify-content-center
+                            li.page-item
+                                a.page-link(href="#" aria-label="Previous")
+                                    span(aria-hidden="true") <<
+                            li.page-item
+                                a.page-link(href="#") 1
+                            li.page-item
+                                a.page-link(href="#") 2
+                            li.page-item
+                                a.page-link(href="#") 3
+                            li.page-item
+                                a.page-link(href="#") 4
+                            li.page-item
+                                a.page-link(href="#") 5
+                            li.page-item
+                                a.page-link(href="#") 6
+                            li.page-item
+                                a.page-link(href="#" aria-label="Next")
+                                    span(aria-hidden="true") >>
+
+
+
+    include ../layout/_scripts
