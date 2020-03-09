@@ -104,15 +104,6 @@ $(function () {
     });
 
     $('#step1Next').on('click', function () {
-        var step1SelectCallSource = $('#step1SelectCallSource').val(),
-            step1SelectCallType = $('#step1SelectCallType').val(),
-            step1SelectClientType = $('#step1SelectClientType').val(),
-            step1InputSelectTipe = $('#step1InputSelectTipe').val();
-        console.log(step1SelectCallSource);
-        console.log(step1SelectCallType);
-        console.log(step1SelectClientType);
-        console.log(step1InputSelectTipe);
-
         $('.list-step-1 i').removeClass('d-none');
     });
 
@@ -159,9 +150,29 @@ $(function () {
             $('#step1Next').removeClass('disabled');
         }
     }); */
-    $('#fieldsetStep1').on('blur keyup', function(){
-        if ($('#fieldsetStep1').valid()  ) {
-            console.log('x')
+    $('#fieldsetStep1').on('change blur keyup', function(){
+        var step1SelectCallSource = $('#step1SelectCallSource').val(),
+            step1SelectClientType = $('#step1SelectClientType').val(),
+            step2SelectClientType = $('#step2SelectClientType').val(),
+            step1SelectCallType = $('#step1SelectCallType').val(),
+            step1InputSelectTipe = $('#step1InputSelectTipe').val(),
+            step2InputNombreContacto = $('#step2InputNombreContacto').val(),
+            step2InputEmail = $('#step2InputEmail').val(),
+            step2InputTelefono = $('#step2InputTelefono').val(),
+            selectAll = $('select').val(),
+            inputAll = $('input').val(),
+            step2InputComentario = $('#step2InputComentario').val();
+            
+            console.log(step1SelectCallSource);
+            console.log(step1SelectCallType);
+            console.log(step2SelectClientType);
+            console.log(step2InputNombreContacto.length);
+            console.log(step2InputEmail.length);
+
+        if ($('#fieldsetStep1').valid() && step1SelectCallSource != "selccionar" && step1SelectCallType != "selccionar" && step2SelectClientType != "selccionar" && step2InputNombreContacto.length > 0 && step2InputEmail.length > 0) {
+            $('#fieldsetStep1').find('.next').prop('disabled', false);
+            $('#fieldsetStep1').find('.next').removeClass('disabled');
+            console.log('funca');
         }
     });
     //WIZARD STEP 2 ====================================================== //
@@ -175,11 +186,13 @@ $(function () {
         $('.bk-step2-hidden').show('slow');
     });
 
-    $('#step2AddNewContact').on('click', function () {
+    $('#step2AddNewContact').on('click', function (e) {
+        e.preventDefault();
         $('.step2AddNewContact-wrap').show('slow');
     });
     //WIZARD STEP 3 ====================================================== //
-    $('#agregarNuevaMaquina').on('click', function () {
+    $('#agregarNuevaMaquina').on('click', function (e) {
+        e.preventDefault();
         var numberCheckboxRandom = Math.floor(Math.random() * 1000);
         $('#crearMaquinaModal').modal('hide');
         $('#contenedorMaquinasListado').append(
@@ -201,28 +214,35 @@ $(function () {
         );
     });
 
-    $('#step3Prev').on('click', function () {
+    $('#step3Prev').on('click', function (e) {
+        e.preventDefault();
         $('.list-step-1 i').addClass('d-none');
     });
-    $('#step3Next').on('click', function () {
+    $('#step3Next').on('click', function (e) {
+        e.preventDefault();
         $('.list-step-2 i').removeClass('d-none');
     });
     //WIZARD STEP 4 ====================================================== //
-    $('#step4Prev').on('click', function () {
+    $('#step4Prev').on('click', function (e) {
+        e.preventDefault();
         $('.list-step-2 i').addClass('d-none');
     });
-    $('#step4Next').on('click', function () {
+    $('#step4Next').on('click', function (e) {
+        e.preventDefault();
         $('.list-step-3 i').removeClass('d-none');
     });
     //WIZARD STEP 5 ====================================================== //
-    $('#step5Prev').on('click', function () {
+    $('#step5Prev').on('click', function (e) {
+        e.preventDefault();
         $('.list-step-3 i').addClass('d-none');
     });
-    $('#step5Next').on('click', function () {
+    $('#step5Next').on('click', function (e) {
+        e.preventDefault();
         $('.list-step-4 i').removeClass('d-none');
     });
 
     $('input.step5SelectCheckbox').on('change', function (evt) {
+        evt.preventDefault();
         if ($('#step5SelectCheckbox').find('.step5SelectCheckbox:checked').length > 3) {
             this.checked = false;
         }
@@ -331,12 +351,28 @@ $(function () {
     $('#step6Next').on('click', function () {
         $('.list-step-5 i').removeClass('d-none');
     });
-
+    // $('#fieldsetStep5').on('change blur keyup', function(){
+    //     var rangoHorariosLength = $('#step6TableTimes').length;
+    //     console.log(rangoHorariosLength);
+    //     if (rangoHorariosLength > 0) {
+    //         $('#fieldsetStep5').find('.next').prop('disabled', false);
+    //         $('#fieldsetStep5').find('.next').removeClass('disabled');
+    //     }
+    // });
     $('#step1SelectCallType').on('change', function () {
         var selectCallType = $(this).val();
         console.log(selectCallType);
     });
-    $('#agregarHorario').on('click', writeResult);
+    $('#agregarHorario').on('click', function(e){
+        e.preventDefault();
+        writeResult();
+        var rangoHorariosLength = $('#step6TableTimes tr').length;
+        console.log(rangoHorariosLength);
+        if (rangoHorariosLength > 0) {
+            $('#fieldsetStep5').find('#step6Next').prop('disabled', false);
+            $('#fieldsetStep5').find('#step6Next').removeClass('disabled');
+        }
+    });
 
     $('#selectAllcheckbox').click(function () {
         console.log('Funca')
