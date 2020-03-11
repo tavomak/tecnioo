@@ -9,7 +9,7 @@ hr
             .input-group-prepend
                 label.input-group-text.form-control(for="step1SelectCallSource") Origen de llamado
             select#step1SelectCallSource.form-control.custom-select(name="step1SelectCallSource")
-                option(value="") Seleccionar origen
+                option(value="Seleccionar") Seleccionar origen
                 each val in ['Llamado','Correo']
                     option( value=val.toLowerCase() )= val
 

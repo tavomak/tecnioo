@@ -169,7 +169,7 @@ $(function () {
             console.log(step2InputNombreContacto.length);
             console.log(step2InputEmail.length);
 
-        if ($('#fieldsetStep1').valid() && step1SelectCallSource != "selccionar" && step1SelectCallType != "selccionar" && step2SelectClientType != "selccionar" && step2InputNombreContacto.length > 0 && step2InputEmail.length > 0) {
+        if ( step1SelectCallSource != "Seleccionar" && step1SelectCallType != "Seleccionar" && step2SelectClientType != "Seleccionar" && step2InputNombreContacto.length > 0 && step2InputEmail.length > 0) {
             $('#fieldsetStep1').find('.next').prop('disabled', false);
             $('#fieldsetStep1').find('.next').removeClass('disabled');
             console.log('funca');
