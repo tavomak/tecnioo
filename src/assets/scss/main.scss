@@ -55,3 +55,10 @@
     color:$white;
   }
 }
+.listado-ordenado{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 600px;
+}

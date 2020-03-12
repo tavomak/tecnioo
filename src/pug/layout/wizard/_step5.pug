@@ -4,10 +4,10 @@
         h3.fs-subtitle Seleccione hasta 3 problemas de la lista
         hr
 
-ul.form-row#step5SelectCheckbox
-    each val, i in {1:'No Enfría', 2:'No Funciona', 3:'Cambiar Compresor', 4:'No Enfría', 5:'No Funciona', 6:'Cambiar Compresor', 7:'No Enfría', 8:'No Funciona', 9:'Cambiar Compresor', 10:'No Enfría', 11:'No Funciona', 12:'Cambiar Compresor'}
-        .form-group.col-6
-            li.custom-control.custom-checkbox
+ul.form-row.listado-ordenado#step5SelectCheckbox
+    each val, i in {1:'Bota Agua', 2:'Burlete roto o no ajusta', 3:'Cambiar Compresor', 4:'Cambio de logo', 5:'Cambio equipo', 6:'Celosia dañada o suelta', 7:'Cenefa dañada o suelta', 8:'Cortocircuito', 9:'Da la corriente', 10:'Equipo congela', 11:'Instalación Nivel 1', 12:'Instalación Nivel 2', 13:'Instalación Nivel 3', 14:'Luz no enciende', 15:'Manilla dañana', 16:'Modificación', 17:'No Enfria', 18:'No Funciona', 19:'Parrillas se caen', 20:'Presupuesto', 21:'Problemas con Técnico', 22:'Problemas con visitas', 23:'Puerta desnivelada', 24:'Puerta no cierra', 25:'Puerta quebrada', 26:'Retiro Nivel 1', 27:'Retiro Nivel 2', 28:'Ruido Extraño', 29:'Visita inspectiva'}
+        li.form-group
+            .custom-control.custom-checkbox
                 input.custom-control-input.step5SelectCheckbox(type="checkbox" id="checkboxForProblem-"+i)
                 label(class="custom-control-label" for="checkboxForProblem-"+i) #{val}
 .form-group
