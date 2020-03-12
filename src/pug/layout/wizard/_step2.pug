@@ -10,7 +10,8 @@
         select.custom-select.form-control.w-100#step2SelectClientType
             option Seleccionar
             - for (var x = 0; x < 30; x++)
-                option= 'Sucursal '+ x  
+                option= 'Sucursal '+ x
+        input(type='button' value='Seleted option' id='but_read')
     p.text-right.m-0
         a.btn.btn-outline-primary.btn-sm.mt-3#step1NuevaSucursal(href="#" data-toggle="modal" data-target="#modalNuevaSucursal") Nueva Sucursal
 .col-12.mt-4.bk-step2-hidden

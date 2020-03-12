@@ -91,6 +91,7 @@ $(function () {
     });
 
     //WIZARD STEP 1 ====================================================== //
+    $("#step2SelectClientType").select2();
     $('.bk-step1-hidden').hide();
     $('#step1ShowResults').on('click', function (e) {
         e.preventDefault();
