@@ -130,7 +130,17 @@ $(function () {
     $('#step1SelectCallType').on('change', function () {
         var step1SelectCallType = $(this).val(),
             reloadClass = $(this).hasClass('reloadPage');
-        if (step1SelectCallType == "Instalaciones *" || step1SelectCallType == 'Retiros **') {
+        if (step1SelectCallType == "3" || step1SelectCallType == '5') {
+            $(this).addClass('reloadPage');
+            $('#progressStep').find('.list-step-3').remove();
+            //$('#progressStep').find('.list-step-4').remove();
+            $('#progressbar').find('.progressbarItem-2').remove();
+            //$('#progressbar').find('.progressbarItem-3').remove();
+            $('.step-remove-1').remove();
+            $('.list-step-5 span').text('4 ');
+            $('.list-step-2').addClass('itemIrregular');
+        }
+        if (step1SelectCallType == "6") {
             $(this).addClass('reloadPage');
             $('#progressStep').find('.list-step-3').remove();
             $('#progressStep').find('.list-step-4').remove();
@@ -151,7 +161,7 @@ $(function () {
             $('#step1Next').removeClass('disabled');
         }
     }); */
-    $('#fieldsetStep1').on('change blur keyup', function(){
+    $('#fieldsetStep1').on('change blur keyup', function () {
         var step1SelectCallSource = $('#step1SelectCallSource').val(),
             step1SelectClientType = $('#step1SelectClientType').val(),
             step2SelectClientType = $('#step2SelectClientType').val(),
@@ -163,14 +173,14 @@ $(function () {
             selectAll = $('select').val(),
             inputAll = $('input').val(),
             step2InputComentario = $('#step2InputComentario').val();
-            
-            console.log(step1SelectCallSource);
-            console.log(step1SelectCallType);
-            console.log(step2SelectClientType);
-            console.log(step2InputNombreContacto.length);
-            console.log(step2InputEmail.length);
 
-        if ( step1SelectCallSource != "Seleccionar" && step1SelectCallType != "Seleccionar" && step2SelectClientType != "Seleccionar" && step2InputNombreContacto.length > 0 && step2InputEmail.length > 0) {
+        console.log(step1SelectCallSource);
+        console.log(step1SelectCallType);
+        console.log(step2SelectClientType);
+        console.log(step2InputNombreContacto.length);
+        console.log(step2InputEmail.length);
+
+        if (step1SelectCallSource != "Seleccionar" && step1SelectCallType != "Seleccionar" && step2SelectClientType != "Seleccionar" && step2InputNombreContacto.length > 0 && step2InputEmail.length > 0) {
             $('#fieldsetStep1').find('.next').prop('disabled', false);
             $('#fieldsetStep1').find('.next').removeClass('disabled');
             console.log('funca');
@@ -191,8 +201,14 @@ $(function () {
         e.preventDefault();
         $('.step2AddNewContact-wrap').show('slow');
     });
+    $('#contenedorMaquinasListado').on('change', function (evt) {
+        evt.preventDefault();
+        if ($(this).find('input:checked').length > 0) {
+            $('#fieldsetStep2').find('#step3Next').removeClass('disabled');
+        }
+    });
     //WIZARD STEP 3 ====================================================== //
-    $('#agregarNuevaMaquina').on('click', function (e) {
+    /*$('#agregarNuevaMaquina').on('click', function (e) {
         e.preventDefault();
         var numberCheckboxRandom = Math.floor(Math.random() * 1000);
         $('#crearMaquinaModal').modal('hide');
@@ -213,8 +229,7 @@ $(function () {
                 </ul>\n\
             </li>'
         );
-    });
-
+    });*/
     $('#step3Prev').on('click', function (e) {
         e.preventDefault();
         $('.list-step-1 i').addClass('d-none');
@@ -222,6 +237,13 @@ $(function () {
     $('#step3Next').on('click', function (e) {
         e.preventDefault();
         $('.list-step-2 i').removeClass('d-none');
+    });
+
+    $('#idPreguntas').on('change', function (evt) {
+        evt.preventDefault();
+        if ($(this).find('input:checked').length > 0) {
+            $('#fieldsetStep4').find('#step5Next').removeClass('disabled');
+        }
     });
     //WIZARD STEP 4 ====================================================== //
     $('#step4Prev').on('click', function (e) {
@@ -364,7 +386,7 @@ $(function () {
         var selectCallType = $(this).val();
         console.log(selectCallType);
     });
-    $('#agregarHorario').on('click', function(e){
+    $('#agregarHorario').on('click', function (e) {
         e.preventDefault();
         writeResult();
         var rangoHorariosLength = $('#step6TableTimes tr').length;
@@ -383,5 +405,7 @@ $(function () {
             $('.tecnioo-card').find('.custom-control-input').attr('checked', false);
         }
     });
-
+    $('#sumitForm').on('click', function (e) {
+        e.preventDefault();
+    });
 });
