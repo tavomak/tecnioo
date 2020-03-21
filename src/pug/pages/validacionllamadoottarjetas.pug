@@ -1,7 +1,7 @@
 extends ../layout/_header
 
 block append config
-    -var pageTitle = 'Vaalidación llamado OT'
+    -var pageTitle = 'Validación llamado OT Tarjetas'
     -var pageDescription = ''
     -var baseDir = ''
     -var linkSrc = ''
@@ -162,35 +162,11 @@ block mainContent
                                 b Nuevo Diagnóstico
                             p
                                 span.badge.badge-secondary.p-2 Solicitud de cambio de compresor
-                            p
-                                b Solución
-                            p
-                                span.badge.badge-info.p-2.mr-2 Limpieza de condensador
-                                span.badge.badge-info.p-2.mr-2 Filtro tapado
-                                span.badge.badge-info.p-2 Termostato
-                            p
-                                b Causa
-                            p
-                                span.badge.badge-info.p-2.mr-2 Desgaste
-                            p
-                                b Acción
-                            p
-                                span.badge.badge-info.p-2.mr-2 Cambio
-                            p
-                                b Repuesto
-                            p
-                                span.badge.badge-info.p-2.mr-2 2 Filtro MN678
-                                span.badge.badge-info.p-2.mr-2 1 Manguera 456
-                            p
+                            p.mb-3.mt-5
                                 b Observación del técnico
-                                .card.p-2
-                                    .card-body.p-0
-                                        p.m-0 El diagnostico estaba equivocado, solicito validar de nuevo
-                            .py-2
-                                ul
-                                    li
-                                        img.w-100(src="https://aakruthigroup.com/wp-content/uploads/2017/09/gallery-dummy-img-1.jpg", alt="")
-                            
+                                    .card
+                                        .card-body
+                                            p El diagnóstico estaba equivocado, solicito validar de nuevo.
                             p.mb-3.mt-5
                                 b Firma Cliente
                             p
@@ -202,7 +178,55 @@ block mainContent
                             .d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y reagendar al mismo técnico
                             .d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y reagendar a otro técnico
                             .d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y enviar programación
+                    a(href="#" data-toggle="modal" data-target="#estadoLlamado")
+                        ul.d-flex.my-4.align-items-center
+                            li 
+                                p.m-0
+                                    span.tecnioo-card--title__status.bg-info
+                            li.w-100
+                                .card
+                                    .card-body  
+                                        .mb-4.d-flex
+                                            i.fas.fa-layer-group.mr-2
+                                            span #765756765757
+                                            span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
+                                        h6 Visitado Pendiente
+                                        p
+                                            i.fas.fa-user-circle.pr-2
+                                            |Sin Asignación
 
+                    a(href="#" data-toggle="modal" data-target="#estadoLlamado")
+                        ul.d-flex.my-4.align-items-center
+                            li 
+                                p.m-0
+                                    span.tecnioo-card--title__status.bg-warning
+                            li.w-100
+                                .card
+                                    .card-body  
+                                        .mb-4.d-flex
+                                            i.fas.fa-layer-group.mr-2
+                                            span #765756765757
+                                            span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
+                                        h6 Pendiente TCM
+                                        p
+                                            i.fas.fa-user-circle.pr-2
+                                            |Sin Asignación
+                    a(href="#" data-toggle="modal" data-target="#estadoLlamado")
+                        ul.d-flex.my-4.align-items-center
+                            li 
+                                p.m-0
+                                    span.tecnioo-card--title__status.bg-danger
+                            li.w-100
+                                .card
+                                    .card-body  
+                                        .mb-4.d-flex
+                                            i.fas.fa-layer-group.mr-2
+                                            span #765756765757
+                                            span.badge.badge-primary.p-2.ml-2.ml-auto 500 pts
+                                        h6 Local Cerrado
+                                        p
+                                            i.fas.fa-user-circle.pr-2
+                                            |Sin Asignación
 
         .modal.fade(id="estadoLlamado" tabindex="-1" role="dialog" aria-labelledby="estadoLlamadoLabel" aria-hidden="true")
             .modal-dialog.modal-sm(role="document")
@@ -328,21 +352,4 @@ block mainContent
                                 label(for="inputFirma") Firma
                                 textatea.form-control(type="text"  id="inputFirma" style="height: 160px;")
                                         
-    block scripts 
-        script(
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"
-            )
-        script(
-            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"
-            )
-        script(
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
-            crossorigin="anonymous"
-            )
-        script(src="https://maps.googleapis.com/maps/api/js")
-        script(src=baseDir+"assets/js/map-dist.js")
+    include ../layout/_scripts

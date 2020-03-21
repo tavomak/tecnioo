@@ -2,8 +2,8 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Vaalidación llamado OT</title>
-    <meta content="Vaalidación llamado OT" property="og:title">
+    <title>Validación llamado OT Tarjetas</title>
+    <meta content="Validación llamado OT Tarjetas" property="og:title">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -218,26 +218,12 @@
                 </div>
                 <p class="mb-3 mt-5"><b>Nuevo Diagnóstico</b></p>
                 <p><span class="badge badge-secondary p-2">Solicitud de cambio de compresor</span></p>
-                <p><b>Solución</b></p>
-                <p><span class="badge badge-info p-2 mr-2">Limpieza de condensador</span><span class="badge badge-info p-2 mr-2">Filtro tapado</span><span class="badge badge-info p-2">Termostato</span></p>
-                <p><b>Causa</b></p>
-                <p><span class="badge badge-info p-2 mr-2">Desgaste</span></p>
-                <p><b>Acción</b></p>
-                <p><span class="badge badge-info p-2 mr-2">Cambio</span></p>
-                <p><b>Repuesto</b></p>
-                <p><span class="badge badge-info p-2 mr-2">2 Filtro MN678</span><span class="badge badge-info p-2 mr-2">1 Manguera 456</span></p>
-                <p><b>Observación del técnico</b>
-                  <div class="card p-2">
-                    <div class="card-body p-0">
-                      <p class="m-0">El diagnostico estaba equivocado, solicito validar de nuevo</p>
-                    </div>
-                  </div>
-                </p>
-                <div class="py-2">
-                  <ul>
-                    <li><img class="w-100" src="https://aakruthigroup.com/wp-content/uploads/2017/09/gallery-dummy-img-1.jpg" alt=""></li>
-                  </ul>
-                </div>
+                <p class="mb-3 mt-5"><b>Observación del técnico
+                    <div class="card">
+                      <div class="card-body">
+                        <p>El diagnóstico estaba equivocado, solicito validar de nuevo.</p>
+                      </div>
+                    </div></b></p>
                 <p class="mb-3 mt-5"><b>Firma Cliente</b></p>
                 <p><a class="btn btn-outline-primary btn-sm">Aprobado</a></p>
                 <hr>
@@ -247,7 +233,49 @@
                 <div class="d-block btn btn-outline-danger btn-sm my-2">Rechazar y reagendar a otro técnico</div>
                 <div class="d-block btn btn-outline-danger btn-sm my-2">Rechazar y enviar programación</div>
               </div>
-            </div>
+            </div><a href="#" data-toggle="modal" data-target="#estadoLlamado">
+              <ul class="d-flex my-4 align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-info"></span></p>
+                </li>
+                <li class="w-100">
+                  <div class="card">
+                    <div class="card-body"> 
+                      <div class="mb-4 d-flex"><i class="fas fa-layer-group mr-2"></i><span>#765756765757</span><span class="badge badge-primary p-2 ml-2 ml-auto">500 pts</span></div>
+                      <h6>Visitado Pendiente</h6>
+                      <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
+                    </div>
+                  </div>
+                </li>
+              </ul></a><a href="#" data-toggle="modal" data-target="#estadoLlamado">
+              <ul class="d-flex my-4 align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-warning"></span></p>
+                </li>
+                <li class="w-100">
+                  <div class="card">
+                    <div class="card-body"> 
+                      <div class="mb-4 d-flex"><i class="fas fa-layer-group mr-2"></i><span>#765756765757</span><span class="badge badge-primary p-2 ml-2 ml-auto">500 pts</span></div>
+                      <h6>Pendiente TCM</h6>
+                      <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
+                    </div>
+                  </div>
+                </li>
+              </ul></a><a href="#" data-toggle="modal" data-target="#estadoLlamado">
+              <ul class="d-flex my-4 align-items-center">
+                <li> 
+                  <p class="m-0"><span class="tecnioo-card--title__status bg-danger"></span></p>
+                </li>
+                <li class="w-100">
+                  <div class="card">
+                    <div class="card-body"> 
+                      <div class="mb-4 d-flex"><i class="fas fa-layer-group mr-2"></i><span>#765756765757</span><span class="badge badge-primary p-2 ml-2 ml-auto">500 pts</span></div>
+                      <h6>Local Cerrado</h6>
+                      <p><i class="fas fa-user-circle pr-2"></i>Sin Asignación</p>
+                    </div>
+                  </div>
+                </li>
+              </ul></a>
           </div>
         </div>
       </section>
@@ -413,6 +441,5 @@
     <script src="assets/js/additional-methods.min-dist.js"></script>
     <script src="assets/js/rut-dist.js"></script>
     <script src="assets/js/main-dist.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   </body>
 </html>

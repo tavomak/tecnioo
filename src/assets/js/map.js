@@ -14,6 +14,27 @@ $(function () {
             createMarker(new google.maps.LatLng(checkboxLat, checkboxLng), 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png', checkboxId, map);
         });
 
+        $('.tecnioo-assigned-card').each(function (i, v) {
+            var checkboxLat = $(this).find('.bk-marker').data('lat'),
+                checkboxLng = $(this).find('.bk-marker').data('lng'),
+                checkboxId = $(this).find('.bk-marker').data('id');
+            createMarkerAssigned(new google.maps.LatLng(checkboxLat, checkboxLng), 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png', checkboxId, map);
+        });
+
+        function createMarkerAssigned(position, icon, id, map) {
+            var marker = new google.maps.Marker({
+                map: map,
+                position: position,
+                icon: icon,
+                idCall: id
+
+            });
+            marker.addListener('click', function () {
+            });
+            markers.push(marker);
+            return marker;
+        }
+        
         function createMarker(position, icon, id, map) {
             var marker = new google.maps.Marker({
                 map: map,
