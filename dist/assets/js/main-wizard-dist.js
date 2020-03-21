@@ -130,7 +130,7 @@ $(function () {
     $('#step1SelectCallType').on('change', function () {
         var step1SelectCallType = $(this).val(),
             reloadClass = $(this).hasClass('reloadPage');
-        if (step1SelectCallType == "Instalaciones *" || step1SelectCallType == 'Retiros **') {
+        if (step1SelectCallType == "3" || step1SelectCallType == '5' || step1SelectCallType == '6') {
             $(this).addClass('reloadPage');
             $('#progressStep').find('.list-step-3').remove();
             $('#progressStep').find('.list-step-4').remove();
@@ -151,26 +151,26 @@ $(function () {
             $('#step1Next').removeClass('disabled');
         }
     }); */
-    $('#fieldsetStep1').on('change blur keyup', function(){
+    $('#fieldsetStep1').on('change blur keyup', function () {
         var step1SelectCallSource = $('#step1SelectCallSource').val(),
             step1SelectClientType = $('#step1SelectClientType').val(),
             step2SelectClientType = $('#step2SelectClientType').val(),
             step1SelectCallType = $('#step1SelectCallType').val(),
             step1InputSelectTipe = $('#step1InputSelectTipe').val(),
-            step2InputNombreContacto = $('#step2InputNombreContacto').val(),
+            NombreContacto = $('#NombreContacto').val(),
             step2InputEmail = $('#step2InputEmail').val(),
             step2InputTelefono = $('#step2InputTelefono').val(),
             selectAll = $('select').val(),
             inputAll = $('input').val(),
             step2InputComentario = $('#step2InputComentario').val();
-            
-            console.log(step1SelectCallSource);
-            console.log(step1SelectCallType);
-            console.log(step2SelectClientType);
-            console.log(step2InputNombreContacto.length);
-            console.log(step2InputEmail.length);
 
-        if ( step1SelectCallSource != "Seleccionar" && step1SelectCallType != "Seleccionar" && step2SelectClientType != "Seleccionar" && step2InputNombreContacto.length > 0 && step2InputEmail.length > 0) {
+        console.log(step1SelectCallSource);
+        console.log(step1SelectCallType);
+        console.log(step2SelectClientType);
+        console.log(NombreContacto.length);
+        console.log(step2InputEmail.length);
+
+        if (step1SelectCallSource != "" && step1SelectCallType != "" && step2SelectClientType != "" && NombreContacto.length > 0 && step2InputEmail.length > 0) {
             $('#fieldsetStep1').find('.next').prop('disabled', false);
             $('#fieldsetStep1').find('.next').removeClass('disabled');
             console.log('funca');
@@ -241,12 +241,13 @@ $(function () {
         e.preventDefault();
         $('.list-step-4 i').removeClass('d-none');
     });
-
-    $('input.step5SelectCheckbox').on('change', function (evt) {
-        evt.preventDefault();
-        if ($('#step5SelectCheckbox').find('.step5SelectCheckbox:checked').length > 3) {
-            this.checked = false;
-        }
+    $(document).ajaxSend(function (event, jqxhr, settings) {
+        $('input.step5SelectCheckbox').on('change', function (evt) {
+            evt.preventDefault();
+            if ($('#step5SelectCheckbox').find('.step5SelectCheckbox:checked').length > 3) {
+                this.checked = false;
+            }
+        });
     });
     //WIZARD STEP 6 ====================================================== //
     var fromDay = 'Lunes',
@@ -364,7 +365,7 @@ $(function () {
         var selectCallType = $(this).val();
         console.log(selectCallType);
     });
-    $('#agregarHorario').on('click', function(e){
+    $('#agregarHorario').on('click', function (e) {
         e.preventDefault();
         writeResult();
         var rangoHorariosLength = $('#step6TableTimes tr').length;
