@@ -44,7 +44,7 @@ $(function () {
 
             });
             marker.addListener('click', function () {
-                console.log(this)
+                //console.log(this)
                 var symbol = this.getIcon();
                 if (symbol === undefined) {
                     this.setIcon('https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png');
@@ -57,12 +57,10 @@ $(function () {
                 }
 
                 var myId = this.idCall;
-                var counter = 0;
 
                 $('.tecnioo-card').each(function (i, v) {
-                    var checkData = $(this).find('.custom-checkbox input').data('id'),
-                        checkDataPts = $(this).find('.custom-checkbox input').data('pts');
-                    console.log(checkData);
+                    var checkData = $(this).find('.custom-checkbox input').data('id');
+                    //console.log(checkData);
 
                     if (checkData === myId) {
 
@@ -71,21 +69,16 @@ $(function () {
                         var chequeadoAnterior = $(this).find('.bk-marker').prop('checked');
 
                         if (chequeadoAnterior) {
-                            //var resta = (this).find('.bk-marker');
                             $(this).find('.bk-marker').prop('checked', false);
-                            if (counter > 0) {
-                                counter -= checkDataPts;
-                            }
                         } else {
                             $(this).find('.bk-marker').prop('checked', true);
                             $(this).parent().prepend($(this));
-                            counter += checkDataPts;
-                            console.log(counter + "esta es la suma");
                         }
                     }
 
                 });
 
+                registroPuntos();
             });
 
             markers.push(marker);
@@ -111,4 +104,17 @@ $(function () {
 
     }
     google.maps.event.addDomListener(window, 'load', initMap);
+
+    $(".bk-marker").change(function () {
+        registroPuntos();
+    });
+
+
+    function registroPuntos(){
+        var count = 0;
+        $('.bk-marker:checked').each(function(){
+            count += Number($(this).data('pts'));
+        });
+        $('.tecnioo-biglist--puntos').text(count);
+    }
 });

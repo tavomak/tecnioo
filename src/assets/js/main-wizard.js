@@ -167,7 +167,7 @@ $(function () {
             step2SelectClientType = $('#step2SelectClientType').val(),
             step1SelectCallType = $('#step1SelectCallType').val(),
             step1InputSelectTipe = $('#step1InputSelectTipe').val(),
-            step2InputNombreContacto = $('#step2InputNombreContacto').val(),
+            NombreContacto = $('#NombreContacto').val(),
             step2InputEmail = $('#step2InputEmail').val(),
             step2InputTelefono = $('#step2InputTelefono').val(),
             selectAll = $('select').val(),
@@ -177,10 +177,10 @@ $(function () {
         console.log(step1SelectCallSource);
         console.log(step1SelectCallType);
         console.log(step2SelectClientType);
-        console.log(step2InputNombreContacto.length);
+        console.log(NombreContacto.length);
         console.log(step2InputEmail.length);
 
-        if (step1SelectCallSource != "Seleccionar" && step1SelectCallType != "Seleccionar" && step2SelectClientType != "Seleccionar" && step2InputNombreContacto.length > 0 && step2InputEmail.length > 0) {
+        if (step1SelectCallSource != "" && step1SelectCallType != "" && step2SelectClientType != "" && NombreContacto.length > 0 && step2InputEmail.length > 0) {
             $('#fieldsetStep1').find('.next').prop('disabled', false);
             $('#fieldsetStep1').find('.next').removeClass('disabled');
             console.log('funca');
@@ -263,12 +263,13 @@ $(function () {
         e.preventDefault();
         $('.list-step-4 i').removeClass('d-none');
     });
-
-    $('input.step5SelectCheckbox').on('change', function (evt) {
-        evt.preventDefault();
-        if ($('#step5SelectCheckbox').find('.step5SelectCheckbox:checked').length > 3) {
-            this.checked = false;
-        }
+    $(document).ajaxSend(function (event, jqxhr, settings) {
+        $('input.step5SelectCheckbox').on('change', function (evt) {
+            evt.preventDefault();
+            if ($('#step5SelectCheckbox').find('.step5SelectCheckbox:checked').length > 3) {
+                this.checked = false;
+            }
+        });
     });
     //WIZARD STEP 6 ====================================================== //
     var fromDay = 'Lunes',

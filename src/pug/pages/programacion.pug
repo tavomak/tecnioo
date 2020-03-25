@@ -50,14 +50,17 @@ block mainContent
                                     a(href="#").btn.btn-outline-primary.btn-sm Buscar
                         hr
                         ul.d-flex
-                            li
-                                .custom-control.custom-checkbox.my-1.ml-3
+                            li.my-1.ml-3
+                                .custom-control.custom-checkbox
                                     input(type="checkbox" class="custom-control-input" id="selectAllcheckbox")
                                     label(class="custom-control-label" for="selectAllcheckbox") Seleccionar Todos
-                            li
-                                .custom-control.custom-checkbox.my-1.ml-3
+                            li.my-1.ml-3
+                                .custom-control.custom-checkbox
                                     input(type="checkbox" class="custom-control-input" id="filterSla")
                                     label(class="custom-control-label" for="filterSla") SLA 24hrs
+                            li.my-1.ml-3
+                                span Pts a asignar:
+                                span.my-1.tecnioo-biglist--puntos
                         ul
                             - for (var x = 0; x < 4; x++)
                                 li.tecnioo-card
