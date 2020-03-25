@@ -8,7 +8,13 @@ $(function () {
             $('.tecnioo-card').find('.custom-control-input').attr('checked', false);
         }
     });
-
+    $(".fancybox").fancybox({
+        buttons : [
+          'download',
+          'thumbs',
+          'close'
+        ]
+      });
     // Arregla el campo de RUT
     $('.Rut').Rut({
         on_error: function () {
@@ -60,4 +66,11 @@ $(function () {
         }
     });
 
+    $('.detalles-owl').owlCarousel({
+        loop: true,
+        autoplay: true,
+        dots: true,
+        //nav:true,
+        items: 2
+    });
 }); 

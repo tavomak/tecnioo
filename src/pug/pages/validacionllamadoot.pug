@@ -187,21 +187,26 @@ block mainContent
                                     .card-body.p-0
                                         p.m-0 El diagnostico estaba equivocado, solicito validar de nuevo
                             .py-2
-                                ul
-                                    li
-                                        img.w-100(src="https://aakruthigroup.com/wp-content/uploads/2017/09/gallery-dummy-img-1.jpg", alt="")
+                                ul.detalles-owl.owl-carousel.owl-theme
+                                    - for (var i = 1; i < 6; ++i) 
+                                        li.item.px-2
+                                            a(class="fancybox" rel="group" href="https://aakruthigroup.com/wp-content/uploads/2017/09/gallery-dummy-img-1.jpg" download)
+                                                img.w-100(src="https://aakruthigroup.com/wp-content/uploads/2017/09/gallery-dummy-img-1.jpg", alt="")
                             
                             p.mb-3.mt-5
                                 b Firma Cliente
                             p
-                                a.btn.btn-outline-primary.btn-sm Aprobado
+                                btn.btn.btn-outline-primary.btn-sm Aprobado
                             hr
                             p.mb-3.mt-5
                                 b Validación
-                            .d-block.btn.btn-outline-primary.btn-sm.my-2 Aprobar y reagendar al mismo técnico
-                            .d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y reagendar al mismo técnico
-                            .d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y reagendar a otro técnico
-                            .d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y enviar programación
+                            a(href="#" data-toggle="modal" data-target="#estadoLlamado").d-block.btn.btn-outline-primary.btn-sm.my-2 Aprobar y cerrar OK el llamado
+                            a(href="#" data-toggle="modal" data-target="#estadoLlamado").d-block.btn.btn-outline-primary.btn-sm.my-2 Aprobar y reagendar al mismo técnico
+                            .py-2
+                            a(href="#" data-toggle="modal" data-target="#estadoLlamado").d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y cerrar OK el llamado
+                            a(href="#" data-toggle="modal" data-target="#estadoLlamado").d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y reagendar al mismo técnico
+                            a(href="#" data-toggle="modal" data-target="#estadoLlamado").d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y reagendar a otro técnico
+                            a(href="#" data-toggle="modal" data-target="#estadoLlamado").d-block.btn.btn-outline-danger.btn-sm.my-2 Rechazar y enviar a programación
 
 
         .modal.fade(id="estadoLlamado" tabindex="-1" role="dialog" aria-labelledby="estadoLlamadoLabel" aria-hidden="true")
@@ -328,21 +333,4 @@ block mainContent
                                 label(for="inputFirma") Firma
                                 textatea.form-control(type="text"  id="inputFirma" style="height: 160px;")
                                         
-    block scripts 
-        script(
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"
-            )
-        script(
-            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"
-            )
-        script(
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
-            crossorigin="anonymous"
-            )
-        script(src="https://maps.googleapis.com/maps/api/js")
-        script(src=baseDir+"assets/js/map-dist.js")
+    include ../layout/_scripts

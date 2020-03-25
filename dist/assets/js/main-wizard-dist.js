@@ -130,7 +130,17 @@ $(function () {
     $('#step1SelectCallType').on('change', function () {
         var step1SelectCallType = $(this).val(),
             reloadClass = $(this).hasClass('reloadPage');
-        if (step1SelectCallType == "3" || step1SelectCallType == '5' || step1SelectCallType == '6') {
+        if (step1SelectCallType == "3" || step1SelectCallType == '5') {
+            $(this).addClass('reloadPage');
+            $('#progressStep').find('.list-step-3').remove();
+            //$('#progressStep').find('.list-step-4').remove();
+            $('#progressbar').find('.progressbarItem-2').remove();
+            //$('#progressbar').find('.progressbarItem-3').remove();
+            $('.step-remove-1').remove();
+            $('.list-step-5 span').text('4 ');
+            $('.list-step-2').addClass('itemIrregular');
+        }
+        if (step1SelectCallType == "6") {
             $(this).addClass('reloadPage');
             $('#progressStep').find('.list-step-3').remove();
             $('#progressStep').find('.list-step-4').remove();
@@ -191,8 +201,14 @@ $(function () {
         e.preventDefault();
         $('.step2AddNewContact-wrap').show('slow');
     });
+    $('#contenedorMaquinasListado').on('change', function (evt) {
+        evt.preventDefault();
+        if ($(this).find('input:checked').length > 0) {
+            $('#fieldsetStep2').find('#step3Next').removeClass('disabled');
+        }
+    });
     //WIZARD STEP 3 ====================================================== //
-    $('#agregarNuevaMaquina').on('click', function (e) {
+    /*$('#agregarNuevaMaquina').on('click', function (e) {
         e.preventDefault();
         var numberCheckboxRandom = Math.floor(Math.random() * 1000);
         $('#crearMaquinaModal').modal('hide');
@@ -213,8 +229,7 @@ $(function () {
                 </ul>\n\
             </li>'
         );
-    });
-
+    });*/
     $('#step3Prev').on('click', function (e) {
         e.preventDefault();
         $('.list-step-1 i').addClass('d-none');
@@ -222,6 +237,13 @@ $(function () {
     $('#step3Next').on('click', function (e) {
         e.preventDefault();
         $('.list-step-2 i').removeClass('d-none');
+    });
+
+    $('#idPreguntas').on('change', function (evt) {
+        evt.preventDefault();
+        if ($(this).find('input:checked').length > 0) {
+            $('#fieldsetStep4').find('#step5Next').removeClass('disabled');
+        }
     });
     //WIZARD STEP 4 ====================================================== //
     $('#step4Prev').on('click', function (e) {
@@ -384,5 +406,7 @@ $(function () {
             $('.tecnioo-card').find('.custom-control-input').attr('checked', false);
         }
     });
-
+    $('#sumitForm').on('click', function (e) {
+        e.preventDefault();
+    });
 });
