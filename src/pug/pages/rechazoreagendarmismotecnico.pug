@@ -1,0 +1,29 @@
+extends ../layout/_header
+
+block append config
+    -var pageTitle = 'Rechazar y agendar al mismo técnico'
+    -var pageDescription = ''
+    -var baseDir = './'
+    -var linkSrc = ''
+
+block mainContent
+    main.content-wrapper
+        section.container.pt-5.pb-3.px-5
+            .row.justify-content-center
+                .col-sm-6
+                    .card.text-center.p-5
+                        .card-body
+                            .card-title.mb-4 
+                                h4 Rechazo
+                                p Se <strong><span class="text-danger">Rechazarán</span></strong> los cambios y se <strong><span  class="text-success">CREARÁ<span></strong> una OT asignada al mismo técnico
+                                p
+                            .form-group
+                                label Nombre Técnico
+                                select.form-control
+                                    each val in ['Seleccionar', 'Alberto Rivera','Sebastián Gonzalez','Juan Pérez','Roberto Soto', 'Sebastián Guédez']
+                                        option= val
+                            a.btn.btn-danger.mt-4.d-block(href="#") Rechazar
+                            a.mt-4.d-block(href="#") Cancelar
+
+
+    include ../layout/_scripts

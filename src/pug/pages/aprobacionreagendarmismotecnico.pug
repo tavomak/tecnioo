@@ -1,0 +1,29 @@
+extends ../layout/_header
+
+block append config
+    -var pageTitle = 'Aprobar y Reagendar al mismo Técnico'
+    -var pageDescription = ''
+    -var baseDir = './'
+    -var linkSrc = ''
+
+block mainContent
+    main.content-wrapper
+        section.container.pt-5.pb-3.px-5
+            .row.justify-content-center
+                .col-sm-6
+                    .card.text-center.p-5
+                        .card-body
+                            .card-title.mb-4 
+                                h4 Aprobación
+                                p Se <strong><span class="text-success">Aprobarán</span></strong> los cambios y se <strong><span  class="text-success">CREARÁ<span></strong> una OT asignada al mismo técnico
+                                p
+                            .form-group
+                                label Nueva fecha de asignación
+                                select.form-control.d-inline.w-75.mr-2
+                                    - for (var i = 1; i < 10; ++i) 
+                                            option= '0'+i+'/04/2020'
+                            a.btn.btn-success.mt-4.d-block(href="#") Aprobar
+                            a.mt-4.d-block(href="#") Cancelar
+
+
+    include ../layout/_scripts

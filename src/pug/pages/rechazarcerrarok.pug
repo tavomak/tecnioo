@@ -1,0 +1,25 @@
+extends ../layout/_header
+
+block append config
+    -var pageTitle = 'Rechazar y Cerrar OK'
+    -var pageDescription = ''
+    -var baseDir = './'
+    -var linkSrc = ''
+
+block mainContent
+    main.content-wrapper
+        section.container.pt-5.pb-3.px-5
+            .row.justify-content-center
+                .col-sm-6
+                    .card.text-center.p-5
+                        .card-body
+                            .card-title.mb-4 
+                                h4 Rechazo
+                                p Se <strong><span class="text-danger">Rechazarán</span></strong> los cambios y se <strong><span  class="text-success">CERRARÁ OK<span></strong> el llamado número:
+                            form.px-5(action="")
+                                .form-group
+                                    input.w-100(type="text", placeholder="#123456789")
+                                a.btn.btn-danger.mt-4.d-block(href="#") Rechazar y Cerrar OK
+                                a.mt-4.d-block(href="#") Cancelar
+
+    include ../layout/_scripts

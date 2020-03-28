@@ -1,0 +1,23 @@
+extends ../layout/_header
+
+block append config
+    -var pageTitle = 'Aprobación'
+    -var pageDescription = ''
+    -var baseDir = './'
+    -var linkSrc = ''
+
+block mainContent
+    main.content-wrapper
+        section.container.pt-5.pb-3.px-5
+            .row.justify-content-center
+                .col-sm-6
+                    .card.text-center.p-5
+                        .card-body
+                            .card-title.mb-4 
+                                h4 Rechazo
+                                p Se <strong><span class="text-danger">Recazarán</span></strong> los cambios y se enviará la OT nuevamente a programación para Asignación futura
+
+                            a.btn.btn-danger.mt-4.d-block(href="#") Rechazar y Enviar a Programación
+                            a.mt-4.d-block(href="#") Cancelar
+
+    include ../layout/_scripts
