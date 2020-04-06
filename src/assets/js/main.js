@@ -1,5 +1,6 @@
 $(function () {
-
+    $("#selectWhitSearch").select2();
+    $('#inputDatepicker').datepicker();
     //Selecciona todos los cheboxes en las tarjetas de llamados
     $('#selectAllcheckbox').click(function () {
         if ($(this).is(':checked')) {
@@ -8,13 +9,15 @@ $(function () {
             $('.tecnioo-card').find('.custom-control-input').attr('checked', false);
         }
     });
-    $(".fancybox").fancybox({
-        buttons : [
-          'download',
-          'thumbs',
-          'close'
-        ]
-      });
+    if ($.isFunction($.fn.fancybox)) {
+        $(".fancybox").fancybox({
+            buttons : [
+            'download',
+            'thumbs',
+            'close'
+            ]
+        });
+    }
     // Arregla el campo de RUT
     $('.Rut').Rut({
         on_error: function () {
