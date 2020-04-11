@@ -21,12 +21,14 @@ $(function () {
     // Arregla el campo de RUT
     $('.Rut').Rut({
         on_error: function () {
-            console.log('rut invalido');
+            console.log('RUT invalido');
+            $('.Rut').parent().append('<span>Ingrese un rut valido</span>');
         },
         on_success: function () {
             console.log('RUT válido')
+            $('.Rut').parent().find('span').remove();
         },
-        format_on: 'keyup'
+        format_on: 'blur'
     });
 
     // Validador de RUT
