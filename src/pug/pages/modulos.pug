@@ -140,9 +140,16 @@ block mainContent
             hr
             .row
                 .col-12.my-2
-                    button.btn.btn-primary Crear
+                    button.btn.btn-success Crear
+                    button.btn.btn-danger Eliminar
+                    button.btn.btn-secondary Volver
+                .col-12.pt-5
+                    h2.fs-title Botones ver con iconos (ABREN LOS MODALES OK ty ERROR)
                 .col-12.my-2
-                    button.btn.btn-danger Cerrar
+                    button.btn.btn-success.sweet-ok
+                        i.fas.fa-eye
+                    button.btn.btn-danger.sweet-error
+                        i.fas.fa-times-circle
 
         section.container.pt-5.pb-3.px-5
             .row.justify-content-center
@@ -242,6 +249,7 @@ block mainContent
         script( src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/sweetalert2@9")
         script(src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js")
         script(src=baseDir+"assets/js/jquery.validate.min-dist.js")
         script(src=baseDir+"assets/js/additional-methods.min-dist.js")

@@ -78,4 +78,20 @@ $(function () {
         //nav:true,
         items: 2
     });
+
+    $('.sweet-error').on('click', function(){
+        Swal.fire({
+            icon: 'error',
+            title: 'Ha ocurrido un error',
+            text: '"Mensaje de error impreso"'
+          })
+    });
+
+    $('.sweet-ok').on('click', function(){
+        Swal.fire({
+            icon: 'success',
+            title: 'Haz pasado la validación OK',
+            text: '"Mensaje de validación impreso"'
+          })
+    });
 }); 
