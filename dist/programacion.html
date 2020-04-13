@@ -112,7 +112,7 @@
                 </div>
               </form>
               <hr>
-              <ul class="d-flex">
+              <ul class="d-flex justify-content-around align-items-baseline">
                 <li class="my-1 ml-3">
                   <div class="custom-control custom-checkbox">
                     <input class="custom-control-input" type="checkbox" id="selectAllcheckbox">
@@ -125,86 +125,226 @@
                     <label class="custom-control-label" for="filterSla">SLA 24hrs</label>
                   </div>
                 </li>
-                <li class="my-1 ml-3"><span>Pts a asignar:</span><span class="badge badge-primary p-2 my-1 tecnioo-biglist--puntos"></span></li>
+                <li class="my-1 ml-3"><span>Pts a asignar:</span><span class="badge badge-primary p-2 my-1 tecnioo-biglist--puntos">0</span></li>
               </ul>
-              <ul>
+              <ul id="tecnioo-unassigned-list">
                 <li class="tecnioo-card">
-                  <hr>
-                  <ul class="d-flex align-items-stretch w-100">
+                  <hr/>
+                  <ul class="d-flex align-items-stretch justify-content-between w-100">
                     <li class="tecnioo-card--flag"></li>
                     <li class="tecnioo-card--item custom-control custom-checkbox ml-3">
-                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[0]_CheckLlamado" data-lat="-33.06" data-lng="-70.01" data-id="10" data-pts="10" name="ListaParaAsignar_[0]">
+                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[0]_CheckLlamado" name="ListaParaAsignar_[0]" data-id="266" data-pts="84" data-lat="-33.453397" data-lng="-70.570569" data-dir="AVDA LARRAIN 5862  LOC 4036 5862  L 0 LA REINA" data-loc="FUENTE NICANOR SPA" data-sla="-264"/>
                       <label class="custom-control-label" for="ListaParaAsignar_[0]_CheckLlamado"></label>
                     </li>
                     <li class="tecnioo-card--item px-3">
-                      <p class="tecnioo-card--title"><span class="tecnioo-card--title__id">#12345678 - </span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
+                      <p class="tecnioo-card--title"><span class="mr-2"><i class="fas fa-layer-group mr-1"></i>0</span><span class="tecnioo-card--title__id"># 266</span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
                       <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
-                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - Providencia, Santiago</small></p>
+                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - AVDA LARRAIN 5862  LOC 4036 5862  L 0 LA REINA</small></p>
                     </li>
-                    <li class="tecnioo-card--item px-3 ml-auto">
-                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">500 pts</span></div>
-                      <p class="tecnioo-card--deadline">-4d</p>
-                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20 </span><span>16:42:17</span></small></p>
+                    <li class="tecnioo-card--item align-selft-end">
+                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">84 pts</span></div>
+                      <p class="tecnioo-card--deadline">-264d</p>
+                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20</span><span>16:42:17</span></small></p>
                     </li>
                   </ul>
                 </li>
                 <li class="tecnioo-card">
-                  <hr>
-                  <ul class="d-flex align-items-stretch w-100">
+                  <hr/>
+                  <ul class="d-flex align-items-stretch justify-content-between w-100">
                     <li class="tecnioo-card--flag"></li>
                     <li class="tecnioo-card--item custom-control custom-checkbox ml-3">
-                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[1]_CheckLlamado" data-lat="-33.16" data-lng="-70.11" data-id="11" data-pts="11" name="ListaParaAsignar_[1]">
+                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[1]_CheckLlamado" name="ListaParaAsignar_[1]" data-id="269" data-pts="84" data-lat="-33.525189" data-lng="-70.661016" data-dir="GRAN AVENIDA 7716 7716 0 LA CISTERNA" data-loc="CESAR CRISTOBAL ARANCIBIA FERNANDEZ" data-sla="216"/>
                       <label class="custom-control-label" for="ListaParaAsignar_[1]_CheckLlamado"></label>
                     </li>
                     <li class="tecnioo-card--item px-3">
-                      <p class="tecnioo-card--title"><span class="tecnioo-card--title__id">#12345678 - </span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
+                      <p class="tecnioo-card--title"><span class="mr-2"><i class="fas fa-layer-group mr-1"></i>1</span><span class="tecnioo-card--title__id"># 269</span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
                       <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
-                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - Providencia, Santiago</small></p>
+                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - GRAN AVENIDA 7716 7716 0 LA CISTERNA</small></p>
                     </li>
-                    <li class="tecnioo-card--item px-3 ml-auto">
-                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">500 pts</span></div>
-                      <p class="tecnioo-card--deadline">-4d</p>
-                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20 </span><span>16:42:17</span></small></p>
+                    <li class="tecnioo-card--item align-selft-end">
+                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">84 pts</span></div>
+                      <p class="tecnioo-card--deadline">216d</p>
+                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20</span><span>16:42:17</span></small></p>
                     </li>
                   </ul>
                 </li>
                 <li class="tecnioo-card">
-                  <hr>
-                  <ul class="d-flex align-items-stretch w-100">
+                  <hr/>
+                  <ul class="d-flex align-items-stretch justify-content-between w-100">
                     <li class="tecnioo-card--flag"></li>
                     <li class="tecnioo-card--item custom-control custom-checkbox ml-3">
-                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[2]_CheckLlamado" data-lat="-33.26" data-lng="-70.21" data-id="12" data-pts="12" name="ListaParaAsignar_[2]">
+                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[2]_CheckLlamado" name="ListaParaAsignar_[2]" data-id="281" data-pts="50" data-lat="-33.515808" data-lng="-70.689861" data-dir="AV SALVADOR ALLENDE 03788 03788 0 LO ESPEJO" data-loc="LORRAINE VALESKA CACERES GROVE" data-sla="206"/>
                       <label class="custom-control-label" for="ListaParaAsignar_[2]_CheckLlamado"></label>
                     </li>
                     <li class="tecnioo-card--item px-3">
-                      <p class="tecnioo-card--title"><span class="tecnioo-card--title__id">#12345678 - </span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
+                      <p class="tecnioo-card--title"><span class="mr-2"><i class="fas fa-layer-group mr-1"></i>2</span><span class="tecnioo-card--title__id"># 281</span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
                       <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
-                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - Providencia, Santiago</small></p>
+                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - AV SALVADOR ALLENDE 03788 03788 0 LO ESPEJO</small></p>
                     </li>
-                    <li class="tecnioo-card--item px-3 ml-auto">
-                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">500 pts</span></div>
-                      <p class="tecnioo-card--deadline">-4d</p>
-                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20 </span><span>16:42:17</span></small></p>
+                    <li class="tecnioo-card--item align-selft-end">
+                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">50 pts</span></div>
+                      <p class="tecnioo-card--deadline">206d</p>
+                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20</span><span>16:42:17</span></small></p>
                     </li>
                   </ul>
                 </li>
                 <li class="tecnioo-card">
-                  <hr>
-                  <ul class="d-flex align-items-stretch w-100">
+                  <hr/>
+                  <ul class="d-flex align-items-stretch justify-content-between w-100">
                     <li class="tecnioo-card--flag"></li>
                     <li class="tecnioo-card--item custom-control custom-checkbox ml-3">
-                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[3]_CheckLlamado" data-lat="-33.36" data-lng="-70.31" data-id="13" data-pts="13" name="ListaParaAsignar_[3]">
+                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[3]_CheckLlamado" name="ListaParaAsignar_[3]" data-id="274" data-pts="84" data-lat="-33.376872" data-lng="-70.644494" data-dir="AV LAS TORRES # 1042 1042 0 HUECHURABA" data-loc="NANCY SALAZAR ESCOBAR" data-sla="93"/>
                       <label class="custom-control-label" for="ListaParaAsignar_[3]_CheckLlamado"></label>
                     </li>
                     <li class="tecnioo-card--item px-3">
-                      <p class="tecnioo-card--title"><span class="tecnioo-card--title__id">#12345678 - </span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
+                      <p class="tecnioo-card--title"><span class="mr-2"><i class="fas fa-layer-group mr-1"></i>3</span><span class="tecnioo-card--title__id"># 274</span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
                       <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
-                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - Providencia, Santiago</small></p>
+                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - AV LAS TORRES # 1042 1042 0 HUECHURABA</small></p>
                     </li>
-                    <li class="tecnioo-card--item px-3 ml-auto">
-                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">500 pts</span></div>
-                      <p class="tecnioo-card--deadline">-4d</p>
-                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20 </span><span>16:42:17</span></small></p>
+                    <li class="tecnioo-card--item align-selft-end">
+                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">84 pts</span></div>
+                      <p class="tecnioo-card--deadline">93d</p>
+                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20</span><span>16:42:17</span></small></p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="tecnioo-card">
+                  <hr/>
+                  <ul class="d-flex align-items-stretch justify-content-between w-100">
+                    <li class="tecnioo-card--flag"></li>
+                    <li class="tecnioo-card--item custom-control custom-checkbox ml-3">
+                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[4]_CheckLlamado" name="ListaParaAsignar_[4]" data-id="277" data-pts="84" data-lat="-33.611339" data-lng="-71.610853" data-dir="JOSE MIGUEL CARRERA 304 0 SAN ANTONIO" data-loc="INGRID OLIVA ALARCON" data-sla="193"/>
+                      <label class="custom-control-label" for="ListaParaAsignar_[4]_CheckLlamado"></label>
+                    </li>
+                    <li class="tecnioo-card--item px-3">
+                      <p class="tecnioo-card--title"><span class="mr-2"><i class="fas fa-layer-group mr-1"></i>4</span><span class="tecnioo-card--title__id"># 277</span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
+                      <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
+                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - JOSE MIGUEL CARRERA 304 0 SAN ANTONIO</small></p>
+                    </li>
+                    <li class="tecnioo-card--item align-selft-end">
+                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">84 pts</span></div>
+                      <p class="tecnioo-card--deadline">193d</p>
+                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20</span><span>16:42:17</span></small></p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="tecnioo-card">
+                  <hr/>
+                  <ul class="d-flex align-items-stretch justify-content-between w-100">
+                    <li class="tecnioo-card--flag"></li>
+                    <li class="tecnioo-card--item custom-control custom-checkbox ml-3">
+                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[5]_CheckLlamado" name="ListaParaAsignar_[5]" data-id="278" data-pts="84" data-lat="-32.857108" data-lng="-71.234107" data-dir="LORCA PRIETO  20 LOCAL-3 (LACRUZ) 20 0 LA CRUZ" data-loc="PEDRO ANTONIO ATENAS TOLEDO" data-sla="182"/>
+                      <label class="custom-control-label" for="ListaParaAsignar_[5]_CheckLlamado"></label>
+                    </li>
+                    <li class="tecnioo-card--item px-3">
+                      <p class="tecnioo-card--title"><span class="mr-2"><i class="fas fa-layer-group mr-1"></i>5</span><span class="tecnioo-card--title__id"># 278</span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
+                      <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
+                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - LORCA PRIETO  20 LOCAL-3 (LACRUZ) 20 0 LA CRUZ</small></p>
+                    </li>
+                    <li class="tecnioo-card--item align-selft-end">
+                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">84 pts</span></div>
+                      <p class="tecnioo-card--deadline">182d</p>
+                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20</span><span>16:42:17</span></small></p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="tecnioo-card">
+                  <hr/>
+                  <ul class="d-flex align-items-stretch justify-content-between w-100">
+                    <li class="tecnioo-card--flag"></li>
+                    <li class="tecnioo-card--item custom-control custom-checkbox ml-3">
+                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[6]_CheckLlamado" name="ListaParaAsignar_[6]" data-id="282" data-pts="280" data-lat="-33.545065" data-lng="-70.629461" data-dir="TACORA 9051 9051 0 LA GRANJA" data-loc="MICHAEL CASTILLO CASANO" data-sla="18"/>
+                      <label class="custom-control-label" for="ListaParaAsignar_[6]_CheckLlamado"></label>
+                    </li>
+                    <li class="tecnioo-card--item px-3">
+                      <p class="tecnioo-card--title"><span class="mr-2"><i class="fas fa-layer-group mr-1"></i>6</span><span class="tecnioo-card--title__id"># 282</span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
+                      <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
+                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - TACORA 9051 9051 0 LA GRANJA</small></p>
+                    </li>
+                    <li class="tecnioo-card--item align-selft-end">
+                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">280 pts</span></div>
+                      <p class="tecnioo-card--deadline">18d</p>
+                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20</span><span>16:42:17</span></small></p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="tecnioo-card">
+                  <hr/>
+                  <ul class="d-flex align-items-stretch justify-content-between w-100">
+                    <li class="tecnioo-card--flag"></li>
+                    <li class="tecnioo-card--item custom-control custom-checkbox ml-3">
+                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[7]_CheckLlamado" name="ListaParaAsignar_[7]" data-id="283" data-pts="84" data-lat="-33.031864" data-lng="-71.630403" data-dir="ARTILLERÑA 347 0 VALPARAÍSO" data-loc="JUAN PABLO NARVAEZ" data-sla="-182"/>
+                      <label class="custom-control-label" for="ListaParaAsignar_[7]_CheckLlamado"></label>
+                    </li>
+                    <li class="tecnioo-card--item px-3">
+                      <p class="tecnioo-card--title"><span class="mr-2"><i class="fas fa-layer-group mr-1"></i>7</span><span class="tecnioo-card--title__id"># 283</span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
+                      <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
+                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - ARTILLERÑA 347 0 VALPARAÍSO</small></p>
+                    </li>
+                    <li class="tecnioo-card--item align-selft-end">
+                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">84 pts</span></div>
+                      <p class="tecnioo-card--deadline">-182d</p>
+                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20</span><span>16:42:17</span></small></p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="tecnioo-card">
+                  <hr/>
+                  <ul class="d-flex align-items-stretch justify-content-between w-100">
+                    <li class="tecnioo-card--flag"></li>
+                    <li class="tecnioo-card--item custom-control custom-checkbox ml-3">
+                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[8]_CheckLlamado" name="ListaParaAsignar_[8]" data-id="276" data-pts="0" data-lat="-33.437279" data-lng="-70.675859" data-dir="ESPERANZA 682 682 0 SANTIAGO" data-loc="SUSANA STEPHANY ARAYA ORELLANA" data-sla="10"/>
+                      <label class="custom-control-label" for="ListaParaAsignar_[8]_CheckLlamado"></label>
+                    </li>
+                    <li class="tecnioo-card--item px-3">
+                      <p class="tecnioo-card--title"><span class="mr-2"><i class="fas fa-layer-group mr-1"></i>8</span><span class="tecnioo-card--title__id"># 276</span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
+                      <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
+                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - ESPERANZA 682 682 0 SANTIAGO</small></p>
+                    </li>
+                    <li class="tecnioo-card--item align-selft-end">
+                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">0 pts</span></div>
+                      <p class="tecnioo-card--deadline">10d</p>
+                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20</span><span>16:42:17</span></small></p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="tecnioo-card">
+                  <hr/>
+                  <ul class="d-flex align-items-stretch justify-content-between w-100">
+                    <li class="tecnioo-card--flag"></li>
+                    <li class="tecnioo-card--item custom-control custom-checkbox ml-3">
+                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[9]_CheckLlamado" name="ListaParaAsignar_[9]" data-id="295" data-pts="84" data-lat="-33.433187" data-lng="-70.6256528" data-dir="Providencia 701 PROVIDENCIA" data-loc="4ptech " data-sla="12"/>
+                      <label class="custom-control-label" for="ListaParaAsignar_[9]_CheckLlamado"></label>
+                    </li>
+                    <li class="tecnioo-card--item px-3">
+                      <p class="tecnioo-card--title"><span class="mr-2"><i class="fas fa-layer-group mr-1"></i>9</span><span class="tecnioo-card--title__id"># 295</span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
+                      <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
+                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - Providencia 701 PROVIDENCIA</small></p>
+                    </li>
+                    <li class="tecnioo-card--item align-selft-end">
+                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">84 pts</span></div>
+                      <p class="tecnioo-card--deadline">12d</p>
+                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20</span><span>16:42:17</span></small></p>
+                    </li>
+                  </ul>
+                </li>
+                <li class="tecnioo-card">
+                  <hr/>
+                  <ul class="d-flex align-items-stretch justify-content-between w-100">
+                    <li class="tecnioo-card--flag"></li>
+                    <li class="tecnioo-card--item custom-control custom-checkbox ml-3">
+                      <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[10]_CheckLlamado" name="ListaParaAsignar_[10]" data-id="296" data-pts="84" data-lat="-33.517416" data-lng="-70.622035" data-dir="CALLE M 250 250 0 LA GRANJA" data-loc="MARIMAN LEUFUMAN BELDANO" data-sla="24"/>
+                      <label class="custom-control-label" for="ListaParaAsignar_[10]_CheckLlamado"></label>
+                    </li>
+                    <li class="tecnioo-card--item px-3">
+                      <p class="tecnioo-card--title"><span class="mr-2"><i class="fas fa-layer-group mr-1"></i>10</span><span class="tecnioo-card--title__id"># 296</span><span class="tecnioo-card--title__text"> <b>Urgencia Cooler  [Modelo]</b></span><span class="tecnioo-card--title__status"></span></p>
+                      <div class="tecnioo-card--content mb-1"><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span><span class="badge badge-light p-2 mr-1">Coller no enfria</span></div>
+                      <p class="tecnioo-card--place pb-2"><i class="fas fa-map-marker-alt tc-icon"> </i><small class="pl-2">Cliente Spot [Logo] - CALLE M 250 250 0 LA GRANJA</small></p>
+                    </li>
+                    <li class="tecnioo-card--item align-selft-end">
+                      <div class="tecnioo-card--label mb-3"><span class="badge badge-primary p-2">84 pts</span></div>
+                      <p class="tecnioo-card--deadline">24d</p>
+                      <p><small><i class="fas fa-clock pr-2"> </i><span>12/01/20</span><span>16:42:17</span></small></p>
                     </li>
                   </ul>
                 </li>
@@ -216,6 +356,17 @@
           </div>
         </div>
       </section>
+      <div class="tecnioo-assigned-list">
+        <div class="tecnioo-assigned-card">
+          <div class="bk-marker" data-id="266" data-lat="-33.453397" data-lng="-70.570569" data-dir="AVDA LARRAIN 5862  LOC 4036 5862  L 0 LA REINA" data-tec="Juan Gonzalez" data-loc="FUENTE NICANOR SPA"></div>
+        </div>
+        <div class="tecnioo-assigned-card">
+          <div class="bk-marker" data-id="269" data-lat="-33.525189" data-lng="-70.661016" data-dir="GRAN AVENIDA 7716 7716 0 LA CISTERNA" data-tec="Juan Gonzalez" data-loc="CESAR CRISTOBAL ARANCIBIA FERNANDEZ"></div>
+        </div>
+        <div class="tecnioo-assigned-card">
+          <div class="bk-marker" data-id="270" data-lat="-33.353681" data-lng="-70.522913" data-dir="EL RODEO 13032 0 LO BARNECHEA" data-tec="Juan Gonzalez" data-loc="SOCIEDAD GASTRONOMICA TANAKA SPA"></div>
+        </div>
+      </div>
       <section class="tecnioo-cards container-fluid pb-5 px-5">
         <div class="row pb-4">
           <div class="col-6">
@@ -350,7 +501,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="assets/js/map-dist.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_Vv6crZNWa6Z9ee1mtrfnGV4EuF7gk0M&amp;callback=initMap"></script>
   </body>
 </html>

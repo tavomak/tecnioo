@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Modulos</title>
+    <meta content="Modulos" property="og:title">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="images/webclip.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="tecnioo-navbar navbar bg-primary px-2 flex-row"><a class="navbar-brand tecnioo-navbar--wrap" href="home.html"><img class="tecnioo-navbar--wrap__img" src="./assets/img/avatar-2.png" alt="Tecnioo"></a>
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item"><a class="nav-link text-white px-2" href="./llamados.html">Llamados</a>
+            <ul class="navbar-nav flex-row"></ul>
+          </li>
+          <li class="nav-item dropdown"><a class="nav-link text-white px-2 dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ruta Camioneta</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="./programacion.html">Programación</a><a class="dropdown-item" href="#">Consulta de cierres</a></div>
+          </li>
+          <li class="nav-item"><a class="nav-link text-white px-2" href="./llamados.html">Validaciones</a></li>
+        </ul>
+      </div>
+      <ul class="navbar-nav flex-row ml-md-auto">
+        <li class="nav-item dropdown"><a class="nav-item nav-link dropdown-toggle px-4 text-white" href="#" id="cientMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Mantenedoores</a>
+          <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="cientMenu"><a class="dropdown-item dropdown-toggle dropdown-submenu" href="#" id="cientSubMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="nav-label dropright">Muestra 9</span><span class="caret"></span></a>
+            <div class="dropdown-menu"><a class="dropdown-item" href="#">Maestra 91</a><a class="dropdown-item" href="#">Maestra 92</a><a class="dropdown-item" href="#">Maestra 93</a>
+            </div><a class="dropdown-item" href="#">Maestra 1</a><a class="dropdown-item" href="#">Maestra 2</a><a class="dropdown-item" href="#">Maestra 3</a><a class="dropdown-item" href="#">Maestra 4</a><a class="dropdown-item" href="#">Maestra 5</a><a class="dropdown-item" href="#">Maestra 6</a><a class="dropdown-item" href="#">Maestra 7</a><a class="dropdown-item" href="#">Maestra 8</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown"><a class="nav-item nav-link dropdown-toggle text-white" href="#" id="cientProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user-circle pr-2"></i>Hola david.s@gmail.com</a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="cientMenu"><a class="dropdown-item" href="#"> Cerrar Sesión</a></div>
+        </li>
+      </ul>
+    </nav>
+    <main class="content-wrapper">
+      <section class="container-fluid pt-5 pb-3 px-5">
+        <div class="row">
+          <div class="col-6">
+            <h4>Titulo de página</h4>
+          </div>
+        </div>
+      </section>
+      <section class="container">
+        <div class="row">
+          <div class="col-12 mt-5">
+            <h2 class="fs-title">Campos de formulario</h2>
+            <hr>
+          </div>
+          <div class="col-12">
+            <div class="form-row">
+              <div class="form-group col-6">
+                <label for="#inputText">Input Text</label>
+                <input class="form-control" id="inputText" type="text" name="inputText" placeholder="Input Text" required>
+              </div>
+              <div class="form-group col-6">
+                <label for="#inputDatepicker">Input Datepicker</label>
+                <input class="form-control" id="inputDatepicker" type="text" name="inputDatepicker" placeholder="Input Datepicker" required>
+              </div>
+              <div class="form-group col-6">
+                <label for="inputRut">Input Rut</label>
+                <input class="form-control Rut" id="inputRut" type="text" name="inputRut" placeholder="RUT" required>
+              </div>
+              <div class="form-group col-6">
+                <label for="inputNumber">Input Number</label>
+                <input class="form-control" id="inputNumber" type="text" name="inputNumber" placeholder="Number" required>
+              </div>
+              <div class="form-grouo col-6">
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input class="custom-control-input" type="radio" id="radio" name="radio">
+                  <label class="custom-control-label" for="radio">Radio</label>
+                </div>
+              </div>
+              <div class="form-group col-6">
+                <div class="custom-control custom-checkbox">
+                  <input class="custom-control-input" type="checkbox" id="checkbox">
+                  <label class="custom-control-label" for="checkbox">Checkbox</label>
+                </div>
+              </div>
+              <div class="form-group col-12">
+                <label for="textArea">Text Area</label>
+                <textarea class="form-control" id="textArea" name="textArea" cols="30" rows="10"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mt-4">
+            <h2 class="fs-title">Combos de Búsqueda</h2>
+            <hr>
+          </div>
+          <div class="col-12">
+            <div class="form-row">
+              <div class="form-group col-6">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text form-control" for="#selectWhitSearch">Seleccionar</label>
+                  </div>
+                  <select class="custom-select form-control w-100" id="selectWhitSearch">
+                    <option>Seleccionar</option>
+                    <option>Selección 0</option>
+                    <option>Selección 1</option>
+                    <option>Selección 2</option>
+                    <option>Selección 3</option>
+                    <option>Selección 4</option>
+                    <option>Selección 5</option>
+                    <option>Selección 6</option>
+                    <option>Selección 7</option>
+                    <option>Selección 8</option>
+                    <option>Selección 9</option>
+                    <option>Selección 10</option>
+                    <option>Selección 11</option>
+                    <option>Selección 12</option>
+                    <option>Selección 13</option>
+                    <option>Selección 14</option>
+                    <option>Selección 15</option>
+                    <option>Selección 16</option>
+                    <option>Selección 17</option>
+                    <option>Selección 18</option>
+                    <option>Selección 19</option>
+                    <option>Selección 20</option>
+                    <option>Selección 21</option>
+                    <option>Selección 22</option>
+                    <option>Selección 23</option>
+                    <option>Selección 24</option>
+                    <option>Selección 25</option>
+                    <option>Selección 26</option>
+                    <option>Selección 27</option>
+                    <option>Selección 28</option>
+                    <option>Selección 29</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group col-6">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text form-control" for="#step2SelectClientType">Seleccione sucursal</label>
+                  </div>
+                  <select class="custom-select form-control w-100" id="step2SelectClientType">
+                    <option>Seleccionar</option>
+                    <option>Sucursal 0</option>
+                    <option>Sucursal 1</option>
+                    <option>Sucursal 2</option>
+                    <option>Sucursal 3</option>
+                    <option>Sucursal 4</option>
+                    <option>Sucursal 5</option>
+                    <option>Sucursal 6</option>
+                    <option>Sucursal 7</option>
+                    <option>Sucursal 8</option>
+                    <option>Sucursal 9</option>
+                    <option>Sucursal 10</option>
+                    <option>Sucursal 11</option>
+                    <option>Sucursal 12</option>
+                    <option>Sucursal 13</option>
+                    <option>Sucursal 14</option>
+                    <option>Sucursal 15</option>
+                    <option>Sucursal 16</option>
+                    <option>Sucursal 17</option>
+                    <option>Sucursal 18</option>
+                    <option>Sucursal 19</option>
+                    <option>Sucursal 20</option>
+                    <option>Sucursal 21</option>
+                    <option>Sucursal 22</option>
+                    <option>Sucursal 23</option>
+                    <option>Sucursal 24</option>
+                    <option>Sucursal 25</option>
+                    <option>Sucursal 26</option>
+                    <option>Sucursal 27</option>
+                    <option>Sucursal 28</option>
+                    <option>Sucursal 29</option>
+                  </select>
+                </div>
+                <p class="text-right m-0"><a class="btn btn-outline-primary btn-sm mt-3" id="step1NuevaSucursal" href="#" data-toggle="modal" data-target="#modalNuevaSucursal">Nueva Sucursal</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mt-4 bk-step2-hidden">
+            <h2 class="fs-title">Contacto asignado</h2>
+            <hr>
+            <ul class="pl-0 mb-3 custom-control custom-radio" id="step2checkboxContact">
+              <li class="my-2">
+                <ul class="tecnioo-card d-flex align-items-center">
+                  <li>
+                    <form class="form-row tecnioo-card--item px-2 py-3 bg-grey inputsFormulario">
+                      <div class="form-group col-md-6">
+                        <label for="NombreContacto">Nombre Contacto</label>
+                        <input class="form-control" type="text" id="NombreContacto">
+                      </div>
+                      <div class="form-group col-md-6"> 
+                        <label for="step2InputEmail">Email</label>
+                        <input class="form-control" type="email" id="step2InputEmail" required>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="step1SelectCallType">Teléfono</label>
+                        <input class="form-control" type="number" id="step2InputTelefono" pattern="[0-9]{9}" max="9" required>
+                      </div>
+                      <div class="form-group col-md-6"> 
+                        <label for="step2InputComentario">Referencia de Unificación</label>
+                        <input class="form-control inputTelefono" type="text" id="step2InputComentario" required>
+                      </div>
+                    </form>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h2 class="fs-title">Busqueda de cliente y sucursal</h2>
+          </div>
+        </div>
+        <hr>
+        <div class="pt-3 form-row">
+          <div class="form-group col-6">
+            <label for="step1SelectClientType">Buscar por</label>
+            <select class="form-control" id="step1SelectClientType">
+              <option>Rut</option>
+              <option>Razón Social</option>
+              <option>Código Cliente</option>
+              <option>ID de Cliente</option>
+              <option>Nombre de Fantasía</option>
+            </select>
+          </div>
+          <div class="form-group col-6" id="step1Rut">
+            <label for="step1InputSelectTipe">Cliente Número</label>
+            <input class="form-control Rut" id="step1InputSelectTipe" type="text" name="inputRut" placeholder="Ej: 9.999.999-9" required>
+          </div>
+          <div class="form-group col-6 d-none" id="step1NotRut">
+            <label for="step1InputSelectTipeNotRut">Cliente Número</label>
+            <input class="form-control" id="step1InputSelectTipeNotRut" type="text" placeholder="">
+          </div>
+          <p class="text-right w-100"><a class="btn btn-outline-primary btn-sm mt-3" id="step1ShowResults" href="#">Buscar</a></p>
+        </div>
+        <div class="bk-step1-hidden pb-5 row">
+          <div class="col-12">
+            <h2 class="fs-title">Resultados</h2>
+            <hr>
+          </div>
+          <div class="col-12 pt-3"><a id="step1SelectClientName" href="#">
+              <div class="card">
+                <div class="card-body">
+                  <p>77.889.654-0</p>
+                  <div class="card-title pb-2">
+                    <h5>Nombre de cliente Spot - <b>[Cliente Manandte]</b></h5>
+                  </div>
+                  <div class="card-text container-fluid">
+                    <div class="row">
+                      <div class="col-4 p-0"><i class="fas fa-phone mr-2"></i><span>+569 6 5654.8454</span></div>
+                      <div class="col-6 p-0"><i class="fas fa-envelope mr-2"></i><span>nombre@empresa.cl</span></div>
+                      <div class="col-2 p-0"><i class="fas fa-map-marker-alt mr-2"></i><span>30</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div></a></div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h2 class="fs-title">Botones</h2>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-12 my-2">
+            <button class="btn btn-success">Crear</button>
+            <button class="btn btn-danger">Eliminar</button>
+            <button class="btn btn-secondary">Volver</button>
+          </div>
+          <div class="col-12 pt-5">
+            <h2 class="fs-title">Botones ver con iconos (ABREN LOS MODALES OK ty ERROR)</h2>
+          </div>
+          <div class="col-12 my-2">
+            <button class="btn btn-success sweet-ok"><i class="fas fa-eye"></i></button>
+            <button class="btn btn-danger sweet-error"><i class="fas fa-times-circle"></i></button>
+          </div>
+        </div>
+      </section>
+      <section class="container pt-5 pb-3 px-5">
+        <div class="row justify-content-center">
+          <div class="col-sm-8">
+            <div class="card text-center p-5">
+              <div class="card-body">
+                <div class="card-title mb-4"> 
+                  <h4>Aprobación</h4>
+                  <p>Se <strong><span class="text-success">Aprobarán</span></strong> los cambios y se <strong><span  class="text-success">CERRARÁ OK<span></strong> el llamado número:</p>
+                </div>
+                <div class="form-group">
+                  <input class="w-100" type="text" placeholder="#123456789">
+                </div><a class="btn btn-success mt-4 d-block" href="#">Aprobar y Cerrar OK</a><a class="mt-4 d-block" href="#">Cancelar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container pt-5 pb-3 px-5">
+        <div class="row justify-content-center">
+          <div class="col-sm-8">
+            <div class="card text-center p-5">
+              <div class="card-body">
+                <div class="card-title mb-4"> 
+                  <h4>Rechazo</h4>
+                  <p>Se <strong><span class="text-danger">Rechazarán</span></strong> los cambios y se <strong><span  class="text-success">CERRARÁ OK<span></strong> el llamado número:</p>
+                </div>
+                <form class="px-5" action="">
+                  <div class="form-group">
+                    <input class="w-100" type="text" placeholder="#123456789">
+                  </div><a class="btn btn-danger mt-4 d-block" href="#">Rechazar y Cerrar OK</a><a class="mt-4 d-block" href="#">Cancelar</a>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="modal fade" id="modalNuevaSucursal" tabindex="-1" role="dialog" aria-labelledby="modalNuevaSucursalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Nueva Sucursal Para</h4>
+            </div>
+            <div class="modal-body">
+              <div class="card p-2 mb-4">
+                <div class="card-body p-0">
+                  <p><small>77.889.098-3</small></p>
+                  <p><b>Nombre de cliente Spot</b></p>
+                </div>
+              </div>
+              <form>
+                <div class="form-group">
+                  <label for="inputNombreSucursalAdd">Nombre Sucursal</label>
+                  <input class="form-control" type="text" id="inputNombreSucursalAdd">
+                </div>
+                <div class="form-group">
+                  <label for="inputDireccionAdd">Dirección</label>
+                  <input class="form-control" type="text" id="inputDireccionAdd">
+                </div>
+                <div class="form-group">
+                  <label for="inputNumeración">Numeración</label>
+                  <input class="form-control" type="text" id="inputNumeraciónAdd">
+                </div>
+                <div class="form-group">
+                  <select class="custom-select form-control">
+                    <option>Seleccionar</option>
+                    <option>Comuna 0</option>
+                    <option>Comuna 1</option>
+                    <option>Comuna 2</option>
+                    <option>Comuna 3</option>
+                    <option>Comuna 4</option>
+                    <option>Comuna 5</option>
+                    <option>Comuna 6</option>
+                    <option>Comuna 7</option>
+                    <option>Comuna 8</option>
+                    <option>Comuna 9</option>
+                    <option>Comuna 10</option>
+                    <option>Comuna 11</option>
+                    <option>Comuna 12</option>
+                    <option>Comuna 13</option>
+                    <option>Comuna 14</option>
+                    <option>Comuna 15</option>
+                    <option>Comuna 16</option>
+                    <option>Comuna 17</option>
+                    <option>Comuna 18</option>
+                    <option>Comuna 19</option>
+                    <option>Comuna 20</option>
+                    <option>Comuna 21</option>
+                    <option>Comuna 22</option>
+                    <option>Comuna 23</option>
+                    <option>Comuna 24</option>
+                    <option>Comuna 25</option>
+                    <option>Comuna 26</option>
+                    <option>Comuna 27</option>
+                    <option>Comuna 28</option>
+                    <option>Comuna 29</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input step5SelectCheckbox" type="checkbox" id="checkboxFornuevaSucursalAdd">
+                    <label class="custom-control-label" for="checkboxFornuevaSucursalAdd">¿En Casa Matríz?</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputIDSucursal">ID de la Sucursal</label>
+                  <input class="form-control" type="text" id="inputIDSucursalAdd">
+                </div>
+              </form>
+              <p class="text-center"><a class="btn btn-primary" href="#">Crear Nueva Sucursal</a></p>
+              <p class="text-center"><a href="#">Cancelar</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+    <script src="assets/js/jquery.validate.min-dist.js"></script>
+    <script src="assets/js/additional-methods.min-dist.js"></script>
+    <script src="assets/js/rut-dist.js"></script>
+    <script src="assets/js/main-wizard-dist.js"></script>
+    <script src="assets/js/main-dist.js"></script>
+  </body>
+</html>

@@ -49,7 +49,7 @@ block mainContent
                                 .col-3.text-right
                                     a(href="#").btn.btn-outline-primary.btn-sm Buscar
                         hr
-                        ul.d-flex
+                        ul.d-flex.justify-content-around.align-items-baseline
                             li.my-1.ml-3
                                 .custom-control.custom-checkbox
                                     input(type="checkbox" class="custom-control-input" id="selectAllcheckbox")
@@ -60,44 +60,161 @@ block mainContent
                                     label(class="custom-control-label" for="filterSla") SLA 24hrs
                             li.my-1.ml-3
                                 span Pts a asignar:
-                                span.badge.badge-primary.p-2.my-1.tecnioo-biglist--puntos
-                        ul
-                            - for (var x = 0; x < 4; x++)
-                                li.tecnioo-card
-                                    hr
-                                    ul.d-flex.align-items-stretch.w-100
-                                        li.tecnioo-card--flag
-                                        li.tecnioo-card--item.custom-control.custom-checkbox.ml-3
-                                            input.custom-control-input(type="checkbox" id="ListaParaAsignar_["+x+"]_CheckLlamado" class="bk-marker" data-lat="-33."+x+"6" data-lng="-70."+x+"1" data-id="1"+x data-pts="1"+x name="ListaParaAsignar_["+x+"]")
-                                            label.custom-control-label(for="ListaParaAsignar_["+x+"]_CheckLlamado")
-                                        li.tecnioo-card--item.px-3
-                                            p.tecnioo-card--title
-                                                span.tecnioo-card--title__id #12345678 - 
-                                                span.tecnioo-card--title__text 
-                                                    b Urgencia Cooler  [Modelo]
-                                                span.tecnioo-card--title__status
-                                            .tecnioo-card--content.mb-1
-                                                span.badge.badge-light.p-2.mr-1 Coller no enfria
-                                                span.badge.badge-light.p-2.mr-1 Coller no enfria
-                                                span.badge.badge-light.p-2.mr-1 Coller no enfria
-                                            p.tecnioo-card--place.pb-2
-                                                i.fas.fa-map-marker-alt.tc-icon 
-                                                small.pl-2 Cliente Spot [Logo] - Providencia, Santiago
-                                        li.tecnioo-card--item.px-3.ml-auto
-                                            .tecnioo-card--label.mb-3
-                                                span.badge.badge-primary.p-2 500 pts
-                                            p.tecnioo-card--deadline -4d
-                                            p
-                                                small
-                                                    i.fas.fa-clock.pr-2 
-                                                    span 12/01/20 
-                                                    span 16:42:17
+                                span.badge.badge-primary.p-2.my-1.tecnioo-biglist--puntos 0
+                        ul#tecnioo-unassigned-list
+                            - 
+                                var array = [
+                                    { 
+                                        "id":"266",
+                                        "pts":"84",
+                                        "lat":"-33.453397",
+                                        "lng":"-70.570569",
+                                        "dir":"AVDA LARRAIN 5862  LOC 4036 5862  L 0 LA REINA",
+                                        "loc":"FUENTE NICANOR SPA",
+                                        "sla":"-264",
+                                        "ots":"3"
+                                    },
+                                    { 
+                                        "id":"269",
+                                        "pts":"84",
+                                        "lat":"-33.525189",
+                                        "lng":"-70.661016",
+                                        "dir":"GRAN AVENIDA 7716 7716 0 LA CISTERNA",
+                                        "loc":"CESAR CRISTOBAL ARANCIBIA FERNANDEZ",
+                                        "sla":"216" ,
+                                        "ots":"3"
+                                    },
+                                    {
+                                        "id":"281",
+                                        "pts":"50",
+                                        "lat":"-33.515808",
+                                        "lng":"-70.689861",
+                                        "dir":"AV SALVADOR ALLENDE 03788 03788 0 LO ESPEJO",
+                                        "loc":"LORRAINE VALESKA CACERES GROVE",
+                                        "sla":"206",
+                                        "ots":"3"
+                                    },
+                                    {
+                                        "id":"274",
+                                        "pts":"84",
+                                        "lat":"-33.376872",
+                                        "lng":"-70.644494",
+                                        "dir":"AV LAS TORRES # 1042 1042 0 HUECHURABA",
+                                        "loc":"NANCY SALAZAR ESCOBAR",
+                                        "sla":"93",
+                                        "ots":"3"
+                                    },
+                                    {
+                                        "id":"277",
+                                        "pts":"84",
+                                        "lat":"-33.611339",
+                                        "lng":"-71.610853",
+                                        "dir":"JOSE MIGUEL CARRERA 304 0 SAN ANTONIO",
+                                        "loc":"INGRID OLIVA ALARCON",
+                                        "sla":"193",
+                                        "ots":"3"
+                                    },
+                                    {
+                                        "id":"278",
+                                        "pts":"84",
+                                        "lat":"-32.857108",
+                                        "lng":"-71.234107",
+                                        "dir":"LORCA PRIETO  20 LOCAL-3 (LACRUZ) 20 0 LA CRUZ",
+                                        "loc":"PEDRO ANTONIO ATENAS TOLEDO",
+                                        "sla":"182",
+                                        "ots":"3"
+                                    },
+                                    {
+                                        "id":"282",
+                                        "pts":"280",
+                                        "lat":"-33.545065",
+                                        "lng":"-70.629461",
+                                        "dir":"TACORA 9051 9051 0 LA GRANJA",
+                                        "loc":"MICHAEL CASTILLO CASANO",
+                                        "sla":"18",
+                                        "ots":"3"
+                                    },
+                                    {
+                                        "id":"283",
+                                        "pts":"84",
+                                        "lat":"-33.031864",
+                                        "lng":"-71.630403",
+                                        "dir":"ARTILLERÑA 347 0 VALPARAÍSO",
+                                        "loc":"JUAN PABLO NARVAEZ",
+                                        "sla":"-182",
+                                        "ots":"3"
+                                    },
+                                    {
+                                        "id":"276",
+                                        "pts":"0",
+                                        "lat":"-33.437279",
+                                        "lng":"-70.675859",
+                                        "dir":"ESPERANZA 682 682 0 SANTIAGO",
+                                        "loc":"SUSANA STEPHANY ARAYA ORELLANA",
+                                        "sla":"10",
+                                        "ots":"3"
+                                    },
+                                    {
+                                        "id":"295",
+                                        "pts":"84",
+                                        "lat":"-33.433187",
+                                        "lng":"-70.6256528",
+                                        "dir":"Providencia 701 PROVIDENCIA",
+                                        "loc":"4ptech ",
+                                        "sla":"12",
+                                        "ots":"3"
+                                    },
+                                    {
+                                        "id":"296",
+                                        "pts":"84",
+                                        "lat":"-33.517416",
+                                        "lng":"-70.622035",
+                                        "dir":"CALLE M 250 250 0 LA GRANJA",
+                                        "loc":"MARIMAN LEUFUMAN BELDANO",
+                                        "sla":"24",
+                                        "ots":"3"
+                                    }
+                                ]
+
+                            each val, key in array
+                                +tarjetaProgramacion(key, val.id, val.lat, val.lng, val.pts, val.dir, val.loc, val.sla, key)
 
 
                 .col-7.p-0
                     #map(style="position:relative;height: 100%;width: 100%;margin: 0px;padding: 0px")
 
-                    
+        .tecnioo-assigned-list
+            - 
+                var array2 = [
+                    {
+                        "id":"266",
+                        "lat":"-33.453397",
+                        "lng":"-70.570569",
+                        "dir":"AVDA LARRAIN 5862  LOC 4036 5862  L 0 LA REINA",
+                        "tec":"Juan Gonzalez",
+                        "loc":"FUENTE NICANOR SPA"
+                    },
+                    {
+                        "id":"269",
+                        "lat":"-33.525189",
+                        "lng":"-70.661016",
+                        "dir":"GRAN AVENIDA 7716 7716 0 LA CISTERNA",
+                        "tec":"Juan Gonzalez",
+                        "loc":"CESAR CRISTOBAL ARANCIBIA FERNANDEZ"
+                    },
+                    {
+                        "id":"270",
+                        "lat":"-33.353681",
+                        "lng":"-70.522913",
+                        "dir":"EL RODEO 13032 0 LO BARNECHEA",
+                        "tec":"Juan Gonzalez",
+                        "loc":"SOCIEDAD GASTRONOMICA TANAKA SPA"
+                    }
+                ]
+            each val, key in array2
+                .tecnioo-assigned-card
+                    .bk-marker(data-id=val.id data-lat=val.lat data-lng=val.lng data-dir=val.dir data-tec=val.tec data-loc=val.loc)
+
         section.tecnioo-cards.container-fluid.pb-5.px-5
             .row.pb-4
                     .col-6
@@ -163,5 +280,9 @@ block mainContent
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
             crossorigin="anonymous"
             )
-        script(src="https://maps.googleapis.com/maps/api/js")
         script(src=baseDir+"assets/js/map-dist.js")
+        script(
+            async
+            defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_Vv6crZNWa6Z9ee1mtrfnGV4EuF7gk0M&callback=initMap"
+            )

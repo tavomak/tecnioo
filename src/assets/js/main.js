@@ -1,5 +1,6 @@
 $(function () {
-
+    $("#selectWhitSearch").select2();
+    $('#inputDatepicker').datepicker();
     //Selecciona todos los cheboxes en las tarjetas de llamados
     $('#selectAllcheckbox').click(function () {
         if ($(this).is(':checked')) {
@@ -8,22 +9,26 @@ $(function () {
             $('.tecnioo-card').find('.custom-control-input').attr('checked', false);
         }
     });
-    $(".fancybox").fancybox({
-        buttons : [
-          'download',
-          'thumbs',
-          'close'
-        ]
-      });
+    if ($.isFunction($.fn.fancybox)) {
+        $(".fancybox").fancybox({
+            buttons : [
+            'download',
+            'thumbs',
+            'close'
+            ]
+        });
+    }
     // Arregla el campo de RUT
     $('.Rut').Rut({
         on_error: function () {
-            console.log('rut invalido');
+            console.log('RUT invalido');
+            $('.Rut').parent().append('<span>Ingrese un rut valido</span>');
         },
         on_success: function () {
             console.log('RUT válido')
+            $('.Rut').parent().find('span').remove();
         },
-        format_on: 'keyup'
+        format_on: 'blur'
     });
 
     // Validador de RUT
@@ -72,5 +77,21 @@ $(function () {
         dots: true,
         //nav:true,
         items: 2
+    });
+
+    $('.sweet-error').on('click', function(){
+        Swal.fire({
+            icon: 'error',
+            title: 'Ha ocurrido un error',
+            text: '"Mensaje de error impreso"'
+          })
+    });
+
+    $('.sweet-ok').on('click', function(){
+        Swal.fire({
+            icon: 'success',
+            title: 'Haz pasado la validación OK',
+            text: '"Mensaje de validación impreso"'
+          })
     });
 }); 
