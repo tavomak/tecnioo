@@ -102,6 +102,23 @@ $(function () {
 
         });
 
+        $('#filterSla').click(function () {
+            $('.tecnioo-card').each(function (i, v) {
+                var checksla = $(this).find('.bk-marker').data('sla');
+
+                if (Number(checksla) < 24) {
+
+                    if ($(this).is(':checked')) {
+                        $('.tecnioo-card').find('.custom-control-input').attr('checked', true);
+                    } else {
+                        $('.tecnioo-card').find('.custom-control-input').attr('checked', false);
+                    }
+                    
+                }
+            });
+
+        });
+
     }
     google.maps.event.addDomListener(window, 'load', initMap);
 
