@@ -107,7 +107,7 @@ function initMap() {
                     infowindow.close();
                     var contentString = '<div class="card" style="width: 22rem;border:none;">'+
                     '<div class="card-body">'+
-                        '<h5 class="card-title">#'+myId+'</h5>'+
+                        '<h5 class="card-title">#'+myId+' <small>Urgencia Cooler  [Modelo]</small></h5>'+
                         '<p class="card-text">'+dirCS+'</p>'+
                         '<table class="table table-striped mt-4">'+
                             '<thead>'+
@@ -127,6 +127,7 @@ function initMap() {
                                     '<td>15:00 a 23:59</td>'+
                             '</tr></tbody>'+
                       '</table>'+
+                      '<a href="" class="btn btn-primary btn-sm m-auto">Ver detalle</a>'+
                     '</div> ';
                     infowindow.setContent(contentString );
 
