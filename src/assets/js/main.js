@@ -1,6 +1,7 @@
 $(function () {
     $("#selectWhitSearch").select2();
     $('#inputDatepicker').datepicker();
+    $('.inputDatepicker').datepicker();
     //Selecciona todos los cheboxes en las tarjetas de llamados
     $('#selectAllcheckbox').click(function () {
         if ($(this).is(':checked')) {

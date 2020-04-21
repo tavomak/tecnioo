@@ -1,0 +1,81 @@
+extends ../layout/_header
+
+block append config
+    -var pageTitle = 'Exportar'
+    -var pageDescription = ''
+    -var baseDir = './'
+    -var linkSrc = ''
+block links
+    link(href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css", rel="stylesheet")
+
+block mainContent
+    main.content-wrapper
+        section.container.pt-5.pb-3.px-5
+            .row.justify-content-center
+                .col-sm-6
+                    .card.p-5
+                        .card-body
+                            .card-title.mb-4 
+                                h4.pb-4 Exportar
+                                p 
+                                    b Fecha de visita
+                                .form-row
+                                    .form-group.col-6
+                                        input.form-control.inputDatepicker#inputDatepicker1(type="text" name="inputDatepicker" placeholder="Desde" required)
+                                    .form-group.col-6
+                                        input.form-control.inputDatepicker#inputDatepicker2(type="text" name="inputDatepicker" placeholder="Hasta" required)
+
+                            .card-text
+                                .form-row
+                                    .form-group.col-6
+                                        p 
+                                            b Zona TCM
+                                        select.form-control
+                                            option Todos
+                                            each val in ['Santigo', 'Viña del mar', 'Rancagua']
+                                                option=val
+                                    .form-group.col-6
+                                        p 
+                                            b Estado de la OT
+                                        select.form-control
+                                            option Todas
+                                            each val in ['Abierto', 'Sin Asignar', 'Asignado', 'Pendiente de Validación', 'Pendiente Cliente', 'Pendiente TCM', 'Local Cerrado', 'Cerrados OK']
+                                                option=val
+                                .form-row
+                                    .form-group.col-6.text-center
+                                        a.btn.btn-success.mt-4.mr-4(href="#") Exportar OTs
+                                    .form-group.col-6.text-center
+                                        a.btn.btn-success.mt-4(href="#") Exportar Repuestos
+
+    block scripts 
+        script(
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"
+            )
+        script(
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+            )
+        script(
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+            crossorigin="anonymous"
+            )
+        script(
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"
+            )
+        script( src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" )
+        script( src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/sweetalert2@9")
+        script(src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js")
+        script(src=baseDir+"assets/js/jquery.validate.min-dist.js")
+        script(src=baseDir+"assets/js/additional-methods.min-dist.js")
+        script(src=baseDir+"assets/js/rut-dist.js")
+        script(src=baseDir+"assets/js/main-wizard-dist.js")
+        script(src=baseDir+"assets/js/main-dist.js")
