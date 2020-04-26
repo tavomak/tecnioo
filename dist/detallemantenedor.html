@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Detalle de Mantenedor</title>
+    <meta content="Detalle de Mantenedor" property="og:title">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/img/favicon.png" rel="icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="./assets/css/main.css" rel="stylesheet">
+    <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="images/webclip.png" rel="apple-touch-icon">
+    <link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="tecnioo-navbar navbar bg-primary px-2 flex-row"><a class="navbar-brand tecnioo-navbar--wrap" href="home.html"><img class="tecnioo-navbar--wrap__img" src="./assets/img/avatar-2.png" alt="Tecnioo"></a>
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item"><a class="nav-link text-white px-2" href="./llamados.html">Llamados</a>
+            <ul class="navbar-nav flex-row"></ul>
+          </li>
+          <li class="nav-item dropdown"><a class="nav-link text-white px-2 dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ruta Camioneta</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="./programacion.html">Programación</a><a class="dropdown-item" href="#">Consulta de cierres</a></div>
+          </li>
+          <li class="nav-item"><a class="nav-link text-white px-2" href="./llamados.html">Validaciones</a></li>
+        </ul>
+      </div>
+      <ul class="navbar-nav flex-row ml-md-auto">
+        <li class="nav-item dropdown"><a class="nav-item nav-link dropdown-toggle px-4 text-white" href="#" id="cientMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Mantenedoores</a>
+          <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="cientMenu"><a class="dropdown-item dropdown-toggle dropdown-submenu" href="#" id="cientSubMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="nav-label dropright">Muestra 9</span><span class="caret"></span></a>
+            <div class="dropdown-menu"><a class="dropdown-item" href="#">Maestra 91</a><a class="dropdown-item" href="#">Maestra 92</a><a class="dropdown-item" href="#">Maestra 93</a>
+            </div><a class="dropdown-item" href="#">Maestra 1</a><a class="dropdown-item" href="#">Maestra 2</a><a class="dropdown-item" href="#">Maestra 3</a><a class="dropdown-item" href="#">Maestra 4</a><a class="dropdown-item" href="#">Maestra 5</a><a class="dropdown-item" href="#">Maestra 6</a><a class="dropdown-item" href="#">Maestra 7</a><a class="dropdown-item" href="#">Maestra 8</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown"><a class="nav-item nav-link dropdown-toggle text-white" href="#" id="cientProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user-circle pr-2"></i>Hola david.s@gmail.com</a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="cientMenu"><a class="dropdown-item" href="#"> Cerrar Sesión</a></div>
+        </li>
+      </ul>
+    </nav>
+    <main class="content-wrapper">
+      <section class="container pt-5 pb-3 px-5">
+        <div class="row justify-content-center">
+          <div class="col-sm-6">
+            <div class="card p-5">
+              <div class="card-body">
+                <div class="card-title mb-4"> 
+                  <h4 class="pb-4">Editar Tipo de Llamado</h4>
+                  <p> <b>Descripción tipo de llamado</b></p>
+                  <p>CAMBIO ACCESORIO O REPUESTO</p>
+                </div>
+                <div class="card-text">
+                  <div class="form-row">
+                    <div class="form-grouo col-6">
+                      <div class="custom-control custom-checkbox custom-control-inline">
+                        <input class="custom-control-input" type="checkbox" id="radio" name="radio" checked>
+                        <label class="pt-1 custom-control-label" for="radio">Vigente</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-6 text-center"><a class="btn btn-success mt-4 mr-4" href="#">Volver</a></div>
+                    <div class="form-group col-6 text-center"><a class="btn btn-primary mt-4" href="#">Editar</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="./assets/js/jquery.validate.min-dist.js"></script>
+    <script src="./assets/js/additional-methods.min-dist.js"></script>
+    <script src="./assets/js/rut-dist.js"></script>
+    <script src="./assets/js/main-dist.js"></script>
+  </body>
+</html>

@@ -12,10 +12,10 @@ $(function () {
     });
     if ($.isFunction($.fn.fancybox)) {
         $(".fancybox").fancybox({
-            buttons : [
-            'download',
-            'thumbs',
-            'close'
+            buttons: [
+                'download',
+                'thumbs',
+                'close'
             ]
         });
     }
@@ -72,6 +72,59 @@ $(function () {
         }
     });
 
+    $('#UserChangePassword').on('change blur keyup', function () {
+        if ( $(this).valid() ) {
+            $('#confirmEditPassword').removeClass('disabled');
+        } else {
+            $('#confirmEditPassword').addClass('disabled');
+        }
+    });
+
+    $('#UserChangePassword').validate({
+        rules: {
+            inputClientePassword: {
+                required: true,
+                minlength: 8,
+                maxlength: 8,
+                passwordCheck: true
+            },
+            inputClientePasswordEdit: {
+                equalTo: "#inputClientePassword"
+            }
+        },
+        messages: {
+            inputClientePassword: {
+                required: "Campo requeriddo",
+                minlength: jQuery.validator.format("Necesitamos por lo menos {0} caracteres"),
+                maxlength: jQuery.validator.format("{0} caracteres son demasiados caracteres!")
+            },
+            inputClientePasswordEdit: {
+                required: "Campo requeriddo",
+                equalTo: "Por favor ingresar los mismos valodes de nuevo"
+            }
+        },
+        errorPlacement: function (error, element) {
+            $(element).parents('.form-group').append(error)
+            console.log(error);
+        }
+    });
+
+    jQuery.validator.addMethod("passwordCheck",
+        function(value, element, param) {
+            if (this.optional(element)) {
+                return true;
+            } else if (!/[A-Z]/.test(value)) {
+                return false;
+            }  else if (!/[0-9]/.test(value)) {
+                return false;
+            }
+                /*else if (!/[a-z]/.test(value)) {
+                return false;
+            }*/ 
+            return true;
+        },
+        "Ingresa al menos una letra Mayúscula y un número");
+
     $('.detalles-owl').owlCarousel({
         loop: true,
         autoplay: true,
@@ -80,19 +133,19 @@ $(function () {
         items: 2
     });
 
-    $('.sweet-error').on('click', function(){
+    $('.sweet-error').on('click', function () {
         Swal.fire({
             icon: 'error',
             title: 'Ha ocurrido un error',
             text: '"Mensaje de error impreso"'
-          })
+        })
     });
 
-    $('.sweet-ok').on('click', function(){
+    $('.sweet-ok').on('click', function () {
         Swal.fire({
             icon: 'success',
             title: 'Haz pasado la validación OK',
             text: '"Mensaje de validación impreso"'
-          })
+        })
     });
 }); 
