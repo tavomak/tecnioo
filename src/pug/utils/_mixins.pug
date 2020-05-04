@@ -151,7 +151,7 @@ mixin rangoHorariosTabla(horarios, asignacion, clase)
 mixin tarjetaProgramacion(index, id, lat, lng, pts, dir, loc, sla, ots)
     li.tecnioo-card
         hr
-        ul.d-flex.align-items-stretch.justify-content-between.w-100
+        ul.d-flex.w-100
             li.tecnioo-card--flag
             li.tecnioo-card--item.custom-control.custom-checkbox.ml-3
                 input.custom-control-input.bk-marker(type="checkbox" id="ListaParaAsignar_["+index+"]_CheckLlamado" name="ListaParaAsignar_["+index+"]" data-id=id data-pts=pts data-lat=lat data-lng=lng data-dir=dir data-loc=loc data-sla=sla)
@@ -165,6 +165,8 @@ mixin tarjetaProgramacion(index, id, lat, lng, pts, dir, loc, sla, ots)
                     span.tecnioo-card--title__text 
                         b Urgencia Cooler  [Modelo]
                     span.tecnioo-card--title__status
+                .tecnioo-card--info
+                    span.badge.badge-primary.py-1.px-2.mb-1 Diagnostico nivel 1
                 .tecnioo-card--content.mb-1
                     span.badge.badge-light.p-2.mr-1 Coller no enfria
                     span.badge.badge-light.p-2.mr-1 Coller no enfria
@@ -172,7 +174,7 @@ mixin tarjetaProgramacion(index, id, lat, lng, pts, dir, loc, sla, ots)
                 p.tecnioo-card--place.pb-2
                     i.fas.fa-map-marker-alt.tc-icon 
                     small.pl-2 Cliente Spot [Logo] - #{dir}
-            li.tecnioo-card--item.align-selft-end
+            li.tecnioo-card--item.ml-auto
                 .tecnioo-card--label.mb-3
                     span.badge.badge-primary.p-2 #{pts} pts
                 p.tecnioo-card--deadline #{sla}d
