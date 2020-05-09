@@ -186,6 +186,12 @@ mixin tarjetaProgramacion(index, id, lat, lng, pts, dir, loc, sla, ots)
         p
             small Miercoles 18 
                 span.text-success abierto
+                span.badge.badge-light.p-2.mx-2 
+                    i.fas.fa-lock-open.pr-2
+                    | lun a dom 08:00 a 15:00
+                span.badge.badge-light.p-2.mx-2 
+                    i.fas.fa-lock.pr-2
+                    | lun a dom 15:00 a 23:00
 //- no son parte del proyecto actual            
 //-mixin slides(image, title, caption)
     .item.text-center&attributes(attributes)
