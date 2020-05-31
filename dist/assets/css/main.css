@@ -2474,7 +2474,7 @@ body .ui-tooltip {
 
 /* line 3, src/assets/scss/components/biglist.scss */
 .tecnioo-biglist--container {
-  max-height: 450px;
+  height: 450px;
   overflow: scroll;
   overflow-x: hidden;
 }

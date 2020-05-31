@@ -36,8 +36,8 @@ block mainContent
             .row
                 .col.py-3
                     ul.nav.nav-pills.nav-justified(id="myTab" role="tablist")
-                        each val in ['Todos (120)','Urgencias (98)','Instalaciones (12)','Retiros','Modificaciones', 'Perforaciones', 'Cambio accesorios', 'Puesta en marcha']
-                                a.nav-item.nav-link(href="#")= val
+                        each val in ['Todos','Urgencias','Instalaciones','Retiros','Modificaciones', 'Perforaciones', 'Cambio accesorios', 'Puesta en marcha']
+                                a.nav-item.nav-link(href="#" data-tip=(val.toLowerCase()))= val
             .row.mb-5.tecnioo-biglist
                 .col-5
                     article.tecnioo-biglist--container.pr-4
@@ -72,7 +72,8 @@ block mainContent
                                         "dir":"AVDA LARRAIN 5862  LOC 4036 5862  L 0 LA REINA",
                                         "loc":"FUENTE NICANOR SPA",
                                         "sla":"-264",
-                                        "ots":"3"
+                                        "ots":"3",
+                                        "tip":"urgencias",
                                     },
                                     { 
                                         "id":"269",
@@ -82,7 +83,8 @@ block mainContent
                                         "dir":"GRAN AVENIDA 7716 7716 0 LA CISTERNA",
                                         "loc":"CESAR CRISTOBAL ARANCIBIA FERNANDEZ",
                                         "sla":"216" ,
-                                        "ots":"3"
+                                        "ots":"3",
+                                        "tip":"instalaciones",
                                     },
                                     {
                                         "id":"281",
@@ -92,7 +94,8 @@ block mainContent
                                         "dir":"AV SALVADOR ALLENDE 03788 03788 0 LO ESPEJO",
                                         "loc":"LORRAINE VALESKA CACERES GROVE",
                                         "sla":"206",
-                                        "ots":"3"
+                                        "ots":"3",
+                                        "tip":"retiros",
                                     },
                                     {
                                         "id":"274",
@@ -102,7 +105,8 @@ block mainContent
                                         "dir":"AV LAS TORRES # 1042 1042 0 HUECHURABA",
                                         "loc":"NANCY SALAZAR ESCOBAR",
                                         "sla":"93",
-                                        "ots":"3"
+                                        "ots":"3",
+                                        "tip":"instalaciones",
                                     },
                                     {
                                         "id":"277",
@@ -112,7 +116,8 @@ block mainContent
                                         "dir":"JOSE MIGUEL CARRERA 304 0 SAN ANTONIO",
                                         "loc":"INGRID OLIVA ALARCON",
                                         "sla":"193",
-                                        "ots":"3"
+                                        "ots":"3",
+                                        "tip":"retiros",
                                     },
                                     {
                                         "id":"278",
@@ -122,7 +127,8 @@ block mainContent
                                         "dir":"LORCA PRIETO  20 LOCAL-3 (LACRUZ) 20 0 LA CRUZ",
                                         "loc":"PEDRO ANTONIO ATENAS TOLEDO",
                                         "sla":"182",
-                                        "ots":"3"
+                                        "ots":"3",
+                                        "tip":"urgencias",
                                     },
                                     {
                                         "id":"282",
@@ -132,7 +138,8 @@ block mainContent
                                         "dir":"TACORA 9051 9051 0 LA GRANJA",
                                         "loc":"MICHAEL CASTILLO CASANO",
                                         "sla":"18",
-                                        "ots":"3"
+                                        "ots":"3",
+                                        "tip":"instalaciones",
                                     },
                                     {
                                         "id":"283",
@@ -142,7 +149,8 @@ block mainContent
                                         "dir":"ARTILLERÑA 347 0 VALPARAÍSO",
                                         "loc":"JUAN PABLO NARVAEZ",
                                         "sla":"-182",
-                                        "ots":"3"
+                                        "ots":"3",
+                                        "tip":"retiros",
                                     },
                                     {
                                         "id":"276",
@@ -152,7 +160,8 @@ block mainContent
                                         "dir":"ESPERANZA 682 682 0 SANTIAGO",
                                         "loc":"SUSANA STEPHANY ARAYA ORELLANA",
                                         "sla":"10",
-                                        "ots":"3"
+                                        "ots":"3",
+                                        "tip":"urgencias",
                                     },
                                     {
                                         "id":"295",
@@ -162,7 +171,8 @@ block mainContent
                                         "dir":"Providencia 701 PROVIDENCIA",
                                         "loc":"4ptech ",
                                         "sla":"12",
-                                        "ots":"3"
+                                        "ots":"3",
+                                        "tip":"instalaciones",
                                     },
                                     {
                                         "id":"296",
@@ -172,12 +182,13 @@ block mainContent
                                         "dir":"CALLE M 250 250 0 LA GRANJA",
                                         "loc":"MARIMAN LEUFUMAN BELDANO",
                                         "sla":"24",
-                                        "ots":"3"
+                                        "ots":"3",
+                                        "tip":"retiros",
                                     }
                                 ]
 
                             each val, key in array
-                                +tarjetaProgramacion(key, val.id, val.lat, val.lng, val.pts, val.dir, val.loc, val.sla, key)
+                                +tarjetaProgramacion(key, val.id, val.lat, val.lng, val.pts, val.dir, val.loc, val.sla, key, val.tip)
 
 
                 .col-7.p-0
@@ -286,8 +297,3 @@ block mainContent
             defer
             src="https://maps.googleapis.com/maps/api/js?callback=initMap"
             )
-        //- script(
-        //-     async
-        //-     defer
-        //-     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_Vv6crZNWa6Z9ee1mtrfnGV4EuF7gk0M&callback=initMap"
-        //-     )

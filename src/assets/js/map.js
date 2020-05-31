@@ -79,7 +79,7 @@ function initMap() {
             var myId = this.idCall,
                 prev_infowindow = false;
             var counter = 0;
-            
+
             $('.tecnioo-card').each(function (i, v) {
                 var checkData = $(this).find('.custom-checkbox input').data('id'),
                     checkDataPts = $(this).find('.custom-checkbox input').data('pts'),
@@ -105,31 +105,31 @@ function initMap() {
                         //console.log(counter + "esta es la suma");
                     }
                     infowindow.close();
-                    var contentString = '<div class="card" style="width: 22rem;border:none;">'+
-                    '<div class="card-body">'+
-                        '<h5 class="card-title">#'+myId+' <small>Urgencia Cooler  [Modelo]</small></h5>'+
-                        '<p class="card-text">'+dirCS+'</p>'+
-                        '<a href="" class="btn btn-primary btn-sm m-auto">Ver detalle</a>'+
-                        '<table class="table table-striped mt-4">'+
-                            '<thead>'+
-                                '<tr>'+
-                                    '<th scope="col">Días</th>'+
-                                    '<th scope="col">Apertura</th>'+
-                                    '<th scope="col">Cierre</th>'+
-                                '</tr>'+
-                            '</thead>'+
-                            '<tbody id="step6TableTimes"><tr>'+
-                                '<td>Lunes a Domingo</td>'+
-                                '<td>08:00 a 15:00</td>'+
-                                '<td>15:00 a 23:59</td>'+
-                                '</tr><tr>'+
-                                    '<td>Lunes a Domingo</td>'+
-                                    '<td>08:00 a 15:00</td>'+
-                                    '<td>15:00 a 23:59</td>'+
-                            '</tr></tbody>'+
-                      '</table>'+
-                    '</div> ';
-                    infowindow.setContent(contentString );
+                    var contentString = '<div class="card" style="width: 22rem;border:none;">' +
+                        '<div class="card-body">' +
+                        '<h5 class="card-title">#' + myId + ' <small>Urgencia Cooler  [Modelo]</small></h5>' +
+                        '<p class="card-text">' + dirCS + '</p>' +
+                        '<a href="" class="btn btn-primary btn-sm m-auto">Ver detalle</a>' +
+                        '<table class="table table-striped mt-4">' +
+                        '<thead>' +
+                        '<tr>' +
+                        '<th scope="col">Días</th>' +
+                        '<th scope="col">Apertura</th>' +
+                        '<th scope="col">Cierre</th>' +
+                        '</tr>' +
+                        '</thead>' +
+                        '<tbody id="step6TableTimes"><tr>' +
+                        '<td>Lunes a Domingo</td>' +
+                        '<td>08:00 a 15:00</td>' +
+                        '<td>15:00 a 23:59</td>' +
+                        '</tr><tr>' +
+                        '<td>Lunes a Domingo</td>' +
+                        '<td>08:00 a 15:00</td>' +
+                        '<td>15:00 a 23:59</td>' +
+                        '</tr></tbody>' +
+                        '</table>' +
+                        '</div> ';
+                    infowindow.setContent(contentString);
 
                     if (prev_infowindow) {
                         prev_infowindow.close();
@@ -217,6 +217,39 @@ function initMap() {
         });
 
     });
+
+
+    $('.nav-link').on('click', function (e) {
+        e.preventDefault();
+        deleteMarkers();
+
+        let dataTipe = $(this).data('tip');
+        //console.log(dataTipe);
+
+        if (dataTipe == 'todos') {
+            $('.tecnioo-card').removeClass('d-none');
+            recorrePorAsignar();
+            recorreAsignados();
+        } else {
+            $('.tecnioo-card').each(function () {
+                $(this).removeClass('d-none');
+                let checkData = $(this).find('.custom-checkbox input').data('tip');
+
+                if (checkData != dataTipe) {
+                    $(this).addClass('d-none');
+                }else {
+                    var checkboxLat = $(this).find('.bk-marker').data('lat'),
+                        checkboxLng = $(this).find('.bk-marker').data('lng'),
+                        checkboxId = $(this).find('.bk-marker').data('id'),
+                        checkboxLoc = $(this).find('.bk-marker').data('loc');
+                    createMarker(new google.maps.LatLng(checkboxLat, checkboxLng), 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png', checkboxId, checkboxLoc, map);
+                }
+
+            })
+        }
+
+
+    })
 
     /*Cambio de fecha*/
 

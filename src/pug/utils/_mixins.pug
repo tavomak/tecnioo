@@ -148,13 +148,13 @@ mixin rangoHorariosTabla(horarios, asignacion, clase)
             span.px-1= horarios
             span.px-1= asignacion
 
-mixin tarjetaProgramacion(index, id, lat, lng, pts, dir, loc, sla, ots)
+mixin tarjetaProgramacion(index, id, lat, lng, pts, dir, loc, sla, ots, tip)
     li.tecnioo-card
         hr
         ul.d-flex.w-100
             li.tecnioo-card--flag
             li.tecnioo-card--item.custom-control.custom-checkbox.ml-3
-                input.custom-control-input.bk-marker(type="checkbox" id="ListaParaAsignar_["+index+"]_CheckLlamado" name="ListaParaAsignar_["+index+"]" data-id=id data-pts=pts data-lat=lat data-lng=lng data-dir=dir data-loc=loc data-sla=sla)
+                input.custom-control-input.bk-marker(type="checkbox" id="ListaParaAsignar_["+index+"]_CheckLlamado" name="ListaParaAsignar_["+index+"]" data-id=id data-pts=pts data-lat=lat data-lng=lng data-dir=dir data-loc=loc data-sla=sla data-tip=tip)
                 label.custom-control-label(for="ListaParaAsignar_["+index+"]_CheckLlamado")
             li.tecnioo-card--item.px-3
                 p.tecnioo-card--title
@@ -184,14 +184,12 @@ mixin tarjetaProgramacion(index, id, lat, lng, pts, dir, loc, sla, ots)
                         span 12/01/20
                         span 16:42:17
         p
-            small Miercoles 18 
+            small Hoy 
                 span.text-success abierto
                 span.badge.badge-light.p-2.mx-2 
-                    i.fas.fa-lock-open.pr-2
-                    | lun a dom 08:00 a 15:00
+                    | lu a do 08:00 a 15:00
                 span.badge.badge-light.p-2.mx-2 
-                    i.fas.fa-lock.pr-2
-                    | lun a dom 15:00 a 23:00
+                    | lu a do 15:00 a 23:00
 //- no son parte del proyecto actual            
 //-mixin slides(image, title, caption)
     .item.text-center&attributes(attributes)
