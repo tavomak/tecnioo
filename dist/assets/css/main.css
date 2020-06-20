@@ -67,7 +67,6 @@ hr {
 /* line 27, src/assets/scss/base/_global.scss */
 a {
   color: #54698D;
-  -webkit-transition: .2s ease-in-out all;
   transition: .2s ease-in-out all;
   font-weight: 400;
   text-decoration: none;
@@ -2588,7 +2587,36 @@ body .ui-tooltip {
   margin-bottom: .5em;
 }
 
-/* line 22, src/assets/scss/main.scss */
+/* line 2, src/assets/scss/pages/rutascalendario.scss */
+.route-info--ico {
+  padding: 5px;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  position: relative;
+}
+
+/* line 8, src/assets/scss/pages/rutascalendario.scss */
+.route-info--ico__route {
+  border-radius: 50%;
+}
+
+/* line 11, src/assets/scss/pages/rutascalendario.scss */
+.route-info--ico__content {
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* line 17, src/assets/scss/pages/rutascalendario.scss */
+.datepickerRoutes {
+  position: absolute;
+  z-index: 20;
+}
+
+/* line 23, src/assets/scss/main.scss */
 .form-control {
   height: 26px;
   padding: 2px .75rem;
@@ -2596,19 +2624,19 @@ body .ui-tooltip {
   border-radius: 0;
 }
 
-/* line 29, src/assets/scss/main.scss */
+/* line 30, src/assets/scss/main.scss */
 .tecnioo-card {
   min-height: 100%;
 }
 
-/* line 31, src/assets/scss/main.scss */
+/* line 32, src/assets/scss/main.scss */
 .tecnioo-card--flag {
   max-height: 80px;
   width: 3px;
   background: #54698D;
 }
 
-/* line 37, src/assets/scss/main.scss */
+/* line 38, src/assets/scss/main.scss */
 .tecnioo-card--title__status {
   width: 14px;
   height: 14px;
@@ -2617,7 +2645,7 @@ body .ui-tooltip {
   margin-right: 10px;
 }
 
-/* line 45, src/assets/scss/main.scss */
+/* line 46, src/assets/scss/main.scss */
 .tecnioo-card--img {
   width: 45px;
   height: 45px;
@@ -2625,19 +2653,16 @@ body .ui-tooltip {
   border: 1px solid #697789;
 }
 
-/* line 53, src/assets/scss/main.scss */
+/* line 54, src/assets/scss/main.scss */
 .select-day:hover {
   background: #54698D;
   color: white;
 }
 
-/* line 58, src/assets/scss/main.scss */
+/* line 59, src/assets/scss/main.scss */
 .listado-ordenado {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
   height: 600px;

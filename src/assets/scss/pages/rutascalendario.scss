@@ -1,0 +1,20 @@
+.route-info{
+    &--ico{
+        padding: 5px;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        position: relative;
+        &__route{
+            border-radius: 50%;
+        }
+        &__content{
+            position: relative;
+            @include centerer();
+        }
+    }
+}
+.datepickerRoutes{
+    position: absolute;
+    z-index: 20;
+}

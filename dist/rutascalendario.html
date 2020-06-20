@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Rutas Calendario</title>
+    <meta content="Rutas Calendario" property="og:title">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/img/favicon.png" rel="icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" rel="stylesheet">
+    <link href="./assets/css/main.css" rel="stylesheet">
+    <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+    <link href="images/webclip.png" rel="apple-touch-icon">
+  </head>
+  <body>
+    <nav class="tecnioo-navbar navbar bg-primary px-2 flex-row"><a class="navbar-brand tecnioo-navbar--wrap" href="home.html"><img class="tecnioo-navbar--wrap__img" src="./assets/img/avatar-2.png" alt="Tecnioo"></a>
+      <div class="navbar-nav-scroll">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item"><a class="nav-link text-white px-2" href="./llamados.html">Llamados</a>
+            <ul class="navbar-nav flex-row"></ul>
+          </li>
+          <li class="nav-item dropdown"><a class="nav-link text-white px-2 dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ruta Camioneta</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="./programacion.html">Programación</a><a class="dropdown-item" href="#">Consulta de cierres</a></div>
+          </li>
+          <li class="nav-item"><a class="nav-link text-white px-2" href="./llamados.html">Validaciones</a></li>
+        </ul>
+      </div>
+      <ul class="navbar-nav flex-row ml-md-auto">
+        <li class="nav-item dropdown"><a class="nav-item nav-link dropdown-toggle px-4 text-white" href="#" id="cientMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Mantenedores</a>
+          <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="cientMenu"><a class="dropdown-item dropdown-toggle dropdown-submenu" href="#" id="cientSubMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="nav-label dropright">Muestra 9</span><span class="caret"></span></a>
+            <div class="dropdown-menu"><a class="dropdown-item" href="#">Maestra 91</a><a class="dropdown-item" href="#">Maestra 92</a><a class="dropdown-item" href="#">Maestra 93</a>
+            </div><a class="dropdown-item" href="#">Maestra 1</a><a class="dropdown-item" href="#">Maestra 2</a><a class="dropdown-item" href="#">Maestra 3</a><a class="dropdown-item" href="#">Maestra 4</a><a class="dropdown-item" href="#">Maestra 5</a><a class="dropdown-item" href="#">Maestra 6</a><a class="dropdown-item" href="#">Maestra 7</a><a class="dropdown-item" href="#">Maestra 8</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown"><a class="nav-item nav-link dropdown-toggle text-white" href="#" id="cientProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-user-circle pr-2"></i>Hola david.s@gmail.com</a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="cientMenu"><a class="dropdown-item" href="#"> Cerrar Sesión</a></div>
+        </li>
+      </ul>
+    </nav>
+    <main class="content-wrapper">
+      <section class="container pt-5 pb-3">
+        <div class="row">
+          <div class="col-sm-2">
+            <h4> <span class="tecnioo-card--title__status bg-success"></span>Postmix</h4>
+          </div>
+          <div class="col-sm-10">
+            <ul class="d-flex justify-content-end align-items-center">
+              <li class="mr-auto">
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comuna</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownTecnicos"><a class="dropdown-item" href="#">Todos</a><a class="dropdown-item" href="#">Providencia</a><a class="dropdown-item" href="#">Santiago</a><a class="dropdown-item" href="#">Las Condes</a>
+                  </div>
+                </div>
+              </li>
+              <li class="mr-auto">
+                <div class="input-group input-group-sm">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="#step2SelectClientType"><i class="fas fa-search"></i></label>
+                    <input class="form-control" type="text" placeholder="ID Cliente">
+                  </div>
+                </div>
+              </li>
+              <li class="mr-3">
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Técnicos</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownTecnicos"><a class="dropdown-item" href="#">Todos</a><a class="dropdown-item" href="#">Pedro Carrasco</a><a class="dropdown-item" href="#">Jorge Salgado</a><a class="dropdown-item" href="#">Juan Gonzalez</a>
+                  </div>
+                </div>
+              </li>
+              <li class="mr-3">
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownZona" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Zona TCM</button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownZona"><a class="dropdown-item" href="#">Todas</a><a class="dropdown-item" href="#">Santiago</a><a class="dropdown-item" href="#">Rancagua</a><a class="dropdown-item" href="#">Viña del mar</a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <button class="btn btn-outline-primary">Filtrar</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row tab-content" id="myTabContent">
+          <div class="col-9 pt-4">
+            <ul class="d-flex justify-content-between">
+              <li style="min-width:20%">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                  <li class="nav-item mr-3"><a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Tabla</a></li>
+                  <li class="nav-item"><a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Mapa</a></li>
+                </ul>
+              </li>
+              <li class="p-2 text-center"><span><</span></li>
+              <li class="p-2 text-center border w-100"><span>sab 07 abril</span></li>
+              <li class="p-2 text-center border w-100"><span>dom 08 abril</span></li>
+              <li class="p-2 text-center border w-100" style="background:#007bff; color:white"><span>Hoy lun 09 abril</span><a class="pb-0 d-block text-white nav-item nav-link dropdown-toggle" id="dayAction1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">acciones</a>
+                <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="#dayAction1"><a class="dropdown-item" href="#">Reprogramar Día</a><a class="dropdown-item" href="#">Ver Mapa</a>
+                </div>
+              </li>
+              <li class="p-2 text-center border w-100"><span>mar 10 abril</span><a class="pb-0 d-block nav-item nav-link dropdown-toggle" id="dayAction2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">acciones</a>
+                <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="#dayAction2"><a class="dropdown-item" href="#">Reprogramar Día</a><a class="dropdown-item" href="#">Ver Mapa</a>
+                </div>
+              </li>
+              <li class="p-2 text-center border w-100"><span>mie 11 abril</span><a class="pb-0 d-block nav-item nav-link dropdown-toggle" id="dayAction3" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">acciones</a>
+                <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="#dayAction3"><a class="dropdown-item" href="#">Reprogramar Día</a><a class="dropdown-item" href="#">Ver Mapa</a>
+                </div>
+              </li>
+              <li class="p-2 text-center"><span>></span></li>
+            </ul>
+          </div>
+          <div class="col-md-3 pt-4"><a class="btn btn-primary btn-sm mb-4" id="btnDatepicker" href="#">seleccionar fecha</a>
+            <div class="d-none datepickerRoutes" id="datepickerRoutes"></div>
+          </div>
+          <div class="col-9">
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="wrap mb-2 shadow">
+                  <ul class="d-flex justify-content-between">
+                    <li class="p-3 border border-right-0" style="min-width:20%">
+                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content"> A</span></span><span>Juan Perez</span></div>
+                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico bg-success ml-3 mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span></div>
+                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico bg-secondary ml-3 mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span></div>
+                      <p class="mb-1">6000</p>
+                      <div class="progress" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">75%</span></div>
+                      </div>
+                    </li>
+                    <li class="p-2 text-center border border-right-0 d-flex align-items-center"><span><</span></li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-1">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-2">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-3">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-4">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-5">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-2 text-center border d-flex align-items-center">
+                      <p>></p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="wrap mb-2 shadow">
+                  <ul class="d-flex justify-content-between">
+                    <li class="p-3 border border-right-0" style="min-width:20%">
+                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content"> B</span></span><span>Pedro Carrasco</span></div>
+                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico bg-success ml-3 mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span></div>
+                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico bg-secondary ml-3 mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span></div>
+                      <p class="mb-1">6000</p>
+                      <div class="progress" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">75%</span></div>
+                      </div>
+                    </li>
+                    <li class="p-2 text-center border border-right-0 d-flex align-items-center"><span><</span></li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-1">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-2">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-3">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-4">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-5">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-2 text-center border d-flex align-items-center">
+                      <p>></p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="wrap mb-2 shadow">
+                  <ul class="d-flex justify-content-between">
+                    <li class="p-3 border border-right-0" style="min-width:20%">
+                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content"> C</span></span><span>Gerardo Angulo</span></div>
+                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico bg-success ml-3 mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span></div>
+                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico bg-secondary ml-3 mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span></div>
+                      <p class="mb-1">6000</p>
+                      <div class="progress" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">75%</span></div>
+                      </div>
+                    </li>
+                    <li class="p-2 text-center border border-right-0 d-flex align-items-center"><span><</span></li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-1">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-2">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-3">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-4">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-5">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-2 text-center border d-flex align-items-center">
+                      <p>></p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="wrap mb-2 shadow">
+                  <ul class="d-flex justify-content-between">
+                    <li class="p-3 border border-right-0" style="min-width:20%">
+                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content"> D</span></span><span>Alverto Rivero</span></div>
+                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico bg-success ml-3 mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span></div>
+                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico bg-secondary ml-3 mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span></div>
+                      <p class="mb-1">6000</p>
+                      <div class="progress" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">75%</span></div>
+                      </div>
+                    </li>
+                    <li class="p-2 text-center border border-right-0 d-flex align-items-center"><span><</span></li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-1">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-2">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-3">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-4">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-3 text-center border border-right-0 w-100 card-day-5">
+                      <div class="progress mb-4" style="height:10px">
+                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">1280 pts</span></div>
+                      </div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">1</span></span></div>
+                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">3</span></span></div>
+                      <div class="badge--container pt-3">
+                        <div class="badge badge-light badge-providencia border w-100 my-1">Providencia</div>
+                        <div class="badge badge-light badge-santiago border w-100 my-1">Santiago</div>
+                        <div class="badge badge-light badge-las-condes border w-100 my-1">Las Condes</div>
+                      </div>
+                    </li>
+                    <li class="p-2 text-center border d-flex align-items-center">
+                      <p>></p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="row">
+                  <div class="col-3">
+                    <div class="card mb-4">
+                      <div class="card-body py-1 px-3">
+                        <div class="d-flex align-items-center pb-2"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content"> A</span></span><span>Juan Perez</span></div>
+                        <div class="mb-2">
+                          <div class="progress" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">75%</span></div>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-success mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span>
+                          <div class="badge badge-light border p-2 ml-auto">Ciclo 4</div>
+                        </div>
+                        <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-secondary mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span>
+                          <div class="badge badge-light border p-2 ml-auto">Ciclo 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card mb-4">
+                      <div class="card-body py-1 px-3">
+                        <div class="d-flex align-items-center pb-2"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content"> B</span></span><span>Pedro Carrasco</span></div>
+                        <div class="mb-2">
+                          <div class="progress" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">75%</span></div>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-success mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span>
+                          <div class="badge badge-light border p-2 ml-auto">Ciclo 4</div>
+                        </div>
+                        <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-secondary mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span>
+                          <div class="badge badge-light border p-2 ml-auto">Ciclo 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card mb-4">
+                      <div class="card-body py-1 px-3">
+                        <div class="d-flex align-items-center pb-2"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content"> C</span></span><span>Gerardo Angulo</span></div>
+                        <div class="mb-2">
+                          <div class="progress" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">75%</span></div>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-success mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span>
+                          <div class="badge badge-light border p-2 ml-auto">Ciclo 4</div>
+                        </div>
+                        <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-secondary mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span>
+                          <div class="badge badge-light border p-2 ml-auto">Ciclo 11</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card mb-4">
+                      <div class="card-body py-1 px-3">
+                        <div class="d-flex align-items-center pb-2"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content"> D</span></span><span>Alverto Rivero</span></div>
+                        <div class="mb-2">
+                          <div class="progress" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"> <span style="font-size:8px">75%</span></div>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-success mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span>
+                          <div class="badge badge-light border p-2 ml-auto">Ciclo 4</div>
+                        </div>
+                        <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-secondary mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span>
+                          <div class="badge badge-light border p-2 ml-auto">Ciclo 11</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-9">
+                    <div id="map" style="position:relative;height: 500px;width: 100%;margin: 0px;padding: 0px"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group pb-2 text-right">
+              <div class="input-group mb-2">
+                <select class="form-control form-control-sm">
+                  <option>Seleccionar Ruta</option>
+                  <option value="Juan Perez">(A) Juan Perez</option>
+                  <option value="Pedro Carrasco">(B) Pedro Carrasco</option>
+                  <option value="Gerardo Angulo">(C) Gerardo Angulo</option>
+                  <option value="Alverto Rivero">(D) Alverto Rivero</option>
+                </select>
+              </div>
+              <button class="btn btn-outline-primary btn-sm ml-auto" type="submit">Asignar</button>
+            </div><a class="routeCard" href="#">
+              <div class="card">
+                <div class="card-header py-1 px-3">
+                  <div class="d-flex align-items-baseline">
+                    <h6>Cod Máquina</h6><span class="badge badge-primary p-2 mt-2 ml-auto">500pts</span>
+                  </div>
+                </div>
+                <div class="card-body py-1 px-3">
+                  <p><b>Nombre Màquina [Modelo] [Logo]</b></p>
+                  <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-success mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span>
+                    <div class="badge badge-light border p-2 ml-auto">Ciclo 4</div>
+                  </div>
+                  <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-secondary mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span>
+                    <div class="badge badge-light border p-2 ml-auto">Ciclo 11</div>
+                  </div><small>15/04/2020</small>
+                  <p>12228 - Burger King <small>Pedro Fontova 134</small></p>
+                  <p>
+                    <div class="badge badge-light border p-2 ml-auto">Las Condes</div>
+                  </p>
+                  <div class="d-flex align-items-center"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content">A</span></span><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content">C</span></span></div>
+                </div>
+              </div></a><a class="text-right d-block pb-4 pt-2" href="#">Ver OT</a><a class="routeCard" href="#">
+              <div class="card">
+                <div class="card-header py-1 px-3">
+                  <div class="d-flex align-items-baseline">
+                    <h6>Cod Máquina</h6><span class="badge badge-primary p-2 mt-2 ml-auto">500pts</span>
+                  </div>
+                </div>
+                <div class="card-body py-1 px-3">
+                  <p><b>Nombre Màquina [Modelo] [Logo]</b></p>
+                  <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-success mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span>
+                    <div class="badge badge-light border p-2 ml-auto">Ciclo 4</div>
+                  </div>
+                  <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-secondary mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span>
+                    <div class="badge badge-light border p-2 ml-auto">Ciclo 11</div>
+                  </div><small>15/04/2020</small>
+                  <p>12228 - Burger King <small>Pedro Fontova 134</small></p>
+                  <p>
+                    <div class="badge badge-light border p-2 ml-auto">Las Condes</div>
+                  </p>
+                  <div class="d-flex align-items-center"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content">A</span></span><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content">C</span></span></div>
+                </div>
+              </div></a><a class="text-right d-block pb-4 pt-2" href="#">Ver OT</a><a class="routeCard" href="#">
+              <div class="card">
+                <div class="card-header py-1 px-3">
+                  <div class="d-flex align-items-baseline">
+                    <h6>Cod Máquina</h6><span class="badge badge-primary p-2 mt-2 ml-auto">500pts</span>
+                  </div>
+                </div>
+                <div class="card-body py-1 px-3">
+                  <p><b>Nombre Màquina [Modelo] [Logo]</b></p>
+                  <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-success mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span>
+                    <div class="badge badge-light border p-2 ml-auto">Ciclo 4</div>
+                  </div>
+                  <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-secondary mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span>
+                    <div class="badge badge-light border p-2 ml-auto">Ciclo 11</div>
+                  </div><small>15/04/2020</small>
+                  <p>12228 - Burger King <small>Pedro Fontova 134</small></p>
+                  <p>
+                    <div class="badge badge-light border p-2 ml-auto">Las Condes</div>
+                  </p>
+                  <div class="d-flex align-items-center"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content">A</span></span><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content">C</span></span></div>
+                </div>
+              </div></a><a class="text-right d-block pb-4 pt-2" href="#">Ver OT</a>
+          </div>
+        </div>
+        <div class="row py-4 justify-content-center">
+          <nav aria-label="pagination">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#" aria-label="Previus"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previus</span></a></li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2 <span class="sr-only">(current)</span></a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+      <script src="./assets/js/routes-dist.js"></script>
+      <script src="./assets/js/map-routes-dist.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+    </main>
+  </body>
+</html>

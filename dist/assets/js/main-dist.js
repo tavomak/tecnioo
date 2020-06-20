@@ -1,7 +1,11 @@
 $(function () {
-    $("#selectWhitSearch").select2();
-    $('#inputDatepicker').datepicker();
-    $('.inputDatepicker').datepicker();
+    if ($.isFunction($.fn.select2)) {
+        $("#selectWhitSearch").select2();
+    }
+    if ($.isFunction($.fn.datepicker)) {
+        $('#inputDatepicker').datepicker();
+        $('.inputDatepicker').datepicker();
+    }
     //Selecciona todos los cheboxes en las tarjetas de llamados
     $('#selectAllcheckbox').click(function () {
         if ($(this).is(':checked')) {

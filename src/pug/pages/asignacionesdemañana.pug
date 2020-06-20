@@ -1,0 +1,83 @@
+extends ../layout/_header
+
+block append config
+    -var pageTitle = 'Asignaciones del día'
+    -var pageDescription = ''
+    -var baseDir = ''
+    -var linkSrc = ''
+
+block mainContent
+    main.content-wrapper
+        section.container-fluid
+            .row
+                .col-4.col-lg-3.col-xl-2.bg-grey.pt-5.pb-3.min-h-100
+                    .input-group.input-group-sm.mb-4
+                        .input-group-prepend
+                            label.input-group-text(for="#step2SelectClientType")
+                                i.fas.fa-search
+                            input.form-control(type="text" placeholder="Buscar Fecha")
+                    h4 
+                        b Vigente
+                    +rangoHorariosTabla('Mañana','800 pts')(class="bg-primary text-white")
+                    +rangoHorariosTabla('Hoy', '7080 pts')
+                    hr
+                    .py-4
+                        h6 Marzo 2020
+                        hr
+                        -var horarios2 = {'Lun 09':'7800 pts', 'Dom 08':'Sin Asignación', 'Sab 07':'3800 pts', 'Vie 06':'8800 pts', 'Jue 05':'9800 pts', 'Mie 04':'10500 pts', 'Lun 03':'1100 pts', 'Dom 02':'Sin Asignación', 'Sab 01':'Sin Asignación'};
+                        each val, key in horarios2
+                            +rangoHorariosTabla(key, val)
+                    .py-4
+                        h6 Febrero 2020
+                        hr
+                        -var horarios2 = {'Lun 31':'7800 pts', 'Dom 30':'Sin Asignación', 'Sab 29':'3800 pts', 'Vie 28':'8800 pts', 'Jue 27':'9800 pts', 'Mie 26':'10500 pts', 'Lun 25':'1100 pts', 'Dom 24':'Sin Asignación', 'Sab 23':'Sin Asignación', 'Vie 22':'8800 pts', 'Jue 21':'9800 pts', 'Mie 20':'10500 pts', 'Lun 19':'1100 pts'};
+                        each val, key in horarios2
+                            +rangoHorariosTabla(key, val)
+                        
+                .col-8.col-lg-9.col-xl-10.pt-5.pb-3
+                    -var diaImpreso = "Mañana 10 de Marzo";
+                    include ../layout/_subheader
+                    .table-responsive
+                        table.table.table-striped
+                            thead
+                                tr
+                                    th(scope="col") Técnico
+                                    th(scope="col") Tipo
+                                    th(scope="col") Zona
+                                    th(scope="col") Nº de Llamados
+                                    th(scope="col") Nº de Locales
+                                    th(scope="col") Pts Programados
+                                    th(scope="col") Ptos Completados
+                                    th(scope="col") Cumplimiento
+                                    th(scope="col") Hora Inicio
+                                    th(scope="col") Hora Término
+                            tbody
+                                - var array = [{ "tecnico":"Jorge Sosa", "tipo": "C", "cumplimiento" : "76%" }, { "tecnico":"Juan Pérez", "tipo": "M",  "cumplimiento" : "76%" }, { "tecnico":"Alberto Rivera", "tipo": "C",  "cumplimiento" : "76%" },{ "tecnico":"Edmindo Perez", "tipo": "C", "cumplimiento" : "76%" }, { "tecnico":"Iván Zambrano", "tipo": "C",  "cumplimiento" : "76%" }, { "tecnico":"Pedro Coronado", "tipo": "C",  "cumplimiento" : "76%" }]
+                                each val, key in array
+                                    +tableRowTecnico(val.tecnico, val.tipo, val.cumplimiento)
+                    nav.py-4(aria-label="Page navigation")
+                        ul.pagination.justify-content-center
+                            li.page-item
+                                a.page-link(href="#" aria-label="Previous")
+                                    span(aria-hidden="true") <<
+                            li.page-item
+                                a.page-link(href="#") 1
+                            li.page-item
+                                a.page-link(href="#") 2
+                            li.page-item
+                                a.page-link(href="#") 3
+                            li.page-item
+                                a.page-link(href="#") 4
+                            li.page-item
+                                a.page-link(href="#") 5
+                            li.page-item
+                                a.page-link(href="#") 6
+                            li.page-item
+                                a.page-link(href="#" aria-label="Next")
+                                    span(aria-hidden="true") >>
+                                    
+                
+
+
+
+    include ../layout/_scripts
