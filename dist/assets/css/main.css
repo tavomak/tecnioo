@@ -41,7 +41,12 @@ table {
   box-sizing: border-box;
 }
 
-/* line 5, src/assets/scss/base/_global.scss */
+/* line 4, src/assets/scss/base/_global.scss */
+html {
+  scroll-behavior: smooth;
+}
+
+/* line 7, src/assets/scss/base/_global.scss */
 body {
   font-size: .8rem !important;
   font-family: "Open Sans", sans-serif;
@@ -51,7 +56,7 @@ body {
   padding-top: 0 !important;
 }
 
-/* line 15, src/assets/scss/base/_global.scss */
+/* line 17, src/assets/scss/base/_global.scss */
 h1,
 h2,
 h3,
@@ -59,12 +64,12 @@ h4 {
   font-weight: 600;
 }
 
-/* line 24, src/assets/scss/base/_global.scss */
+/* line 26, src/assets/scss/base/_global.scss */
 hr {
   margin: 0 0 10px 0;
 }
 
-/* line 27, src/assets/scss/base/_global.scss */
+/* line 29, src/assets/scss/base/_global.scss */
 a {
   color: #54698D;
   transition: .2s ease-in-out all;
@@ -72,143 +77,143 @@ a {
   text-decoration: none;
 }
 
-/* line 32, src/assets/scss/base/_global.scss */
+/* line 34, src/assets/scss/base/_global.scss */
 a:hover {
   text-decoration: none;
   color: #697789;
 }
 
-/* line 36, src/assets/scss/base/_global.scss */
+/* line 38, src/assets/scss/base/_global.scss */
 a:focus {
   text-decoration: none;
 }
 
-/* line 40, src/assets/scss/base/_global.scss */
+/* line 42, src/assets/scss/base/_global.scss */
 ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-/* line 44, src/assets/scss/base/_global.scss */
+/* line 46, src/assets/scss/base/_global.scss */
 strong {
   font-weight: 600;
 }
 
-/* line 48, src/assets/scss/base/_global.scss */
+/* line 50, src/assets/scss/base/_global.scss */
 label {
   font-weight: 400;
 }
 
-/* line 52, src/assets/scss/base/_global.scss */
+/* line 54, src/assets/scss/base/_global.scss */
 .content-wrapper {
   min-height: calc(100vh - 360px);
 }
 
 @media screen and (min-width: 1024px) {
-  /* line 55, src/assets/scss/base/_global.scss */
+  /* line 57, src/assets/scss/base/_global.scss */
   .bk-text-justify {
     text-align: justify;
   }
 }
 
-/* line 59, src/assets/scss/base/_global.scss */
+/* line 61, src/assets/scss/base/_global.scss */
 .bk-text-justify--center {
   text-align: center;
 }
 
 @media screen and (min-width: 1024px) {
-  /* line 59, src/assets/scss/base/_global.scss */
+  /* line 61, src/assets/scss/base/_global.scss */
   .bk-text-justify--center {
     text-align: justify;
   }
 }
 
-/* line 67, src/assets/scss/base/_global.scss */
+/* line 69, src/assets/scss/base/_global.scss */
 .bg-primary {
   background-color: #54698D !important;
 }
 
-/* line 70, src/assets/scss/base/_global.scss */
+/* line 72, src/assets/scss/base/_global.scss */
 .text-color-primary {
   color: #54698D !important;
 }
 
-/* line 67, src/assets/scss/base/_global.scss */
+/* line 69, src/assets/scss/base/_global.scss */
 .bg-secondary {
   background-color: #90B9FF !important;
 }
 
-/* line 70, src/assets/scss/base/_global.scss */
+/* line 72, src/assets/scss/base/_global.scss */
 .text-color-secondary {
   color: #90B9FF !important;
 }
 
-/* line 67, src/assets/scss/base/_global.scss */
+/* line 69, src/assets/scss/base/_global.scss */
 .bg-success {
   background-color: #3ccc90 !important;
 }
 
-/* line 70, src/assets/scss/base/_global.scss */
+/* line 72, src/assets/scss/base/_global.scss */
 .text-color-success {
   color: #3ccc90 !important;
 }
 
-/* line 67, src/assets/scss/base/_global.scss */
+/* line 69, src/assets/scss/base/_global.scss */
 .bg-danger {
   background-color: #e93a3a !important;
 }
 
-/* line 70, src/assets/scss/base/_global.scss */
+/* line 72, src/assets/scss/base/_global.scss */
 .text-color-danger {
   color: #e93a3a !important;
 }
 
-/* line 67, src/assets/scss/base/_global.scss */
+/* line 69, src/assets/scss/base/_global.scss */
 .bg-warning {
   background-color: #FF8C31 !important;
 }
 
-/* line 70, src/assets/scss/base/_global.scss */
+/* line 72, src/assets/scss/base/_global.scss */
 .text-color-warning {
   color: #FF8C31 !important;
 }
 
-/* line 67, src/assets/scss/base/_global.scss */
+/* line 69, src/assets/scss/base/_global.scss */
 .bg-info {
   background-color: #F7CC00 !important;
 }
 
-/* line 70, src/assets/scss/base/_global.scss */
+/* line 72, src/assets/scss/base/_global.scss */
 .text-color-info {
   color: #F7CC00 !important;
 }
 
-/* line 67, src/assets/scss/base/_global.scss */
+/* line 69, src/assets/scss/base/_global.scss */
 .bg-dark {
   background-color: #913C9E !important;
 }
 
-/* line 70, src/assets/scss/base/_global.scss */
+/* line 72, src/assets/scss/base/_global.scss */
 .text-color-dark {
   color: #913C9E !important;
 }
 
-/* line 74, src/assets/scss/base/_global.scss */
+/* line 76, src/assets/scss/base/_global.scss */
 .bg-tertiary {
   background: #c4c4b3 !important;
 }
 
-/* line 77, src/assets/scss/base/_global.scss */
+/* line 79, src/assets/scss/base/_global.scss */
 .bg-complementary {
   background: #7ca7ad !important;
 }
 
-/* line 80, src/assets/scss/base/_global.scss */
+/* line 82, src/assets/scss/base/_global.scss */
 .bg-grey {
   background: #F5F6FA !important;
 }
 
-/* line 83, src/assets/scss/base/_global.scss */
+/* line 85, src/assets/scss/base/_global.scss */
 .min-h-100 {
   min-height: 94vh;
 }
@@ -2666,6 +2671,14 @@ body .ui-tooltip {
   flex-wrap: wrap;
   width: 100%;
   height: 600px;
+}
+
+@media screen and (min-width: 1400px) {
+  /* line 66, src/assets/scss/main.scss */
+  .padding-xl {
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

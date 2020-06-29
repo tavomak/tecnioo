@@ -1,0 +1,6 @@
+- var dataAttributes = {}
+- for (attr in v.comunas) {
+-     var key = 'data-' + attr
+-     dataAttributes[key] = v.comunas[attr].toLowerCase().replace(' ','')
+- }
+.badge--container.pt-3&attributes(dataAttributes)

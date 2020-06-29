@@ -9,8 +9,8 @@ block append config
 
 block mainContent
     main.content-wrapper
-        section.container.pt-5.pb-3
-            .row
+        section.container-fluid.pt-5.pb-3.padding-xl
+            .row.padding-xl
                 .col-sm-2
                     h4 
                         span.tecnioo-card--title__status.bg-success
@@ -44,129 +44,366 @@ block mainContent
                         li
                             button.btn.btn-outline-primary Filtrar
 
-            .row.tab-content#myTabContent
-                .col-9.pt-4
+            .row.tab-content.padding-xl#myTabContent
+                .col-md-10.col-xl-9.pt-4
                     ul.d-flex.justify-content-between
-                        li(style="min-width:20%")
-                            ul.nav.nav-pills.mb-3#pills-tab(role="tablist")
-                                li.nav-item.mr-3
-                                    a.nav-link.active#pills-home-tab(data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true") Tabla
+                        li.pr-3(style="min-width:12%")
+                            ul.nav.nav-pills.flex-column.mb-3#pills-tab(role="tablist" aria-orientation="vertical")
+                                li.nav-item.mb-2
+                                    a.nav-link.active.py-1#pills-home-tab(data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true") Tabla
                                 li.nav-item
-                                    a.nav-link#pills-profile-tab(data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false") Mapa
-                        li.p-2.text-center
-                            span <
-                        li.p-2.text-center.border.w-100
-                            span sab 07 abril
-                        li.p-2.text-center.border.w-100
-                            span dom 08 abril
-                        li.p-2.text-center.border.w-100(style="background:#007bff; color:white")
-                            span Hoy lun 09 abril
-                            a.pb-0.d-block.text-white.nav-item.nav-link.dropdown-toggle#dayAction1(href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") acciones
-                            .dropdown-menu.dropdown-menu-right.dropright(aria-labelledby="#dayAction1")
-                                each val in ['Reprogramar Día', 'Ver Mapa' ]
-                                    a.dropdown-item(href="#")= val
-                        li.p-2.text-center.border.w-100
-                            span mar 10 abril
-                            a.pb-0.d-block.nav-item.nav-link.dropdown-toggle#dayAction2(href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") acciones
-                            .dropdown-menu.dropdown-menu-right.dropright(aria-labelledby="#dayAction2")
-                                each val in ['Reprogramar Día', 'Ver Mapa' ]
-                                    a.dropdown-item(href="#")= val
-                        li.p-2.text-center.border.w-100
-                            span mie 11 abril
-                            a.pb-0.d-block.nav-item.nav-link.dropdown-toggle#dayAction3(href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") acciones
-                            .dropdown-menu.dropdown-menu-right.dropright(aria-labelledby="#dayAction3")
-                                each val in ['Reprogramar Día', 'Ver Mapa' ]
-                                    a.dropdown-item(href="#")= val
-                        li.p-2.text-center
-                            span >
-                .col-md-3.pt-4
+                                    a.nav-link.py-1#pills-profile-tab(data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false") Mapa
+                        li.p-2.text-center.border.border-right-0
+                            span <i class="fas fa-caret-left"></i>
+                        - 
+                            var week = [
+                                {
+                                    "id" : "1",
+                                    "name" : "Lunes",
+                                    "nikName" : "Lun",
+                                },
+                                {
+                                    "id" : "2",
+                                    "name" : "Martes",
+                                    "nikName" : "Mar",
+                                },
+                                {
+                                    "id" : "3",
+                                    "name" : "Miercoles",
+                                    "nikName" : "Mie",
+                                },
+                                {
+                                    "id" : "4",
+                                    "name" : "Jueves",
+                                    "nikName" : "Jue",
+                                },
+                                {
+                                    "id" : "5",
+                                    "name" : "Viernes",
+                                    "nikName" : "Vie",
+                                },
+                                {
+                                    "id" : "6",
+                                    "name" : "Sabado",
+                                    "nikName" : "Sab",
+                                },
+                                {
+                                    "id" : "0",
+                                    "name" : "Domingo",
+                                    "nikName" : "Dom",
+                                },
+                            ]
+                        each val, key in week
+                            li.p-2.text-center.border.border-right-0.w-100(class="weekDay-"+val.id)
+                                span#activeDay.d-none Hoy 
+                                span #{val.nikName} 
+                                span#dayNumber 
+                                a.pb-0.nav-item.nav-link.dropdown-toggle(id="dayAction"+val.id href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") acciones
+                                .dropdown-menu.dropdown-menu-right.dropright(aria-labelledby="#dayAction"+val.id)
+                                    each val in ['Reprogramar Día', 'Ver Mapa' ]
+                                        a.dropdown-item(href="#")= val
+                        li.p-2.text-center.border
+                            span <i class="fas fa-caret-right"></i>
+                .col-md-2.col-xl-3.pt-4.text-right.text-xl-center
                     a.btn.btn-primary.btn-sm.mb-4#btnDatepicker(href="#") seleccionar fecha
                     #datepickerRoutes.d-none.datepickerRoutes
 
-
-                .col-9
+            .row.tab-content.padding-xl
+                .col-md-10.col-xl-9
                     .tab-content#pills-tabContent
                         .tab-pane.fade.show.active#pills-home(role="tabpanel" aria-labelledby="pills-home-tab")
                             - 
                                 var array = [
                                     { 
-                                        "id":"1",
-                                        "name":"Juan Perez",
-                                        "route": "A",
-                                        "pts":"1 cuadro",
-                                        "ciclo": 1231241,
+                                        "id"   : "1",
+                                        "name" : "Juan Perez",
+                                        "route" : "A",
+                                        "pts" : "5000",
+                                        "meta" : "85",
+                                        "brix" : "4",
+                                        "sanitizado" : "12",
+                                        "tecWeek" : [
+                                            {
+                                                "meta" : "25",
+                                                "brix" : "2",
+                                                "sanitizado" : "6",
+                                                "pts" : "600",
+                                                "comunas": [ "Cerrillos", "La Reina", "Pudahuel" ]
+                                            },
+                                            {
+                                                "meta" : "33",
+                                                "brix" : "5",
+                                                "sanitizado" : "12",
+                                                "pts" : "900",
+                                                "comunas": [ "Cerro Navia", "Las Condes", "Quilicura" ]
+                                            },
+                                            {
+                                                "meta" : "47",
+                                                "brix" : "2",
+                                                "sanitizado" : "17",
+                                                "pts" : "1280",
+                                                "comunas": ["Las Condes", "La Reina", "Pudahuel"]
+                                            },
+                                            {
+                                                "meta" : "55",
+                                                "brix" : "3",
+                                                "sanitizado" : "11",
+                                                "pts" : "820",
+                                                "comunas": [ "Cerrillos", "La Reina", "Pudahuel" ]
+                                            },
+                                            {
+                                                "meta" : "63",
+                                                "brix" : "5",
+                                                "sanitizado" : "16",
+                                                "pts" : "400",
+                                                "comunas": [ "Cerro Navia", "Las Condes", "Quilicura" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "2",
+                                                "sanitizado" : "12",
+                                                "pts" : "500",
+                                                "comunas": [ "Las Condes", "La Reina", "Pudahuel" ]
+                                            },
+                                            {
+                                                "meta" : "95",
+                                                "brix" : "8",
+                                                "sanitizado" : "5",
+                                                "pts" : "500",
+                                                "comunas": ["Cerrillos", "La Reina", "Pudahuel"]
+                                            },
+                                        ] 
                                     },
                                     { 
-                                        "id":"2",
-                                        "name":"Pedro Carrasco",
-                                        "route": "B",
-                                        "pts":"2 cuadro",
-                                        "ciclo": 1231241,
+                                        "id" : "2",
+                                        "name" : "Pedro Carrasco",
+                                        "route" : "B",
+                                        "pts" : "6000",
+                                        "meta" : "75",
+                                        "brix" : "5",
+                                        "sanitizado" : "15",
+                                        "tecWeek" : [
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Conchalí", "Lo Barnechea", "Quinta Normal" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "El Bosque", "Lo Espejo", "Recoleta" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Estacion Central", "Lo Prado", "Renca" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Conchalí", "Lo Barnechea", "Quinta Normal" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "El Bosque", "Lo Espejo", "Recoleta" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Estacion Central", "Lo Prado", "Renca" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Conchalí", "Lo Barnechea", "Quinta Normal" ]
+                                            },
+                                        ]
                                     },
                                     { 
-                                        "id":"3",
-                                        "name":"Gerardo Angulo",
-                                        "route": "C",
-                                        "pts":"3 cuadro",
-                                        "ciclo": 1231241,
+                                        "id" : "3",
+                                        "name" : "Gerardo Angulo",
+                                        "route" : "C",
+                                        "pts" : "6000",
+                                        "meta" : "75",
+                                        "brix" : "5",
+                                        "sanitizado" : "15",
+                                        "tecWeek" : [
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Huechuraba", "Macul", "San Miguel" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Independencia", "Maipú", "San Joaquín" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Huechuraba", "Macul", "San Miguel" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Huechuraba", "Macul", "San Miguel" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Independencia", "Maipú", "San Joaquín" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Independencia", "Maipú", "San Joaquín" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Independencia", "Maipú", "San Joaquín" ]
+                                            },
+                                        ]
                                     },
                                     { 
-                                        "id":"4",
-                                        "name":"Alverto Rivero",
-                                        "route": "D",
-                                        "pts":"4 cuadro",
-                                        "ciclo": 1231241,
+                                        "id" : "4",
+                                        "name" : "Alverto Rivero",
+                                        "route" : "D",
+                                        "pts" : "6000",
+                                        "meta" : "75",
+                                        "brix" : "5",
+                                        "sanitizado" : "15",
+                                        "tecWeek" : [
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Las Condes","Buín","Recoleta" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Santiago","Providencia","Puente Alto" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Vitacura","Independencia","La Reina" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Las Condes","Buín","Recoleta" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Las Condes","Buín","Recoleta" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Las Condes","Buín","Recoleta" ]
+                                            },
+                                            {
+                                                "meta" : "75",
+                                                "brix" : "5",
+                                                "sanitizado" : "15",
+                                                "pts" : "1200",
+                                                "comunas": [ "Las Condes","Buín","Recoleta" ]
+                                            },
+                                        ]
                                     },
                                 ]
                             each val, key in array
-                                .wrap.mb-2.shadow
+                                .wrap.mb-2.shadow(class="ruta"+val.route)
                                     ul.d-flex.justify-content-between
 
-                                        li.p-3.border.border-right-0(style="min-width:20%")
-                                            .d-flex.align-items-center.pb-4
+                                        li.p-3.border.border-right-0(style="min-width:12%")
+                                            .d-flex.align-items-center.pb-3
                                                 span.route-info--ico.route-info--ico__route.mr-2.bg-info
                                                     span.route-info--ico__content  #{val.route}
                                                 span #{val.name}
-                                            .d-flex.align-items-center.pb-4
+                                            .d-flex.align-items-center.pb-3
                                                 span.route-info--ico.bg-success.ml-3.mr-2
-                                                    span.route-info--ico__content 5 
+                                                    span.route-info--ico__content #{val.brix} 
                                                 span
                                                     small Brix
                                             .d-flex.align-items-center.pb-4
                                                 span.route-info--ico.bg-secondary.ml-3.mr-2
-                                                    span.route-info--ico__content 15 
+                                                    span.route-info--ico__content #{val.sanitizado} 
                                                 span
                                                     small Sanitizado
-                                            p.mb-1 6000
-                                            .progress(style="height:10px")
-                                                .progress-bar.progress-bar-striped(role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100") 
-                                                    span(style="font-size:8px") 75%
+                                            p.mb-1 #{val.pts}
+                                            .progress(style="height:10px"  )
+                                                .progress-bar.progress-bar-striped(role="progressbar" style="width:"+val.meta+"%;" aria-valuenow=val.meta aria-valuemin="0" aria-valuemax=val.pts) 
+                                                    span(style="font-size:8px") #{val.meta}%
                                         
                                         li.p-2.text-center.border.border-right-0.d-flex.align-items-center
-                                            span <
-                                        each val in [1, 2, 3, 4, 5]
-                                            li.p-3.text-center.border.border-right-0.w-100(class="card-day-"+val)
+                                            span <i class="fas fa-caret-left"></i>
+                                        each v, k in val.tecWeek
+                                            li.p-3.text-center.border.border-right-0.w-100(class="card-day card-day-"+k)
                                                 .progress.mb-4(style="height:10px")
-                                                    .progress-bar.progress-bar-striped(role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100") 
-                                                        span(style="font-size:8px") 1280 pts
+                                                    .progress-bar.progress-bar-striped(role="progressbar" style="width:"+v.meta+"%;" aria-valuenow=v.meta aria-valuemin="0" aria-valuemax=v.pts) 
+                                                        span(style="font-size:8px") #{v.pts} pts
                                                 .d-flex.w-100.justify-content-between.align-items-center.py-2
                                                     span
                                                         small Ciclo 1
                                                     span.route-info--ico.bg-success
-                                                        span.route-info--ico__content 1
+                                                        span.route-info--ico__content #{v.brix}
                                                 .d-flex.w-100.justify-content-between.align-items-center.py-2
                                                     span
                                                         small Ciclo 11
                                                     span.route-info--ico.bg-secondary
-                                                        span.route-info--ico__content 3
+                                                        span.route-info--ico__content #{v.sanitizado}
                                                 .badge--container.pt-3
-                                                    .badge.badge-light.badge-providencia.border.w-100.my-1 Providencia
-                                                    .badge.badge-light.badge-santiago.border.w-100.my-1 Santiago
-                                                    .badge.badge-light.badge-las-condes.border.w-100.my-1 Las Condes
+                                                    each comuna in v.comunas
+                                                        .badge.badge-light.border.w-100.my-1(class="badge-"+comuna.toLowerCase().replace(' ','') data-comuna=comuna.toLowerCase().replace(' ','')) #{comuna}
+                                                button(class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion") Asignar
 
 
                                         li.p-2.text-center.border.d-flex.align-items-center
-                                            p >
+                                            p <i class="fas fa-caret-right"></i>
                         .tab-pane.fade#pills-profile(role="tabpanel" aria-labelledby="pills-profile-tab")
                             .row
                                 .col-3
@@ -179,104 +416,92 @@ block mainContent
                                                     span #{val.name}
                                                 .mb-2
                                                     .progress(style="height:10px")
-                                                        .progress-bar.progress-bar-striped(role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100") 
-                                                            span(style="font-size:8px") 75%
+                                                        .progress-bar.progress-bar-striped(role="progressbar" style="width:"+val.meta+"%;" aria-valuenow=val.meta aria-valuemin="0" aria-valuemax=val.pts) 
+                                                            span(style="font-size:8px") #{val.meta}%
                                                 .d-flex.align-items-center.pb-2
                                                     span.route-info--ico.bg-success.mr-2
-                                                        span.route-info--ico__content 5 
+                                                        span.route-info--ico__content #{val.brix} 
                                                     span
                                                         small Brix
                                                     .badge.badge-light.border.p-2.ml-auto Ciclo 4
                                                 .d-flex.align-items-center.pb-2
                                                     span.route-info--ico.bg-secondary.mr-2
-                                                        span.route-info--ico__content 15 
+                                                        span.route-info--ico__content #{val.sanitizado}
                                                     span
                                                         small Sanitizado
                                                     .badge.badge-light.border.p-2.ml-auto Ciclo 11
                                 .col-9
                                     #map(style="position:relative;height: 500px;width: 100%;margin: 0px;padding: 0px")
 
-                .col-md-3
-                    .form-group.pb-2.text-right
-                        .input-group.mb-2
-                            select.form-control.form-control-sm
-                                option Seleccionar Ruta
-                                each val in array
-                                    option(value=val.name) (#{val.route}) #{val.name}
-                        button(type="submit" class="btn btn-outline-primary btn-sm ml-auto") Asignar
+                .col-md-2.col-xl-3
                     - 
-                        var array2 = [
+                        var asignar = [
                             { 
                                 "id":"1",
                                 "pts":"1 cuadro",
-                                "ciclo": 1231241,
+                                "ciclo": 2,
+                                "rutas" : ["A", "D"],
+                                "comuna" : "Las condes"
                             },
                             { 
                                 "id":"2",
                                 "pts":"2 cuadro",
-                                "ciclo": 1231241,
+                                "ciclo": 1,
+                                "rutas" : ["B"],
+                                "comuna" : "Estacion Central"
                             },
                             { 
                                 "id":"3",
                                 "pts":"3 cuadro",
-                                "ciclo": 1231241,
+                                "ciclo": 4,
+                                "rutas" : [],
+                                "comuna" : "Huechuraba"
                             },
                         ]
-                    each val, key in array2
-                        a.routeCard(href="#")
-                            .card
-                                .card-header.py-1.px-3
-                                    .d-flex.align-items-baseline
-                                        h6 Cod Máquina
-                                        span.badge.badge-primary.p-2.mt-2.ml-auto 500pts
-                                .card-body.py-1.px-3
-                                    p
-                                        b Nombre Màquina [Modelo] [Logo]
-                                    .d-flex.align-items-center.pb-2
-                                        span.route-info--ico.bg-success.mr-2
-                                            span.route-info--ico__content 5 
-                                        span
-                                            small Brix
-                                        .badge.badge-light.border.p-2.ml-auto Ciclo 4
-                                    .d-flex.align-items-center.pb-2
-                                        span.route-info--ico.bg-secondary.mr-2
-                                            span.route-info--ico__content 15 
-                                        span
-                                            small Sanitizado
-                                        .badge.badge-light.border.p-2.ml-auto Ciclo 11
-                                    small 15/04/2020
-                                    p 12228 - Burger King 
-                                        small Pedro Fontova 134
+                    each val, key in asignar
+                        .routeCardGroup
+                            a.routeCard(href="#" data-comuna=val.comuna.toLowerCase().replace(' ','') data-rutas=val.rutas)
+                                .card.rounded-0.pb-2
+                                    .card-header.py-1.px-3
+                                        .d-flex.align-items-baseline
+                                            h6 Cod Máquina
+                                            span.badge.badge-primary.p-2.mt-2.ml-auto 500pts
+                                    .card-body.py-1.px-3
+                                        p
+                                            b Nombre Máquina [Modelo] [Logo]
+                                        .d-flex.align-items-center.pb-2
+                                            span.route-info--ico.bg-success.mr-2
+                                                span.route-info--ico__content 5 
+                                            span
+                                                small Brix
+                                            .badge.badge-light.border.p-2.ml-auto Ciclo 4
+                                        .d-flex.align-items-center.pb-2
+                                            span.route-info--ico.bg-secondary.mr-2
+                                                span.route-info--ico__content 15 
+                                            span
+                                                small Sanitizado
+                                            .badge.badge-light.border.p-2.ml-auto Ciclo 11
+                                        small 15/04/2020
+                                        p 12228 - Burger King 
+                                            small Pedro Fontova 134
 
-                                    p
-                                        .badge.badge-light.border.p-2.ml-auto Las Condes
-                                    .d-flex.align-items-center
-                                        span.route-info--ico.route-info--ico__route.mr-2.bg-info
-                                            span.route-info--ico__content A
-                                        span.route-info--ico.route-info--ico__route.mr-2.bg-info
-                                            span.route-info--ico__content C
-                        a.text-right.d-block.pb-4.pt-2(href="#") Ver OT
+                                        p
+                                            .badge.badge-light.border.p-2.ml-auto #{val.comuna}
+                                        .d-flex.align-items-center
+                                            each v, k in val.rutas
+                                                span.route-info--ico.route-info--ico__route.mr-2.bg-info
+                                                    span.route-info--ico__content(data-ruta="ruta-"+v.toLowerCase()) #{v}
+                            .form-group
+                                .input-group
+                                    select.form-control.form-control-sm
+                                        option Seleccionar Ruta
+                                        each val in array
+                                            option(value=val.name) (#{val.route}) #{val.name}
+                                .button-group.p-2.border.d-flex.justify-content-between
+                                    a.btn.btn-outline-primary.btn-sm(href="#") Ver OT
+                                    button(type="submit" class="btn btn-outline-primary btn-sm ml-auto d-none") Asignar
 
-            .row.py-4.justify-content-center
-                nav(aria-label="pagination")
-                    ul.pagination
-                        li.page-item
-                            a.page-link(href="#" aria-label="Previus")
-                                span(aria-hidden="true") &laquo;
-                                span.sr-only Previus
-                        li.page-item.active
-                            a.page-link( href="#") 1
-                        li.page-item
-                            a.page-link( href="#") 2 
-                                span.sr-only (current)
-                        li.page-item
-                            a.page-link( href="#") 3
-                        li.page-item
-                            a.page-link( href="#") 4
-                        li.page-item
-                            a.page-link(href="#" aria-label="Next")
-                                span(aria-hidden="true") &raquo;
-                                span.sr-only Next
+
 
         block scripts 
         script(
