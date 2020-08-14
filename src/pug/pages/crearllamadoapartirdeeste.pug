@@ -32,18 +32,12 @@ block mainContent
                         - for (var x = 0; x < 4; x++)
                             li(class='w-100 progressbarItem-'+x  )
                     form#msform
-                        fieldset#fieldsetStep1.w-100
-                            include ../layout/wizard/_step1
-                            hr    
-                            a.next.action-buton.btn.btn-primary.text-white.disabled#step1Next(disabled) Siguiente
                         fieldset#fieldsetStep2.w-100
                             include ../layout/wizard/_step3
                         fieldset#fieldsetStep3.w-100.step-remove
                             include ../layout/wizard/_step4
                         fieldset#fieldsetStep4.w-100.step-remove
                             include ../layout/wizard/_step5
-                        fieldset#fieldsetStep5.w-100
-                            include ../layout/wizard/_step6
                 .col-md-3.bg-grey.d-none.d-md-block.pt-5
                     include ../layout/_previewllamado
     form.d-none(action="")
@@ -127,9 +121,7 @@ block mainContent
                 .modal-body
                     include ../layout/_previewllamado
                     p.text-center
-                        a.btn.btn-danger.mt-5(href="") Enviar Solicitud
-                    p.text-center
-                        a.btn.btn-info(href="crearllamadoapartirdeeste.html") Crear llamado a partir de este
+                        a.btn.btn-danger.mt-5(href="#") Enviar Solicitud
 
     .modal.fade(id="modalNuevaSucursal" tabindex="-1" role="dialog" aria-labelledby="modalNuevaSucursalLabel" aria-hidden="true")
         .modal-dialog(role="document")

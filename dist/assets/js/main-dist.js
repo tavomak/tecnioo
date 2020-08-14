@@ -128,14 +128,15 @@ $(function () {
             return true;
         },
         "Ingresa al menos una letra Mayúscula y un número");
-
-    $('.detalles-owl').owlCarousel({
-        loop: true,
-        autoplay: true,
-        dots: true,
-        //nav:true,
-        items: 2
-    });
+    if ($.isFunction($.fn.owlCarousel)) {
+        $('.detalles-owl').owlCarousel({
+            loop: true,
+            autoplay: true,
+            dots: true,
+            //nav:true,
+            items: 2
+        });
+    }
 
     $('.sweet-error').on('click', function () {
         Swal.fire({

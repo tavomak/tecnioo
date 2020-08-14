@@ -180,7 +180,7 @@ $(function () {
         console.log(NombreContacto.length);
         console.log(step2InputEmail.length);
 
-        if (step1SelectCallSource != "" && step1SelectCallType != "" && step2SelectClientType != "" && NombreContacto.length > 0 && step2InputEmail.length > 0) {
+        if (step1SelectCallSource != "" && step1SelectCallType != "" && step1SelectCallType != "Seleccionar" && step2SelectClientType != "" && NombreContacto.length > 0 && step2InputEmail.length > 0) {
             $('#fieldsetStep1').find('.next').prop('disabled', false);
             $('#fieldsetStep1').find('.next').removeClass('disabled');
             console.log('funca');
@@ -246,6 +246,9 @@ $(function () {
         }
     });
     //WIZARD STEP 4 ====================================================== //
+    $('#fieldsetStep3 input').on('change', function(){
+        $('#step4Next').removeClass('disabled')
+    });
     $('#step4Prev').on('click', function (e) {
         e.preventDefault();
         $('.list-step-2 i').addClass('d-none');
@@ -263,14 +266,15 @@ $(function () {
         e.preventDefault();
         $('.list-step-4 i').removeClass('d-none');
     });
-    $(document).ajaxSend(function (event, jqxhr, settings) {
+    //$(document).ajaxSend(function (event, jqxhr, settings) {
         $('input.step5SelectCheckbox').on('change', function (evt) {
             evt.preventDefault();
-            if ($('#step5SelectCheckbox').find('.step5SelectCheckbox:checked').length > 3) {
+            if ($('#step5SelectCheckbox').find('.step5SelectCheckbox:checked').length >= 3) {
                 this.checked = false;
+                $('#step5Next').removeClass('disabled');
             }
         });
-    });
+    //});
     //WIZARD STEP 6 ====================================================== //
     var fromDay = 'Lunes',
         toDay = 'Domingo',
