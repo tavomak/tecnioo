@@ -79,6 +79,58 @@ mixin tableRow(color, cierre, asingacion, sla)
             b=sla
         td Nombre Sucursal - Cliente Spot
         td Providencia
+mixin tableRowMantenciones(color, ruta, tecnico, fecha, servicio, cierre, modificable)
+    tr
+        td 
+            span #98876
+        td 
+            span 
+                i.fas.fa-map-marker-alt
+            span  1220 Burger King <br>Huechuraba
+        td #98876
+        td Máquina <br>[Módelo] [Logo]
+        td=ruta
+        td=tecnico
+        td 
+            if fecha == ''
+                span 12/09/20
+            else
+                span -
+        td.text-white
+            if servicio == 1
+                p.text-center.bg-success.py-1 brxpm
+            else if servicio == 2
+                p.text-center.bg-primary.py-1 sansc
+            else
+                p.text-center.bg-primary.py-1 sanpm
+        td 
+            if fecha == ''
+                span 12/09/20
+            else
+                span -
+        td 
+            span.badge.badge-primary.py-2.px-4 180p
+        td
+            if color == "success"
+                span.tecnioo-card--title__status(class="bg-"+color) 
+                b(class="text-color-"+color) OK
+            else
+                span.tecnioo-card--title__status(class="bg-"+color) 
+                b(class="text-color-"+color)=cierre
+        if modificable == true
+            td
+                a.pr-2(href="#" data-toggle="modal" data-target="#editarOt")
+                    i.fas.fa-eye
+                a.pr-2(href="#" data-toggle="modal" data-target="#editarOt")
+                    i.fas.fa-pencil-alt
+                a(href="#" data-toggle="modal" data-target="#eliminarOt")
+                    i.fas.fa-times
+        else
+            td
+                a.pr-2(href="#" data-toggle="modal" data-target="#editarOt")
+                        i.fas.fa-eye
+
+                
 mixin tableRowTecnico(tecnico, tipo, cumplimiento)
     tr 
         td

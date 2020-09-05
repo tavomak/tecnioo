@@ -1,0 +1,368 @@
+extends ../layout/_header
+
+block append config
+    -var pageTitle = 'Home'
+    -var pageDescription = ''
+    -var baseDir = ''
+    -var linkSrc = ''
+
+block mainContent
+    main.content-wrapper
+        section.container-fluid
+            .row
+                .col-4.col-lg-3.col-xl-2.bg-grey.py-5
+                    ul.nav.nav-pills#hlm-pills-tab(role="tablist")
+                        li.nav-item
+                            a.nav-link.active#pills-home-tab(data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true") Llamados
+                        li.nav-item
+                            a.nav-link#profile-tab(data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false") Mantenciones
+                    
+                .col-8.col-lg-9.col-xl-10.pt-5
+                    .hlm-title.active
+                        h6 
+                            b 102 Llamados
+                        hr
+        .tab-content#hlm-pills-tabContent
+            .container-fluid.tab-pane.fade.show.active#pills-home(role="tabpanel" aria-labelledby="pills-home-tab")
+                .row
+                    .col-4.col-lg-3.col-xl-2.bg-grey.pb-3.min-h-100
+                        +listStado(
+                            'primary', 
+                            'Abiertos', 
+                            '8'
+                            )
+                        +listStado(
+                            'secondary', 
+                            'Asignados', 
+                            '5'
+                            )
+                        +listStado(
+                            'dark', 
+                            'En Validación', 
+                            '4'
+                            )
+                        +listStado(
+                            'info', 
+                            'Pendiente Cliente', 
+                            '9'
+                            )
+                        +listStado(
+                            'warning', 
+                            'Pendiente TCM', 
+                            '2'
+                            )
+                        +listStado(
+                            'danger', 
+                            'Local Cerrado', 
+                            '7'
+                            )
+                        hr
+                        h6 
+                            b Otros Filtros
+                        hr
+                        +listName( 
+                            'Nuevos Hoy', 
+                            '18'
+                            )
+                        +listName( 
+                            'Cerrados Hoy', 
+                            '7'
+                            )
+                        +listName( 
+                            'Vencidos', 
+                            '12'
+                            )
+                        +listName( 
+                            'Re-asignados', 
+                            '10'
+                            )
+                        hr
+                        +listStado(
+                            'success', 
+                            'Llamados Cerrados', 
+                            '7',
+                            'Consultar'
+                            )
+                        hr
+                    .col-8.col-lg-9.col-xl-10.pb-3
+                        include ../layout/_filtros
+                        .table-responsive
+                            table.table.table-striped.mt-4
+                                thead
+                                    tr
+                                        th(scope="col") Creacion
+                                        th(scope="col") Ticket
+                                        th(scope="col") Tipo de Llamado
+                                        th(scope="col") Ots
+                                        th(scope="col") Último Cierre
+                                        th(scope="col") Asignación
+                                        th(scope="col") SLA
+                                        th(scope="col") Sucursal
+                                        th(scope="col") Comuna
+                                tbody
+                                    +tableRow(
+                                        'primary', 
+                                        'Abierto',  
+                                        'Sin Asignación', 
+                                        'N/A'
+                                        )
+                                    +tableRow(
+                                        'secondary', 
+                                        'Asignado',  
+                                        'Juan Peréz', 
+                                        '+48h'
+                                        )
+                                    +tableRow(
+                                        'primary', 
+                                        'Abierto',  
+                                        'Sin Asignación', 
+                                        'N/A'
+                                        )
+                                    +tableRow(
+                                        'info', 
+                                        'Pendiente Cliente',  
+                                        'Roberto Mendoza', 
+                                        '+3'
+                                        )
+                                    +tableRow(
+                                        'danger', 
+                                        'Local Cerrado',  
+                                        'Juan Peréz', 
+                                        '-3'
+                                        )
+                                    +tableRow(
+                                        'warning', 
+                                        'Pendiente TCM',  
+                                        'Juan Peréz', 
+                                        '+3'
+                                        )
+                                    +tableRow(
+                                        'dark', 
+                                        'Pendiente de Validación',  
+                                        'Juan Peréz', 
+                                        'N/A'
+                                        )
+            .container-fluid.tab-pane.fade#pills-profile(role="tabpanel" aria-labelledby="pills-profile-tab")
+                .row
+                    .col-4.col-lg-3.col-xl-2.bg-grey.pb-3.min-h-100
+                        +listStado(
+                            'secondary', 
+                            'Asignados', 
+                            '5'
+                            )
+                        +listStado(
+                            'info', 
+                            'Pendiente Cliente', 
+                            '9'
+                            )
+                        +listStado(
+                            'warning', 
+                            'Pendiente TCM', 
+                            '2'
+                            )
+                        +listStado(
+                            'danger', 
+                            'Local Cerrado', 
+                            '7'
+                            )
+                        +listStado(
+                            'success', 
+                            'Llamados Cerrados', 
+                            '7'
+                            )
+                    .col-8.col-lg-9.col-xl-10.pb-3
+                        include ../layout/_filtros2
+                        .table-responsive
+                            table.table.table-striped.mt-4
+                                thead
+                                    tr
+                                        th(scope="col") OT
+                                        th(scope="col") Sucursal Spot
+                                        th(scope="col") Nº de Serie
+                                        th(scope="col") Máquina
+                                        th(scope="col") Ruta
+                                        th(scope="col") Técnico
+                                        th(scope="col") Fecha Programada
+                                        th(scope="col") Cod Servicio
+                                        th(scope="col") Fecha Realizado
+                                        th(scope="col") Puntos
+                                        th(scope="col") Status Cierre
+                                        th(scope="col")
+                                tbody
+                                    +tableRowMantenciones(
+                                        'primary',
+                                        'RP80',
+                                        'Juan González',  
+                                        '-', 
+                                        '1',
+                                        'Asignado',
+                                        true
+                                        )
+                                    +tableRowMantenciones(
+                                        'success',
+                                        'RP80',
+                                        'Alexis Osorio',  
+                                        '', 
+                                        '2',
+                                        'Ok'
+                                        )
+                                    +tableRowMantenciones(
+                                        'success',
+                                        'RP80',
+                                        'José Pérez',  
+                                        '', 
+                                        '1',
+                                        'Ok'
+                                        )
+                                    +tableRowMantenciones(
+                                        'success',
+                                        'RP80',
+                                        'Alverto Rivera',  
+                                        '', 
+                                        '3',
+                                        'Ok'
+                                        )
+                                    +tableRowMantenciones(
+                                        'info',
+                                        'RP80',
+                                        'José Pérez',  
+                                        '', 
+                                        '1',
+                                        'P. Cliente'
+                                        )
+                                    +tableRowMantenciones(
+                                        'warning',
+                                        'RP80',
+                                        'Pedro Carrasco',  
+                                        '', 
+                                        '2',
+                                        'P. TCM'
+                                        )
+                                    +tableRowMantenciones(
+                                        'danger',
+                                        'RP80',
+                                        'Alverto Rivera',  
+                                        '', 
+                                        '3',
+                                        'L. Cerrado'
+                                        )
+        .modal.fade(id="editarOt" tabindex="-1" role="dialog" aria-labelledby="editarOtLabel" aria-hidden="true")
+            .modal-dialog(role="document")
+                .modal-content
+                    .modal-header
+                        ul.w-100.d-flex.justify-content-between.align-items-center
+                            li
+                                h4 Editar OT #98876
+                            li
+                                span.px-4.bg-success.text-white.py-2.my-4 brxpm
+                            li
+                                button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                                    span(aria-hidden="true") &times;
+                    .modal-body
+                        table.table.table-striped.my-4
+                            tbody
+                                tr
+                                    td 
+                                        b Código Máquina
+                                    td #98876
+                                tr
+                                    td 
+                                        b Máquina
+                                    td Nombre de Máquina [Módelo] [Logo]
+                                tr
+                                    td 
+                                        b Cliente Spot
+                                    td 1220 - Burger King - Huechuraba
+                                tr
+                                    td 
+                                        b Técnico
+                                    td Juan González
+                        form.pb-4
+                            p Ruta
+                            .form-group.m-0
+                                .input-group
+                                    - 
+                                        var array = ["RP80", "RSA8", "PR81", "RSB13", "RSA1", "RSA12", "RSB13"]
+                                    select.form-control.form-control-sm(name="selectRuta")
+                                        each val in array
+                                                option(value=val)=val
+                        form
+                            .form-group
+                                label(for="inputDatepicker") Fecha de Programación
+                                input.form-control.form-control-sm#inputDatepicker(type="text" name="inputDatepicker" placeholder="Seleccionar fecha" required)
+                        .text-center
+                            button.btn.btn-success.sweet-ok Guardar
+        .modal.fade(id="eliminarOt" tabindex="-1" role="dialog" aria-labelledby="eliminarOtLabel" aria-hidden="true")
+            .modal-dialog(role="document")
+                .modal-content
+                    .modal-header
+                        ul.w-100.d-flex.justify-content-between.align-items-center
+                            li
+                                h4 Eliminar OT #98876
+                            li
+                                span.px-4.bg-success.text-white.py-2.my-4 brxpm
+                            li
+                                button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                                    span(aria-hidden="true") &times;
+                    .modal-body
+                        table.table.table-striped.my-4
+                            tbody
+                                tr
+                                    td 
+                                        b Código Máquina
+                                    td #98876
+                                tr
+                                    td 
+                                        b Máquina
+                                    td Nombre de Máquina [Módelo] [Logo]
+                                tr
+                                    td 
+                                        b Cliente Spot
+                                    td 1220 - Burger King - Huechuraba
+                                tr
+                                    td 
+                                        b Técnico
+                                    td Juan González
+                                tr
+                                    td 
+                                        b Ruta 
+                                    td RP80
+                                tr
+                                    td 
+                                        b Fecha de Programación
+                                    td 31-08-2020
+                        .text-center
+                            button.btn.btn-danger.sweet-error Confirmar eliminación
+
+    block scripts 
+        script(
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"
+            )
+        script(
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"
+            )
+        script(
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+            crossorigin="anonymous"
+            )
+        script(
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"
+            )
+        script( src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" )
+        script( src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/sweetalert2@9")
+        script(src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js")
+        script(src=baseDir+"assets/js/jquery.validate.min-dist.js")
+        script(src=baseDir+"assets/js/additional-methods.min-dist.js")
+        script(src=baseDir+"assets/js/rut-dist.js")
+        script(src=baseDir+"assets/js/main-wizard-dist.js")
+        script(src=baseDir+"assets/js/main-dist.js")

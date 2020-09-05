@@ -1,0 +1,43 @@
+ul.d-flex.justify-content-between.align-items-center
+    li
+        .input-group.input-group-sm
+            .input-group-prepend
+                label.input-group-text
+                    i.fas.fa-search
+                input.form-control(type="text" placeholder="Ticket")
+    li
+        .input-group.input-group-sm
+            .input-group-prepend
+                label.input-group-text
+                    i.fas.fa-search
+                input.form-control(type="text" placeholder="Rut")
+    li
+        .input-group.input-group-sm
+            .input-group-prepend
+                label.input-group-text
+                    i.fas.fa-search
+                input.form-control(type="text" placeholder="ID Sucursal")
+    li
+        form
+            .form-group.mt-3
+                input.form-control.form-control-sm#inputDatepicker(type="text" name="inputDatepicker" placeholder="Seleccionar fecha" required)
+    li
+        .dropdown
+            button.btn.btn-light.dropdown-toggle(type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Ruta
+            .dropdown-menu(aria-labelledby="dropdownTecnicos")
+                each val in ['Todos','Pedro Carrasco','Jorge Salgado','Juan Gonzalez']
+                    a.dropdown-item(href="#")= val
+    li
+        .dropdown
+            button.btn.btn-light.dropdown-toggle(type="button" id="dropdownZona" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Zona
+            .dropdown-menu(aria-labelledby="dropdownZona")
+                each val in ['Todas','Santiago','Rancagua','Viña del mar']
+                    a.dropdown-item(href="#")= val
+    li
+        .dropdown
+            button.btn.btn-light.dropdown-toggle(type="button" id="dropdownTipo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Tipo
+            .dropdown-menu(aria-labelledby="dropdownTipo")
+                each val in ['Todos','Urgencias','Instalaciones','Modificaciones', 'Cambio de accesoio', 'Retiro', 'Vista Inspectiva', 'Capacitación','Perforaciones','Puesta en Marcha','Diagnóstico','Taller']
+                    a.dropdown-item(href="#")= val
+    li
+        button.btn.btn-outline-primary Filtrar

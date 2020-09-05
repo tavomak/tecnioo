@@ -68,7 +68,9 @@ $(function () {
             },
         },
         messages: {
-            step1SelectCallSource: { valueNotEquals: "Seleccionar un origen de llamado" }
+            step1SelectCallSource: {
+                valueNotEquals: "Seleccionar un origen de llamado"
+            }
         },
         errorPlacement: function (error, element) {
             $(element).parents('.form-group').append(error)
@@ -77,7 +79,7 @@ $(function () {
     });
 
     $('#UserChangePassword').on('change blur keyup', function () {
-        if ( $(this).valid() ) {
+        if ($(this).valid()) {
             $('#confirmEditPassword').removeClass('disabled');
         } else {
             $('#confirmEditPassword').addClass('disabled');
@@ -114,17 +116,17 @@ $(function () {
     });
 
     jQuery.validator.addMethod("passwordCheck",
-        function(value, element, param) {
+        function (value, element, param) {
             if (this.optional(element)) {
                 return true;
             } else if (!/[A-Z]/.test(value)) {
                 return false;
-            }  else if (!/[0-9]/.test(value)) {
+            } else if (!/[0-9]/.test(value)) {
                 return false;
             }
-                /*else if (!/[a-z]/.test(value)) {
+            /*else if (!/[a-z]/.test(value)) {
                 return false;
-            }*/ 
+            }*/
             return true;
         },
         "Ingresa al menos una letra Mayúscula y un número");
@@ -153,4 +155,12 @@ $(function () {
             text: '"Mensaje de validación impreso"'
         })
     });
-}); 
+
+    /* 
+	------------------------------------------------------------------
+		Home Llamados / Mantenciones
+	------------------------------------------------------------------
+    */
+
+    
+});
