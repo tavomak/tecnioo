@@ -18,16 +18,16 @@
     <link href="images/webclip.png" rel="apple-touch-icon">
   </head>
   <body>
-    <nav class="tecnioo-navbar navbar bg-primary px-2 flex-row"><a class="navbar-brand tecnioo-navbar--wrap" href="home.html"><img class="tecnioo-navbar--wrap__img" src="./assets/img/avatar-2.png" alt="Tecnioo"></a>
+    <nav class="tecnioo-navbar navbar bg-primary px-2 flex-row"><a class="navbar-brand tecnioo-navbar--wrap" href="home.html"><img class="tecnioo-navbar--wrap__img" src="assets/img/avatar-2.png" alt="Tecnioo"></a>
       <div class="navbar-nav-scroll">
         <ul class="navbar-nav flex-row">
-          <li class="nav-item"><a class="nav-link text-white px-2" href="./llamados.html">Llamados</a>
+          <li class="nav-item"><a class="nav-link text-white px-2" href="llamados.html">Llamados</a>
             <ul class="navbar-nav flex-row"></ul>
           </li>
           <li class="nav-item dropdown"><a class="nav-link text-white px-2 dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ruta Camioneta</a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="./programacion.html">Programación</a><a class="dropdown-item" href="#">Consulta de cierres</a></div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="programacion.html">Programación</a><a class="dropdown-item" href="#">Consulta de cierres</a></div>
           </li>
-          <li class="nav-item"><a class="nav-link text-white px-2" href="./llamados.html">Validaciones</a></li>
+          <li class="nav-item"><a class="nav-link text-white px-2" href="llamados.html">Validaciones</a></li>
         </ul>
       </div>
       <ul class="navbar-nav flex-row ml-md-auto">
@@ -47,9 +47,9 @@
       <section class="container-fluid">
         <div class="row">
           <div class="col-4 col-lg-3 col-xl-2 bg-grey py-5">
-            <ul class="nav nav-pills" id="hlm-pills-tab" role="tablist">
-              <li class="nav-item"><a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Llamados</a></li>
-              <li class="nav-item"><a class="nav-link" id="profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Mantenciones</a></li>
+            <ul class="nav nav-pills nav-justified" id="hlm-pills-tab" role="tablist">
+              <li class="nav-item"><a class="nav-link px-2 py-2 active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Llamados</a></li>
+              <li class="nav-item"><a class="nav-link px-2 py-2" id="profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Mantenciones</a></li>
             </ul>
           </div>
           <div class="col-8 col-lg-9 col-xl-10 pt-5">
@@ -389,7 +389,7 @@
                 <li>
                   <form>
                     <div class="form-group mt-3">
-                      <input class="form-control form-control-sm" id="inputDatepicker" type="text" name="inputDatepicker" placeholder="Seleccionar fecha" required>
+                      <input class="form-control form-control-sm" id="inputDatepickerRange" type="text" name="inputDatepicker" placeholder="Seleccionar fecha" required>
                     </div>
                   </form>
                 </li>
@@ -454,7 +454,7 @@
                       <td> <span class="badge badge-primary py-2 px-4">180p</span></td>
                       <td><span class="tecnioo-card--title__status bg-primary"> </span><b class="text-color-primary">Asignado</b>
                       </td>
-                      <td><a class="pr-2" href="#" data-toggle="modal" data-target="#editarOt"><i class="fas fa-eye"></i></a><a class="pr-2" href="#" data-toggle="modal" data-target="#editarOt"><i class="fas fa-pencil-alt"></i></a><a href="#" data-toggle="modal" data-target="#eliminarOt"><i class="fas fa-times"></i></a></td>
+                      <td><a class="pr-2" href="./detalle-mantencion/asignado.html"><i class="fas fa-eye"></i></a><a class="pr-2" href="#" data-toggle="modal" data-target="#editarOt"><i class="fas fa-pencil-alt"></i></a><a href="#" data-toggle="modal" data-target="#eliminarOt"><i class="fas fa-times"></i></a></td>
                     </tr>
                     <tr>
                       <td> <span>#98876</span></td>
@@ -473,7 +473,7 @@
                       <td> <span class="badge badge-primary py-2 px-4">180p</span></td>
                       <td><span class="tecnioo-card--title__status bg-success"> </span><b class="text-color-success">OK</b>
                       </td>
-                      <td><a class="pr-2" href="#" data-toggle="modal" data-target="#editarOt"><i class="fas fa-eye"></i></a></td>
+                      <td><a class="pr-2" href="./detalle-mantencion/schop-cerrado-ok.html"><i class="fas fa-eye"></i></a></td>
                     </tr>
                     <tr>
                       <td> <span>#98876</span></td>
@@ -492,7 +492,7 @@
                       <td> <span class="badge badge-primary py-2 px-4">180p</span></td>
                       <td><span class="tecnioo-card--title__status bg-success"> </span><b class="text-color-success">OK</b>
                       </td>
-                      <td><a class="pr-2" href="#" data-toggle="modal" data-target="#editarOt"><i class="fas fa-eye"></i></a></td>
+                      <td><a class="pr-2" href="./detalle-mantencion/brix-postmix-cerrado-ok.html"><i class="fas fa-eye"></i></a></td>
                     </tr>
                     <tr>
                       <td> <span>#98876</span></td>
@@ -511,7 +511,7 @@
                       <td> <span class="badge badge-primary py-2 px-4">180p</span></td>
                       <td><span class="tecnioo-card--title__status bg-success"> </span><b class="text-color-success">OK</b>
                       </td>
-                      <td><a class="pr-2" href="#" data-toggle="modal" data-target="#editarOt"><i class="fas fa-eye"></i></a></td>
+                      <td><a class="pr-2" href="./detalle-mantencion/sanitizado-postmix-cerrado-ok.html"><i class="fas fa-eye"></i></a></td>
                     </tr>
                     <tr>
                       <td> <span>#98876</span></td>
@@ -530,7 +530,7 @@
                       <td> <span class="badge badge-primary py-2 px-4">180p</span></td>
                       <td><span class="tecnioo-card--title__status bg-info"> </span><b class="text-color-info">P. Cliente</b>
                       </td>
-                      <td><a class="pr-2" href="#" data-toggle="modal" data-target="#editarOt"><i class="fas fa-eye"></i></a></td>
+                      <td><a class="pr-2" href="./detalle-mantencion/pendiente-cliente.html"><i class="fas fa-eye"></i></a></td>
                     </tr>
                     <tr>
                       <td> <span>#98876</span></td>
@@ -549,7 +549,7 @@
                       <td> <span class="badge badge-primary py-2 px-4">180p</span></td>
                       <td><span class="tecnioo-card--title__status bg-warning"> </span><b class="text-color-warning">P. TCM</b>
                       </td>
-                      <td><a class="pr-2" href="#" data-toggle="modal" data-target="#editarOt"><i class="fas fa-eye"></i></a></td>
+                      <td><a class="pr-2" href="./detalle-mantencion/pendiente-tcm.html"><i class="fas fa-eye"></i></a></td>
                     </tr>
                     <tr>
                       <td> <span>#98876</span></td>
@@ -568,7 +568,7 @@
                       <td> <span class="badge badge-primary py-2 px-4">180p</span></td>
                       <td><span class="tecnioo-card--title__status bg-danger"> </span><b class="text-color-danger">L. Cerrado</b>
                       </td>
-                      <td><a class="pr-2" href="#" data-toggle="modal" data-target="#editarOt"><i class="fas fa-eye"></i></a></td>
+                      <td><a class="pr-2" href="./detalle-mantencion/local-cerrado.html"><i class="fas fa-eye"></i></a></td>
                     </tr>
                   </tbody>
                 </table>

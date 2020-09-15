@@ -3,6 +3,18 @@ $(function () {
         $("#selectWhitSearch").select2();
     }
     if ($.isFunction($.fn.datepicker)) {
+        $('#inputDatepickerRange').datepicker(
+            {
+                onSelect: function(selectedDate) {
+                    //$("#cal4").datepicker("setDate", selectedDate);
+                    var date = $(this).datepicker("getDate"); 
+                    date.setDate(date.getDate() + 15);
+                    $("#txtTo").datepicker("setDate", date);
+                    $("#txtTo").datepicker("option", "minDate", selectedDate);
+                    $("#txtTo").datepicker("option", "maxDate", date);
+                }
+            }
+        );
         $('#inputDatepicker').datepicker();
         $('.inputDatepicker').datepicker();
     }

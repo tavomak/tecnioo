@@ -11,7 +11,7 @@ $palette: (
     ultra-ligth-grey: #F5F6FA,
     medium-grey: #697789,
     brand-grey: #2F3640,
-    dark-grey: #121212,
+    dark-grey: #6b7c8d,
     brand-primary-color: #54698D, //#0a2240,
     brand-secondary-color: #90B9FF,
     brand-tertiary-color: #c4c4b3,
@@ -38,6 +38,7 @@ $colors: (
     danger: rgb(233, 58, 58),
     warning: #FF8C31,
     info: #F7CC00,
-    dark: #913C9E
+    dark: #913C9E,
+    dark-grey: lighten($brand-primary-color, 15%),
 );
 

@@ -38,20 +38,20 @@ html(lang="es")
             nav.tecnioo-navbar.navbar.bg-primary.px-2.flex-row
 
                 a.navbar-brand.tecnioo-navbar--wrap(href="home.html")
-                    img.tecnioo-navbar--wrap__img(src="./assets/img/avatar-2.png", alt="Tecnioo")
+                    img.tecnioo-navbar--wrap__img(src=baseDir+"assets/img/avatar-2.png", alt="Tecnioo")
 
                 .navbar-nav-scroll
                     ul.navbar-nav.flex-row
                         li.nav-item
-                            a.nav-link.text-white.px-2(href="./llamados.html") Llamados
+                            a.nav-link.text-white.px-2(href=linkSrc+"llamados.html") Llamados
                             ul.navbar-nav.flex-row
                         li.nav-item.dropdown
                             a.nav-link.text-white.px-2.dropdown-toggle(href="#", id="dropdownMenuButton", data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") Ruta Camioneta
                             .dropdown-menu(aria-labelledby="dropdownMenuButton")
-                                a.dropdown-item(href="./programacion.html") Programación
+                                a.dropdown-item(href=linkSrc+"programacion.html") Programación
                                 a.dropdown-item(href="#") Consulta de cierres
                         li.nav-item
-                            a.nav-link.text-white.px-2(href="./llamados.html") Validaciones
+                            a.nav-link.text-white.px-2(href=linkSrc+"llamados.html") Validaciones
                 ul.navbar-nav.flex-row.ml-md-auto
                     li.nav-item.dropdown
                         a.nav-item.nav-link.dropdown-toggle.px-4.text-white(href="#", id="cientMenu" data-toggle="dropdown", aria-haspopup="true", aria-expanded="false") 

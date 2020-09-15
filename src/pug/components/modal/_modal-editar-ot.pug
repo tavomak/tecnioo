@@ -1,0 +1,46 @@
+.modal.fade(id="editarOt" tabindex="-1" role="dialog" aria-labelledby="editarOtLabel" aria-hidden="true")
+    .modal-dialog(role="document")
+        .modal-content
+            .modal-header
+                ul.w-100.d-flex.justify-content-between.align-items-center
+                    li
+                        h4 Editar OT #98876
+                    li
+                        span.px-4.bg-success.text-white.py-2.my-4 brxpm
+                    li
+                        button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden="true") &times;
+            .modal-body
+                table.table.table-striped.my-4
+                    tbody
+                        tr
+                            td 
+                                b Código Máquina
+                            td #98876
+                        tr
+                            td 
+                                b Máquina
+                            td Nombre de Máquina [Módelo] [Logo]
+                        tr
+                            td 
+                                b Cliente Spot
+                            td 1220 - Burger King - Huechuraba
+                        tr
+                            td 
+                                b Técnico
+                            td Juan González
+                form.pb-4
+                    p Ruta
+                    .form-group.m-0
+                        .input-group
+                            - 
+                                var array = ["RP80", "RSA8", "PR81", "RSB13", "RSA1", "RSA12", "RSB13"]
+                            select.form-control.form-control-sm(name="selectRuta")
+                                each val in array
+                                        option(value=val)=val
+                form
+                    .form-group
+                        label(for="inputDatepicker") Fecha de Programación
+                        input.form-control.form-control-sm#inputDatepicker(type="text" name="inputDatepicker" placeholder="Seleccionar fecha" required)
+                .text-center
+                    button.btn.btn-success.sweet-ok Guardar

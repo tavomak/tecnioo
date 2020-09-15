@@ -198,6 +198,16 @@ label {
   color: #913C9E !important;
 }
 
+/* line 69, src/assets/scss/base/_global.scss */
+.bg-dark-grey {
+  background-color: #7c90b1 !important;
+}
+
+/* line 72, src/assets/scss/base/_global.scss */
+.text-color-dark-grey {
+  color: #7c90b1 !important;
+}
+
 /* line 76, src/assets/scss/base/_global.scss */
 .bg-tertiary {
   background: #c4c4b3 !important;

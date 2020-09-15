@@ -11,11 +11,13 @@ block mainContent
         section.container-fluid
             .row
                 .col-4.col-lg-3.col-xl-2.bg-grey.py-5
-                    ul.nav.nav-pills#hlm-pills-tab(role="tablist")
+                    ul.nav.nav-pills.nav-justified#hlm-pills-tab(role="tablist")
                         li.nav-item
-                            a.nav-link.active#pills-home-tab(data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true") Llamados
+                            a.nav-link.px-2.py-2.active#pills-home-tab(data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true")
+                                | Llamados
                         li.nav-item
-                            a.nav-link#profile-tab(data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false") Mantenciones
+                            a.nav-link.px-2.py-2#profile-tab(data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false")
+                                | Mantenciones
                     
                 .col-8.col-lg-9.col-xl-10.pt-5
                     .hlm-title.active
@@ -196,6 +198,7 @@ block mainContent
                                         '-', 
                                         '1',
                                         'Asignado',
+                                        './detalle-mantencion/asignado.html',
                                         true
                                         )
                                     +tableRowMantenciones(
@@ -204,7 +207,8 @@ block mainContent
                                         'Alexis Osorio',  
                                         '', 
                                         '2',
-                                        'Ok'
+                                        'Ok',
+                                        './detalle-mantencion/schop-cerrado-ok.html'
                                         )
                                     +tableRowMantenciones(
                                         'success',
@@ -212,7 +216,8 @@ block mainContent
                                         'José Pérez',  
                                         '', 
                                         '1',
-                                        'Ok'
+                                        'Ok',
+                                        './detalle-mantencion/brix-postmix-cerrado-ok.html'
                                         )
                                     +tableRowMantenciones(
                                         'success',
@@ -220,7 +225,8 @@ block mainContent
                                         'Alverto Rivera',  
                                         '', 
                                         '3',
-                                        'Ok'
+                                        'Ok',
+                                        './detalle-mantencion/sanitizado-postmix-cerrado-ok.html'
                                         )
                                     +tableRowMantenciones(
                                         'info',
@@ -228,7 +234,8 @@ block mainContent
                                         'José Pérez',  
                                         '', 
                                         '1',
-                                        'P. Cliente'
+                                        'P. Cliente',
+                                        './detalle-mantencion/pendiente-cliente.html'
                                         )
                                     +tableRowMantenciones(
                                         'warning',
@@ -236,7 +243,8 @@ block mainContent
                                         'Pedro Carrasco',  
                                         '', 
                                         '2',
-                                        'P. TCM'
+                                        'P. TCM',
+                                        './detalle-mantencion/pendiente-tcm.html'
                                         )
                                     +tableRowMantenciones(
                                         'danger',
@@ -244,95 +252,11 @@ block mainContent
                                         'Alverto Rivera',  
                                         '', 
                                         '3',
-                                        'L. Cerrado'
+                                        'L. Cerrado',
+                                        './detalle-mantencion/local-cerrado.html'
                                         )
-        .modal.fade(id="editarOt" tabindex="-1" role="dialog" aria-labelledby="editarOtLabel" aria-hidden="true")
-            .modal-dialog(role="document")
-                .modal-content
-                    .modal-header
-                        ul.w-100.d-flex.justify-content-between.align-items-center
-                            li
-                                h4 Editar OT #98876
-                            li
-                                span.px-4.bg-success.text-white.py-2.my-4 brxpm
-                            li
-                                button(type="button" class="close" data-dismiss="modal" aria-label="Close")
-                                    span(aria-hidden="true") &times;
-                    .modal-body
-                        table.table.table-striped.my-4
-                            tbody
-                                tr
-                                    td 
-                                        b Código Máquina
-                                    td #98876
-                                tr
-                                    td 
-                                        b Máquina
-                                    td Nombre de Máquina [Módelo] [Logo]
-                                tr
-                                    td 
-                                        b Cliente Spot
-                                    td 1220 - Burger King - Huechuraba
-                                tr
-                                    td 
-                                        b Técnico
-                                    td Juan González
-                        form.pb-4
-                            p Ruta
-                            .form-group.m-0
-                                .input-group
-                                    - 
-                                        var array = ["RP80", "RSA8", "PR81", "RSB13", "RSA1", "RSA12", "RSB13"]
-                                    select.form-control.form-control-sm(name="selectRuta")
-                                        each val in array
-                                                option(value=val)=val
-                        form
-                            .form-group
-                                label(for="inputDatepicker") Fecha de Programación
-                                input.form-control.form-control-sm#inputDatepicker(type="text" name="inputDatepicker" placeholder="Seleccionar fecha" required)
-                        .text-center
-                            button.btn.btn-success.sweet-ok Guardar
-        .modal.fade(id="eliminarOt" tabindex="-1" role="dialog" aria-labelledby="eliminarOtLabel" aria-hidden="true")
-            .modal-dialog(role="document")
-                .modal-content
-                    .modal-header
-                        ul.w-100.d-flex.justify-content-between.align-items-center
-                            li
-                                h4 Eliminar OT #98876
-                            li
-                                span.px-4.bg-success.text-white.py-2.my-4 brxpm
-                            li
-                                button(type="button" class="close" data-dismiss="modal" aria-label="Close")
-                                    span(aria-hidden="true") &times;
-                    .modal-body
-                        table.table.table-striped.my-4
-                            tbody
-                                tr
-                                    td 
-                                        b Código Máquina
-                                    td #98876
-                                tr
-                                    td 
-                                        b Máquina
-                                    td Nombre de Máquina [Módelo] [Logo]
-                                tr
-                                    td 
-                                        b Cliente Spot
-                                    td 1220 - Burger King - Huechuraba
-                                tr
-                                    td 
-                                        b Técnico
-                                    td Juan González
-                                tr
-                                    td 
-                                        b Ruta 
-                                    td RP80
-                                tr
-                                    td 
-                                        b Fecha de Programación
-                                    td 31-08-2020
-                        .text-center
-                            button.btn.btn-danger.sweet-error Confirmar eliminación
+        include ../components/modal/_modal-editar-ot
+        include ../components/modal/_modal-eliminar-ot
 
     block scripts 
         script(

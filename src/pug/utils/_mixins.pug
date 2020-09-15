@@ -79,7 +79,7 @@ mixin tableRow(color, cierre, asingacion, sla)
             b=sla
         td Nombre Sucursal - Cliente Spot
         td Providencia
-mixin tableRowMantenciones(color, ruta, tecnico, fecha, servicio, cierre, modificable)
+mixin tableRowMantenciones(color, ruta, tecnico, fecha, servicio, cierre, url, modificable)
     tr
         td 
             span #98876
@@ -119,7 +119,7 @@ mixin tableRowMantenciones(color, ruta, tecnico, fecha, servicio, cierre, modifi
                 b(class="text-color-"+color)=cierre
         if modificable == true
             td
-                a.pr-2(href="#" data-toggle="modal" data-target="#editarOt")
+                a.pr-2(href=url)
                     i.fas.fa-eye
                 a.pr-2(href="#" data-toggle="modal" data-target="#editarOt")
                     i.fas.fa-pencil-alt
@@ -127,7 +127,7 @@ mixin tableRowMantenciones(color, ruta, tecnico, fecha, servicio, cierre, modifi
                     i.fas.fa-times
         else
             td
-                a.pr-2(href="#" data-toggle="modal" data-target="#editarOt")
+                a.pr-2(href=url)
                         i.fas.fa-eye
 
                 
@@ -242,6 +242,11 @@ mixin tarjetaProgramacion(index, id, lat, lng, pts, dir, loc, sla, ots, tip)
                     | lu a do 08:00 a 15:00
                 span.badge.badge-light.p-2.mx-2 
                     | lu a do 15:00 a 23:00
+
+mixin trTdRight(key,value)
+    tr
+        td=key
+        td.text-right=value
 //- no son parte del proyecto actual            
 //-mixin slides(image, title, caption)
     .item.text-center&attributes(attributes)
