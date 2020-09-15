@@ -21,10 +21,10 @@ block mainContent
                         li
                             p.m-0 
                                 span.tecnioo-card--title__status.bg-success
-                                | Cerrado OK
+                                | Cerrado Ok
                         li
                             p.m-0
-                                | Sanitizado Schop [Máquina] [Modelo] [Logo]
+                                | Brix Postmix [Máquina] [Modelo] [Logo]
                         li
                             h5 
                                 i.fas.fa-user-circle.mr-2
@@ -37,115 +37,249 @@ block mainContent
                             .badge.badge-primary.p-2.mr-1 500 pts
             hr
             .row.justify-content-end
-                .col-4.text-right
-                    button.btn.btn-success(href="#" data-toggle="modal" data-target="#editarOt") Editar OT
-                    button.btn.btn-danger(href="#" data-toggle="modal" data-target="#eliminarOt") Eliminar OT
-            ul.row
-                li.col-4
-                    .card.mt-4
-                        .card-header.bg-dark-grey.text-white
-                           .h6.m-0 Sucursal Spot
-                        .card-body-nm
-                            table.table
-                                tr
-                                    td Burguer King Pedro de Fontova
-                                    td.text-right ID: 9676
-                            iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.01075626506!2d-70.58617688480206!3d-33.39688358078929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2ddbca25c3%3A0x94faa92657957dde!2sAv%20Vitacura%205250%2C%20of.%20308%2C%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1579371739262!5m2!1ses-419!2scl"
-                            width="100%" 
-                            height="150" 
-                            frameborder="0" 
-                            style="border:0;" 
-                            allowfullscreen="")
-                            table.table.table-striped.m-0
-                                -
-                                    var sucursalSpot = {
-                                        "RUT" : "15.772.353-4",
-                                        "Cliente Spot" : "Restaurant 4p Spa.",
-                                        "Suc Cliente Spot" : "Restaurant 4p Spa Providencia",
-                                        "Ubicación" : "Providencia 701",
-                                        "Comuna" : "Providencia",
-                                        "Zona TCM" : "Santiago",
-                                        "Coordenadas" : "(-33.343553, -70.1235323)"
-                                    }
-                                each val, key in sucursalSpot
-                                    +trTdRight(key,val)
-                li.col-4
-                    .card.mt-4
-                        .card-header.bg-dark-grey.text-white
-                           .h6.m-0 Datos de la Máquina
-                        .card-body-nm
-                            table.table.table-striped.m-0
-                                -
-                                    var datosMaquina = {
-                                        "SKU" : "8756",
-                                        "Código TCM" : "15722353",
-                                        "Modelo" : "Postmix 555",
-                                        "Logo" : "CCU",
-                                        "Mandante " : "CCU",
-                                    }
-                                each val, key in datosMaquina
-                                    +trTdRight(key,val)
-                    .card.mt-4
-                        .card-header.bg-dark-grey.text-white
-                           .h6.m-0 Datos del Servicio
-                        .card-body-nm
-                            table.table.table-striped.m-0
-                                -
-                                    var datosServicio = {
-                                        "Servicio" : "Sanitizado Postmix",
-                                        "Código" : "Sanpm",
-                                        "Ciclo" : "2",
-                                    }
-                                each val, key in datosServicio
-                                    +trTdRight(key,val)
-                    .card.mt-4
-                        .card-header.bg-dark-grey.text-white
-                           .h6.m-0 Datos de la Ruta
-                        .card-body-nm
-                            table.table.table-striped.m-0
-                                -
-                                    var datosRuta = {
-                                        "Ruta" : "RP08",
-                                        "Técnico" : "Juan Gonzalez",
-                                        "Fecha Programada" : "31-08-2020",
-                                    }
-                                each val, key in datosRuta
-                                    +trTdRight(key,val)
-                li.col-4
-                    .card.mt-4
-                        .card-header.bg-dark-grey.text-white.bg-dark-grey.text-white
-                           .h6.m-0 Datos de la visita
-                        .card-body-nm
-                            table.table.table-striped.m-0
-                                -
-                                    var datosVisita = {
-                                        "Fecha real de la visita ": "N/A",
-                                        "Estado del Check-in" : "N/A",
-                                        "Hora del Check-in" :"N/A",
-                                        "Coordenada" : "N/A",
-                                        "Hora del Check-out" : "N/A",
-                                        "Coordenada" : "N/A",
-                                    }
-                                each val, key in datosVisita
-                                    +trTdRight(key,val)
-                    .card.mt-4
-                        .card-header.bg-dark-grey.text-white.bg-dark-grey.text-white
-                           .h6.m-0 Firma Cliente
-                        .card-body-nm
-                            table.table.table-striped
-                                -
-                                    var firmaCliente = {
-                                        "Estado" : "N/A",
-                                        "Nombre" : "N/A",
-                                        "RUT" : "N/A",
-                                        "Email " : "N/A",
-                                        "Observación" : "N/A",
-                                    }
-                                each val, key in firmaCliente
-                                    +trTdRight(key,val)
-                            p.px-3 Firma
-                            img(src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Firma_Soledad_Pastorutti.png", alt="").w-100.px-2.pb-4
-            
+                .col-4
+                    ul.nav.nav-pills.nav-justified#hlm-pills-tab(role="tablist")
+                        li.nav-item
+                            a.nav-link.px-2.py-2.active#pills-home-tab(data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true")
+                                | Registro de Datos
+                        li.nav-item
+                            a.nav-link.px-2.py-2#profile-tab(data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false")
+                                | Detalle de cierre
+            hr.my-3
+        .tab-content#hlm-pills-tabContent
+            .container-fluid.tab-pane.fade.px-5.show.active#pills-home(role="tabpanel" aria-labelledby="pills-home-tab")
+                ul.row
+                    li.col-4
+                        .card
+                            .card-header.bg-dark-grey.text-white
+                                h6.m-0 Sucursal Spot
+                            .card-body-nm
+                                table.table
+                                    +trTdRight('Burguer King Pedro de Fontova', 'ID: 9676')
+                                iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.01075626506!2d-70.58617688480206!3d-33.39688358078929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2ddbca25c3%3A0x94faa92657957dde!2sAv%20Vitacura%205250%2C%20of.%20308%2C%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1579371739262!5m2!1ses-419!2scl"
+                                width="100%" 
+                                height="150" 
+                                frameborder="0" 
+                                style="border:0;" 
+                                allowfullscreen="")
+                                table.table.table-striped.m-0
+                                    -
+                                        var sucursalSpot = {
+                                            "RUT" : "15.772.353-4",
+                                            "Cliente Spot" : "Restaurant 4p Spa.",
+                                            "Suc Cliente Spot" : "Restaurant 4p Spa Providencia",
+                                            "Ubicación" : "Providencia 701",
+                                            "Comuna" : "Providencia",
+                                            "Zona TCM" : "Santiago",
+                                            "Coordenadas" : "(-33.343553, -70.1235323)"
+                                        }
+                                    each val, key in sucursalSpot
+                                        +trTdRight(key,val)
+                    li.col-4
+                        .card
+                            .card-header.bg-dark-grey.text-white
+                                h6.m-0 Datos de la Máquina
+                            .card-body-nm
+                                table.table.table-striped.m-0
+                                    -
+                                        var datosMaquina = {
+                                            "SKU" : "8756",
+                                            "Código TCM" : "15722353",
+                                            "Modelo" : "Postmix 555",
+                                            "Logo" : "Cristal",
+                                            "Mandante " : "CCU",
+                                        }
+                                    each val, key in datosMaquina
+                                        +trTdRight(key,val)
+                        .card.mt-4
+                            .card-header.bg-dark-grey.text-white
+                                h6.m-0 Datos del Servicio
+                            .card-body-nm
+                                table.table.table-striped.m-0
+                                    -
+                                        var datosServicio = {
+                                            "Servicio" : "Sanitizado Schop",
+                                            "Código" : "Sansc",
+                                            "Ciclo" : "2",
+                                        }
+                                    each val, key in datosServicio
+                                        +trTdRight(key,val)
+                        .card.mt-4
+                            .card-header.bg-dark-grey.text-white
+                                h6.m-0 Datos de la Ruta
+                            .card-body-nm
+                                table.table.table-striped.m-0
+                                    -
+                                        var datosRuta = {
+                                            "Ruta" : "RP08",
+                                            "Técnico" : "Juan Gonzalez",
+                                            "Fecha Programada" : "31-08-2020",
+                                        }
+                                    each val, key in datosRuta
+                                        +trTdRight(key,val)
+                    li.col-4
+                        .card
+                            .card-header.bg-dark-grey.text-white
+                                h6.m-0 Datos de la visita
+                            .card-body-nm
+                                table.table.table-striped.m-0
+                                    -
+                                        var datosVisita = {
+                                            "Fecha real de la visita ": "31-08-2020",
+                                            "Estado del Check-in" : "Dentro del rango",
+                                            "Hora del Check-in" :"09:23",
+                                            "Coordenada" : "(-33.343553, -70.1235323)",
+                                            "Hora del Check-out" : "10:37",
+                                            "Coordenada" : "(-33.343553, -70.1235323)",
+                                        }
+                                    each val, key in datosVisita
+                                        +trTdRight(key,val)
+                        .card.mt-4
+                            .card-header.bg-dark-grey.text-white
+                                h6.m-0 Firma Cliente
+                            .card-body-nm
+                                table.table.table-striped
+                                    -
+                                        var firmaCliente = {
+                                            "Estado" : "Aprobado",
+                                            "Nombre" : "Sebastian Morales",
+                                            "RUT" : "15.772.353-4",
+                                            "Email " : "s@4ptech.com",
+                                            "Observación" : "Sin comentarios",
+                                        }
+                                    each val, key in firmaCliente
+                                        +trTdRight(key,val)
+                                p.px-3 Firma
+                                img(src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Firma_Soledad_Pastorutti.png", alt="").w-100.px-2.pb-4
+            .container-fluid.tab-pane.fade.px-5#pills-profile(role="tabpanel" aria-labelledby="pills-profile-tab")
+                .row
+                    .col-12
+                        h2.text-center
+                            span.tecnioo-card--title__status.bg-success
+                            | Detalle del cierre
+                    .col-12
+                        h6.m-0 Tareas
+                    .col-md-4
+                        .card.mt-4
+                            .card-body-nm
+                                table.table
+                                    -
+                                        var visitaActual = {
+                                            "Sanitización" : "ok",
+                                            "Limpieza del regulador de CO2" : "ok",
+                                            "Limpieza condensador" : "ok",
+                                        }
+                                    each val, key in visitaActual
+                                        +trTdRight(key,val)
+
+                    .col-md-4
+                        .card.mt-4
+                            .card-body-nm
+                                table.table
+                                    -
+                                        var visitaActual = {
+                                            "Sanitización y desarme de grifos y cabezales" : "ok",
+                                            "Control de banco de hielo y agua" : "ok",
+                                            "Presión de trabajo CO2" : "1.2",
+                                        }
+                                    each val, key in visitaActual
+                                        +trTdRight(key,val)
+                    .col-md-4
+                        .card.mt-4
+                            .card-body-nm
+                                table.table
+                                    -
+                                        var visitaActual = {
+                                            "Limpieza de mangueras" : "ok",
+                                            "Revisi'on de fugas" : "ok",
+                                            "Registro Sticker" : "ok",
+                                        }
+                                    each val, key in visitaActual
+                                        +trTdRight(key,val)
+                    .col-12
+                        h4.my-4 Revisiones
+                    .col-md-4
+                        .card.mt-4
+                            .card-header.bg-dark-grey.text-white
+                                h6.m-0 Mangueras
+                            .card-body-nm
+                                table.table
+                                    -
+                                        var visitaActual = {
+                                            "Estado" : "DESGASTE",
+                                            "Próxima acción" : "CAMBIO",
+                                            "Fecha" : "Lu 25 - 06- 2020",
+                                        }
+                                    each val, key in visitaActual
+                                        +trTdRight(key,val) 
+                                p.card.p-3.mx-2 No olvidar mangueras de repuesto
+                        .card.mt-4
+                            .card-header.bg-dark-grey.text-white
+                                h6.m-0 Regulador CO2
+                            .card-body-nm
+                                table.table
+                                    -
+                                        var visitaActual = {
+                                            "Estado" : "DESGASTE",
+                                            "Próxima acción" : "CAMBIO",
+                                            "Fecha" : "Lu 25 - 06- 2020",
+                                        }
+                                    each val, key in visitaActual
+                                        +trTdRight(key,val) 
+                                p.card.p-3.mx-2 Se debe cambiar
+                                
+                    .col-md-4
+                        .card.my-4
+                            .card-header.bg-dark-grey.text-white
+                                h6.m-0 Columnas
+                            .card-body-nm
+                                table.table
+                                    -
+                                        var visitaActual = {
+                                            "Estado" : "ok",
+                                            "Próxima acción" : "N/A",
+                                        }
+                                    each val, key in visitaActual
+                                        +trTdRight(key,val) 
+                        .card.my-4
+                            .card-header.bg-dark-grey.text-white
+                                h6.m-0 Cabezales
+                            .card-body-nm
+                                table.table
+                                    -
+                                        var visitaActual = {
+                                            "Estado" : "ok",
+                                            "Próxima acción" : "N/A",
+                                        }
+                                    each val, key in visitaActual
+                                        +trTdRight(key,val)
+                    .col-md-4
+                        .card.my-4
+                            .card-header.bg-dark-grey.text-white
+                                h6.m-0 Cabezales
+                            .card-body-nm
+                                table.table
+                                    -
+                                        var visitaActual = {
+                                            "Estado" : "ok",
+                                            "Próxima acción" : "N/A",
+                                        }
+                                    each val, key in visitaActual
+                                        +trTdRight(key,val) 
+                        .card.my-4
+                            .card-header.bg-dark-grey.text-white
+                                h6.m-0 Iluminación
+                            .card-body-nm
+                                table.table
+                                    -
+                                        var visitaActual = {
+                                            "Estado" : "ok",
+                                            "Próxima acción" : "N/A",
+                                        }
+                                    each val, key in visitaActual
+                                        +trTdRight(key,val)
+
+
     include ../../components/modal/_modal-editar-ot
     include ../../components/modal/_modal-eliminar-ot
     block scripts 

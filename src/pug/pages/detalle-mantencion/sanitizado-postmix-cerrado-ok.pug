@@ -127,12 +127,12 @@ block mainContent
                                 table.table.table-striped.m-0
                                     -
                                         var datosVisita = {
-                                            "Fecha real de la visita ": "N/A",
-                                            "Estado del Check-in" : "N/A",
-                                            "Hora del Check-in" :"N/A",
-                                            "Coordenada" : "N/A",
-                                            "Hora del Check-out" : "N/A",
-                                            "Coordenada" : "N/A",
+                                            "Fecha real de la visita ": "31-08-2020",
+                                            "Estado del Check-in" : "Dentro del rango",
+                                            "Hora del Check-in" :"09:23",
+                                            "Coordenada" : "(-33.343553, -70.1235323)",
+                                            "Hora del Check-out" : "10:37",
+                                            "Coordenada" : "(-33.343553, -70.1235323)",
                                         }
                                     each val, key in datosVisita
                                         +trTdRight(key,val)
@@ -192,13 +192,7 @@ block mainContent
                             .card-header.bg-dark-grey.text-white.bg-dark-grey.text-white
                                 h6.m-0 Obeservaciones
                             .card-body-nm
-                                table.table
-                                    -
-                                        var visitaActual = {
-                                            "Observación" : "N/A",
-                                        }
-                                    each val, key in visitaActual
-                                        +trTdRight(key,val)
+                                p NA
 
 
     include ../../components/modal/_modal-editar-ot

@@ -21,7 +21,7 @@ block mainContent
                         li
                             p.m-0 
                                 span.tecnioo-card--title__status.bg-success
-                                | Pendiente TCM
+                                | Cerrado Ok
                         li
                             p.m-0
                                 | Brix Postmix [Máquina] [Modelo] [Logo]
@@ -55,9 +55,7 @@ block mainContent
                                 h6.m-0 Sucursal Spot
                             .card-body-nm
                                 table.table
-                                    tr
-                                        td Burguer King Pedro de Fontova
-                                        td.text-right ID: 9676
+                                    +trTdRight('Burguer King Pedro de Fontova', 'ID: 9676')
                                 iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.01075626506!2d-70.58617688480206!3d-33.39688358078929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf2ddbca25c3%3A0x94faa92657957dde!2sAv%20Vitacura%205250%2C%20of.%20308%2C%20Vitacura%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1579371739262!5m2!1ses-419!2scl"
                                 width="100%" 
                                 height="150" 
@@ -100,9 +98,9 @@ block mainContent
                                 table.table.table-striped.m-0
                                     -
                                         var datosServicio = {
-                                            "Servicio" : "Sanitizado Postmix",
-                                            "Código" : "Sanpm",
-                                            "Ciclo" : "2",
+                                            "Servicio" : "Brix Postmix",
+                                            "Código" : "Brxpm",
+                                            "Ciclo" : "1",
                                         }
                                     each val, key in datosServicio
                                         +trTdRight(key,val)
@@ -127,12 +125,12 @@ block mainContent
                                 table.table.table-striped.m-0
                                     -
                                         var datosVisita = {
-                                            "Fecha real de la visita ": "N/A",
-                                            "Estado del Check-in" : "N/A",
-                                            "Hora del Check-in" :"N/A",
-                                            "Coordenada" : "N/A",
-                                            "Hora del Check-out" : "N/A",
-                                            "Coordenada" : "N/A",
+                                            "Fecha real de la visita ": "31-08-2020",
+                                            "Estado del Check-in" : "Dentro del rango",
+                                            "Hora del Check-in" :"09:23",
+                                            "Coordenada" : "(-33.343553, -70.1235323)",
+                                            "Hora del Check-out" : "10:37",
+                                            "Coordenada" : "(-33.343553, -70.1235323)",
                                         }
                                     each val, key in datosVisita
                                         +trTdRight(key,val)
@@ -143,11 +141,11 @@ block mainContent
                                 table.table.table-striped
                                     -
                                         var firmaCliente = {
-                                            "Estado" : "N/A",
-                                            "Nombre" : "N/A",
-                                            "RUT" : "N/A",
-                                            "Email " : "N/A",
-                                            "Observación" : "N/A",
+                                            "Estado" : "Aprobado",
+                                            "Nombre" : "Sebastian Morales",
+                                            "RUT" : "15.772.353-4",
+                                            "Email " : "s@4ptech.com",
+                                            "Observación" : "Sin comentarios",
                                         }
                                     each val, key in firmaCliente
                                         +trTdRight(key,val)
