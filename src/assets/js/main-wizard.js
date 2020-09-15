@@ -267,13 +267,24 @@ $(function () {
         $('.list-step-4 i').removeClass('d-none');
     });
     //$(document).ajaxSend(function (event, jqxhr, settings) {
-        $('input.step5SelectCheckbox').on('change', function (evt) {
-            evt.preventDefault();
-            if ($('#step5SelectCheckbox').find('.step5SelectCheckbox:checked').length >= 3) {
-                this.checked = false;
+        $('input.step5SelectCheckbox').on('change blur keyup', function (evt) {
+            var lengthCheckboxStep5 = $('#step5SelectCheckbox').find('.step5SelectCheckbox:checked').length
+            if (lengthCheckboxStep5 === 3) {
                 $('#step5Next').removeClass('disabled');
+                $('#step5SelectCheckbox').find('.step5SelectCheckbox:not(:checked)').prop('disabled', true)
             }
         });
+
+        //PARA PANTALLA CREAR LLAMADO A PARTIR DE ESTE
+        $('input.step5SelectCheckboxV2').on('change blur keyup', function (evt) {
+            var lengthCheckboxStep5 = $('#step5SelectCheckbox').find('.step5SelectCheckboxV2:checked').length
+            if (lengthCheckboxStep5 === 3) {
+                $('#step6Next').removeClass('disabled');
+                $('#step5SelectCheckbox').find('.step5SelectCheckboxV2:not(:checked)').prop('disabled', true)
+            }
+        });
+        ///////////////////////////////////////////////
+
     //});
     //WIZARD STEP 6 ====================================================== //
     var fromDay = 'Lunes',
