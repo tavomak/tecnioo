@@ -2691,4 +2691,10 @@ body .ui-tooltip {
   }
 }
 
+/* line 73, src/assets/scss/main.scss */
+strong.select2-results__group {
+  color: #2F3640;
+  background: #DCDDE1;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -16,6 +16,7 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
     <link href="images/webclip.png" rel="apple-touch-icon">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet">
   </head>
   <body>
     <nav class="tecnioo-navbar navbar bg-primary px-2 flex-row"><a class="navbar-brand tecnioo-navbar--wrap" href="home.html"><img class="tecnioo-navbar--wrap__img" src="assets/img/avatar-2.png" alt="Tecnioo"></a>
@@ -387,23 +388,36 @@
                   </div>
                 </li>
                 <li>
-                  <form>
-                    <div class="form-group mt-3">
+                  <div class="input-group input-group-sm">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text"><i class="fas fa-calendar-alt"></i></label>
                       <input class="form-control form-control-sm" id="inputDatepickerRange" type="text" name="inputDatepicker" placeholder="Seleccionar fecha" required>
-                    </div>
-                  </form>
-                </li>
-                <li>
-                  <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ruta</button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownTecnicos"><a class="dropdown-item" href="#">Todos</a><a class="dropdown-item" href="#">Pedro Carrasco</a><a class="dropdown-item" href="#">Jorge Salgado</a><a class="dropdown-item" href="#">Juan Gonzalez</a>
                     </div>
                   </div>
                 </li>
                 <li>
+                  <select class="custom-select form-control w-100" id="step2SelectClientType">
+                    <option>Nombre Ruta</option>
+                    <optgroup label="Lun 09-09-2020"></optgroup>
+                    <option>PR1 - Juan Pérez</option>
+                    <option>PA1 - Pedro Carrasco</option>
+                    <option>PC1 - Alverto Rivera</option>
+                    <option>PJ1 - Isaac Valdivia</option>
+                    <option>PH1 - Cristián Barahona</option>
+                    <option>PB1 - Álvaro Peréz</option>
+                    <optgroup label="Lun 10-09-2020"></optgroup>
+                    <option>PR2 - Juan Pérez</option>
+                    <option>PA2 - Pedro Carrasco</option>
+                    <option>PC2 - Alverto Rivera</option>
+                    <option>PJ2 - Isaac Valdivia</option>
+                    <option>PH2 - Cristián Barahona</option>
+                    <option>PB2 - Álvaro Peréz</option>
+                  </select>
+                </li>
+                <li>
                   <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownZona" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Zona</button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownZona"><a class="dropdown-item" href="#">Todas</a><a class="dropdown-item" href="#">Santiago</a><a class="dropdown-item" href="#">Rancagua</a><a class="dropdown-item" href="#">Viña del mar</a>
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Zona TCM</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownTecnicos"><a class="dropdown-item" href="#">Todas</a><a class="dropdown-item" href="#">Santiago</a><a class="dropdown-item" href="#">Rancagua</a><a class="dropdown-item" href="#">Viña del mar</a>
                     </div>
                   </div>
                 </li>

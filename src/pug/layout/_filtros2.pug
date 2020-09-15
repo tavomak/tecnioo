@@ -18,19 +18,24 @@ ul.d-flex.justify-content-between.align-items-center
                     i.fas.fa-search
                 input.form-control(type="text" placeholder="ID Sucursal")
     li
-        form
-            .form-group.mt-3
+        .input-group.input-group-sm
+            .input-group-prepend
+                label.input-group-text
+                    i.fas.fa-calendar-alt
                 input.form-control.form-control-sm#inputDatepickerRange(type="text" name="inputDatepicker" placeholder="Seleccionar fecha" required)
     li
-        .dropdown
-            button.btn.btn-light.dropdown-toggle(type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Ruta
-            .dropdown-menu(aria-labelledby="dropdownTecnicos")
-                each val in ['Todos','Pedro Carrasco','Jorge Salgado','Juan Gonzalez']
-                    a.dropdown-item(href="#")= val
+        select.custom-select.form-control.w-100#step2SelectClientType
+            option Nombre Ruta
+            optgroup(label="Lun 09-09-2020")
+            each val in ['PR1 - Juan Pérez','PA1 - Pedro Carrasco','PC1 - Alverto Rivera', 'PJ1 - Isaac Valdivia','PH1 - Cristián Barahona','PB1 - Álvaro Peréz']
+                option= val
+            optgroup(label="Lun 10-09-2020")
+            each val in ['PR2 - Juan Pérez','PA2 - Pedro Carrasco','PC2 - Alverto Rivera', 'PJ2 - Isaac Valdivia','PH2 - Cristián Barahona','PB2 - Álvaro Peréz']
+                option= val
     li
         .dropdown
-            button.btn.btn-light.dropdown-toggle(type="button" id="dropdownZona" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Zona
-            .dropdown-menu(aria-labelledby="dropdownZona")
+            button.btn.btn-light.dropdown-toggle(type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Zona TCM
+            .dropdown-menu(aria-labelledby="dropdownTecnicos")
                 each val in ['Todas','Santiago','Rancagua','Viña del mar']
                     a.dropdown-item(href="#")= val
     li
