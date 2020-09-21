@@ -98,11 +98,11 @@ mixin tableRowMantenciones(color, ruta, tecnico, fecha, servicio, cierre, url, m
                 span -
         td.text-white
             if servicio == 1
-                p.text-center.bg-success.py-1 brxpm
+                p.text-center.bg-success.py-1.text-uppercase brxpm
             else if servicio == 2
-                p.text-center.bg-primary.py-1 sansc
+                p.text-center.bg-primary.py-1.text-uppercase sansc
             else
-                p.text-center.bg-primary.py-1 sanpm
+                p.text-center.bg-primary.py-1.text-uppercase sanpm
         td 
             if fecha == ''
                 span 12/09/20

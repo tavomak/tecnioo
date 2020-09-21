@@ -1,0 +1,39 @@
+.modal.fade(id="reprogramarDia" tabindex="-1" role="dialog" aria-labelledby="reprogramarDiaLabel" aria-hidden="true")
+    .modal-dialog.modal-xl(role="document")
+        .modal-content
+            .modal-header
+                ul.w-100.d-flex.justify-content-between.align-items-center
+                    li
+                        h4 Reprogramar día
+                        p Se re-agendarán todas las Ots de cada ruta seleccionada
+                    li
+                        button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden="true") &times;
+            .modal-body
+                table.table.table-striped.my-4
+                    thead
+                        tr
+                            th(scope="col") Seleccionar
+                            th(scope="col") Ruta
+                            th(scope="col") Nombre Técnico
+                            th(scope="col") Puntos
+                            th(scope="col") Ots de Servicios
+                            th(scope="col") Fecha Programación
+                    tbody
+                        - for (var index = 1; index <= 4; ++index) 
+                            tr
+                                td 
+                                    .custom-control.custom-checkbox.ml-3
+                                        input.custom-control-input.bk-marker(type="checkbox" id="ListaParaAsignar_["+index+"]_CheckLlamado" name="ListaParaAsignar_["+index+"]" data-id=id data-pts=pts data-lat=lat data-lng=lng data-dir=dir data-loc=loc data-sla=sla data-tip=tip)
+                                        label.custom-control-label(for="ListaParaAsignar_["+index+"]_CheckLlamado")
+                                td PR4
+                                td Juan González
+                                td 1200
+                                td BRXPM(3) SANPM(5)
+                                td 30-09-2020
+                .d-flex.justify-content-center.align-items-center.mb-5
+                    p.m-0.mr-4 Fecha de Programación
+                    a.btn.btn-sm.btn-outline-primary.btnDatepicker(href="#") Seleccionar fecha
+                        .d-none.datepickerRoutes
+                .text-center
+                    button.btn.btn-danger.sweet-error Guardar y cerrar

@@ -44,14 +44,14 @@
       </ul>
     </nav>
     <main class="content-wrapper">
-      <section class="container-fluid pt-5 pb-3 padding-xl">
-        <div class="row padding-xl">
+      <section class="container-fluid pt-5 pb-3">
+        <div class="row">
           <div class="col-sm-2">
             <h4> <span class="tecnioo-card--title__status bg-success"></span>Postmix</h4>
           </div>
           <div class="col-sm-10">
             <ul class="d-flex justify-content-end align-items-center">
-              <li class="mr-auto">
+              <li class="mr-2">
                 <div class="dropdown">
                   <button class="btn btn-light dropdown-toggle" type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comuna</button>
                   <div class="dropdown-menu" aria-labelledby="dropdownTecnicos"><a class="dropdown-item" href="#">Todos</a><a class="dropdown-item" href="#">Providencia</a><a class="dropdown-item" href="#">Santiago</a><a class="dropdown-item" href="#">Las Condes</a>
@@ -86,9 +86,9 @@
             </ul>
           </div>
         </div>
-        <div class="row tab-content padding-xl" id="myTabContent">
-          <div class="col-md-10 col-xl-9 pt-4">
-            <ul class="d-flex justify-content-between">
+        <div class="row tab-content" id="myTabContent">
+          <div class="col-md-10 col-xl-9 pt-4 px-xl-4">
+            <ul class="d-flex justify-content-between px-xl-4">
               <li class="pr-3" style="min-width:12%">
                 <ul class="nav nav-pills flex-column mb-3" id="pills-tab" role="tablist" aria-orientation="vertical">
                   <li class="nav-item mb-2"><a class="nav-link active py-1" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Tabla</a></li>
@@ -96,476 +96,426 @@
                 </ul>
               </li>
               <li class="p-2 text-center border border-right-0"><span><i class="fas fa-caret-left"></i></span></li>
-              <li class="p-2 text-center border border-right-0 w-100 weekDay-1"><span class="d-none" id="activeDay">Hoy </span><span>Lun </span><span id="dayNumber"> </span><a class="pb-0 nav-item nav-link dropdown-toggle" id="dayAction1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">acciones</a>
-                <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="#dayAction1"><a class="dropdown-item" href="#">Reprogramar Día</a><a class="dropdown-item" href="#">Ver Mapa</a>
-                </div>
+              <li class="p-2 text-center border border-right-0 w-100 weekDay-1"><span class="d-none" id="activeDay">Hoy </span><span>Lun </span><span id="dayNumber"> </span>
+                <p class="pt-2"><small> <a href="#" data-toggle="modal" data-target="#reprogramarDia">Reprogramar</a></small></p>
               </li>
-              <li class="p-2 text-center border border-right-0 w-100 weekDay-2"><span class="d-none" id="activeDay">Hoy </span><span>Mar </span><span id="dayNumber"> </span><a class="pb-0 nav-item nav-link dropdown-toggle" id="dayAction2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">acciones</a>
-                <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="#dayAction2"><a class="dropdown-item" href="#">Reprogramar Día</a><a class="dropdown-item" href="#">Ver Mapa</a>
-                </div>
+              <li class="p-2 text-center border border-right-0 w-100 weekDay-2"><span class="d-none" id="activeDay">Hoy </span><span>Mar </span><span id="dayNumber"> </span>
+                <p class="pt-2"><small> <a href="#" data-toggle="modal" data-target="#reprogramarDia">Reprogramar</a></small></p>
               </li>
-              <li class="p-2 text-center border border-right-0 w-100 weekDay-3"><span class="d-none" id="activeDay">Hoy </span><span>Mie </span><span id="dayNumber"> </span><a class="pb-0 nav-item nav-link dropdown-toggle" id="dayAction3" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">acciones</a>
-                <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="#dayAction3"><a class="dropdown-item" href="#">Reprogramar Día</a><a class="dropdown-item" href="#">Ver Mapa</a>
-                </div>
+              <li class="p-2 text-center border border-right-0 w-100 weekDay-3"><span class="d-none" id="activeDay">Hoy </span><span>Mie </span><span id="dayNumber"> </span>
+                <p class="pt-2"><small> <a href="#" data-toggle="modal" data-target="#reprogramarDia">Reprogramar</a></small></p>
               </li>
-              <li class="p-2 text-center border border-right-0 w-100 weekDay-4"><span class="d-none" id="activeDay">Hoy </span><span>Jue </span><span id="dayNumber"> </span><a class="pb-0 nav-item nav-link dropdown-toggle" id="dayAction4" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">acciones</a>
-                <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="#dayAction4"><a class="dropdown-item" href="#">Reprogramar Día</a><a class="dropdown-item" href="#">Ver Mapa</a>
-                </div>
+              <li class="p-2 text-center border border-right-0 w-100 weekDay-4"><span class="d-none" id="activeDay">Hoy </span><span>Jue </span><span id="dayNumber"> </span>
+                <p class="pt-2"><small> <a href="#" data-toggle="modal" data-target="#reprogramarDia">Reprogramar</a></small></p>
               </li>
-              <li class="p-2 text-center border border-right-0 w-100 weekDay-5"><span class="d-none" id="activeDay">Hoy </span><span>Vie </span><span id="dayNumber"> </span><a class="pb-0 nav-item nav-link dropdown-toggle" id="dayAction5" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">acciones</a>
-                <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="#dayAction5"><a class="dropdown-item" href="#">Reprogramar Día</a><a class="dropdown-item" href="#">Ver Mapa</a>
-                </div>
+              <li class="p-2 text-center border border-right-0 w-100 weekDay-5"><span class="d-none" id="activeDay">Hoy </span><span>Vie </span><span id="dayNumber"> </span>
+                <p class="pt-2"><small> <a href="#" data-toggle="modal" data-target="#reprogramarDia">Reprogramar</a></small></p>
               </li>
-              <li class="p-2 text-center border border-right-0 w-100 weekDay-6"><span class="d-none" id="activeDay">Hoy </span><span>Sab </span><span id="dayNumber"> </span><a class="pb-0 nav-item nav-link dropdown-toggle" id="dayAction6" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">acciones</a>
-                <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="#dayAction6"><a class="dropdown-item" href="#">Reprogramar Día</a><a class="dropdown-item" href="#">Ver Mapa</a>
-                </div>
+              <li class="p-2 text-center border border-right-0 w-100 weekDay-6"><span class="d-none" id="activeDay">Hoy </span><span>Sab </span><span id="dayNumber"> </span>
+                <p class="pt-2"><small> <a href="#" data-toggle="modal" data-target="#reprogramarDia">Reprogramar</a></small></p>
               </li>
-              <li class="p-2 text-center border border-right-0 w-100 weekDay-0"><span class="d-none" id="activeDay">Hoy </span><span>Dom </span><span id="dayNumber"> </span><a class="pb-0 nav-item nav-link dropdown-toggle" id="dayAction0" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">acciones</a>
-                <div class="dropdown-menu dropdown-menu-right dropright" aria-labelledby="#dayAction0"><a class="dropdown-item" href="#">Reprogramar Día</a><a class="dropdown-item" href="#">Ver Mapa</a>
-                </div>
+              <li class="p-2 text-center border border-right-0 w-100 weekDay-0"><span class="d-none" id="activeDay">Hoy </span><span>Dom </span><span id="dayNumber"> </span>
+                <p class="pt-2"><small> <a href="#" data-toggle="modal" data-target="#reprogramarDia">Reprogramar</a></small></p>
               </li>
               <li class="p-2 text-center border"><span><i class="fas fa-caret-right"></i></span></li>
             </ul>
           </div>
-          <div class="col-md-2 col-xl-3 pt-4 text-right text-xl-center"><a class="btn btn-primary btn-sm mb-4" id="btnDatepicker" href="#">seleccionar fecha</a>
-            <div class="d-none datepickerRoutes" id="datepickerRoutes"></div>
-          </div>
+          <div class="col-md-2 col-xl-3 pt-4"><a class="btn btn-primary btn-sm mb-4 btnDatepicker" href="#">Seleccionar fecha
+              <div class="d-none datepickerRoutes"></div></a></div>
         </div>
-        <div class="row tab-content padding-xl">
+        <div class="row tab-content">
           <div class="col-md-10 col-xl-9">
             <div class="tab-content" id="pills-tabContent">
               <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                <div class="wrap mb-2 shadow rutaA">
-                  <ul class="d-flex justify-content-between">
-                    <li class="p-3 border border-right-0" style="min-width:12%">
-                      <div class="d-flex align-items-center pb-3"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content"> A</span></span><span>Juan Perez</span></div>
-                      <div class="d-flex align-items-center pb-3"><span class="route-info--ico bg-success ml-3 mr-2"><span class="route-info--ico__content">4 </span></span><span><small>Brix</small></span></div>
-                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico bg-secondary ml-3 mr-2"><span class="route-info--ico__content">12 </span></span><span><small>Sanitizado</small></span></div>
-                      <p class="mb-1">5000</p>
-                      <div class="progress" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="5000"> <span style="font-size:8px">85%</span></div>
-                      </div>
-                    </li>
-                    <li class="p-2 text-center border border-right-0 d-flex align-items-center"><span><i class="fas fa-caret-left"></i></span></li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-0">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="600"> <span style="font-size:8px">600 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">2</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">6</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-cerrillos" data-comuna="cerrillos">Cerrillos</div>
-                        <div class="badge badge-light border w-100 my-1 badge-lareina" data-comuna="lareina">La Reina</div>
-                        <div class="badge badge-light border w-100 my-1 badge-pudahuel" data-comuna="pudahuel">Pudahuel</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-1">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="900"> <span style="font-size:8px">900 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">12</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-cerronavia" data-comuna="cerronavia">Cerro Navia</div>
-                        <div class="badge badge-light border w-100 my-1 badge-lascondes" data-comuna="lascondes">Las Condes</div>
-                        <div class="badge badge-light border w-100 my-1 badge-quilicura" data-comuna="quilicura">Quilicura</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-2">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:47%;" aria-valuenow="47" aria-valuemin="0" aria-valuemax="1280"> <span style="font-size:8px">1280 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">2</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">17</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-lascondes" data-comuna="lascondes">Las Condes</div>
-                        <div class="badge badge-light border w-100 my-1 badge-lareina" data-comuna="lareina">La Reina</div>
-                        <div class="badge badge-light border w-100 my-1 badge-pudahuel" data-comuna="pudahuel">Pudahuel</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-3">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="820"> <span style="font-size:8px">820 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">3</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">11</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-cerrillos" data-comuna="cerrillos">Cerrillos</div>
-                        <div class="badge badge-light border w-100 my-1 badge-lareina" data-comuna="lareina">La Reina</div>
-                        <div class="badge badge-light border w-100 my-1 badge-pudahuel" data-comuna="pudahuel">Pudahuel</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-4">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:63%;" aria-valuenow="63" aria-valuemin="0" aria-valuemax="400"> <span style="font-size:8px">400 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">16</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-cerronavia" data-comuna="cerronavia">Cerro Navia</div>
-                        <div class="badge badge-light border w-100 my-1 badge-lascondes" data-comuna="lascondes">Las Condes</div>
-                        <div class="badge badge-light border w-100 my-1 badge-quilicura" data-comuna="quilicura">Quilicura</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-5">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="500"> <span style="font-size:8px">500 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">2</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">12</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-lascondes" data-comuna="lascondes">Las Condes</div>
-                        <div class="badge badge-light border w-100 my-1 badge-lareina" data-comuna="lareina">La Reina</div>
-                        <div class="badge badge-light border w-100 my-1 badge-pudahuel" data-comuna="pudahuel">Pudahuel</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-6">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="500"> <span style="font-size:8px">500 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">8</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-cerrillos" data-comuna="cerrillos">Cerrillos</div>
-                        <div class="badge badge-light border w-100 my-1 badge-lareina" data-comuna="lareina">La Reina</div>
-                        <div class="badge badge-light border w-100 my-1 badge-pudahuel" data-comuna="pudahuel">Pudahuel</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-2 text-center border d-flex align-items-center">
-                      <p><i class="fas fa-caret-right"></i></p>
-                    </li>
-                  </ul>
-                </div>
-                <div class="wrap mb-2 shadow rutaB">
-                  <ul class="d-flex justify-content-between">
-                    <li class="p-3 border border-right-0" style="min-width:12%">
-                      <div class="d-flex align-items-center pb-3"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content"> B</span></span><span>Pedro Carrasco</span></div>
-                      <div class="d-flex align-items-center pb-3"><span class="route-info--ico bg-success ml-3 mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span></div>
-                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico bg-secondary ml-3 mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span></div>
-                      <p class="mb-1">6000</p>
-                      <div class="progress" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="6000"> <span style="font-size:8px">75%</span></div>
-                      </div>
-                    </li>
-                    <li class="p-2 text-center border border-right-0 d-flex align-items-center"><span><i class="fas fa-caret-left"></i></span></li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-0">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-conchalí" data-comuna="conchalí">Conchalí</div>
-                        <div class="badge badge-light border w-100 my-1 badge-lobarnechea" data-comuna="lobarnechea">Lo Barnechea</div>
-                        <div class="badge badge-light border w-100 my-1 badge-quintanormal" data-comuna="quintanormal">Quinta Normal</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-1">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-elbosque" data-comuna="elbosque">El Bosque</div>
-                        <div class="badge badge-light border w-100 my-1 badge-loespejo" data-comuna="loespejo">Lo Espejo</div>
-                        <div class="badge badge-light border w-100 my-1 badge-recoleta" data-comuna="recoleta">Recoleta</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-2">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-estacioncentral" data-comuna="estacioncentral">Estacion Central</div>
-                        <div class="badge badge-light border w-100 my-1 badge-loprado" data-comuna="loprado">Lo Prado</div>
-                        <div class="badge badge-light border w-100 my-1 badge-renca" data-comuna="renca">Renca</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-3">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-conchalí" data-comuna="conchalí">Conchalí</div>
-                        <div class="badge badge-light border w-100 my-1 badge-lobarnechea" data-comuna="lobarnechea">Lo Barnechea</div>
-                        <div class="badge badge-light border w-100 my-1 badge-quintanormal" data-comuna="quintanormal">Quinta Normal</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-4">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-elbosque" data-comuna="elbosque">El Bosque</div>
-                        <div class="badge badge-light border w-100 my-1 badge-loespejo" data-comuna="loespejo">Lo Espejo</div>
-                        <div class="badge badge-light border w-100 my-1 badge-recoleta" data-comuna="recoleta">Recoleta</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-5">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-estacioncentral" data-comuna="estacioncentral">Estacion Central</div>
-                        <div class="badge badge-light border w-100 my-1 badge-loprado" data-comuna="loprado">Lo Prado</div>
-                        <div class="badge badge-light border w-100 my-1 badge-renca" data-comuna="renca">Renca</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-6">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-conchalí" data-comuna="conchalí">Conchalí</div>
-                        <div class="badge badge-light border w-100 my-1 badge-lobarnechea" data-comuna="lobarnechea">Lo Barnechea</div>
-                        <div class="badge badge-light border w-100 my-1 badge-quintanormal" data-comuna="quintanormal">Quinta Normal</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-2 text-center border d-flex align-items-center">
-                      <p><i class="fas fa-caret-right"></i></p>
-                    </li>
-                  </ul>
-                </div>
-                <div class="wrap mb-2 shadow rutaC">
-                  <ul class="d-flex justify-content-between">
-                    <li class="p-3 border border-right-0" style="min-width:12%">
-                      <div class="d-flex align-items-center pb-3"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content"> C</span></span><span>Gerardo Angulo</span></div>
-                      <div class="d-flex align-items-center pb-3"><span class="route-info--ico bg-success ml-3 mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span></div>
-                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico bg-secondary ml-3 mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span></div>
-                      <p class="mb-1">6000</p>
-                      <div class="progress" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="6000"> <span style="font-size:8px">75%</span></div>
-                      </div>
-                    </li>
-                    <li class="p-2 text-center border border-right-0 d-flex align-items-center"><span><i class="fas fa-caret-left"></i></span></li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-0">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-huechuraba" data-comuna="huechuraba">Huechuraba</div>
-                        <div class="badge badge-light border w-100 my-1 badge-macul" data-comuna="macul">Macul</div>
-                        <div class="badge badge-light border w-100 my-1 badge-sanmiguel" data-comuna="sanmiguel">San Miguel</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-1">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-independencia" data-comuna="independencia">Independencia</div>
-                        <div class="badge badge-light border w-100 my-1 badge-maipú" data-comuna="maipú">Maipú</div>
-                        <div class="badge badge-light border w-100 my-1 badge-sanjoaquín" data-comuna="sanjoaquín">San Joaquín</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-2">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-huechuraba" data-comuna="huechuraba">Huechuraba</div>
-                        <div class="badge badge-light border w-100 my-1 badge-macul" data-comuna="macul">Macul</div>
-                        <div class="badge badge-light border w-100 my-1 badge-sanmiguel" data-comuna="sanmiguel">San Miguel</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-3">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-huechuraba" data-comuna="huechuraba">Huechuraba</div>
-                        <div class="badge badge-light border w-100 my-1 badge-macul" data-comuna="macul">Macul</div>
-                        <div class="badge badge-light border w-100 my-1 badge-sanmiguel" data-comuna="sanmiguel">San Miguel</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-4">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-independencia" data-comuna="independencia">Independencia</div>
-                        <div class="badge badge-light border w-100 my-1 badge-maipú" data-comuna="maipú">Maipú</div>
-                        <div class="badge badge-light border w-100 my-1 badge-sanjoaquín" data-comuna="sanjoaquín">San Joaquín</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-5">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-independencia" data-comuna="independencia">Independencia</div>
-                        <div class="badge badge-light border w-100 my-1 badge-maipú" data-comuna="maipú">Maipú</div>
-                        <div class="badge badge-light border w-100 my-1 badge-sanjoaquín" data-comuna="sanjoaquín">San Joaquín</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-6">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-independencia" data-comuna="independencia">Independencia</div>
-                        <div class="badge badge-light border w-100 my-1 badge-maipú" data-comuna="maipú">Maipú</div>
-                        <div class="badge badge-light border w-100 my-1 badge-sanjoaquín" data-comuna="sanjoaquín">San Joaquín</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-2 text-center border d-flex align-items-center">
-                      <p><i class="fas fa-caret-right"></i></p>
-                    </li>
-                  </ul>
-                </div>
-                <div class="wrap mb-2 shadow rutaD">
-                  <ul class="d-flex justify-content-between">
-                    <li class="p-3 border border-right-0" style="min-width:12%">
-                      <div class="d-flex align-items-center pb-3"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content"> D</span></span><span>Alverto Rivero</span></div>
-                      <div class="d-flex align-items-center pb-3"><span class="route-info--ico bg-success ml-3 mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span></div>
-                      <div class="d-flex align-items-center pb-4"><span class="route-info--ico bg-secondary ml-3 mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span></div>
-                      <p class="mb-1">6000</p>
-                      <div class="progress" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="6000"> <span style="font-size:8px">75%</span></div>
-                      </div>
-                    </li>
-                    <li class="p-2 text-center border border-right-0 d-flex align-items-center"><span><i class="fas fa-caret-left"></i></span></li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-0">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-lascondes" data-comuna="lascondes">Las Condes</div>
-                        <div class="badge badge-light border w-100 my-1 badge-buín" data-comuna="buín">Buín</div>
-                        <div class="badge badge-light border w-100 my-1 badge-recoleta" data-comuna="recoleta">Recoleta</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-1">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-santiago" data-comuna="santiago">Santiago</div>
-                        <div class="badge badge-light border w-100 my-1 badge-providencia" data-comuna="providencia">Providencia</div>
-                        <div class="badge badge-light border w-100 my-1 badge-puentealto" data-comuna="puentealto">Puente Alto</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-2">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-vitacura" data-comuna="vitacura">Vitacura</div>
-                        <div class="badge badge-light border w-100 my-1 badge-independencia" data-comuna="independencia">Independencia</div>
-                        <div class="badge badge-light border w-100 my-1 badge-lareina" data-comuna="lareina">La Reina</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-3">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-lascondes" data-comuna="lascondes">Las Condes</div>
-                        <div class="badge badge-light border w-100 my-1 badge-buín" data-comuna="buín">Buín</div>
-                        <div class="badge badge-light border w-100 my-1 badge-recoleta" data-comuna="recoleta">Recoleta</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-4">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-lascondes" data-comuna="lascondes">Las Condes</div>
-                        <div class="badge badge-light border w-100 my-1 badge-buín" data-comuna="buín">Buín</div>
-                        <div class="badge badge-light border w-100 my-1 badge-recoleta" data-comuna="recoleta">Recoleta</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-5">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-lascondes" data-comuna="lascondes">Las Condes</div>
-                        <div class="badge badge-light border w-100 my-1 badge-buín" data-comuna="buín">Buín</div>
-                        <div class="badge badge-light border w-100 my-1 badge-recoleta" data-comuna="recoleta">Recoleta</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-3 text-center border border-right-0 w-100 card-day card-day-6">
-                      <div class="progress mb-4" style="height:10px">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> <span style="font-size:8px">1200 pts</span></div>
-                      </div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 1</small></span><span class="route-info--ico bg-success"><span class="route-info--ico__content">5</span></span></div>
-                      <div class="d-flex w-100 justify-content-between align-items-center py-2"><span><small>Ciclo 11</small></span><span class="route-info--ico bg-secondary"><span class="route-info--ico__content">15</span></span></div>
-                      <div class="badge--container pt-3">
-                        <div class="badge badge-light border w-100 my-1 badge-lascondes" data-comuna="lascondes">Las Condes</div>
-                        <div class="badge badge-light border w-100 my-1 badge-buín" data-comuna="buín">Buín</div>
-                        <div class="badge badge-light border w-100 my-1 badge-recoleta" data-comuna="recoleta">Recoleta</div>
-                      </div>
-                      <button class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion">Asignar</button>
-                    </li>
-                    <li class="p-2 text-center border d-flex align-items-center">
-                      <p><i class="fas fa-caret-right"></i></p>
-                    </li>
-                  </ul>
+                <div class="rute-wrapper px-xl-4" style="max-height:80vh; overflow-y:scroll; overflow-x:hidden">
+                  <div class="wrap mb-2 shadow rutaA">
+                    <ul class="d-flex justify-content-between">
+                      <li class="p-3 border border-right-0" style="min-width:12%">
+                        <div class="pb-3">
+                          <h6><strong>Juan Perez</strong></h6>
+                        </div>
+                        <div class="d-flex w-100 justify-content-between">
+                          <p>5000 </p>
+                          <p>85 %</p>
+                        </div>
+                        <div class="progress" style="height:10px">
+                          <div class="progress-bar progress-bar-striped" role="progressbar" style="width:85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="5000"> </div>
+                        </div>
+                      </li>
+                      <li class="p-2 text-center border border-right-0 d-flex align-items-center"><span><i class="fas fa-caret-left"></i></span></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-0"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>600 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="600"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-1"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR2</h6><span>900 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="900"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-2"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR3</h6><span>1280 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:47%;" aria-valuenow="47" aria-valuemin="0" aria-valuemax="1280"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-3"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR4</h6><span>820 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:55%;" aria-valuenow="55" aria-valuemin="0" aria-valuemax="820"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-4"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR5</h6><span>400 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:63%;" aria-valuenow="63" aria-valuemin="0" aria-valuemax="400"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-5"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR6</h6><span>500 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="500"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-6"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR7</h6><span>500 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="500"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-2 text-center border d-flex align-items-center">
+                        <p><i class="fas fa-caret-right"></i></p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="wrap mb-2 shadow rutaB">
+                    <ul class="d-flex justify-content-between">
+                      <li class="p-3 border border-right-0" style="min-width:12%">
+                        <div class="pb-3">
+                          <h6><strong>Pedro Carrasco</strong></h6>
+                        </div>
+                        <div class="d-flex w-100 justify-content-between">
+                          <p>6000 </p>
+                          <p>75 %</p>
+                        </div>
+                        <div class="progress" style="height:10px">
+                          <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="6000"> </div>
+                        </div>
+                      </li>
+                      <li class="p-2 text-center border border-right-0 d-flex align-items-center"><span><i class="fas fa-caret-left"></i></span></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-0"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-1"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-2"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-3"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-4"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-5"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-6"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-2 text-center border d-flex align-items-center">
+                        <p><i class="fas fa-caret-right"></i></p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="wrap mb-2 shadow rutaC">
+                    <ul class="d-flex justify-content-between">
+                      <li class="p-3 border border-right-0" style="min-width:12%">
+                        <div class="pb-3">
+                          <h6><strong>Gerardo Angulo</strong></h6>
+                        </div>
+                        <div class="d-flex w-100 justify-content-between">
+                          <p>6000 </p>
+                          <p>75 %</p>
+                        </div>
+                        <div class="progress" style="height:10px">
+                          <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="6000"> </div>
+                        </div>
+                      </li>
+                      <li class="p-2 text-center border border-right-0 d-flex align-items-center"><span><i class="fas fa-caret-left"></i></span></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-0"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-1"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-2"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-3"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-4"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-5"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-6"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-2 text-center border d-flex align-items-center">
+                        <p><i class="fas fa-caret-right"></i></p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="wrap mb-2 shadow rutaD">
+                    <ul class="d-flex justify-content-between">
+                      <li class="p-3 border border-right-0" style="min-width:12%">
+                        <div class="pb-3">
+                          <h6><strong>Alverto Rivero</strong></h6>
+                        </div>
+                        <div class="d-flex w-100 justify-content-between">
+                          <p>6000 </p>
+                          <p>75 %</p>
+                        </div>
+                        <div class="progress" style="height:10px">
+                          <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="6000"> </div>
+                        </div>
+                      </li>
+                      <li class="p-2 text-center border border-right-0 d-flex align-items-center"><span><i class="fas fa-caret-left"></i></span></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-0"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-1"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-2"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-3"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-4"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-5"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-3 border border-right-0 w-100 card-day card-day-6"><a href="./detalle-ruta/detalle-ruta.html">
+                          <div class="d-flex w-100 justify-content-between align-items-start">
+                            <h6>PR1</h6><span>1200 pts</span>
+                          </div>
+                          <div class="progress mb-2" style="height:10px">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200"> </div>
+                          </div>
+                          <div class="text-white">
+                            <p class="text-center bg-success p-xl-1 text-uppercase mb-1"><small>brxpm (1)</small></p>
+                            <p class="text-center bg-primary p-xl-1 text-uppercase mb-1"><small>sanpm (1)</small></p>
+                          </div></a></li>
+                      <li class="p-2 text-center border d-flex align-items-center">
+                        <p><i class="fas fa-caret-right"></i></p>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -644,123 +594,231 @@
             </div>
           </div>
           <div class="col-md-2 col-xl-3">
-            <div class="routeCardGroup"><a class="routeCard" href="#" data-comuna="lascondes" data-rutas="[&quot;A&quot;,&quot;D&quot;]">
-                <div class="card rounded-0 pb-2">
-                  <div class="card-header py-1 px-3">
-                    <div class="d-flex align-items-baseline">
-                      <h6>Cod Máquina</h6><span class="badge badge-primary p-2 mt-2 ml-auto">500pts</span>
-                    </div>
-                  </div>
-                  <div class="card-body py-1 px-3">
-                    <p><b>Nombre Máquina [Modelo] [Logo]</b></p>
-                    <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-success mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span>
-                      <div class="badge badge-light border p-2 ml-auto">Ciclo 4</div>
-                    </div>
-                    <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-secondary mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span>
-                      <div class="badge badge-light border p-2 ml-auto">Ciclo 11</div>
-                    </div><small>15/04/2020</small>
-                    <p>12228 - Burger King <small>Pedro Fontova 134</small></p>
-                    <p>
-                      <div class="badge badge-light border p-2 ml-auto">Las condes</div>
-                    </p>
-                    <div class="d-flex align-items-center"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content" data-ruta="ruta-a">A</span></span><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content" data-ruta="ruta-d">D</span></span>
-                    </div>
-                  </div>
-                </div></a>
-              <div class="form-group">
-                <div class="input-group">
-                  <select class="form-control form-control-sm">
-                    <option>Seleccionar Ruta</option>
-                    <option value="Juan Perez">(A) Juan Perez</option>
-                    <option value="Pedro Carrasco">(B) Pedro Carrasco</option>
-                    <option value="Gerardo Angulo">(C) Gerardo Angulo</option>
-                    <option value="Alverto Rivero">(D) Alverto Rivero</option>
+            <hr>
+            <p class="pl-3"><b>Asignación</b></p>
+            <ul class="d-flex justify-content-between align-items-center">
+              <li class="mr-2"> 
+                <div class="form-group m-0">
+                  <select class="form-control">
+                    <option>Día</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
                   </select>
                 </div>
-                <div class="button-group p-2 border d-flex justify-content-between"><a class="btn btn-outline-primary btn-sm" href="#">Ver OT</a>
-                  <button class="btn btn-outline-primary btn-sm ml-auto d-none" type="submit">Asignar</button>
-                </div>
-              </div>
-            </div>
-            <div class="routeCardGroup"><a class="routeCard" href="#" data-comuna="estacioncentral" data-rutas="[&quot;B&quot;]">
-                <div class="card rounded-0 pb-2">
-                  <div class="card-header py-1 px-3">
-                    <div class="d-flex align-items-baseline">
-                      <h6>Cod Máquina</h6><span class="badge badge-primary p-2 mt-2 ml-auto">500pts</span>
+              </li>
+              <li class="mr-2">
+                <select class="custom-select form-control w-100" id="step2SelectClientType">
+                  <option>Ruta</option>
+                  <optgroup label="Lun 09-09-2020"></optgroup>
+                  <option>PR1 - Juan Pérez</option>
+                  <option>PA1 - Pedro Carrasco</option>
+                  <option>PC1 - Alverto Rivera</option>
+                  <option>PJ1 - Isaac Valdivia</option>
+                  <option>PH1 - Cristián Barahona</option>
+                  <option>PB1 - Álvaro Peréz</option>
+                  <optgroup label="Lun 10-09-2020"></optgroup>
+                  <option>PR2 - Juan Pérez</option>
+                  <option>PA2 - Pedro Carrasco</option>
+                  <option>PC2 - Alverto Rivera</option>
+                  <option>PJ2 - Isaac Valdivia</option>
+                  <option>PH2 - Cristián Barahona</option>
+                  <option>PB2 - Álvaro Peréz</option>
+                </select>
+              </li>
+              <li>
+                <button class="btn btn-outline-primary btn-sm" href="#">Asignar</button>
+              </li>
+            </ul>
+            <div class="wrapper pr-2" style="max-height:80vh; overflow-y:scroll; overflow-x:hidden">
+              <div class="routeCardGroup mb-4"><a class="routeCard" href="#" data-comuna="lascondes" data-rutas="[&quot;A&quot;,&quot;D&quot;]">
+                  <div class="card rounded-0 pb-2">
+                    <div class="card-header py-1 px-3">
+                      <div class="d-flex align-items-baseline">
+                        <h6>Cod Máquina</h6><span class="badge badge-primary p-2 mt-2 ml-auto">500pts</span>
+                      </div>
                     </div>
-                  </div>
-                  <div class="card-body py-1 px-3">
-                    <p><b>Nombre Máquina [Modelo] [Logo]</b></p>
-                    <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-success mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span>
-                      <div class="badge badge-light border p-2 ml-auto">Ciclo 4</div>
+                    <div class="card-body py-1 px-3">
+                      <p><b>Nombre Máquina [Modelo] [Logo]</b></p>
+                      <div class="d-flex align-items-center pb-2 text-white">
+                        <p class="text-center bg-success p-2 mr-2 text-uppercase">brxpm (1)</p>
+                        <p class="text-center bg-primary p-2 mr-2 text-uppercase">sanpm (1)</p>
+                      </div><small>15/04/2020</small>
+                      <p>12228 - Burger King <small>Pedro Fontova 134</small></p>
+                      <p>
+                        <div class="badge badge-light border p-2 ml-auto">Las condes</div>
+                      </p>
+                      <div class="button-group d-flex justify-content-end">
+                        <button class="btn btn-outline-primary btn-sm" onClick="location.href='./detalle-ruta/detalle-ruta.html'">Ver OT</button>
+                      </div>
                     </div>
-                    <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-secondary mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span>
-                      <div class="badge badge-light border p-2 ml-auto">Ciclo 11</div>
-                    </div><small>15/04/2020</small>
-                    <p>12228 - Burger King <small>Pedro Fontova 134</small></p>
-                    <p>
-                      <div class="badge badge-light border p-2 ml-auto">Estacion Central</div>
-                    </p>
-                    <div class="d-flex align-items-center"><span class="route-info--ico route-info--ico__route mr-2 bg-info"><span class="route-info--ico__content" data-ruta="ruta-b">B</span></span>
+                  </div></a></div>
+              <div class="routeCardGroup mb-4"><a class="routeCard" href="#" data-comuna="estacioncentral" data-rutas="[&quot;B&quot;]">
+                  <div class="card rounded-0 pb-2">
+                    <div class="card-header py-1 px-3">
+                      <div class="d-flex align-items-baseline">
+                        <h6>Cod Máquina</h6><span class="badge badge-primary p-2 mt-2 ml-auto">500pts</span>
+                      </div>
                     </div>
-                  </div>
-                </div></a>
-              <div class="form-group">
-                <div class="input-group">
-                  <select class="form-control form-control-sm">
-                    <option>Seleccionar Ruta</option>
-                    <option value="Juan Perez">(A) Juan Perez</option>
-                    <option value="Pedro Carrasco">(B) Pedro Carrasco</option>
-                    <option value="Gerardo Angulo">(C) Gerardo Angulo</option>
-                    <option value="Alverto Rivero">(D) Alverto Rivero</option>
-                  </select>
-                </div>
-                <div class="button-group p-2 border d-flex justify-content-between"><a class="btn btn-outline-primary btn-sm" href="#">Ver OT</a>
-                  <button class="btn btn-outline-primary btn-sm ml-auto d-none" type="submit">Asignar</button>
-                </div>
-              </div>
-            </div>
-            <div class="routeCardGroup"><a class="routeCard" href="#" data-comuna="huechuraba" data-rutas="[]">
-                <div class="card rounded-0 pb-2">
-                  <div class="card-header py-1 px-3">
-                    <div class="d-flex align-items-baseline">
-                      <h6>Cod Máquina</h6><span class="badge badge-primary p-2 mt-2 ml-auto">500pts</span>
+                    <div class="card-body py-1 px-3">
+                      <p><b>Nombre Máquina [Modelo] [Logo]</b></p>
+                      <div class="d-flex align-items-center pb-2 text-white">
+                        <p class="text-center bg-success p-2 mr-2 text-uppercase">brxpm (1)</p>
+                        <p class="text-center bg-primary p-2 mr-2 text-uppercase">sanpm (1)</p>
+                      </div><small>15/04/2020</small>
+                      <p>12228 - Burger King <small>Pedro Fontova 134</small></p>
+                      <p>
+                        <div class="badge badge-light border p-2 ml-auto">Estacion Central</div>
+                      </p>
+                      <div class="button-group d-flex justify-content-end">
+                        <button class="btn btn-outline-primary btn-sm" onClick="location.href='./detalle-ruta/detalle-ruta.html'">Ver OT</button>
+                      </div>
                     </div>
-                  </div>
-                  <div class="card-body py-1 px-3">
-                    <p><b>Nombre Máquina [Modelo] [Logo]</b></p>
-                    <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-success mr-2"><span class="route-info--ico__content">5 </span></span><span><small>Brix</small></span>
-                      <div class="badge badge-light border p-2 ml-auto">Ciclo 4</div>
+                  </div></a></div>
+              <div class="routeCardGroup mb-4"><a class="routeCard" href="#" data-comuna="huechuraba" data-rutas="[]">
+                  <div class="card rounded-0 pb-2">
+                    <div class="card-header py-1 px-3">
+                      <div class="d-flex align-items-baseline">
+                        <h6>Cod Máquina</h6><span class="badge badge-primary p-2 mt-2 ml-auto">500pts</span>
+                      </div>
                     </div>
-                    <div class="d-flex align-items-center pb-2"><span class="route-info--ico bg-secondary mr-2"><span class="route-info--ico__content">15 </span></span><span><small>Sanitizado</small></span>
-                      <div class="badge badge-light border p-2 ml-auto">Ciclo 11</div>
-                    </div><small>15/04/2020</small>
-                    <p>12228 - Burger King <small>Pedro Fontova 134</small></p>
-                    <p>
-                      <div class="badge badge-light border p-2 ml-auto">Huechuraba</div>
-                    </p>
-                    <div class="d-flex align-items-center">
+                    <div class="card-body py-1 px-3">
+                      <p><b>Nombre Máquina [Modelo] [Logo]</b></p>
+                      <div class="d-flex align-items-center pb-2 text-white">
+                        <p class="text-center bg-success p-2 mr-2 text-uppercase">brxpm (1)</p>
+                        <p class="text-center bg-primary p-2 mr-2 text-uppercase">sanpm (1)</p>
+                      </div><small>15/04/2020</small>
+                      <p>12228 - Burger King <small>Pedro Fontova 134</small></p>
+                      <p>
+                        <div class="badge badge-light border p-2 ml-auto">Huechuraba</div>
+                      </p>
+                      <div class="button-group d-flex justify-content-end">
+                        <button class="btn btn-outline-primary btn-sm" onClick="location.href='./detalle-ruta/detalle-ruta.html'">Ver OT</button>
+                      </div>
                     </div>
-                  </div>
-                </div></a>
-              <div class="form-group">
-                <div class="input-group">
-                  <select class="form-control form-control-sm">
-                    <option>Seleccionar Ruta</option>
-                    <option value="Juan Perez">(A) Juan Perez</option>
-                    <option value="Pedro Carrasco">(B) Pedro Carrasco</option>
-                    <option value="Gerardo Angulo">(C) Gerardo Angulo</option>
-                    <option value="Alverto Rivero">(D) Alverto Rivero</option>
-                  </select>
-                </div>
-                <div class="button-group p-2 border d-flex justify-content-between"><a class="btn btn-outline-primary btn-sm" href="#">Ver OT</a>
-                  <button class="btn btn-outline-primary btn-sm ml-auto d-none" type="submit">Asignar</button>
-                </div>
-              </div>
+                  </div></a></div>
             </div>
           </div>
         </div>
       </section>
+      <div class="modal fade" id="reprogramarDia" tabindex="-1" role="dialog" aria-labelledby="reprogramarDiaLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <ul class="w-100 d-flex justify-content-between align-items-center">
+                <li>
+                  <h4>Reprogramar día</h4>
+                  <p>Se re-agendarán todas las Ots de cada ruta seleccionada</p>
+                </li>
+                <li>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-body">
+              <table class="table table-striped my-4">
+                <thead>
+                  <tr>
+                    <th scope="col">Seleccionar</th>
+                    <th scope="col">Ruta</th>
+                    <th scope="col">Nombre Técnico</th>
+                    <th scope="col">Puntos</th>
+                    <th scope="col">Ots de Servicios</th>
+                    <th scope="col">Fecha Programación</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> 
+                      <div class="custom-control custom-checkbox ml-3">
+                        <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[1]_CheckLlamado" name="ListaParaAsignar_[1]">
+                        <label class="custom-control-label" for="ListaParaAsignar_[1]_CheckLlamado"></label>
+                      </div>
+                    </td>
+                    <td>PR4</td>
+                    <td>Juan González</td>
+                    <td>1200</td>
+                    <td>BRXPM(3) SANPM(5)</td>
+                    <td>30-09-2020</td>
+                  </tr>
+                  <tr>
+                    <td> 
+                      <div class="custom-control custom-checkbox ml-3">
+                        <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[2]_CheckLlamado" name="ListaParaAsignar_[2]">
+                        <label class="custom-control-label" for="ListaParaAsignar_[2]_CheckLlamado"></label>
+                      </div>
+                    </td>
+                    <td>PR4</td>
+                    <td>Juan González</td>
+                    <td>1200</td>
+                    <td>BRXPM(3) SANPM(5)</td>
+                    <td>30-09-2020</td>
+                  </tr>
+                  <tr>
+                    <td> 
+                      <div class="custom-control custom-checkbox ml-3">
+                        <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[3]_CheckLlamado" name="ListaParaAsignar_[3]">
+                        <label class="custom-control-label" for="ListaParaAsignar_[3]_CheckLlamado"></label>
+                      </div>
+                    </td>
+                    <td>PR4</td>
+                    <td>Juan González</td>
+                    <td>1200</td>
+                    <td>BRXPM(3) SANPM(5)</td>
+                    <td>30-09-2020</td>
+                  </tr>
+                  <tr>
+                    <td> 
+                      <div class="custom-control custom-checkbox ml-3">
+                        <input class="custom-control-input bk-marker" type="checkbox" id="ListaParaAsignar_[4]_CheckLlamado" name="ListaParaAsignar_[4]">
+                        <label class="custom-control-label" for="ListaParaAsignar_[4]_CheckLlamado"></label>
+                      </div>
+                    </td>
+                    <td>PR4</td>
+                    <td>Juan González</td>
+                    <td>1200</td>
+                    <td>BRXPM(3) SANPM(5)</td>
+                    <td>30-09-2020</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="d-flex justify-content-center align-items-center mb-5">
+                <p class="m-0 mr-4">Fecha de Programación</p><a class="btn btn-sm btn-outline-primary btnDatepicker" href="#">Seleccionar fecha
+                  <div class="d-none datepickerRoutes"></div></a>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-danger sweet-error">Guardar y cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

@@ -1,9 +1,9 @@
 $(function () {
 
-    $('#btnDatepicker').on('click', function () {
-        $('#datepickerRoutes').toggleClass('d-none');
+    $('.btnDatepicker').on('click', function () {
+        $(this).find('.datepickerRoutes').toggleClass('d-none');
     })
-    $("#datepickerRoutes").datepicker();
+    $(".datepickerRoutes").datepicker();
 
     const TIME = new Date(),
     TODAY = TIME.getDay();
@@ -14,6 +14,7 @@ $(function () {
     });
 
     $(`.weekDay-${TODAY} .nav-item`).addClass('text-white');
+    $(`.weekDay-${TODAY} a`).addClass('text-white');
     $(`.weekDay-${TODAY} #activeDay`).removeClass('d-none');
 
     $('.routeCard').on('click', function (e) {

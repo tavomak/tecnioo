@@ -2697,4 +2697,16 @@ strong.select2-results__group {
   background: #DCDDE1;
 }
 
+/* line 78, src/assets/scss/main.scss */
+.rute-wrapper li .d-flex {
+  display: inline !important;
+}
+
+@media screen and (min-width: 1400px) {
+  /* line 78, src/assets/scss/main.scss */
+  .rute-wrapper li .d-flex {
+    display: flex !important;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

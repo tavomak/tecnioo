@@ -9,15 +9,15 @@ block append config
 
 block mainContent
     main.content-wrapper
-        section.container-fluid.pt-5.pb-3.padding-xl
-            .row.padding-xl
+        section.container-fluid.pt-5.pb-3
+            .row
                 .col-sm-2
                     h4 
                         span.tecnioo-card--title__status.bg-success
                         | Postmix
                 .col-sm-10
                     ul.d-flex.justify-content-end.align-items-center
-                        li.mr-auto
+                        li.mr-2
                             .dropdown
                                 button.btn.btn-light.dropdown-toggle(type="button" id="dropdownTecnicos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") Comuna
                                 .dropdown-menu(aria-labelledby="dropdownTecnicos")
@@ -44,9 +44,9 @@ block mainContent
                         li
                             button.btn.btn-outline-primary Filtrar
 
-            .row.tab-content.padding-xl#myTabContent
-                .col-md-10.col-xl-9.pt-4
-                    ul.d-flex.justify-content-between
+            .row.tab-content#myTabContent
+                .col-md-10.col-xl-9.pt-4.px-xl-4
+                    ul.d-flex.justify-content-between.px-xl-4
                         li.pr-3(style="min-width:12%")
                             ul.nav.nav-pills.flex-column.mb-3#pills-tab(role="tablist" aria-orientation="vertical")
                                 li.nav-item.mb-2
@@ -98,17 +98,17 @@ block mainContent
                                 span#activeDay.d-none Hoy 
                                 span #{val.nikName} 
                                 span#dayNumber 
-                                a.pb-0.nav-item.nav-link.dropdown-toggle(id="dayAction"+val.id href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false") acciones
-                                .dropdown-menu.dropdown-menu-right.dropright(aria-labelledby="#dayAction"+val.id)
-                                    each val in ['Reprogramar Día', 'Ver Mapa' ]
-                                        a.dropdown-item(href="#")= val
+                                p.pt-2
+                                    small 
+                                        a(href="#" data-toggle="modal" data-target="#reprogramarDia") Reprogramar
+                                        
                         li.p-2.text-center.border
                             span <i class="fas fa-caret-right"></i>
-                .col-md-2.col-xl-3.pt-4.text-right.text-xl-center
-                    a.btn.btn-primary.btn-sm.mb-4#btnDatepicker(href="#") seleccionar fecha
-                    #datepickerRoutes.d-none.datepickerRoutes
+                .col-md-2.col-xl-3.pt-4
+                    a.btn.btn-primary.btn-sm.mb-4.btnDatepicker(href="#") Seleccionar fecha
+                        .d-none.datepickerRoutes
 
-            .row.tab-content.padding-xl
+            .row.tab-content
                 .col-md-10.col-xl-9
                     .tab-content#pills-tabContent
                         .tab-pane.fade.show.active#pills-home(role="tabpanel" aria-labelledby="pills-home-tab")
@@ -128,49 +128,56 @@ block mainContent
                                                 "brix" : "2",
                                                 "sanitizado" : "6",
                                                 "pts" : "600",
-                                                "comunas": [ "Cerrillos", "La Reina", "Pudahuel" ]
+                                                "comunas": [ "Cerrillos", "La Reina", "Pudahuel" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "33",
                                                 "brix" : "5",
                                                 "sanitizado" : "12",
                                                 "pts" : "900",
-                                                "comunas": [ "Cerro Navia", "Las Condes", "Quilicura" ]
+                                                "comunas": [ "Cerro Navia", "Las Condes", "Quilicura" ],
+                                                "ruta" : "PR2"
                                             },
                                             {
                                                 "meta" : "47",
                                                 "brix" : "2",
                                                 "sanitizado" : "17",
                                                 "pts" : "1280",
-                                                "comunas": ["Las Condes", "La Reina", "Pudahuel"]
+                                                "comunas": ["Las Condes", "La Reina", "Pudahuel"],
+                                                "ruta" : "PR3"
                                             },
                                             {
                                                 "meta" : "55",
                                                 "brix" : "3",
                                                 "sanitizado" : "11",
                                                 "pts" : "820",
-                                                "comunas": [ "Cerrillos", "La Reina", "Pudahuel" ]
+                                                "comunas": [ "Cerrillos", "La Reina", "Pudahuel" ],
+                                                "ruta" : "PR4"
                                             },
                                             {
                                                 "meta" : "63",
                                                 "brix" : "5",
                                                 "sanitizado" : "16",
                                                 "pts" : "400",
-                                                "comunas": [ "Cerro Navia", "Las Condes", "Quilicura" ]
+                                                "comunas": [ "Cerro Navia", "Las Condes", "Quilicura" ],
+                                                "ruta" : "PR5"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "2",
                                                 "sanitizado" : "12",
                                                 "pts" : "500",
-                                                "comunas": [ "Las Condes", "La Reina", "Pudahuel" ]
+                                                "comunas": [ "Las Condes", "La Reina", "Pudahuel" ],
+                                                "ruta" : "PR6"
                                             },
                                             {
                                                 "meta" : "95",
                                                 "brix" : "8",
                                                 "sanitizado" : "5",
                                                 "pts" : "500",
-                                                "comunas": ["Cerrillos", "La Reina", "Pudahuel"]
+                                                "comunas": ["Cerrillos", "La Reina", "Pudahuel"],
+                                                "ruta" : "PR7"
                                             },
                                         ] 
                                     },
@@ -188,49 +195,56 @@ block mainContent
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Conchalí", "Lo Barnechea", "Quinta Normal" ]
+                                                "comunas": [ "Conchalí", "Lo Barnechea", "Quinta Normal" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "El Bosque", "Lo Espejo", "Recoleta" ]
+                                                "comunas": [ "El Bosque", "Lo Espejo", "Recoleta" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Estacion Central", "Lo Prado", "Renca" ]
+                                                "comunas": [ "Estacion Central", "Lo Prado", "Renca" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Conchalí", "Lo Barnechea", "Quinta Normal" ]
+                                                "comunas": [ "Conchalí", "Lo Barnechea", "Quinta Normal" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "El Bosque", "Lo Espejo", "Recoleta" ]
+                                                "comunas": [ "El Bosque", "Lo Espejo", "Recoleta" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Estacion Central", "Lo Prado", "Renca" ]
+                                                "comunas": [ "Estacion Central", "Lo Prado", "Renca" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Conchalí", "Lo Barnechea", "Quinta Normal" ]
+                                                "comunas": [ "Conchalí", "Lo Barnechea", "Quinta Normal" ],
+                                                "ruta" : "PR1"
                                             },
                                         ]
                                     },
@@ -248,49 +262,56 @@ block mainContent
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Huechuraba", "Macul", "San Miguel" ]
+                                                "comunas": [ "Huechuraba", "Macul", "San Miguel" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Independencia", "Maipú", "San Joaquín" ]
+                                                "comunas": [ "Independencia", "Maipú", "San Joaquín" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Huechuraba", "Macul", "San Miguel" ]
+                                                "comunas": [ "Huechuraba", "Macul", "San Miguel" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Huechuraba", "Macul", "San Miguel" ]
+                                                "comunas": [ "Huechuraba", "Macul", "San Miguel" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Independencia", "Maipú", "San Joaquín" ]
+                                                "comunas": [ "Independencia", "Maipú", "San Joaquín" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Independencia", "Maipú", "San Joaquín" ]
+                                                "comunas": [ "Independencia", "Maipú", "San Joaquín" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Independencia", "Maipú", "San Joaquín" ]
+                                                "comunas": [ "Independencia", "Maipú", "San Joaquín" ],
+                                                "ruta" : "PR1"
                                             },
                                         ]
                                     },
@@ -308,102 +329,91 @@ block mainContent
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Las Condes","Buín","Recoleta" ]
+                                                "comunas": [ "Las Condes","Buín","Recoleta" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Santiago","Providencia","Puente Alto" ]
+                                                "comunas": [ "Santiago","Providencia","Puente Alto" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Vitacura","Independencia","La Reina" ]
+                                                "comunas": [ "Vitacura","Independencia","La Reina" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Las Condes","Buín","Recoleta" ]
+                                                "comunas": [ "Las Condes","Buín","Recoleta" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Las Condes","Buín","Recoleta" ]
+                                                "comunas": [ "Las Condes","Buín","Recoleta" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Las Condes","Buín","Recoleta" ]
+                                                "comunas": [ "Las Condes","Buín","Recoleta" ],
+                                                "ruta" : "PR1"
                                             },
                                             {
                                                 "meta" : "75",
                                                 "brix" : "5",
                                                 "sanitizado" : "15",
                                                 "pts" : "1200",
-                                                "comunas": [ "Las Condes","Buín","Recoleta" ]
+                                                "comunas": [ "Las Condes","Buín","Recoleta" ],
+                                                "ruta" : "PR1"
                                             },
                                         ]
                                     },
                                 ]
-                            each val, key in array
-                                .wrap.mb-2.shadow(class="ruta"+val.route)
-                                    ul.d-flex.justify-content-between
+                            .rute-wrapper.px-xl-4(style="max-height:80vh; overflow-y:scroll; overflow-x:hidden")
+                                each val, key in array
+                                    .wrap.mb-2.shadow(class="ruta"+val.route)
+                                        ul.d-flex.justify-content-between
+                                            li.p-3.border.border-right-0(style="min-width:12%")
+                                                .pb-3
+                                                    h6
+                                                        strong #{val.name}
+                                                .d-flex.w-100.justify-content-between
+                                                    p #{val.pts} 
+                                                    p #{val.meta} %
+                                                .progress(style="height:10px"  )
+                                                    .progress-bar.progress-bar-striped(role="progressbar" style="width:"+val.meta+"%;" aria-valuenow=val.meta aria-valuemin="0" aria-valuemax=val.pts) 
+                                            li.p-2.text-center.border.border-right-0.d-flex.align-items-center
+                                                span <i class="fas fa-caret-left"></i>
+                                            each v, k in val.tecWeek
+                                                li.p-3.border.border-right-0.w-100(class="card-day card-day-"+k)
+                                                    a(href=baseDir+"detalle-ruta/detalle-ruta.html")
+                                                        .d-flex.w-100.justify-content-between.align-items-start
+                                                            h6 #{v.ruta}
+                                                            span #{v.pts} pts
+                                                        .progress.mb-2(style="height:10px")
+                                                            .progress-bar.progress-bar-striped(role="progressbar" style="width:"+v.meta+"%;" aria-valuenow=v.meta aria-valuemin="0" aria-valuemax=v.pts) 
+                                                        .text-white
+                                                            p.text-center.bg-success.p-xl-1.text-uppercase.mb-1
+                                                                small brxpm (1)
+                                                            p.text-center.bg-primary.p-xl-1.text-uppercase.mb-1
+                                                                small sanpm (1)
+                                            li.p-2.text-center.border.d-flex.align-items-center
+                                                p <i class="fas fa-caret-right"></i>
 
-                                        li.p-3.border.border-right-0(style="min-width:12%")
-                                            .d-flex.align-items-center.pb-3
-                                                span.route-info--ico.route-info--ico__route.mr-2.bg-info
-                                                    span.route-info--ico__content  #{val.route}
-                                                span #{val.name}
-                                            .d-flex.align-items-center.pb-3
-                                                span.route-info--ico.bg-success.ml-3.mr-2
-                                                    span.route-info--ico__content #{val.brix} 
-                                                span
-                                                    small Brix
-                                            .d-flex.align-items-center.pb-4
-                                                span.route-info--ico.bg-secondary.ml-3.mr-2
-                                                    span.route-info--ico__content #{val.sanitizado} 
-                                                span
-                                                    small Sanitizado
-                                            p.mb-1 #{val.pts}
-                                            .progress(style="height:10px"  )
-                                                .progress-bar.progress-bar-striped(role="progressbar" style="width:"+val.meta+"%;" aria-valuenow=val.meta aria-valuemin="0" aria-valuemax=val.pts) 
-                                                    span(style="font-size:8px") #{val.meta}%
-                                        
-                                        li.p-2.text-center.border.border-right-0.d-flex.align-items-center
-                                            span <i class="fas fa-caret-left"></i>
-                                        each v, k in val.tecWeek
-                                            li.p-3.text-center.border.border-right-0.w-100(class="card-day card-day-"+k)
-                                                .progress.mb-4(style="height:10px")
-                                                    .progress-bar.progress-bar-striped(role="progressbar" style="width:"+v.meta+"%;" aria-valuenow=v.meta aria-valuemin="0" aria-valuemax=v.pts) 
-                                                        span(style="font-size:8px") #{v.pts} pts
-                                                .d-flex.w-100.justify-content-between.align-items-center.py-2
-                                                    span
-                                                        small Ciclo 1
-                                                    span.route-info--ico.bg-success
-                                                        span.route-info--ico__content #{v.brix}
-                                                .d-flex.w-100.justify-content-between.align-items-center.py-2
-                                                    span
-                                                        small Ciclo 11
-                                                    span.route-info--ico.bg-secondary
-                                                        span.route-info--ico__content #{v.sanitizado}
-                                                .badge--container.pt-3
-                                                    each comuna in v.comunas
-                                                        .badge.badge-light.border.w-100.my-1(class="badge-"+comuna.toLowerCase().replace(' ','') data-comuna=comuna.toLowerCase().replace(' ','')) #{comuna}
-                                                button(class="d-none btn btn-outline-primary btn-sm mt-2 cardBtnAsignacion") Asignar
-
-
-                                        li.p-2.text-center.border.d-flex.align-items-center
-                                            p <i class="fas fa-caret-right"></i>
                         .tab-pane.fade#pills-profile(role="tabpanel" aria-labelledby="pills-profile-tab")
                             .row
                                 .col-3
@@ -434,6 +444,27 @@ block mainContent
                                     #map(style="position:relative;height: 500px;width: 100%;margin: 0px;padding: 0px")
 
                 .col-md-2.col-xl-3
+                    hr
+                    p.pl-3
+                        b Asignación
+                    ul.d-flex.justify-content-between.align-items-center
+                        li.mr-2 
+                            .form-group.m-0
+                                select.form-control
+                                    option Día
+                                    - for (var i = 1; i < 30; ++i) 
+                                        option= i
+                        li.mr-2
+                            select.custom-select.form-control.w-100#step2SelectClientType
+                                option Ruta
+                                optgroup(label="Lun 09-09-2020")
+                                each val in ['PR1 - Juan Pérez','PA1 - Pedro Carrasco','PC1 - Alverto Rivera', 'PJ1 - Isaac Valdivia','PH1 - Cristián Barahona','PB1 - Álvaro Peréz']
+                                    option= val
+                                optgroup(label="Lun 10-09-2020")
+                                each val in ['PR2 - Juan Pérez','PA2 - Pedro Carrasco','PC2 - Alverto Rivera', 'PJ2 - Isaac Valdivia','PH2 - Cristián Barahona','PB2 - Álvaro Peréz']
+                                    option= val
+                        li
+                            button.btn.btn-outline-primary.btn-sm(href="#") Asignar
                     - 
                         var asignar = [
                             { 
@@ -458,50 +489,31 @@ block mainContent
                                 "comuna" : "Huechuraba"
                             },
                         ]
-                    each val, key in asignar
-                        .routeCardGroup
-                            a.routeCard(href="#" data-comuna=val.comuna.toLowerCase().replace(' ','') data-rutas=val.rutas)
-                                .card.rounded-0.pb-2
-                                    .card-header.py-1.px-3
-                                        .d-flex.align-items-baseline
-                                            h6 Cod Máquina
-                                            span.badge.badge-primary.p-2.mt-2.ml-auto 500pts
-                                    .card-body.py-1.px-3
-                                        p
-                                            b Nombre Máquina [Modelo] [Logo]
-                                        .d-flex.align-items-center.pb-2
-                                            span.route-info--ico.bg-success.mr-2
-                                                span.route-info--ico__content 5 
-                                            span
-                                                small Brix
-                                            .badge.badge-light.border.p-2.ml-auto Ciclo 4
-                                        .d-flex.align-items-center.pb-2
-                                            span.route-info--ico.bg-secondary.mr-2
-                                                span.route-info--ico__content 15 
-                                            span
-                                                small Sanitizado
-                                            .badge.badge-light.border.p-2.ml-auto Ciclo 11
-                                        small 15/04/2020
-                                        p 12228 - Burger King 
-                                            small Pedro Fontova 134
-
-                                        p
-                                            .badge.badge-light.border.p-2.ml-auto #{val.comuna}
-                                        .d-flex.align-items-center
-                                            each v, k in val.rutas
-                                                span.route-info--ico.route-info--ico__route.mr-2.bg-info
-                                                    span.route-info--ico__content(data-ruta="ruta-"+v.toLowerCase()) #{v}
-                            .form-group
-                                .input-group
-                                    select.form-control.form-control-sm
-                                        option Seleccionar Ruta
-                                        each val in array
-                                            option(value=val.name) (#{val.route}) #{val.name}
-                                .button-group.p-2.border.d-flex.justify-content-between
-                                    a.btn.btn-outline-primary.btn-sm(href="#") Ver OT
-                                    button(type="submit" class="btn btn-outline-primary btn-sm ml-auto d-none") Asignar
+                    .wrapper.pr-2(style="max-height:80vh; overflow-y:scroll; overflow-x:hidden")
+                        each val, key in asignar
+                            .routeCardGroup.mb-4
+                                a.routeCard(href="#" data-comuna=val.comuna.toLowerCase().replace(' ','') data-rutas=val.rutas)
+                                    .card.rounded-0.pb-2
+                                        .card-header.py-1.px-3
+                                            .d-flex.align-items-baseline
+                                                h6 Cod Máquina
+                                                span.badge.badge-primary.p-2.mt-2.ml-auto 500pts
+                                        .card-body.py-1.px-3
+                                            p
+                                                b Nombre Máquina [Modelo] [Logo]
+                                            .d-flex.align-items-center.pb-2.text-white
+                                                p.text-center.bg-success.p-2.mr-2.text-uppercase brxpm (1)
+                                                p.text-center.bg-primary.p-2.mr-2.text-uppercase sanpm (1)
+                                            small 15/04/2020
+                                            p 12228 - Burger King 
+                                                small Pedro Fontova 134
+                                            p
+                                                .badge.badge-light.border.p-2.ml-auto #{val.comuna}
+                                            .button-group.d-flex.justify-content-end
+                                                button.btn.btn-outline-primary.btn-sm(onClick="location.href='./detalle-ruta/detalle-ruta.html'") Ver OT
 
 
+        include ../components/modal/_modal-reasignar-ruta
 
         block scripts 
         script(

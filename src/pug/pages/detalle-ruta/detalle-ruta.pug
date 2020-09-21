@@ -1,0 +1,148 @@
+extends ../../layout/_header
+
+block append config
+    -var pageTitle = 'Detalle de Ruta'
+    -var pageDescription = ''
+    -var baseDir = '../'
+    -var linkSrc = '../'
+
+block mainContent
+    main.content-wrapper
+        section.container-fluid.pt-5.pb-3.px-5
+            .row.align-items-center
+                .col-3
+                    h5
+                        a(href="../rutascalendario.html")
+                            i.fas.fa-arrow-left.mr-2
+                        span volver
+                    .wrapper(style="max-width:190px")
+                        .d-flex.w-100.justify-content-between.align-items-start
+                            h6 PR1
+                            span 1200 pts
+                        .progress.mb-2(style="height:10px")
+                            .progress-bar.progress-bar-striped(role="progressbar" style="width:75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="1200") 
+                        .text-white
+                            p.text-center.bg-success.p-xl-1.text-uppercase.mb-1
+                                small brxpm (1)
+                    h5 
+                        i.fas.fa-user-circle.mr-2
+                        | Juan Gonzalez
+                .col-6.text-center
+                    h4 
+                        span.tecnioo-card--title__status.bg-success
+                        | Postmix - Jueves 09 de abril
+                    .card.shadow
+                        .card-body
+                            ul.d-flex.m-0
+                                li.w-100
+                                    h4 4
+                                    p.m-0
+                                        small Sucursales Spot
+                                li.w-100
+                                    h4 8
+                                    p.m-0
+                                        small Sanitizados
+                                li.w-100
+                                    h4 2
+                                    p.m-0
+                                        small Brix
+                                li.w-100
+                                    h4 4
+                                    p.m-0
+                                        small 1200 pts
+                .col-3.text-center
+                    a.btn.btn-primary.btn-sm.mb-4.btnDatepicker(href="#") Seleccionar fecha
+                        .d-none.datepickerRoutes
+
+            .row
+                .col-12
+                    .table-responsive
+                        table.table.table-striped.mt-4
+                            thead
+                                tr
+                                    th(scope="col") OT
+                                    th(scope="col") Sucursal Spot
+                                    th(scope="col") Nº de Serie
+                                    th(scope="col") Máquina
+                                    th(scope="col") Ruta
+                                    th(scope="col") Técnico
+                                    th(scope="col") Fecha Programada
+                                    th(scope="col") Cod Servicio
+                                    th(scope="col") Fecha Realizado
+                                    th(scope="col") Puntos
+                                    th(scope="col") Status Cierre
+                                    th(scope="col")
+                            tbody
+                                +tableRowMantenciones(
+                                    'primary',
+                                    'RP80',
+                                    'Juan González',  
+                                    '-', 
+                                    '1',
+                                    'Asignado',
+                                    '../detalle-mantencion/asignado.html',
+                                    true
+                                    )
+                                +tableRowMantenciones(
+                                    'success',
+                                    'RP80',
+                                    'Alexis Osorio',  
+                                    '', 
+                                    '2',
+                                    'Ok',
+                                    '../detalle-mantencion/schop-cerrado-ok.html'
+                                    )
+                                +tableRowMantenciones(
+                                    'success',
+                                    'RP80',
+                                    'José Pérez',  
+                                    '', 
+                                    '1',
+                                    'Ok',
+                                    '../detalle-mantencion/brix-postmix-cerrado-ok.html'
+                                    )
+                                +tableRowMantenciones(
+                                    'success',
+                                    'RP80',
+                                    'Alverto Rivera',  
+                                    '', 
+                                    '3',
+                                    'Ok',
+                                    '../detalle-mantencion/sanitizado-postmix-cerrado-ok.html'
+                                    )
+                                +tableRowMantenciones(
+                                    'info',
+                                    'RP80',
+                                    'José Pérez',  
+                                    '', 
+                                    '1',
+                                    'P. Cliente',
+                                    '../detalle-mantencion/pendiente-cliente.html'
+                                    )
+                                +tableRowMantenciones(
+                                    'warning',
+                                    'RP80',
+                                    'Pedro Carrasco',  
+                                    '', 
+                                    '2',
+                                    'P. TCM',
+                                    '../detalle-mantencion/pendiente-tcm.html'
+                                    )
+                                +tableRowMantenciones(
+                                    'danger',
+                                    'RP80',
+                                    'Alverto Rivera',  
+                                    '', 
+                                    '3',
+                                    'L. Cerrado',
+                                    '../detalle-mantencion/local-cerrado.html'
+                                    )
+    include ../../components/modal/_modal-editar-ot
+    include ../../components/modal/_modal-eliminar-ot
+    include ../../layout/_scripts
+    script(
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"
+    )
+    script(src=baseDir+"assets/js/routes-dist.js")

@@ -74,3 +74,11 @@ strong.select2-results__group{
   color: $brand-grey;
   background: $ligth-grey;
 }
+.rute-wrapper{
+  li .d-flex{
+    display: inline !important;
+    @include MQ(1400px){
+      display: flex !important;
+    }
+  }
+}
